@@ -1,0 +1,8 @@
+* [Animation](common/animation.md)
+* [Template Engine](common/template-engine.md)
+* [Localization](common/localization.md)
+* [Internationalization](common/internationalization.md)
+* [Drag and Drop](common/drag-and-drop.md)
+* [Update NPM Packages](common/how-to/update-npm-package.md)
+* [Load locale files using Ajax](common/how-to/localization-using-ajax.md)
+* [Load culture files](common/how-to/localization-with-locale.md)
