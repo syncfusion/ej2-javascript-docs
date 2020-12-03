@@ -25,7 +25,7 @@ The default options available within the `resources` collection are as follows,
 | `dataSource` | Object | Assigns the resource `dataSource`, where data can be passed either as an array of JavaScript objects, or else can create an instance of [`DataManager`](http://ej2.syncfusion.com/documentation/data/api-dataManager.html) in case of processing remote data and can be assigned to the `dataSource` property. With the remote data assigned to `dataSource`, check the available [adaptors](http://ej2.syncfusion.com/documentation/data/adaptors.html) to customize the data processing. |
 | `query` | Query | Defines the external [`query`](http://ej2.syncfusion.com/documentation/data/api-query.html) that will be executed along with the data processing. |
 | `idField` | String | Binds the resource ID field name from the resources `dataSource`. |
-| `expandedField` | Boolean | When set `isExpand` property to `false` in resources `dataSource`, It restricts the resource field from expanding. By default, its value set to `true`|
+| `expandedField` | Boolean | When set `IsExpand` property to `false` in resources `dataSource`, It restricts the resource field from expanding. By default, its value set to `true`. |
 | `textField` | String | Binds the text field name from the resources `dataSource`. It usually holds the resource names. |
 | `groupIDField` | String | Binds the group ID field name from the resource `dataSource`. It usually holds the value of resource IDs of parent level resources. |
 | `colorField` | String | Binds the color field name from the resource `dataSource`. The color value mapped in this field will be applied to the events of resources. |
@@ -692,7 +692,7 @@ scheduleObj.appendTo('#Schedule');
 
 ## Expand and collapse resource fields
 
-It is possible to expand and collapse the resource field. By default, resource fields are expanded with their child fields. We can customize this behavior using `isExpand` property. When set `isExpand` property in resources dataSource to `false`, It restricts the resource fields from expanding. By default, `isExpand` value set to `true`.
+It is possible to expand and collapse the resource field. By default, resource fields are expanded with their child fields. We can customize this behavior using `IsExpand` property. When set `IsExpand` property in resources dataSource to `false`, It restricts the resource fields from expanding. By default, `IsExpand` value set to `true`.
 
 {% tab template="schedule/resource-grouping", es5Template="timeline-group-template", iframeHeight="588px", sourceFiles="index.ts,index.html"  %}
 
@@ -700,37 +700,41 @@ It is possible to expand and collapse the resource field. By default, resource f
 import { Schedule, TimelineViews, TimelineMonth, Agenda } from '@syncfusion/ej2-schedule';
 import { resourceData } from './datasource.ts';
 
-Schedule.Inject(TimelineViews, TimelineMonth, Agenda );
+Schedule.Inject(TimelineViews, TimelineMonth, Agenda);
 let scheduleObj: Schedule = new Schedule({
-    width: '100%',
-    height: '550px',
-    currentView: 'TimelineWeek',
-    views: ['TimelineWeek', 'TimelineMonth', 'Agenda'],
-    selectedDate: new Date(2018, 3, 4),
-    group: {
-        resources: ['Rooms', 'Owners']
+  width: "100%",
+  height: "550px",
+  currentView: "TimelineWeek",
+  views: ["TimelineWeek", "TimelineMonth", "Agenda"],
+  selectedDate: new Date(2018, 3, 4),
+  group: {
+    resources: ["Rooms", "Owners"]
+  },
+  resources: [
+    {
+      field: "RoomId", title: "Room",
+      name: "Rooms", allowMultiple: false,
+      dataSource: [
+        { RoomText: "ROOM 1", Id: 1, RoomColor: "#cb6bb2", IsExpand: false },
+        { RoomText: "ROOM 2", Id: 2, RoomColor: "#56ca85" }
+      ],
+      textField: "RoomText", idField: "Id", colorField: "RoomColor", expandedField: "IsExpand"
     },
-    resources: [{
-        field: 'RoomId', title: 'Room',
-        name: 'Rooms', allowMultiple: false,
-        dataSource: [
-            { RoomText: 'ROOM 1', Id: 1, RoomColor: '#cb6bb2', isExpand: false },
-            { RoomText: 'ROOM 2', Id: 2, RoomColor: '#56ca85' }
-            ],
-            textField: 'RoomText', idField: 'Id', colorField: 'RoomColor'
-        }, {
-        field: 'OwnerId', title: 'Owner',
-        name: 'Owners', allowMultiple: true,
-        dataSource: [
-            { OwnerText: 'Nancy', Id: 1, OwnerGroupId: 1, OwnerColor: '#ffaa00' },
-            { OwnerText: 'Steven', Id: 2, OwnerGroupId: 2, OwnerColor: '#f8a398' },
-            { OwnerText: 'Michael', Id: 3, OwnerGroupId: 1, OwnerColor: '#7499e1' }
-        ],
-        textField: 'OwnerText', idField: 'Id', groupIDField: 'OwnerGroupId', colorField: 'OwnerColor'
-    }],
-    eventSettings: { dataSource: resourceData }
+    {
+      field: "OwnerId", title: "Owner",
+      name: "Owners", allowMultiple: true,
+      dataSource: [
+        { OwnerText: "Nancy", Id: 1, OwnerGroupId: 1, OwnerColor: "#ffaa00" },
+        { OwnerText: "Steven", Id: 2, OwnerGroupId: 2, OwnerColor: "#f8a398" },
+        { OwnerText: "Michael", Id: 3, OwnerGroupId: 1, OwnerColor: "#7499e1" },
+        { OwnerText: "Alice", Id: 4, OwnerGroupId: 2, OwnerColor: "#7fa900" }
+      ],
+      textField: "OwnerText", idField: "Id", groupIDField: "OwnerGroupId", colorField: "OwnerColor"
+    }
+  ],
+  eventSettings: { dataSource: resourceData }
 });
-scheduleObj.appendTo('#Schedule');
+scheduleObj.appendTo("#Schedule");
 ```
 
 {% endtab %}
