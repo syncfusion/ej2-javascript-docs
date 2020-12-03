@@ -1,0 +1,158 @@
+---
+title: "word processor server overview"
+component: "Word Processor"
+description: "Word Processor Server Web API controller docker image overview"
+---
+# Word Processor Server
+
+The Syncfusion **Word Processor (also known as Document Editor)** is a component with editing capabilities like Microsoft Word. It is used to create, edit, view, and print Word documents. It provides all the common word processing abilities, including editing text; formatting contents; resizing images and tables; finding and replacing text; importing, exporting, and printing Word documents; and using bookmarks and tables of contents.
+
+This Docker image is the predefined Docker container of Syncfusion’s Word Processor backend. You can deploy it quickly to your infrastructure.
+
+Word Processor is a commercial product, and it requires a valid license to use it in a production environment [`(request license or trial key).`](https://help.syncfusion.com/common/essential-studio/licensing/licensing-faq/where-can-i-get-a-license-key)
+
+The Word Processor is supported in the JavaScript, Angular, React, Vue, ASP.NET Core, ASP.NET MVC, and Blazor platforms.
+
+## Prerequisites
+
+Have [`Docker`](https://www.docker.com/products/container-runtime#/download) installed in your environment:
+
+* On Windows, install [`Docker for Windows`](https://hub.docker.com/editions/community/docker-ce-desktop-windows).
+
+* On macOS, install [`Docker for Mac`](https://hub.docker.com/editions/community/docker-ce-desktop-windows).
+
+## How to use this Word Processor Docker image
+
+**Step 1:** Pull the word-processor-server image from Docker Hub.
+
+```console
+docker pull word-processor-server
+```
+
+**Step 2:** Create the docker-compose.yml file with the following code in your file system.
+
+```yaml
+version: '3.4'
+
+services:
+ word-processor-server:
+    image: syncfusion/word-processor-server:latest
+    environment:
+      #Provide your license key for activation
+      SYNCFUSION_LICENSE_KEY: YOUR_LICENSE_KEY
+    ports:
+    - "6002:80"
+```
+
+**Step 3:** In a terminal tab, navigate to the directory where you’ve placed the docker-compose.yml file and execute the following.
+
+```console
+docker-compose up
+```
+
+Also, you can run the Docker container along with the license key using this docker run command.
+
+```console
+docker run -d -p 6002:80 –e SYNCFUSION_LICENSE_KEY= YOUR_LICENSE_KEY syncfusion/word-processor-server:latest
+```
+
+Now the Word Processor server Docker instance runs in the localhost with the provided port number `http://localhost:6002`. Open this link in a browser and navigate to the Word Processor Web API control `http://localhost:6002/api/documenteitor`. It returns the default get method response.
+
+**Step 4:** Append the Docker instance running the URL `(http://localhost:6002/api/documenteditor)` to the service URL in the client-side Word Processor control. For more information about how to get started with the Word Processor control, refer to this [`getting started page.`](https://ej2.syncfusion.com/javascript/documentation/document-editor/getting-started)
+
+```html
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+       <head>
+          <title>Essential JS 2</title>
+          <!-- EJ2 Document Editor dependent material theme -->
+          <link href="resources/base/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/buttons/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/inputs/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/popups/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/lists/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/navigations/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/splitbuttons/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <link href="resources/dropdowns/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+          <!-- EJ2 DocumentEditor material theme -->
+          <link href="resources/documenteditor/styles/material.css" rel="stylesheet" type="text/css" rel='nofollow' />
+
+          <!-- EJ2 Document Editor dependent scripts -->
+          <script src="resources/scripts/ej2-base.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-data.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-svg-base.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-file-utils.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-compression.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-pdf-export.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-buttons.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-popups.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-splitbuttons.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-inputs.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-lists.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-navigations.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-dropdowns.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-calendars.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-charts.min.js" type="text/javascript"></script>
+          <script src="resources/scripts/ej2-office-chart.min.js" type="text/javascript"></script>
+          <!-- EJ2 Document Editor script -->
+          <script src="resources/scripts/ej2-documenteditor.min.js" type="text/javascript"></script>
+       </head>
+<body>
+<!--element which is going to render-->
+<div id='DocumentEditor' style='height:620px'>
+
+</div>
+<script>
+    // Initialize DocumentEditorContainer component.
+    var documenteditorContainer = new ej.documenteditor.DocumentEditorContainer({ enableToolbar: true });
+    ej.documenteditor.DocumentEditorContainer.Inject(ej.documenteditor.Toolbar);
+    documenteditorContainer.serviceUrl ="http://localhost:6002/api/documenteditor";
+    //DocumentEditorContainer control rendering starts
+    documenteditorContainer.appendTo('#DocumentEditor');
+</script>
+</body>
+  </html>
+```
+
+## How to configure a spell checker dictionaries path using Docker compose file
+
+**Step 1:** In the Docker compose file, mount the local directory as a container volume using the following code.
+
+```yaml
+version: '3.4'
+services:
+ word-processor-server:
+    image: syncfusion/word-processor-server:latest
+    environment:
+      #Provide your license key for activation
+      SYNCFUSION_LICENSE_KEY: YOUR_LICENSE_KEY
+   volumes:
+      -  ./data:/app/data
+    ports:
+    - "6001:80"
+```
+
+This YAML definition binds the data folder that is available in the Docker compose file directory.  
+
+**Step 2:** In the data folder, include the dictionary and .aff dictionary files.
+
+**Step 3:** For handling the personal dictionary, place an empty .dic file (e.g.,. customDict.dic file) in the data folder.
+
+**Step 4:** Provide the configured volume path to the environment variable like in the following in the Docker compose file.
+
+```yaml
+version: '3.4'
+services:
+ word-processor-server:
+    image: syncfusion/word-processo -server:latest
+    environment:
+      #Provide your license key for activation
+      SYNCFUSION_LICENSE_KEY: YOUR_LICENSE_KEY
+      SPELLCHECK_DICTIONARY_PATH: data
+   volumes:
+      -  ./data:/app/data
+    ports:
+    - "6001:80"
+```
+
+Refer to these getting started pages to create a Word Processor in [`Angular`](https://ej2.syncfusion.com/angular/documentation/document-editor/getting-started/), [`React`](https://ej2.syncfusion.com/react/documentation/document-editor/getting-started/), [`Vue`](https://ej2.syncfusion.com/vue/documentation/document-editor/getting-started/), [`ASP.NET MVC`](https://ej2.syncfusion.com/aspnetmvc/documentation/document-editor/getting-started/), [`ASP.NET Core`](https://ej2.syncfusion.com/aspnetcore/documentation/document-editor/getting-started/), and [`Blazor`](https://blazor.syncfusion.com/documentation/document-editor/getting-started/server-side-application/).
