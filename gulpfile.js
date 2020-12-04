@@ -53,10 +53,10 @@ gulp.task('ship-to-gitlap', function (done) {
             console.log('Clone has been completed...!');
             shelljs.cp('-rf', `./src/${cloneRepos[j]}/*`, `./gitlapRepo/ej2-${cloneRepos[j]}-angular-docs/src`);
             shelljs.cd(`./gitlapRepo/ej2-${cloneRepos[j]}-angular-docs`);
-            shelljs.exec('git add .');
-            shelljs.exec('git pull');
-            shelljs.exec('git commit -m \"ci-skip(EJ2-000): source updation from github repo [ci skip]\" --no-verify');
-            shelljs.exec('git push');
+//             shelljs.exec('git add .');
+//             shelljs.exec('git pull');
+//             shelljs.exec('git commit -m \"ci-skip(EJ2-000): source updation from github repo [ci skip]\" --no-verify');
+//             shelljs.exec('git push');
             shelljs.cd('../../');
         }
     }
