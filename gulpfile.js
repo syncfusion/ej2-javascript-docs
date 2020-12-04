@@ -81,7 +81,7 @@ gulp.task('ship-to-gitlap', function (done) {
             shelljs.cd('../../');
         }
     }
-})
+});
 
 /**
  * Lint md files in src location
