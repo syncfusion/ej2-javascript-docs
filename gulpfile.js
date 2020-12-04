@@ -16,33 +16,36 @@ var user_mail = process.env.GIT_MAIL;
 gulp.task('ship-to-gitlap', function (done) {
     console.log('---check----' + user_mail);
     console.log('---user---' + user);
-    
+
     shelljs.exec(`git config --global user.email "${user_mail}"`);
     shelljs.exec(`git config --global user.name "${user}"`);
-    
-    var changes = shelljs.exec(`git diff --name-only HEAD^ HEAD`);
+
+    var changes = shelljs.exec(`git diff --name-only`);
     console.log('--changes----' + changes);
-    
+
     var changedFileNames = changes.stdout.split('\n');
     console.log('--changedFileNames----' + changedFileNames);
-    
+
     var cloneRepos = [];
+    var copyHelper = [];
     for (var i = 0; i < changedFileNames.length; i++) {
-        var curentRootRepo = changedFileNames[i].split('/')[1];
-//         if(curentRootRepo !='workflows'){
-//             return
-//            }
-        if (curentRootRepo != undefined && curentRootRepo !='workflows') {
-            cloneRepos.push(curentRootRepo);
+        var curentRootRepo = changedFileNames[i].split('/');
+        //         if(curentRootRepo !='workflows'){
+        //             return
+        //            }
+        if (curentRootRepo[1] != undefined && curentRootRepo[1] != 'workflows' && cloneRepos.indexOf(curentRootRepo[1]) == -1) {
+            cloneRepos.push(curentRootRepo[1]);
+            copyHelper.push(`${curentRootRepo[1]}/${curentRootRepo[2]}`);
         }
     }
-    
-    console.log('--cloneRepos----' + cloneRepos);    
-    
+
+    console.log('--cloneRepos----' + cloneRepos);
+
     for (var j = 0; j < cloneRepos.length; j++) {
-        var gitPath = 'https://' + user + ':' + token + `@gitlab.syncfusion.com/essential-studio/ej2-${cloneRepos[j]}-angular-docs`;
+        var cloneRepoName = cloneRepos[j] === 'common' ? 'common' : cloneRepos[j];
+        var gitPath = 'https://' + user + ':' + token + `@gitlab.syncfusion.com/essential-studio/ej2-${cloneRepoName}-docs`;
         console.log('Clone has been started...!');
-        var clone = shelljs.exec('git clone ' + gitPath + ' -b master' + ' ' + `./gitlapRepo/ej2-${cloneRepos[j]}-angular-docs`, {
+        var clone = shelljs.exec('git clone ' + gitPath + ' -b master' + ' ' + `./gitlapRepo/ej2-${cloneRepoName}-docs`, {
             silent: false
         });
         if (clone.code !== 0) {
@@ -51,8 +54,26 @@ gulp.task('ship-to-gitlap', function (done) {
             return;
         } else {
             console.log('Clone has been completed...!');
-            shelljs.cp('-rf', `./src/${cloneRepos[j]}/*`, `./gitlapRepo/ej2-${cloneRepos[j]}-angular-docs/src`);
-            shelljs.cd(`./gitlapRepo/ej2-${cloneRepos[j]}-angular-docs`);
+            // start - source copy
+            if (cloneRepos[j] === 'common') {
+                shelljs.cp('-rf', './src/common/*', `./gitlapRepo/ej2-${cloneRepoName}-docs/src`);
+            } else {
+                var destPath = `./gitlapRepo/ej2-${cloneRepoName}-docs/src/${copyHelper[j].split('/')[1]}/`;
+                var destfiles = glob.sync(destPath + '*', { ignore: [`${destPath}ts`, `${destPath}js`] });
+                for (var i = 0; i < destfiles.length; i++) {
+                    var copyPath = './src/' + cloneRepos[j] + destfiles[i].split('src')[1];
+                    copyPath = copyPath + `${copyPath.indexOf('.md') === -1 ? '/*' : ''}`;
+                    shelljs.cp('-rf', copyPath, destfiles[i]);
+                }
+                var tsDestFiles = glob.sync(destPath + 'ts/*');
+                for (var i = 0; i < tsDestFiles.length; i++) {
+                    var copyPath = './src/' + cloneRepos[j] + tsDestFiles[i].split('src')[1].replace('/ts', '');
+                    copyPath = copyPath + `${copyPath.indexOf('.md') === -1 ? '/*' : ''}`;
+                    shelljs.cp('-rf', copyPath, tsDestFiles[i]);
+                }
+            }
+            // end
+            shelljs.cd(`./gitlapRepo/ej2-${cloneRepoName}-docs`);
             shelljs.exec('git add .');
             shelljs.exec('git pull');
             shelljs.exec('git commit -m \"ci-skip(EJ2-000): source updation from github repo [ci skip]\" --no-verify');
