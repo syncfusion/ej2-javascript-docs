@@ -28,5 +28,5 @@
 * [CSS Structure](diagram/style.md)
 * [Context Menu](diagram/context-menu.md)
 * [Symbol Palette](diagram/symbol-palette.md)
-* [Overview Control](diagram/overView.md)
+* [Overview Control](diagram/overview.md)
 * [Migration from Essential JS 1](diagram/ej1-api-migration.md)

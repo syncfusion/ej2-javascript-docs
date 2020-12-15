@@ -13,7 +13,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -125,7 +125,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -157,7 +157,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -615,7 +615,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -1107,7 +1107,7 @@ var connector = {
         x: 200,
         y: 200
     },
-    linehitPadding: 15
+    lineHitPadding: 15
 };
 $("#diagramcontent").ejDiagram({
     connectors: [connector]
@@ -3944,7 +3944,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -4309,7 +4309,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -4910,7 +4910,7 @@ $("#diagramcontent").ejDiagram({
 <b>Not applicable</b></td>
 </tr>
 <tr>
-<td><b>Sets the targetPoint-x value of the connection data source item</b></td>
+<td><b>Sets the x point value of the connection data source item</b></td>
 <td>
 <b>Property</b>:<i>`dataSourceSettings.connectionDataSource.targetPointX`</i>
 </br>
@@ -4933,7 +4933,7 @@ $("#diagramcontent").ejDiagram({
 <b>Not applicable</b></td>
 </tr>
 <tr>
-<td><b>Sets the targetPoint-y value of the connection data source item</b></td>
+<td><b>Sets the y point value of the connection data source item</b></td>
 <td>
 <b>Property</b>:<i>`dataSourceSettings.connectionDataSource.targetPointY`</i>
 </br>
@@ -5144,7 +5144,7 @@ $("#diagramcontent").ejDiagram({
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5227,7 +5227,7 @@ $("#diagramcontent").ejDiagram({
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5261,7 +5261,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5295,7 +5295,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5331,7 +5331,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5376,7 +5376,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5412,57 +5412,12 @@ diagram.appendTo('#diagram');
 </tr>
 </table>
 
-## GetDescription
-
-<!-- markdownlint-disable MD033 -->
-<table>
-<tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
-<td style="width: 40%;"><b>API in Essential JS 1</b></td>
-<td><b>API in Essential JS 2</b></td>
-</tr>
-
-<tr>
-<td><b>Allows to get the custom description<b></td>
-<td><b>Not applicable</b>
-</td>
-<td>
-<b>Property</b>:<i>`getDescription`</i>
-</br>
-</br>
-<code>
-function getAccessibility(object: ConnectorModel, diagram: Diagram): string {
-    var value;
-    if (object instanceof Connector) {
-        value = 'clicked on Connector';
-    } else {
-        value = undefined;
-    }
-    return value;
-}
-var nodes = [{
-          id: 'node1', width: 100, height: 100, offsetX: 100, offsetY: 100,
-      },
-      {
-          id: 'node2', width: 100, height: 100, offsetX: 300, offsetY: 100,
-          shape: { type: 'Basic', shape: 'Ellipse' },
-      }];
-var diagram = new ej.diagrams.Diagram({
-    width: '100%', height: '600px',
-    nodes: nodes,
-    getDescription: getAccessibility
-});
-diagram.appendTo('#diagram');
-</code></td>
-</tr>
-</table>
-
 ## GetCustomTool
 
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5512,7 +5467,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -5547,7 +5502,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6034,7 +5989,7 @@ diagram.historyList.canLog = function (entry: HistoryEntry) {
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6057,7 +6012,7 @@ $("#diagramcontent").ejDiagram({ labelRenderingMode: "svg" });
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6631,7 +6586,7 @@ diagram.dataBind();
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -12028,7 +11983,7 @@ diagram.tool = DiagramTools.ZoomPan;
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -12140,7 +12095,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -12199,7 +12154,7 @@ overview.appendTo('#overview');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -12301,7 +12256,7 @@ $("#diagram").ejDiagram({
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13155,7 +13110,7 @@ console.log(node.labels[0].mode);
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13220,7 +13175,7 @@ diagram.appendTo('#diagram');
 <code>
 $("#diagramcontent").ejDiagram({
     pageSettings: {
-        pagebackgroundColor: "lightgrey",
+        pageBackgroundColor: "lightgrey",
         }
 });
 </code>
@@ -13309,7 +13264,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13608,7 +13563,7 @@ palette.appendTo('#symbolpalette');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13800,7 +13755,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13974,7 +13929,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -14161,7 +14116,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -14196,7 +14151,7 @@ diagram.zoomTo(zoomin);
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -14230,7 +14185,7 @@ diagram.tool = DiagramTools.ZoomPan;
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -14264,7 +14219,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -14592,7 +14547,7 @@ diagram.appendTo('#diagram');
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -14621,7 +14576,7 @@ $("#diagramcontent").ejDiagram({
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>

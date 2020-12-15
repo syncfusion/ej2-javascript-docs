@@ -28,7 +28,7 @@ The following list of dependencies are required to use the `Diagram` component i
 
 ## Installation and Configuration
 
-* To get started with the diagram component, clone the [`Essential JS 2 quickstart`](https://github.com/syncfusion/ej2-quickstart.git) project and install necessary packages by using the following commands.
+* To get started with the diagram component, clone the [`Essential JS 2 quickStart`](https://github.com/syncfusion/ej2-quickstart.git) project and install necessary packages by using the following commands.
 
 ```sh
 git clone https://github.com/syncfusion/ej2-quickstart.git quickstart
@@ -198,7 +198,7 @@ diagram.appendTo('#element');
 
 ### Connect Nodes
 
-Add two node to the diagram as shown in the previous example. Connect these nodes by adding a connector using the `connector` property and refer the source and target end by using the `sourceNode` and `tagetNode` properties.
+Add two node to the diagram as shown in the previous example. Connect these nodes by adding a connector using the `connector` property and refer the source and target end by using the `sourceNode` and `targetNode` properties.
 
 {% tab template= "diagram/getting-started", es5Template="es5Connect" %}
 

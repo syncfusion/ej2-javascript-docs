@@ -192,7 +192,7 @@ import {
     NodeModel
 } from '@syncfusion/ej2-diagrams';
 
-//Initializes the nodes
+//Initializes the node
 let node: NodeModel = {
     id: 'node1',
     width: 90,
