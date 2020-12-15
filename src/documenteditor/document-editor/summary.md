@@ -34,6 +34,7 @@
 * [Document Management](document-editor/document-management.md)
 * [Spell Checker](document-editor/spell-check.md)
 * [Globalization](document-editor/global-local.md)
+* [Footnotes and Endnotes](document-editor/notes.md)
 * [Override keyboard shortcuts](document-editor/how-to/override-the-keyboard-shortcuts.md)
 * [Customize context menu](document-editor/how-to/customize-context-menu.md)
 * [Customize toolbar](document-editor/how-to/customize-tool-bar.md)

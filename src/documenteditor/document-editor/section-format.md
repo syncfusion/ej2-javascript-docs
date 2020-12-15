@@ -49,4 +49,4 @@ documenteditor.selection.sectionFormat.footerDistance = 72;
 
 ## See Also
 
-*[Pagesetup dialog](../document-editor/dialog#page-setup-dialog/)
+*[Page setup dialog](../document-editor/dialog#page-setup-dialog/)

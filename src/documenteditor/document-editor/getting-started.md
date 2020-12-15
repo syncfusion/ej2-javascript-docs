@@ -17,7 +17,7 @@ The Essential JS 2 JavaScript components can be initialized by using either of t
 
 ### Using local script and style references in a HTML page
 
-**Step 1:** Create an app folder `myapp` for Essential JS 2 JavaScript components.
+**Step 1:** Create an app folder `app` for Essential JS 2 JavaScript components.
 
 **Step 2:** You can get the global scripts and styles from the [Essential Studio JavaScript (Essential JS 2)](https://www.syncfusion.com/downloads/essential-js2/) build installed location.
 
@@ -32,9 +32,9 @@ The Essential JS 2 JavaScript components can be initialized by using either of t
 >
 > Styles: `C:/Program Files (x86)/Syncfusion/Essential Studio/15.4.30/Essential JS 2/ej2-documenteditor/styles/material.css`
 
-**Step 3:** Create a folder `myapp/resources` and copy/paste the global scripts and styles from the above installed location to `myapp/resources` location.
+**Step 3:** Create a folder `app/resources` and copy/paste the global scripts and styles from the above installed location to `app/resources` location.
 
-**Step 4:** Create a HTML page (index.html) in `myapp` location and add the Essentials JS 2 script and style references.
+**Step 4:** Create a HTML page (index.html) in `app` location and add the Essentials JS 2 script and style references.
 
 ```html
 <!DOCTYPE html>
@@ -197,7 +197,7 @@ Now, run the `index.html` in web browser, it will render the **Essential JS 2 Do
 
 ### Using CDN link for script and style reference
 
-**Step 1:** Create an app folder `myapp` for the Essential JS 2 JavaScript components.
+**Step 1:** Create an app folder `app` for the Essential JS 2 JavaScript components.
 
 **Step 2:** The Essential JS 2 component's global scripts and styles are already hosted in the below CDN link formats.
 
@@ -211,7 +211,7 @@ Now, run the `index.html` in web browser, it will render the **Essential JS 2 Do
 >
 > Styles: [`https://cdn.syncfusion.com/ej2/17.3.14/ej2-documenteditor/styles/material.css`](https://cdn.syncfusion.com/ej2/17.3.14/ej2-documenteditor/styles/material.css)
 
-**Step 3:** Create a HTML page (index.html) in `myapp` location and add the CDN link references. Now, add the `Div` element and initiate the `Essential JS 2 DocumentEditor` component in the index.html by using following code.
+**Step 3:** Create a HTML page (index.html) in `app` location and add the CDN link references. Now, add the `Div` element and initiate the `Essential JS 2 DocumentEditor` component in the index.html by using following code.
 
 {% tab template="document-editor/es5-getting-started", sourceFiles="index.html" %}
 
