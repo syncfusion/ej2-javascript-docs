@@ -10,7 +10,7 @@ Rich Text Editor allows to insert table of content in edit panel and provide opt
 | styles | This is an array of key value pair, on each pair, key should be name of styling and value is class name. this list will be shown on quick toolbar options to change the styles of table on designing like dashed, double bordered. | [TableStyleItems](../api/rich-text-editor/tableSettings/#styles) |
 | width | Sets the default width of the table. | 100% |
 
-> Rich Text Editor features are segregated into individual feature-wise modules. To use table tool,inject image module using the `RichTextEditor.Inject(table)`.
+> Rich Text Editor features are segregated into individual feature-wise modules. To use table tool,inject image module using the `RichTextEditor.Inject(Table)`.
 
 ## Insert table
 

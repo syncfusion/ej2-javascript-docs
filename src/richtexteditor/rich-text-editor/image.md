@@ -17,7 +17,7 @@ Rich Text Editor allows to insert images from online source as well as local com
 | saveUrl | Provides URL to map the action result method to save the image.|
 | path | Specifies the location to store the image.|
 
-> Rich Text Editor features are segregated into individual feature-wise modules. To use image and link tool, inject image module using the `RichTextEditor.Inject(image)`.
+> Rich Text Editor features are segregated into individual feature-wise modules. To use image and link tool, inject image module using the `RichTextEditor.Inject(Image)`.
 
 ## Upload options
 
@@ -54,11 +54,39 @@ defaultRTE.appendTo('#defaultRTE');
 
 ## Image delete
 
-To remove an image from the Rich Text Editor content, select the image and click `Remove` tool from the quick toolbar. It will delete the image from the Rich Text Editor content as well as from the service location if the saveUrl is given.
+To remove an image from the Rich Text Editor content, select the image and click `Remove` tool from the quick toolbar. It will delete the image from the Rich Text Editor content as well as from the service location if the `removeUrl` is given.
 
 Once you select the image from the local machine, the URL for the image will be generate. From there, you can remove the image from the service location by clicking the cross icon.
 
 ![RTE Image delete](./images/image-del.png)
+
+The following sample explains, how to configure `removeUrl` to remove a saved image from the remote service location, when the following image remove actions are performed:
+
+* `delete` key action.
+* `backspace` key action.
+* Removing uploaded image file from the insert image dialog.
+* Deleting image using the quick toolbar `remove` option.
+
+{% tab template="rich-text-editor/remove-url", es5Template="remove-url" %}
+
+```typescript
+import { RichTextEditor, HtmlEditor, Toolbar, QuickToolbar, Image, FileManager } from '@syncfusion/ej2-richtexteditor';
+RichTextEditor.Inject(HtmlEditor, Toolbar, QuickToolbar, Image, FileManager);
+
+let defaultRTE: RichTextEditor = new RichTextEditor({
+    insertImageSettings: {
+        saveUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Save',
+        removeUrl: 'https://ej2.syncfusion.com/services/api/uploadbox/Remove'
+    },
+    toolbarSettings: {
+        items: ['Image']
+    }
+});
+defaultRTE.appendTo('#defaultRTE');
+
+```
+
+{% endtab %}
 
 ## Insert from web
 

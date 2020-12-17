@@ -345,7 +345,7 @@ The following sample demonstrates the option to insert the image to the Rich Tex
 
 {% endtab %}
 
-> Rich Text Editor features are segregated into individual feature-wise modules. To use quick toolbar, inject the quick toolbar module using the `RichTextEditor.Inject(image, link)`.
+> Rich Text Editor features are segregated into individual feature-wise modules. To use quick toolbar, inject the quick toolbar module using the `RichTextEditor.Inject(Image, Link)`.
 
 ## See Also
 
