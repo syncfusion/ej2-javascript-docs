@@ -1,6 +1,7 @@
 * [Getting Started](dialog/es5-getting-started.md)
 * [Templates](dialog/template.md)
 * [Animation](dialog/animation.md)
+* [Resizing](dialog/resize.md)
 * [Dialog utility](dialog/dialog-utility.md)
 * [CSS Structure](dialog/style.md)
 * [Localization](dialog/localization.md)
