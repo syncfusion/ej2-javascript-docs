@@ -8,6 +8,7 @@
 * [Link](rich-text-editor/link.md)
 * [Table](rich-text-editor/table.md)
 * [Markdown](rich-text-editor/markdown.md)
+* [File Browser](rich-text-editor/file-browser.md)
 * [IFrame Rendering](rich-text-editor/iframe.md)
 * [Form Support](rich-text-editor/form-support.md)
 * [Validation](rich-text-editor/validation.md)
