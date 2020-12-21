@@ -6,13 +6,13 @@ description: "Learn how to select rows and cells, use range selection, and use c
 
 # Selection
 
-Selection provides an option to highlight a row or a cell. It can be done through simple mouse down or arrow keys. To disable selection in the Grid, set the [`allowSelection`](../api/grid/#allowselection) to false.
+Selection provides an option to highlight a row or a cell or a column. It can be done through simple mouse down or arrow keys. To disable selection in the Grid, set the [`allowSelection`](../api/grid/#allowselection) to false.
 
 The grid supports two types of selection that can be set by using the [`selectionSettings.type`](../api/grid/selectionSettings/#type). They are:
 
-* **`Single`**: The `Single` value is set by default, and it only allows selection of a single row or a cell.
-* **`Multiple`**: Allows you to select multiple rows or cells.
-To perform the multi-selection, press and hold CTRL key and click the desired rows or cells. To select range of rows or cells, press and hold the SHIFT key and click the rows or cells.
+* **`Single`**: The `Single` value is set by default, and it only allows selection of a single row or a cell or a column.
+* **`Multiple`**: Allows you to select multiple rows or cells or columns.
+To perform the multi-selection, press and hold CTRL key and click the desired rows or cells or columns. To select range of rows or cells or columns, press and hold the SHIFT key and click the rows or cells or columns.
 
 {% tab template="grid/grid", es5Template="selection" %}
 
@@ -106,6 +106,36 @@ grid.appendTo('#Grid');
 > Cell selection requires the [`selectionSettings.mode`](../api/grid/selectionSettings/#mode) to be `Cell` or  `Both`, and
 [`type`](../api/grid/selectionSettings/#type) should be `Multiple`.
 
+## Column selection
+
+Column selection can be done through simple mouse down or arrow keys.
+
+You can enable column selection by setting the [`selectionSettings.allowColumnSelection`](../api/grid/selectionSettings/#allowcolumnselection) property as true.
+
+{% tab template="grid/selected-index", es5Template="columnselection" %}
+
+```typescript
+import { Grid } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    enableHover: false,
+    selectionSettings: { allowColumnSelection: true, type: 'Multiple' },
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 150 },
+        { field: 'ShipCity', headerText: 'Ship City', width: 150 },
+        { field: 'ShipName', headerText: 'Ship Name', width: 150 }
+    ],
+    height: 315
+});
+grid.appendTo('#Grid');
+
+```
+
+{% endtab %}
+
 ## Checkbox selection
 
 Checkbox selection provides an option to select multiple grid records with help of checkbox in each row.
@@ -174,7 +204,7 @@ grid.appendTo('#Grid');
 
 ## Toggle selection
 
-The Toggle selection allows to perform selection and unselection of the particular row or cell. To enable toggle selection, set [`enableToggle`](../api/grid/selectionSettings/#enabletoggle) property of the selectionSettings as true. If you click on the selected row or cell then it will be unselected and vice versa.
+The Toggle selection allows to perform selection and unselection of the particular row or cell or column. To enable toggle selection, set [`enableToggle`](../api/grid/selectionSettings/#enabletoggle) property of the selectionSettings as true. If you click on the selected row or cell or column then it will be unselected and vice versa.
 
 {% tab template="grid/grid", es5Template="toggleselection" %}
 
