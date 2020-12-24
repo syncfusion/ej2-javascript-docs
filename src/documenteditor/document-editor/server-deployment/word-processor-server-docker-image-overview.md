@@ -26,7 +26,7 @@ Have [`Docker`](https://www.docker.com/products/container-runtime#/download) ins
 **Step 1:** Pull the word-processor-server image from Docker Hub.
 
 ```console
-docker pull word-processor-server
+docker pull syncfusion/word-processor-server
 ```
 
 **Step 2:** Create the docker-compose.yml file with the following code in your file system.
@@ -56,7 +56,7 @@ Also, you can run the Docker container along with the license key using this doc
 docker run -d -p 6002:80 –e SYNCFUSION_LICENSE_KEY= YOUR_LICENSE_KEY syncfusion/word-processor-server:latest
 ```
 
-Now the Word Processor server Docker instance runs in the localhost with the provided port number `http://localhost:6002`. Open this link in a browser and navigate to the Word Processor Web API control `http://localhost:6002/api/documenteitor`. It returns the default get method response.
+Now the Word Processor server Docker instance runs in the localhost with the provided port number `http://localhost:6002`. Open this link in a browser and navigate to the Word Processor Web API control `http://localhost:6002/api/documenteditor`. It returns the default get method response.
 
 **Step 4:** Append the Docker instance running the URL `(http://localhost:6002/api/documenteditor)` to the service URL in the client-side Word Processor control. For more information about how to get started with the Word Processor control, refer to this [`getting started page.`](https://ej2.syncfusion.com/javascript/documentation/document-editor/getting-started)
 
@@ -106,7 +106,7 @@ Now the Word Processor server Docker instance runs in the localhost with the pro
     // Initialize DocumentEditorContainer component.
     var documenteditorContainer = new ej.documenteditor.DocumentEditorContainer({ enableToolbar: true });
     ej.documenteditor.DocumentEditorContainer.Inject(ej.documenteditor.Toolbar);
-    documenteditorContainer.serviceUrl ="http://localhost:6002/api/documenteditor";
+    documenteditorContainer.serviceUrl ="http://localhost:6002/api/documenteditor/";
     //DocumentEditorContainer control rendering starts
     documenteditorContainer.appendTo('#DocumentEditor');
 </script>
@@ -129,7 +129,7 @@ services:
    volumes:
       -  ./data:/app/data
     ports:
-    - "6001:80"
+    - "6002:80"
 ```
 
 This YAML definition binds the data folder that is available in the Docker compose file directory.  
@@ -152,7 +152,7 @@ services:
    volumes:
       -  ./data:/app/data
     ports:
-    - "6001:80"
+    - "6002:80"
 ```
 
 Refer to these getting started pages to create a Word Processor in [`Angular`](https://ej2.syncfusion.com/angular/documentation/document-editor/getting-started/), [`React`](https://ej2.syncfusion.com/react/documentation/document-editor/getting-started/), [`Vue`](https://ej2.syncfusion.com/vue/documentation/document-editor/getting-started/), [`ASP.NET MVC`](https://ej2.syncfusion.com/aspnetmvc/documentation/document-editor/getting-started/), [`ASP.NET Core`](https://ej2.syncfusion.com/aspnetcore/documentation/document-editor/getting-started/), and [`Blazor`](https://blazor.syncfusion.com/documentation/document-editor/getting-started/server-side-application/).
