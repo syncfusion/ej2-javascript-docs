@@ -306,7 +306,7 @@ grid.appendTo('#Grid');
 
 Grid cells in the exported Excel can be customized or formatted using [`excelQueryCellInfo`](../api/grid/#excelQueryCellInfo) event. In this event, we can format the grid cells of exported PDF document based on the column cell value.
 
-In the below sample, we have set the background color for `Freight` column in the exported excel by `args.cell` and `backgroundColor` property.
+In the below sample, we have set the background color for `Freight` column in the exported excel by `args.cell` and `backColor` property.
 
 {% tab template="grid/grid",es5Template="cell-format-excel" %}
 
