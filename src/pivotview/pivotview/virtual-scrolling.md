@@ -8,6 +8,8 @@ description: "Virtual Scrolling allows user to load large amount of data without
 
 # Virtual Scrolling
 
+## Virtual scrolling
+
 Allows to load the large amounts of data without any performance degradation by rendering rows and columns only in the current content viewport. Rest of the aggregated data will be brought into viewport dynamically based on vertical or horizontal scroll position. This feature can be enabled by setting the [`enableVirtualization`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#enablevirtualization) property in pivot table to **true**..
 
 To use the virtual scrolling feature, inject the `VirtualScroll` module in to the pivot table.
@@ -145,3 +147,81 @@ pivotTableObj.appendTo('#PivotTable');
 * If you use any of the aggregations above, it will result in an aggregation type **"Sum"**.
 * Distinctcount will act as **"Count"** aggregation type.
 * In the calculated field, an existing field can be inserted without altering its default aggregation type Even if we change it, it would use the default aggregation type back for calculation.
+
+## Virtual scrolling for static field list
+
+Virtual scrolling automatically works with "Popup" field list on setting the [`enableVirtualization`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#enablevirtualization) property in the Pivot Table to **true**. Incase of static field list, which act as a separate component, user need to enable [`enableVirtualization`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#enablevirtualization) property in the Pivot Table and also pass the report information to pivot table instance via the [`load`]((https://ej2.syncfusion.com/javascript/documentation/api/pivotview#load)) event of the field list.
+
+{% tab template="pivot-table/field-list", es5Template="staticfieldlistvirtualization", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, PivotFieldList } from '@syncfusion/ej2-pivotview';
+
+let data: Function = (count: number) => {
+    let result: Object[] = [];
+    let dt: number = 0;
+    for (let i: number = 1; i < (count + 1); i++) {
+        dt++;
+        let round: string;
+        let toString: string = i.toString();
+        if (toString.length === 1) {
+            round = '0000' + (i);
+        }
+        else if (toString.length === 2) {
+            round = '000' + i;
+        }
+        else if (toString.length === 3) {
+            round = '00' + i;
+        } else if (toString.length === 4) {
+            round = '0' + i;
+        } else {
+            round = toString;
+        }
+        result.push({
+            ProductID: 'PRO-' + round,
+            Year: "FY " + (dt + 2013),
+            Price: Math.round(Math.random() * 5000) + 5000,
+            Sold: Math.round(Math.random() * 80) + 10,
+        });
+        if (dt / 4 == 1) {
+            dt = 0;
+        }
+    }
+    return result;
+};
+let pivotObj: PivotView = new PivotView({
+    enginePopulated: () => {
+        if (fieldListObj) {
+            fieldListObj.update(pivotObj);
+        }
+    },
+    enableVirtualization: true,
+    height: 350
+});
+pivotObj.appendTo('#PivotTable');
+let fieldListObj: PivotFieldList = new PivotFieldList({
+    dataSourceSettings: {
+        dataSource: data(1000) as IDataSet[],
+        rows: [{ name: 'ProductID' }],
+        columns: [{ name: 'Year' }],
+        values: [{ name: 'Price', caption: 'Unit Price' }, { name: 'Sold', caption: 'Unit Sold' }]
+    },
+    renderMode: 'Fixed',
+    load: (): void => {
+        this.pivotGridModule = pivotObj;
+        //Assigning report to pivot table component.
+        pivotObj.dataSourceSettings = fieldListObj.dataSourceSettings;
+        //Generating page settings based on pivot table component’s size.
+        pivotObj.updatePageSettings(true);
+        //Assigning page settings to field list component.
+        fieldListObj.pageSettings = pivotObj.pageSettings;
+    },
+    enginePopulated: (): void => {
+        fieldListObj.updateView(pivotObj);
+    }
+});
+fieldListObj.appendTo('#Static_FieldList');
+
+```
+
+{% endtab %}
