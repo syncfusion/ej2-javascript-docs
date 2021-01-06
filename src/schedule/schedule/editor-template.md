@@ -475,6 +475,7 @@ The following code example shows how to save the customized event editor using a
 ```typescript
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { Schedule, Day, Week, WorkWeek, Month, Agenda, PopupOpenEventArgs, PopupCloseEventArgs } from '@syncfusion/ej2-schedule';
 import { eventData } from './datasource.ts';
 

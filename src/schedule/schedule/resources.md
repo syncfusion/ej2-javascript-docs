@@ -25,7 +25,7 @@ The default options available within the `resources` collection are as follows,
 | `dataSource` | Object | Assigns the resource `dataSource`, where data can be passed either as an array of JavaScript objects, or else can create an instance of [`DataManager`](http://ej2.syncfusion.com/documentation/data/api-dataManager.html) in case of processing remote data and can be assigned to the `dataSource` property. With the remote data assigned to `dataSource`, check the available [adaptors](http://ej2.syncfusion.com/documentation/data/adaptors.html) to customize the data processing. |
 | `query` | Query | Defines the external [`query`](http://ej2.syncfusion.com/documentation/data/api-query.html) that will be executed along with the data processing. |
 | `idField` | String | Binds the resource ID field name from the resources `dataSource`. |
-| `expandedField` | Boolean | When set `IsExpand` property to `false` in resources `dataSource`, It restricts the resource field from expanding. By default, its value set to `true`. |
+| `expandedField` | Boolean | Binds the `expandedField` name from the resources `dataSource`. It usually holds boolean value which decide whether the resource of timeline views is in collapse or expand state on initial load. |
 | `textField` | String | Binds the text field name from the resources `dataSource`. It usually holds the resource names. |
 | `groupIDField` | String | Binds the group ID field name from the resource `dataSource`. It usually holds the value of resource IDs of parent level resources. |
 | `colorField` | String | Binds the color field name from the resource `dataSource`. The color value mapped in this field will be applied to the events of resources. |
@@ -690,9 +690,9 @@ scheduleObj.appendTo('#Schedule');
 
 {% endtab %}
 
-## Expand and collapse resource fields
+## Hide child resources in timeline views
 
-It is possible to expand and collapse the resource field. By default, resource fields are expanded with their child fields. We can customize this behavior using `IsExpand` property. When set `IsExpand` property in resources dataSource to `false`, It restricts the resource fields from expanding. By default, `IsExpand` value set to `true`.
+It is possible to expand and collapse the resources which have child resource in timeline views dynamically. By default, resources are in expanded state with their child resource. We can collapse and hide the child resources in UI by setting `expandedField` option as `false` whereas its default value is `true`.
 
 {% tab template="schedule/resource-grouping", es5Template="timeline-group-template", iframeHeight="588px", sourceFiles="index.ts,index.html"  %}
 

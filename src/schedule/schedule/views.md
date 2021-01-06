@@ -269,9 +269,9 @@ let scheduleObj: Schedule = new Schedule({
 scheduleObj.appendTo('#Schedule');
 ```
 
-> Schedule Height is mandatory to set in pixels for Agenda view alone.
-
 {% endtab %}
+
+> Schedule Height is mandatory to set in pixels for Agenda view alone.
 
 ### Month Agenda view
 
