@@ -28,4 +28,5 @@
 * [Open Editor Window Manually](schedule/how-to/open-event-editor-manually.md)
 * [Prevent the Date Navigation](schedule/how-to/prevent-date-navigation.md)
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
+* [Show Entire Time in Responsive Mode When Start Hour is Set](schedule/how-to/show-entire-time-in-responsive-mode.md)
 * [Styling and Appearance](schedule/how-to/scheduler-styling.md)
