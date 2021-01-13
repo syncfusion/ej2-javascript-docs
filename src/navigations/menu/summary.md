@@ -13,4 +13,5 @@
 * [Change animation settings](menu/how-to/change-animation-settings.md)
 * [Right to left](menu/how-to/right-to-left.md)
 * [Set title for Menu items](menu/how-to/set-title.md)
+* [Style and Appearance](menu/how-to/style-and-appearance.md)
 * [Migration from Essential JS 1](menu/ej1-api-migration.md)

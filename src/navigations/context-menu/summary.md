@@ -9,5 +9,6 @@
 * [Underline a character in the item text](context-menu/how-to/underline-a-character-in-the-item-text.md)
 * [Open a dialog on ContextMenu item click](context-menu/how-to/open-a-dialog-on-contextmenu-item-click.md)
 * [Change animation settings](context-menu/how-to/change-animation-settings.md)
+* [Style and Appearance](context-menu/how-to/style-and-appearance.md)
 * [Add or remove context menu items](context-menu/how-to/add-or-remove-context-menu-items.md)
 * [Enable or disable context menu items](context-menu/how-to/enable-or-disable-context-menu-items.md)
