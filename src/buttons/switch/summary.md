@@ -5,5 +5,6 @@
 * [Enable ripple for Switch label](switch/how-to/enable-ripple-for-switch-label.md)
 * [Enable RTL](switch/how-to/enable-rtl.md)
 * [Set disabled state](switch/how-to/set-disabled-state.md)
+* [Style and Appearance](switch/how-to/style-and-appearance.md)
 * [Submit name and value in form](switch/how-to/submit-name-and-value-in-form.md)
 * [Change switch state using toggle method](switch/how-to/change-switch-state-using-toggle-method.md)

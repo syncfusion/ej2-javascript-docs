@@ -9,6 +9,7 @@
 * [Disable a DropDownButton](drop-down-button/how-to/disable-a-dropdownbutton.md)
 * [Group popup items with ListView component](drop-down-button/how-to/group-popup-items-with-listview-component.md)
 * [Hide dropdown arrow](drop-down-button/how-to/hide-dropdown-arrow.md)
+* [Style and Appearance](drop-down-button/how-to/style-and-appearance.md)
 * [Open a dialog on popup item click](drop-down-button/how-to/open-a-dialog-on-popup-item-click.md)
 * [Position popup open](drop-down-button/how-to/position-popup-open.md)
 * [Underline a character in the item text](drop-down-button/how-to/underline-a-character-in-the-item-text.md)

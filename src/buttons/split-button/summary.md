@@ -6,5 +6,6 @@
 * [Group items in Popup](split-button/how-to/group-items-in-popup.md)
 * [Open a dialog on popup item click](split-button/how-to/open-a-dialog-on-popup-item-click.md)
 * [Set the disabled state](split-button/how-to/set-the-disabled-state.md)
+* [Style and Appearance](split-button/how-to/style-and-appearance.md)
 * [Underline a character in a text](split-button/how-to/underline-a-character-in-a-text.md)
 * [Migration from Essential JS 1](split-button/ej1-api-migration.md)

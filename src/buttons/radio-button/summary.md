@@ -4,4 +4,5 @@
 * [Name and Value in form submit](radio-button/how-to/name-and-value-in-form-submit.md)
 * [Right-To-Left](radio-button/how-to/right-to-left.md)
 * [Set the disabled state](radio-button/how-to/set-the-disabled-state.md)
+* [Style and Appearance](radio-button/how-to/style-and-appearance.md)
 * [Migration from Essential JS 1](radio-button/ej1-api-migration.md)

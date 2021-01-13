@@ -10,3 +10,4 @@
 * [Form submit](button-group/how-to/form-submit.md)
 * [Initialize ButtonGroup using util function](button-group/how-to/initialize-buttongroup-using-util-function.md)
 * [Show ButtonGroup selected state on initial render](button-group/how-to/show-buttongroup-selected-state-on-initial-render.md)
+* [Style and Appearance](button-group/how-to/style-and-appearance.md)
