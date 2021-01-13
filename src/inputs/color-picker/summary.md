@@ -8,4 +8,5 @@
 * [Customize ColorPicker](color-picker/how-to/customize-colorpicker.md)
 * [Handle No Color Support](color-picker/how-to/handle-no-color-support.md)
 * [Disable ColorPicker](color-picker/how-to/disabled.md)
+* [Style and Appearance](color-picker/how-to/style-and-appearance.md)
 * [Migration from Essential JS 1](color-picker/ej1-api-migration.md)
