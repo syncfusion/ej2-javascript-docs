@@ -10,4 +10,5 @@
 * [Add items](list-box/how-to/add-items.md)
 * [Enable or disable items](list-box/how-to/enable-or-disable-items.md)
 * [Form submit to the list box](list-box/how-to/form-submit.md)
+* [Style and Appearance](list-box/how-to/style-and-appearance.md)
 * [Select items](list-box/how-to/select-items.md)
