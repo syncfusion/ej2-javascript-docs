@@ -9,4 +9,5 @@
 * [Set maximum group count](query-builder/how-to/restrict-groups.md)
 * [Maintain the state persistence](query-builder/how-to/state-persistence.md)
 * [Right to left (RTL)](query-builder/how-to/rtl.md)
+* [Style and Appearance](query-builder/how-to/style-and-appearance.md)
 * [Summary View](query-builder/how-to/summary-view.md)
