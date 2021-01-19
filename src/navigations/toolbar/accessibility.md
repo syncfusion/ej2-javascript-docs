@@ -33,7 +33,7 @@ Keyboard navigation is enabled, by default. Possible keys are:
 | <kbd>Down</kbd>   | Focuses the next popup element.                                                  |
 | <kbd>Up</kbd>      | Focuses the previous popup element.                                                |
 
-{% tab template="toolbar/toolbar", es5Template="es5_toolbar_access" , sourceFiles="index.ts,index.html" %}
+{% tab template="toolbar/toolbar", es5Template="es5_toolbar_access" , sourceFiles="index.ts,index.html,index.css" %}
 
 ```typescript
 import {Toolbar} from '@syncfusion/ej2-navigations';
@@ -41,16 +41,16 @@ let toolbar: Toolbar = new Toolbar({
     width: 300,
     overflowMode: 'Popup',
     items: [
-      { type: 'Button', prefixIcon: 'e-cut-icon', text:'Cut', showTextOn:'Overflow' },
-      { type: 'Button', prefixIcon: 'e-copy-icon', text:'Copy', showTextOn:'Overflow' },
-      { type: 'Button', prefixIcon: 'e-paste-icon', text:'Paste', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-cut-icon tb-icons', text:'Cut', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-copy-icon tb-icons', text:'Copy', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-paste-icon tb-icons', text:'Paste', showTextOn:'Overflow' },
       { type: 'Separator'},
-      { type: 'Button', prefixIcon: 'e-bold-icon', text:'Bold', showTextOn:'Overflow' },
-      { type: 'Button', prefixIcon: 'e-underline-icon', text:'Underline', showTextOn:'Overflow' },
-      { type: 'Button', prefixIcon: 'e-italic-icon', text:'Italic', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-bold-icon tb-icons', text:'Bold', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-underline-icon tb-icons', text:'Underline', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-italic-icon tb-icons', text:'Italic', showTextOn:'Overflow' },
       { type: 'Separator'},
-      { type: 'Button', prefixIcon: 'e-ascending-icon', text:'A-Z Sort', showTextOn:'Overflow' },
-      { type: 'Button', prefixIcon: 'e-descending-icon', text:'Z-A Sort', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-ascending-icon tb-icons', text:'A-Z Sort', showTextOn:'Overflow' },
+      { type: 'Button', prefixIcon: 'e-descending-icon tb-icons', text:'Z-A Sort', showTextOn:'Overflow' },
       ]
 });
 toolbar.appendTo('#element');

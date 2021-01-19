@@ -33,7 +33,7 @@ The default overflow mode of the Toolbar is `Scrollable`. Scrollable display mod
 
 ![Long press scroll](./images/scrolling_long_press.gif)
 
-{% tab template="toolbar/toolbar-scrollable", es5Template="es5_toolbar_scrollable", sourceFiles="index.ts,index.html" %}
+{% tab template="toolbar/toolbar-scrollable", es5Template="es5_toolbar_scrollable", sourceFiles="index.ts,index.html,index.css" %}
 
 ```typescript
 
@@ -42,18 +42,18 @@ import {Toolbar} from '@syncfusion/ej2-navigations';
 let toolbar: Toolbar = new Toolbar({
     width:600,
     items: [
-            { type: 'Button', prefixIcon: 'e-cut-icon', text:'Cut' },
-            { type: 'Button', prefixIcon: 'e-copy-icon', text:'Copy' },
-            { type: 'Button', prefixIcon: 'e-paste-icon', text:'Paste' },
+            { type: 'Button', prefixIcon: 'e-cut-icon tb-icons', text:'Cut' },
+            { type: 'Button', prefixIcon: 'e-copy-icon tb-icons', text:'Copy' },
+            { type: 'Button', prefixIcon: 'e-paste-icon tb-icons', text:'Paste' },
             { type: 'Separator'},
-            { type: 'Button', prefixIcon: 'e-bold-icon', text:'Bold' },
-            { type: 'Button', prefixIcon: 'e-underline-icon', text:'Underline' },
-            { type: 'Button', prefixIcon: 'e-italic-icon', text:'Italic' },
-            { type: 'Button', prefixIcon: 'e-color-icon', text:'Color-Picker' },
+            { type: 'Button', prefixIcon: 'e-bold-icon tb-icons', text:'Bold' },
+            { type: 'Button', prefixIcon: 'e-underline-icon tb-icons', text:'Underline' },
+            { type: 'Button', prefixIcon: 'e-italic-icon tb-icons', text:'Italic' },
+            { type: 'Button', prefixIcon: 'e-color-icon tb-icons', text:'Color-Picker' },
             { type: 'Separator'},
-            { type: 'Button', prefixIcon: 'e-ascending-icon', text:'A-Z Sort' },
-            { type: 'Button', prefixIcon: 'e-descending-icon', text:'Z-A Sort' },
-            { type: 'Button', prefixIcon: 'e-clear-icon', text:'Clear' }
+            { type: 'Button', prefixIcon: 'e-ascending-icon tb-icons', text:'A-Z Sort' },
+            { type: 'Button', prefixIcon: 'e-descending-icon tb-icons', text:'Z-A Sort' },
+            { type: 'Button', prefixIcon: 'e-clear-icon tb-icons', text:'Clear' }
           ]
 });
 toolbar.appendTo('#element');
@@ -89,7 +89,7 @@ If primary priority commands also exceed available space, they are moved to the 
 
 > You can maintain toolbar item on popup always by using the [`showAlwaysInPopup`](../api/toolbar/item#showalwaysinpopup) property, and this behavior is not applicable for toolbar items with [`overflow`](../api/toolbar/item#overflow) property as 'show'.
 
-{% tab template="toolbar/toolbar-popup-tool-priority", es5Template="es5_toolbar_tool_priority", sourceFiles="index.ts,index.html" %}
+{% tab template="toolbar/toolbar-popup-tool-priority", es5Template="es5_toolbar_tool_priority", sourceFiles="index.ts,index.html,index.css" %}
 
 ```typescript
 import {Toolbar} from '@syncfusion/ej2-navigations';
@@ -98,16 +98,16 @@ let toolbar: Toolbar = new Toolbar({
     width: 380,
     overflowMode: 'Popup',
     items: [
-      { type: 'Button', prefixIcon: 'e-cut-icon', text:'Cut', overflow: 'Show' },
-      { type: 'Button', prefixIcon: 'e-copy-icon', text:'Copy', overflow: 'Show' },
-      { type: 'Button', prefixIcon: 'e-paste-icon',text:'Paste', overflow: 'Show' },
+      { type: 'Button', prefixIcon: 'e-cut-icon tb-icons', text:'Cut', overflow: 'Show' },
+      { type: 'Button', prefixIcon: 'e-copy-icon tb-icons', text:'Copy', overflow: 'Show' },
+      { type: 'Button', prefixIcon: 'e-paste-icon tb-icons',text:'Paste', overflow: 'Show' },
       { type: 'Separator' },
-      { type: 'Button', prefixIcon: 'e-bold-icon', text:'Bold'},
-      { type: 'Button', prefixIcon: 'e-italic-icon', text:'Italic'},
-      { type: 'Button', prefixIcon: 'e-underline-icon', text:'Underline' },
+      { type: 'Button', prefixIcon: 'e-bold-icon tb-icons', text:'Bold'},
+      { type: 'Button', prefixIcon: 'e-italic-icon tb-icons', text:'Italic'},
+      { type: 'Button', prefixIcon: 'e-underline-icon tb-icons', text:'Underline' },
       { type: 'Separator'},
-      { type: 'Button', prefixIcon: 'e-ascending-icon', text:'A-Z Sort', overflow: 'Show'},
-      { type: 'Button', prefixIcon: 'e-descending-icon', text:'Z-A Sort', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-ascending-icon tb-icons', text:'A-Z Sort', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-descending-icon tb-icons', text:'Z-A Sort', overflow: 'Show'},
       ]
 });
 toolbar.appendTo('#element');
@@ -132,7 +132,7 @@ Possible values are,
 
 In the following code sample, text is only visible in the popup container and not in the Toolbar container.
 
-{% tab template="toolbar/toolbar-popup-pop-priority", es5Template="es5_toolbar_pop_priority", sourceFiles="index.ts,index.html" %}
+{% tab template="toolbar/toolbar-popup-pop-priority", es5Template="es5_toolbar_pop_priority", sourceFiles="index.ts,index.html,index.css" %}
 
 ```typescript
 import {Toolbar} from '@syncfusion/ej2-navigations';
@@ -141,18 +141,18 @@ let toolbar: Toolbar = new Toolbar({
     width: 330,
     overflowMode: 'Popup',
     items: [
-      { type: 'Button', prefixIcon: 'e-cut-icon', text:'Cut', showTextOn:'Overflow', overflow: 'Show'},
-      { type: 'Button', prefixIcon: 'e-copy-icon', text:'Copy', showTextOn:'Overflow', overflow: 'Show'},
-      { type: 'Button', prefixIcon: 'e-paste-icon', text:'Paste', showTextOn:'Overflow', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-cut-icon tb-icons', text:'Cut', showTextOn:'Overflow', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-copy-icon tb-icons', text:'Copy', showTextOn:'Overflow', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-paste-icon tb-icons', text:'Paste', showTextOn:'Overflow', overflow: 'Show'},
       { type: 'Separator'},
-      { type: 'Button', prefixIcon: 'e-bold-icon', text:'Bold', showTextOn:'Overflow', overflow: 'Show'},
-      { type: 'Button', prefixIcon: 'e-underline-icon', text:'Underline', showTextOn:'Overflow', overflow: 'Show'},
-      { type: 'Button', prefixIcon: 'e-italic-icon', text:'Italic', overflow: 'Show', showTextOn:'Overflow',},
-      { type: 'Button', prefixIcon: 'e-color-icon', text:'Color-Picker', overflow: 'Hide', showTextOn:'Overflow',},
+      { type: 'Button', prefixIcon: 'e-bold-icon tb-icons', text:'Bold', showTextOn:'Overflow', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-underline-icon tb-icons', text:'Underline', showTextOn:'Overflow', overflow: 'Show'},
+      { type: 'Button', prefixIcon: 'e-italic-icon tb-icons', text:'Italic', overflow: 'Show', showTextOn:'Overflow',},
+      { type: 'Button', prefixIcon: 'e-color-icon tb-icons', text:'Color-Picker', overflow: 'Hide', showTextOn:'Overflow',},
       { type: 'Separator'},
-      { type: 'Button', prefixIcon: 'e-ascending-icon', text:'A-Z Sort', overflow: 'Show', showTextOn:'Overflow',},
-      { type: 'Button', prefixIcon: 'e-descending-icon', text:'Z-A Sort', overflow: 'Show', showTextOn:'Overflow',},
-      { type: 'Button', prefixIcon: 'e-clear-icon', text:'Clear', overflow: 'Show', showTextOn:'Overflow',}]
+      { type: 'Button', prefixIcon: 'e-ascending-icon tb-icons', text:'A-Z Sort', overflow: 'Show', showTextOn:'Overflow',},
+      { type: 'Button', prefixIcon: 'e-descending-icon tb-icons', text:'Z-A Sort', overflow: 'Show', showTextOn:'Overflow',},
+      { type: 'Button', prefixIcon: 'e-clear-icon tb-icons', text:'Clear', overflow: 'Show', showTextOn:'Overflow',}]
 });
 toolbar.appendTo('#element');
 

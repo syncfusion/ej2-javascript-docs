@@ -10,6 +10,7 @@
 * [Load accordion with DataSource](accordion/how-to/load-accordion-with-data-source.md)
 * [Load accordion items dynamically](accordion/how-to/load-accordion-items-dynamically.md)
 * [Add icon to Accordion header](accordion/how-to/add-icon-to-accordion-header.md)
+* [Add font awesome icons](accordion/how-to/add-font-awesome.md)
 * [Customize Accordion expand or collapse animation behavior](accordion/how-to/customize-expand-collapse-actions.md)
 * [Integrate Essential JS 2 TreeView inside the Accordion](accordion/how-to/integrate-treeview-inside-the-accordion.md)
 * [Migration from Essential JS 1](accordion/ej1-api-migration.md)

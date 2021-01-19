@@ -12,6 +12,7 @@
 * [Create wizard using Tab](tab/how-to/create-wizard-using-tab.md)
 * [Load tab with DataSource](tab/how-to/load-tab-with-data-source.md)
 * [Add nested Tabs](tab/how-to/add-nested-tabs.md)
+* [Add font awesome icons](tab/how-to/add-font-awesome.md)
 * [Set state persistence of the Tab component](tab/how-to/set-state-persistence-of-the-tab-component.md)
 * [Set custom animation](tab/how-to/set-custom-animation.md)
 * [Load Tab items dynamically](tab/how-to/load-tab-items-dynamically.md)
