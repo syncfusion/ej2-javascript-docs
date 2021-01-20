@@ -128,7 +128,7 @@ let listObj: ListBox = new ListBox({
     //set the data to dataSource property
     dataSource: data,
     selectionSettings: {
-       showCheckBox: true,
+       showCheckbox: true,
        showSelectAll: true
     }
 });
