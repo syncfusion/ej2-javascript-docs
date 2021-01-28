@@ -379,6 +379,51 @@ treeGridObj.appendTo('#TreeGrid');
 
 {% endtab %}
 
+### To persist collapsed state
+
+You can persist the collapsed state in the exported document by defining `isCollapsedStatePersist` property as true in `TreeGridExcelExportProperties` parameter of  [`excelExport`](../api/treegrid/#excelexport) method.
+
+{% tab template="treegrid/excel-export",es5Template="exportiscollapsed" %}
+
+```typescript
+
+import { TreeGrid, Toolbar, ExcelExport, TreeGridExcelExportProperties, Page } from '@syncfusion/ej2-treegrid';
+import { sampleData } from './datasource.ts';
+
+TreeGrid.Inject(Toolbar, ExcelExport, Page);
+
+let treeGridObj: TreeGrid = new TreeGrid({
+    dataSource: sampleData,
+    childMapping: 'subtasks',
+    allowExcelExport: true,
+    allowPaging: true,
+    height: 220,
+    pageSettings: {pageSize: 7},
+    toolbar: ['ExcelExport'],
+    treeColumnIndex: 1,
+    columns: [
+            { field: 'taskID', headerText: 'Task ID', width: 90, textAlign: 'Right' },
+            { field: 'taskName', headerText: 'Task Name', width: 180, textAlign: 'Left' },
+            {
+                field: 'startDate', headerText: 'Start Date', width: 90, textAlign: 'Right', type: 'date', format: 'yMd'
+            },
+            { field: 'duration', headerText: 'Duration', width: 80, textAlign: 'Right' }
+    ]
+});
+treeGridObj.toolbarClick = (args: Object) => {
+    if (args['item'].text === 'Excel Export') {
+        let excelExportProperties: TreeGridExcelExportProperties = {
+            isCollapsedStatePersist: true
+        };
+        treeGridObj.excelExport(excelExportProperties);
+    }
+}
+treeGridObj.appendTo('#TreeGrid');
+
+```
+
+{% endtab %}
+
 ## Custom data source
 
 The excel export provides an option to define datasource dynamically before exporting. To export data dynamically, define the `dataSource` in `exportProperties`.
