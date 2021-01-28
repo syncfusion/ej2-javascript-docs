@@ -1,0 +1,8 @@
+* [Overview](visual-studio-integration/overview.md)
+* [Create Project](visual-studio-integration/visual-studio-extensions/create-project.md)
+* [Convert Project](visual-studio-integration/visual-studio-extensions/convert-project.md)
+* [Upgrade Project](visual-studio-integration/visual-studio-extensions/upgrade-project.md)
+* [Create Samples](visual-studio-integration/visual-studio-extensions/create-samples.md)
+* [Scaffolding](visual-studio-integration/visual-studio-extensions/scaffolding.md)
+* [Check for Updates](visual-studio-integration/visual-studio-extensions/check-for-updates.md)
+* [NuGet Packages](visual-studio-integration/nuget-packages.md)
