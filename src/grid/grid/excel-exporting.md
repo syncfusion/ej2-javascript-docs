@@ -656,6 +656,91 @@ function toolbarClick(args) {
   and if it exceeds more than seven levels then the document will be exported without outline option.
   Please refer the [Microsoft Limitation](https://docs.microsoft.com/en-us/sql/reporting-services/report-builder/exporting-to-microsoft-excel-report-builder-and-ssrs?view=sql-server-2017#ExcelLimitations)
 
+## Exporting Grid in server
+
+The Grid have an option to export the data to Excel in server side using Grid server export library.
+
+### Server Dependencies
+
+The Server side export functionality is shipped in the Syncfusion.EJ2.GridExport package, which is available in Essential Studio and [nuget.org](https://www.nuget.org/).The following list of dependencies is required for Grid server side Excel exporting action.
+
+* Syncfusion.EJ2
+* Syncfusion.EJ2.GridExport
+* Syncfusion.Compression.Base
+* Syncfusion.XlsIO.Base
+
+### Server Configuration
+
+The following code snippets shows server configuration using ASP.NET MVC Controller Action.
+
+To Export the Grid in server side, You need to call the
+ [`serverExcelExport`](../api/grid/#serverexcelexport) method for passing the Grid properties to server exporting action.
+
+```typescript
+public ActionResult ExcelExport(string gridModel)
+{
+    GridExcelExport exp = new GridExcelExport();
+    Grid gridProperty = ConvertGridObject(gridModel);
+    return exp.ExcelExport<OrdersDetails>(gridProperty, OrderRepository.GetAllRecords());
+}
+
+private Grid ConvertGridObject(string gridProperty)
+{
+    Grid GridModel = (Grid)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(Grid));
+    GridColumnModel cols = (GridColumnModel)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(GridColumnModel));
+    GridModel.Columns = cols.columns;
+    return GridModel;
+}
+
+public class GridColumnModel
+{
+    public List<GridColumn> columns { get; set; }
+}
+
+public ActionResult DataSource(DataManager dm)
+{
+    var DataSource = OrderRepository.GetAllRecords();
+    DataResult result = new DataResult();
+    result.result = DataSource.Skip(dm.Skip).Take(dm.Take).ToList();
+    result.count = result.result.Count;
+    return Json(result, JsonRequestBehavior.AllowGet);
+}
+
+```
+
+```typescript
+import { Grid, Toolbar } from '@syncfusion/ej2-grids';
+import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
+Grid.Inject(Toolbar);
+
+let data: DataManager = new DataManager({
+    url: "Home/DataSource",
+    adaptor: new UrlAdaptor
+});
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    toolbar: ['ExcelExport'],
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 100 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 120 },
+        { field: 'Freight', headerText: 'Freight', textAlign: 'Right', width: 120, format: 'C2' },
+        { field: 'ShipCountry', headerText: 'Ship Country', width: 150 }
+    ],
+    height: 265
+});
+grid.appendTo('#Grid');
+
+grid.toolbarClick = (args: Object) => {
+    if (args['item'].id === 'Grid_excelexport') {
+        grid.serverExcelExport("Home/ExcelExport");
+    }
+}
+
+```
+
+> **Note:** Refer to the GitHub sample for quick implementation and testing from [here](https://github.com/SyncfusionExamples/TypeScript-EJ2-Grid-server-side-exporting).
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to/exporting-grid-in-cordova-application)
