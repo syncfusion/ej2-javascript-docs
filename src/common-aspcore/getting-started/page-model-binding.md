@@ -28,7 +28,7 @@ Declare the data property as public property in PageModel class of the Razor Pag
         //Input Date for Calendar
         public DateTime? Date { get; set; } = new DateTime();
         //Default value for DropDown List
-        public String Game { get; set; } = "American Football";
+        public string Game { get; set; } = "American Football";
         public void OnGet()
         {   
         }
