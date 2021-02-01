@@ -30,3 +30,4 @@
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Show Entire Time in Responsive Mode When Start Hour is Set](schedule/how-to/show-entire-time-in-responsive-mode.md)
 * [Styling and Appearance](schedule/how-to/scheduler-styling.md)
+* [Show quick info template](schedule/how-to/quick-info-template.md)
