@@ -1,0 +1,1 @@
+This page is redirected to /common/compatible-with-essentialjs1/
