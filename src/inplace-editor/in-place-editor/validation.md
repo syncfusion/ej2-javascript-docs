@@ -36,7 +36,7 @@ Step 1: To perform default validation in In-place Editor the `name` property is 
 
 Step 2:  The corresponding name specified in the name property should bind with the `validationRules` property. For example, in the below code snippet, the `Number`  in the name property is bind with the `maxLength`  of validationRules.  Likewise, you can bind with the in-build validation configurations in the above table.
 
-{% tab template="in-place-editor/validation-sample", es5Template="es5_validation-sample", sourceFiles="index.ts,index.html" %}
+{% tab template="in-place-editor/validation-sample", es5Template="es5_validation_sample", sourceFiles="index.ts,index.html" %}
 
 ```typescript
 
@@ -56,7 +56,7 @@ let textObj: InPlaceEditor = new InPlaceEditor({
     Number: { maxLength: 5 }
   }
 });
-textObj.appendTo("#container");
+textObj.appendTo("#numeric");
 
 ```
 
