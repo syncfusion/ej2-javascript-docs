@@ -319,11 +319,11 @@ function finalizeDetails(args: any): void {
         }
         let displayAmt : any = document.getElementById('amount');
         if (ticketType.value === 'Economy Class') {
-            displayAmt.innerText = 'Total payable amount: $' + passCount * (300 + calcFare);
+            displayAmt.innerText = "Total payable amount: $" + passCount * (300 + calcFare);
         } else if (ticketType.value === 'Business Class') {
-            displayAmt.innerText = 'Total payable amount: $' + passCount * (500 + calcFare);
+            displayAmt.innerText = "Total payable amount: $" + passCount * (500 + calcFare);
         } else if (ticketType.value === 'Common Class') {
-            displayAmt.innerText = 'Total payable amount: $' + passCount * (150 + calcFare);
+            displayAmt.innerText = "Total payable amount: $" + passCount * (150 + calcFare);
         }
     }
     ticketDetailGrid.dataSource = reserved;
