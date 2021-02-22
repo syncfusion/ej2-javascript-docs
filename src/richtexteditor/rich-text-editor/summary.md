@@ -12,7 +12,7 @@
 * [IFrame Rendering](rich-text-editor/iframe.md)
 * [Form Support](rich-text-editor/form-support.md)
 * [Validation](rich-text-editor/validation.md)
-* [CSS Structure](rich-text-editor/style.md)
+* [Style and appearance](rich-text-editor/style.md)
 * [Globalization](rich-text-editor/globalization.md)
 * [ExecCommand in Rich Text Editor](rich-text-editor/exec-command.md)
 * [Miscellaneous](rich-text-editor/miscellaneous.md)
