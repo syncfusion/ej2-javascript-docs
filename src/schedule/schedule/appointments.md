@@ -538,7 +538,7 @@ let scheduleObj: Schedule = new Schedule({
     selectedDate: new Date(2018, 1, 15),
     eventSettings: { dataSource: data },
     dragStart: (args: DragEventArgs) => {
-        args.excludeSelectors = 'e-header-cells';
+        args.excludeSelectors = 'e-header-cells,e-header-day,e-header-date,e-all-day-cells';
     }
 });
 scheduleObj.appendTo('#Schedule');
@@ -754,7 +754,7 @@ function onTreeDragStop(event: DragAndDropEventArgs): void {
                     IsAllDay: cellData.isAllDay,
                     Description: filteredData[0].Description
                 };
-                scheduleObj.openEditor(eventData, 'Add', true);
+                scheduleObj.addEvent(eventData);
                 isTreeItemDropped = true;
                 draggedItemId = event.draggedNodeData.id as string;
             }

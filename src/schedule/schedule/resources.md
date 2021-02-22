@@ -836,6 +836,44 @@ function onChange(args: ChangeArgs): void {
 
 > The value of the `resourceColorField` field should be mapped with the `name` value given within the `resources` property.
 
+## Setting different style to each resource appointments
+
+By default, the appearance of events is the same for all resource events. In case, if you want to apply the different styles to each resource event, you can do this by defining the `cssClassField` option within the `resource` property that maps the different cssClass fields from the resource dataSource as depicted in the following example.
+
+{% tab template="schedule/resource-css-class-field-api", es5Template="resource-css-class-field-api", iframeHeight="620px", sourceFiles="index.ts,index.html"  %}
+
+```typescript
+import { Schedule, Week, Month, Agenda, TimelineViews, TimelineMonth } from '@syncfusion/ej2-schedule';
+import { resourceData } from './datasource.ts';
+
+Schedule.Inject(Month, Week, Agenda, TimelineViews, TimelineMonth);
+let scheduleObj: Schedule = new Schedule({
+    width: '100%',
+    height: '550px',
+    views: ['Week', 'Month', 'TimelineWeek', 'TimelineMonth', 'Agenda'],
+    selectedDate: new Date(2018, 3, 1),
+    group: {
+        resources: ['Owners']
+    },
+    resources: [
+      {
+        field: 'OwnerId', title: 'Owner',
+        name: 'Owners', allowMultiple: true,
+        dataSource: [
+            { OwnerText: 'Nancy', Id: 1, OwnerGroupId: 1, OwnerColor: '#ffaa00', ResourceCssClass: "NancyResource" },
+            { OwnerText: 'Steven', Id: 2, OwnerGroupId: 2, OwnerColor: '#f8a398', ResourceCssClass: "StevenResource" },
+            { OwnerText: 'Michael', Id: 3, OwnerGroupId: 1, OwnerColor: '#7499e1', ResourceCssClass: "MichaelResource" }
+        ],
+        textField: 'OwnerText', idField: 'Id', groupIDField: 'OwnerGroupId', colorField: 'OwnerColor', cssClassField: "ResourceCssClass"
+    }],
+    eventSettings: { dataSource: resourceData, resourceColorField: 'Rooms' }
+});
+scheduleObj.appendTo('#Schedule');
+
+```
+
+{% endtab %}
+
 ## Dynamically add and remove resources
 
 It is possible to add or remove the resources dynamically to and from the Scheduler respectively. In the following example, when the checkboxes are checked and unchecked, the respective resources gets added up or removed from the Scheduler layout. To add new resource dynamically, `addResource` method is used which accepts the arguments such as resource object, resource name (within which level, the resource object to be added) and index (position where the resource needs to be added).
@@ -985,6 +1023,57 @@ scheduleObj.appendTo('#Schedule');
 {% endtab %}
 
 In this example, a resource named `Will Smith` is depicted with working hours ranging from 8.00 AM to 3.00 PM and is visually illustrated with active colors, whereas the other two resources have different working hours set.
+
+## Scroll to specific resource
+
+You can manually scroll to a specific resource on Scheduler by making use of the `scrollToResource` method as depicted in the following code example.
+
+{% tab template="schedule/scroll-to-resource", es5Template="scroll-to-resource", iframeHeight="588px", sourceFiles="index.ts,index.html"  %}
+
+```typescript
+import { Schedule, Week, Month, Agenda, TimelineViews, TimelineMonth } from '@syncfusion/ej2-schedule';
+import { Button } from '@syncfusion/ej2-buttons';
+import { resourceData } from './datasource.ts';
+
+Schedule.Inject(Month, Week, Agenda, TimelineViews, TimelineMonth);
+let scheduleObj: Schedule = new Schedule({
+    width: '100%',
+    height: '550px',
+    views: ['Week', 'Month', 'TimelineWeek', 'TimelineMonth', 'Agenda'],
+    selectedDate: new Date(2018, 3, 1),
+    group: {
+        resources: ['Owners']
+    },
+    resources: [
+      {
+        field: 'OwnerId', title: 'Owner',
+        name: 'Owners', allowMultiple: true,
+        dataSource: [
+            { OwnerText: 'Jammy', Id: 1, OwnerColor: '#ffaa00' },
+            { OwnerText: 'Steven', Id: 2,  OwnerColor: '#f8a398' },
+            { OwnerText: 'Tweety', Id: 3, OwnerColor: '#7499e1'},
+            { OwnerText: 'Jammy', Id: 4,  OwnerColor: '#ffaa00' },
+            { OwnerText: 'Nestle', Id: 5, OwnerGroupId: 2, OwnerColor: '#f8a398' },
+            { OwnerText: 'Phoenix', Id: 6,  OwnerColor: '#7499e1'},
+            { OwnerText: 'Hangout', Id: 7,  OwnerColor: '#ffaa00' },
+            { OwnerText: 'Rainbow', Id: 8, OwnerGroupId: 2, OwnerColor: '#f8a398' },
+            { OwnerText: 'Photogenic', Id: 9,  OwnerColor: '#7499e1'}
+        ],
+        textField: 'OwnerText', idField: 'Id', colorField: 'OwnerColor'
+    }],
+    eventSettings: { dataSource: resourceData }
+});
+scheduleObj.appendTo('#Schedule');
+
+let button1: Button = new Button();
+button1.appendTo('#btn1');
+
+button1.element.onclick = (): void => {
+  scheduleObj.scrollToResource(6, 'Owners');
+};
+```
+
+{% endtab %}
 
 ## Compact view in mobile
 
