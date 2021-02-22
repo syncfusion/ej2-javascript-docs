@@ -6,7 +6,7 @@
 * [Data Binding](in-place-editor/data-binding.md)
 * [Integrate HTML5 Controls](in-place-editor/integration.md)
 * [Validation](in-place-editor/validation.md)
-* [CSS Structures](in-place-editor/style.md)
+* [Style and appearance](in-place-editor/style.md)
 * [Globalization](in-place-editor/localization.md)
 * [Dynamically move input to edit mode](in-place-editor/how-to/dynamic-edit-mode.md)
 * [Disable the edit mode specifically](in-place-editor/how-to/disable-edit-mode.md)
