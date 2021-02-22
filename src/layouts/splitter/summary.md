@@ -5,6 +5,6 @@
 * [Expand and Collapse](splitter/expand-and-collapse.md)
 * [Resize](splitter/resizing.md)
 * [Different Layouts](splitter/es5-different-layouts.md)
-* [CSS Structure](splitter/style.md)
+* [Style and appearance](splitter/style.md)
 * [Globalization](splitter/es5-globalization.md)
 * [Migration from Essential JS 1](splitter/ej1-api-migration.md)
