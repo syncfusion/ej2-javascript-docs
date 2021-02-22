@@ -341,10 +341,10 @@ grid.appendTo('#Grid');
 ### Enable different filter for a column
 
 You can use both `Menu` and `CheckBox` filter in a same Grid. To do so, set the
-[`column.filter.type`](../api/grid/column/#filter as `Menu` or `CheckBox`.
+[`column.filter.type`](../api/grid/column/#filter) as `Menu` or `CheckBox`.
 
 In the following sample menu filter is enabled by default and checkbox filter is enabled for the CustomerID column using the
-[`column.filter.type`](../api/grid/column/#filter.
+[`column.filter.type`](../api/grid/column/#filter).
 
 {% tab template="grid/grid",es5Template="filtertype" %}
 
