@@ -22,6 +22,7 @@
 * [Recurrence Editor](schedule/recurrence-editor.md)
 * [Globalization](schedule/localization.md)
 * [Accessibility](schedule/accessibility.md)
+* [Styling And Appearance](schedule/scheduler-styling.md)
 * [Migration from Essential JS 1](schedule/ej1-api-migration.md)
 * [Perform CRUD Actions Dynamically](schedule/how-to/add-edit-and-remove-events.md)
 * [Set Default Value for Event Fields](schedule/how-to/set-default-value-for-event-fields.md)
@@ -30,5 +31,4 @@
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Zoom in and Zoom out the Schedule using the mouse scrolling event](schedule/how-to/zoom-in-and-zoom-out-the-schedule.md)
 * [Show entire time in responsive mode when start hour is set](schedule/how-to/show-entire-time-in-responsive-mode.md)
-* [Styling and Appearance](schedule/how-to/scheduler-styling.md)
 * [Show quick info template](schedule/how-to/quick-info-template.md)
