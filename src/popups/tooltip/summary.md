@@ -5,7 +5,7 @@
 * [Open Mode](tooltip/open-mode.md)
 * [Animation](tooltip/animation.md)
 * [Customization](tooltip/customization.md)
-* [CSS Structure](tooltip/style.md)
+* [Styles and Appearance](tooltip/style.md)
 * [Accessibility](tooltip/accessibility.md)
 * [EJ1 Migration](tooltip/ej1-api-migration.md)
 * [Show tooltip on disabled elements and disable tooltip](tooltip/how-to/show-tooltip-on-disabled-elements-and-disable-tooltip.md)
