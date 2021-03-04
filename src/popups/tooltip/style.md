@@ -1,7 +1,7 @@
 ---
 title: "Styles and Appearance"
 component: "Tooltip"
-description: "This section explains the details of the styles and appearnace of the Typescript Model Tooltip."
+description: "This section explains the details of the styles and appearance of the Typescript Model Tooltip."
 ---
 
 # Styles and Appearance
