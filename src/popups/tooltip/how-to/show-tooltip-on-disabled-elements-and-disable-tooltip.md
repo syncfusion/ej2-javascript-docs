@@ -43,6 +43,11 @@ let switchObj: Switch = new Switch({
   checked: true,
   change: (args) => {
     if ((document.getElementById('checked') as HTMLInputElement).checked) {
+      let tooltipObj_2: Tooltip = new Tooltip({
+        //Set tooltip content
+        content: "Lets go green & Save Earth !!!"
+      });
+      //Render initialized Tooltip component
       tooltipObj_2.appendTo('#tooltip');
     } else {
       tooltipObj_2.destroy();
