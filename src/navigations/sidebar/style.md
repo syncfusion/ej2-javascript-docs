@@ -1,10 +1,10 @@
 ---
-title: "CSS Structure"
+title: "Styles and Appearance"
 component: "Sidebar"
-description: "This section explains the details of the CSS structures in Sidebar."
+description: "This section explains the details of the styles and appearance of Sidebar."
 ---
 
-# CSS structures
+# Styles and Appearance
 
 The following content provides the exact CSS structure that can be used to modify the control's appearance based on the user's preference.
 
