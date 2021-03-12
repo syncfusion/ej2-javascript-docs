@@ -73,7 +73,7 @@ interface IWindow extends Window {
 
 ### Limitations
 
-Row template feature is not compatible with all the features which are available in grid and it has limited features support. Here we have listed out the features which are compatible with row template feature.
+Row template feature is not compatible with all the features which are available in grid and it has limited features support. Here we have listed out the features which are not compatible with row template feature.
 
 * Filtering
 * Paging
@@ -84,6 +84,9 @@ Row template feature is not compatible with all the features which are available
 * Export
 * Context Menu
 * State Persistence
+* Selection
+* Grouping
+* Editing
 
 ## Detail template
 
