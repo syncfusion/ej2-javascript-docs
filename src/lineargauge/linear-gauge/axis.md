@@ -213,6 +213,26 @@ let gauge: LinearGauge = new LinearGauge({
 
 {% endtab %}
 
+## Orientation
+
+By default, the linear gauge is rendered vertically. To change its orientation, [`orientation`](../api/linear-gauge/linearGaugeModel/#orientation) property must be set to **"Horizontal"**.
+
+{% tab template= "linear-gauge/axis", sourceFiles="index.ts,index.html", es5Template="es5Orientation" %}
+
+```typescript
+import { LinearGauge } from '@syncfusion/ej2-lineargauge';
+let gauge: LinearGauge = new LinearGauge({
+     orientation: "Horizontal",
+     axes: [{
+        minimum: 20,
+        maximum: 140,
+    }]
+}, '#element');
+
+```
+
+{% endtab %}
+
 ## Inverted Axes
 
 [`isInversed`](../api/linear-gauge/axis/#isinversed-boolean) property is used to choose the rendering of axis either bottom to top or top to bottom direction.
