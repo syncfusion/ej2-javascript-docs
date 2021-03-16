@@ -504,7 +504,7 @@ let pivotTableObj: PivotView = new PivotView({
         filters: []
     },
     displayOption: { view: 'Chart' },
-    chartSettings: { enableMultiAxis: true, chartSeries: { type: 'Column' } },
+    chartSettings: { enableMultipleAxis: true, chartSeries: { type: 'Column' } },
     height: 350
 });
 pivotTableObj.appendTo('#PivotTable');
@@ -513,9 +513,9 @@ pivotTableObj.appendTo('#PivotTable');
 
 {% endtab %}
 
-## Multi Axis
+## Multiple Axis
 
-User can draw the pivot chart with multiple value fields by setting the property [`enableMultiAxis`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/#enablemultiaxis) in [`chartSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/) to **true**. In the below code sample, the pivot chart will be drawn with both value fields "Sold" and "Amount" available in the [`dataSourceSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettingsModel/).
+User can draw the pivot chart with multiple value fields by setting the property [`enableMultipleAxis`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/#enablemultiaxis) in [`chartSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/) to **true**. In the below code sample, the pivot chart will be drawn with both value fields "Sold" and "Amount" available in the [`dataSourceSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettingsModel/).
 
 > The multi axis support is not applicable for the accumulation chart types like pie, doughnut, pyramid, and funnel.
 
@@ -537,7 +537,7 @@ let pivotTableObj: PivotView = new PivotView({
         filters: []
     },
     displayOption: { view: 'Chart' },
-    chartSettings: { enableMultiAxis: true, chartSeries: { type: 'Column' } },
+    chartSettings: { enableMultipleAxis: true, chartSeries: { type: 'Column' } },
     height: 350
 });
 pivotTableObj.appendTo('#PivotTable');
@@ -566,8 +566,39 @@ let pivotTableObj: PivotView = new PivotView({
         filters: []
     },
     displayOption: { view: 'Chart' },
-    chartSettings: { enableMultiAxis: true,enableScrollOnMultiAxis:true, chartSeries: { type: 'Column' }
+    chartSettings: { enableMultipleAxis: true, enableScrollOnMultiAxis:true, chartSeries: { type: 'Column' }
      },
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
+Meanwhile, there is another way to display multiple values in a chart. In this approach, the series drawn from multiple values are grouped and displayed in a single chart. And, based on the values, multiple Y axis scales will be framed with different ranges. This can be achieved by setting the properties [`enableMultipleAxis`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/#enablemultiaxis) as **true** and `multipleAxisMode` as `Single` in [`chartSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/).
+
+In the following code sample, the pivot chart can be seen as a single chart with multiple value fields such as **Sold** and **Amount** that are drawn as multiple Y axis.
+
+{% tab template="pivot-table/pivot-table", es5Template="chart-multipleAxisMode", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, PivotChart } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(PivotChart);
+let pivotTableObj: PivotView = new PivotView({
+        dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    displayOption: { view: 'Chart' },
+    chartSettings: { enableMultipleAxis: true, multipleAxisMode : 'Single', chartSeries: { type: 'Column' },
     height: 350
 });
 pivotTableObj.appendTo('#PivotTable');
