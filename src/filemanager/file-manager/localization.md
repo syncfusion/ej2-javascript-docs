@@ -49,6 +49,7 @@ The file manager can be localized to any culture by defining the texts and messa
 |Modified|Modified|
 |Location|Location|
 |Type|Type|
+|Permission|Permission|
 |Ascending|Ascending|
 |Descending|Descending|
 |None|None|
