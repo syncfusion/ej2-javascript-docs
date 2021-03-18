@@ -113,6 +113,7 @@ let scheduleObj: Schedule = new Schedule({
         width: '100%',
         height: '550px',
         views: ['Day','Week', 'TimelineWeek', 'Month'],
+        cssClass: 'schedule-cell-template',
         cellTemplate: '${if(type === "workCells")}<div class="templatewrap">${getWorkCellText(data.date)}</div>${/if}${if(type === "monthCells")}<div class="templatewrap">${getMonthCellText(data.date)}</div>${/if}',
         selectedDate: new Date(2017, 11, 16)
 });
