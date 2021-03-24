@@ -227,6 +227,48 @@ diagram.appendTo('#element');
 
 >Note: HTML node cannot be exported to image format, like JPEG, PNG, and BMP. It is by design, while exporting the diagram is drawn in a canvas. Further, this canvas is exported into image formats. Currently, drawing in a canvas equivalent from all possible HTML is not feasible. Hence, this limitation.
 
+## HTML Node With Template
+
+Html elements can be embedded in the diagram using [`Html`](../api/diagram/node#shape-shapemodel) type node. The shape property of the node allows you to set the type of node. The following code shows how an Html node is created with a template.
+
+{% tab template= "diagram/shapes", es5Template="es5HTML_with_template" %}
+
+```typescript
+
+import { Diagram, NodeModel, NodeConstraints } from '@syncfusion/ej2-diagrams';
+
+// A node is created and stored in nodes array.
+let nodes: NodeModel[] = [{
+    //Id of the node
+    id: "Node",
+    //Position of the node
+    offsetX: 100,
+    offsetY: 100,
+    //Size of the node
+    width: 100,
+    height: 100,
+    //sets the type of the shape as HTML
+    shape: {
+        type: 'HTML'
+    }
+}
+];
+
+//initialize diagram component
+
+let diagram: Diagram = new Diagram({
+    width: '100%',
+    height: '600px',
+    // Add node
+    nodes: nodes,
+    nodeTemplate: "#nodetemplate"
+});
+//render initialized diagram
+diagram.appendTo('#element');
+```
+
+{% endtab %}
+
 ## Native
 
 Diagram provides support to embed SVG element into a node. The shape property of node allows you to set the type of node. To create a [`native`](../api/diagram/node#shape-shapemodel) node, it should be set as **native**. The following code illustrates how a native node is created.

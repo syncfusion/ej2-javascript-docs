@@ -1343,6 +1343,24 @@ diagram.appendTo('#diagram');
 
 ```
 
+### Prevent connectors overlay
+
+The below constraints prevents the connector segments overlapping nodes with a complex hierarchical layout.
+
+```typescript
+
+//Initialize diagram
+let diagram: Diagram = new Diagram({
+     width: '100%', height: '590px',
+    layout: {
+        //this prevents connector segments overlapping
+        enableRouting: true,
+    },
+});
+diagram.appendTo('#diagram');
+
+```
+
 ## Customize layout
 
 Orientation, spacings, and position of the layout can be customized with a set of properties.
