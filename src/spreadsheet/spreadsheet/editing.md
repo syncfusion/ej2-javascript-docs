@@ -83,6 +83,10 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
+## Limitation
+
+* Text overflow in cells is not supported in Editing.
+
 ## See Also
 
 * [Cell range](./cell-range)

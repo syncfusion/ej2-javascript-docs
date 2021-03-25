@@ -11,6 +11,7 @@ The Spreadsheet is an user interactive control to organize and analyze data in t
 * [`Formatting`](formatting)
 * [`Sorting`](sort)
 * [`Filtering`](filter)
+* [`Freeze Panes`](freeze-pane)
 * [`Undo and Redo`](undo-redo)
 * [`Data Binding`](data-binding)
 * [`Find and Replace`](searching)

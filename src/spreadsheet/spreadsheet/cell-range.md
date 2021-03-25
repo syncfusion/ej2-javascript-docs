@@ -57,6 +57,13 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
+### Limitation of Wrap text
+
+The following features have some limitations in wrap text:
+
+* Sorting with wrap text applied data.
+* Merge with wrap text.
+
 ## Merge cells
 
 Merge cells allows users to span two or more cells in the same row or column into a single cell. When cells with multiple values are merged, top-left most cell data will be the data for the merged cell. By default, the merge cells option is enabled. Use [`allowMerge`](../api/spreadsheet/#allowmerge) property to enable or disable the merge cells option in spreadsheet.
@@ -127,6 +134,13 @@ spreadsheet.appendTo('#spreadsheet');
 ```
 
 {% endtab %}
+
+### Limitation of Merge
+
+The following features have some limitations in Merge:
+
+* Merge with filter.
+* Merge with wrap text.
 
 ## Data Validation
 
@@ -261,6 +275,15 @@ spreadsheet.appendTo('#spreadsheet');
 ```
 
 {% endtab %}
+
+### Limitation of Data validation
+
+The following features have some limitations in Data Validation:
+
+* Entire row data validation.
+* Insert row between the data validation.
+* Copy/paste with data validation.
+* Delete cells between data validation applied range.
 
 ## See Also
 
