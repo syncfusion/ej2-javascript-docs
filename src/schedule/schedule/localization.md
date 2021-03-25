@@ -281,37 +281,32 @@ scheduleObj.appendTo('#Schedule');
 
 {% endtab %}
 
-## Time mode
+## Setting the time format
 
-The time mode of the Scheduler can be either 12 or 24 hours format which is completely based on the `locale` set to the Scheduler. Since the default `locale` value of the Scheduler is en-US, the time mode will be set to 12 hours format automatically.
+Time formats is a way of representing the time value in different string formats in the Scheduler. By default, the time mode of the Scheduler can be either 12 or 24 hours format which is completely based on the system’s local culture. You can also customize the format by using the `timeFormat` property. To know more about the time format standards, refer to the [Date and Time Format](https://ej2.syncfusion.com/documentation/common/internationalization/#custom-formats) section.
 
-{% tab template="schedule/localization", es5Template="localization-template", iframeHeight="588px" , sourceFiles="index.ts,index.html"  %}
+The following example demonstrates the Scheduler component in 24 hours format.
+
+{% tab template="schedule/localization", es5Template="time-format", iframeHeight="588px" , sourceFiles="index.ts,index.html"  %}
 
 ```typescript
-import { Schedule, Day, Week, WorkWeek, Month} from '@syncfusion/ej2-schedule';
+import { Schedule, Day, Week, WorkWeek, Month } from '@syncfusion/ej2-schedule';
 import { scheduleData } from './datasource.ts';
-import { L10n, loadCldr } from '@syncfusion/ej2-base';
-import * as numberingSystems from './numberingSystems.json';
-import * as gregorian from './ca-gregorian.json';
-import * as numbers from './numbers.json';
-import * as detimeZoneNames from './timeZoneNames.json';
-import * as localeTexts from './locale.json';
 
 Schedule.Inject(Day, Week, WorkWeek, Month);
-loadCldr(numberingSystems, gregorian, numbers, detimeZoneNames);
-L10n.load(localeTexts);
-
 let scheduleObj: Schedule = new Schedule({
     height: '550px',
-    locale: 'fr-CH',
-    selectedDate: new Date(2018, 1, 15),
+    timeFormat: 'HH:mm',
     views: ['Day', 'Week', 'WorkWeek', 'Month'],
-    eventSettings: { dataSource: scheduleData  }
+    selectedDate: new Date(2018, 1, 15),
+    eventSettings: { dataSource: scheduleData }
 });
 scheduleObj.appendTo('#Schedule');
 ```
 
 {% endtab %}
+
+> Note: `timeFormat` property only accepts the valid time format's.
 
 ## Displaying Scheduler in RTL mode
 
