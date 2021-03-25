@@ -47,7 +47,11 @@ By default, the [showCloseButton](../api/toast/#showclosebutton) is not enabled.
 
 ## Progress bar
 
-By default, the [showProgressBar](../api/toast/#showprogressbar) is not enabled. If it is enabled, it can visually indicate how long to get toast expires. Based on the [timeOut](../api/toast/#timeout) property, progress bar will appear.
+By default, the [showProgressBar](../api/toast/#showprogressbar) is not enabled. If it is enabled, it can visually indicate when will the toast gets expired. Based on the [timeOut](../api/toast/#timeout) property, progress bar will appear.
+
+### Progress bar direction
+
+By default, the [progressDirection](../api/toast/#progressDirection) is set to "Rtl" and it will appear from right to left direction. You can change the progressDirection to "Ltr" to make it appear from left to right direction.
 
 ## Newest on top
 
@@ -69,7 +73,8 @@ let toast: Toast = new Toast({
     target: '#toast_target',
     position: { X: "Center" }
     newestOnTop: true,
-    showProgressBar: true
+    showProgressBar: true,
+    progressDirection: "Ltr"
 });
 toast.appendTo('#element');
 toast.show();
