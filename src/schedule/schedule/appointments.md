@@ -493,6 +493,33 @@ scheduleObj.appendTo('#Schedule');
 
 {% endtab %}
 
+### Drag and drop multiple appointments
+
+We can drag and drop multiple appointments by enabling the `allowMultiDrag` property. We can select multiple appointments by holding the CTRL key. Once the events are selected, we can leave the CTRL key and start dragging the event.
+
+We can also drag multiple events from one resource to another resource. In this case, if all the selected events are in the different resources, then all the events should be moved to the single resource that is related to the target event.
+
+{% tab template="schedule/event", es5Template="multi-drag", iframeHeight="588px",sourceFiles="index.ts,index.html"  %}
+
+```typescript
+import { extend } from '@syncfusion/ej2-base';
+import { Schedule, Day, Week, WorkWeek, Month, Agenda, DragAndDrop} from '@syncfusion/ej2-schedule';
+import { scheduleData } from './datasource.ts';
+
+Schedule.Inject(Day, Week, WorkWeek, Month, Agenda, DragAndDrop);
+
+let data: Object[] = <Object[]>extend([], scheduleData, null, true);
+let scheduleObj: Schedule = new Schedule({
+    height: '550px',
+    allowMultiDrag: true,
+    selectedDate: new Date(2018, 1, 15),
+    eventSettings: { dataSource: data },
+});
+scheduleObj.appendTo('#Schedule');
+```
+
+{% endtab %}
+
 ### Disable the drag action
 
 By default, you can drag and drop the events within any of the applicable scheduler views, and to disable it, set `false` to the `allowDragAndDrop` property.
