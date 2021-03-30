@@ -5,7 +5,7 @@
 * [Server side export](document-editor/server-side-export.md)
 * [Using ASP.NET Core](document-editor/web-services/core.md)
 * [Using ASP.NET MVC](document-editor/web-services/mvc.md)
-* [Using Java](document-editor/web-services/java.md)
+* [Using Java web service](document-editor/web-services/java.md)
 * [Images](document-editor/image.md)
 * [Bookmarks](document-editor/bookmark.md)
 * [Hyperlink](document-editor/link.md)
