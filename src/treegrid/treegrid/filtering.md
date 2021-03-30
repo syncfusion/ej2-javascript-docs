@@ -1,7 +1,7 @@
 ---
 title: "Filtering"
 component: "TreeGrid"
-description: "Learn how to filter rows in the TreeGrid using the filter bar, and menu filtering. Also learn how to use custom filter components in the Essential JS 2 TreeGrid control."
+description: "Learn how to filter rows in the TreeGrid using the filter bar, menu, excel and checkbox filtering. Also learn how to use custom filter components in the Essential JS 2 TreeGrid control."
 ---
 
 # Filtering
