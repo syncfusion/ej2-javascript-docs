@@ -12,7 +12,7 @@ Illustrations help you to insert an image, shapes, and graphic objects in the Es
 
 Adding images to a spreadsheet can enhance the visual appeal and help to convey information more clearly.
 
->* The default value for the `allowImage` property is `true`.
+> The default value for the `allowImage` property is `true`.
 
 ### Insert Image
 
@@ -37,7 +37,7 @@ The available arguments in `ImageModel` are:
 * top: Specifies the top position of the image.
 * left: Specifies the left side of the image.
 
->* In a spreadsheet, you can add many types of image files, including IMAGE, JPG, PNG, GIF, and JPEG files.
+> In a spreadsheet, you can add many types of image files, including IMAGE, JPG, PNG, GIF, and JPEG files.
 
 ### Delete Image
 
@@ -221,7 +221,7 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
-### Limitation of Image
+### Limitations of Image
 
 The following features have some limitations in Image:
 
@@ -232,7 +232,7 @@ The following features have some limitations in Image:
 
 A chart is a graphical representation of data, that organizes and represents a set of numerical or qualitative data. It mostly displays the selected range of data in terms of `x`-axis and `y`-axis. You can use the [`allowChart`](../api/spreadsheet/#allowChart) property to enable or disable the chart functionality.
 
->* The default value for the [`allowChart`](../api/spreadsheet/#allowChart) property is `true`.
+> The default value for the [`allowChart`](../api/spreadsheet/#allowChart) property is `true`.
 
 ### Types of chart
 
@@ -337,7 +337,7 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
-### Limitation of Chart
+### Limitations of Chart
 
 The following features have some limitations in the Chart:
 

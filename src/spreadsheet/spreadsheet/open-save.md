@@ -125,6 +125,54 @@ spreadsheet.appendTo('#spreadsheet');
 > * Use `Ctrl + S` keyboard shortcut to save the Spreadsheet data as Excel file.
 > * The default value of [allowSave](../api/spreadsheet/#allowsave) property is `true`. For demonstration purpose, we have showcased the [allowSave](../api/spreadsheet/#allowsave) property in previous code snippet.
 
+### Methods
+
+To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [save](../api/spreadsheet/#save) method should be called with the `url`, `fileName` and `saveType` as parameters. The following code example shows to save the spreadsheet file as an `xlsx, xls, csv, or pdf` in the button click event.
+
+{% tab template="spreadsheet/save", sourceFiles="app.ts,index.html", es5Template="es5-save", iframeHeight="450px" %}
+
+```typescript
+
+import { Spreadsheet, ColumnModel } from '@syncfusion/ej2-spreadsheet';
+import { Button } from '@syncfusion/ej2-buttons';
+import { data } from './datasource.ts';
+
+let columns: ColumnModel[] = [{ width: 100 }, { width: 130 },{ width: 96},
+    { width: 130 }, { width: 130 },{ width: 96},
+    { width: 100 }, { width: 100 },{ width: 110}, { width: 100 }, { width: 130 },{ width: 150}]
+
+let spreadsheet: Spreadsheet = new Spreadsheet({
+    sheets: [{ ranges: [{ dataSource: data }], columns: columns }],
+    allowSave: true
+});
+
+//Render the initialized Spreadsheet
+spreadsheet.appendTo('#spreadsheet');
+
+let button: Button = new Button({content: 'Save As xlsx'});
+button.appendTo('#xlsx');
+let button1: Button = new Button({content: 'Save As xls'});
+button1.appendTo('#xls');
+let button2: Button = new Button({content: 'Save As csv'});
+button2.appendTo('#csv');
+let button3: Button = new Button({content: 'Save As pdf'});
+button3.appendTo('#pdf');
+document.getElementById('xlsx').onclick = (): void => {
+  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
+}
+document.getElementById('xls').onclick = (): void => {
+  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
+}
+document.getElementById('csv').onclick = (): void => {
+  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
+}
+document.getElementById('pdf').onclick = (): void => {
+  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
+}
+```
+
+{% endtab %}
+
 ## Server Configuration
 
 Import and export are processed in `server-side` using Spreadsheet server library. The following code snippets shows server configuration using `WebAPI` service,
@@ -174,6 +222,7 @@ The following list of Excel file formats are supported in Spreadsheet:
 * MS Excel (.xlsx)
 * MS Excel 97-2003 (.xls)
 * Comma Separated Values (.csv)
+* Portable Document Format (.pdf)
 
 ## See Also
 

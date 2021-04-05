@@ -57,7 +57,7 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
-### Limitation of Wrap text
+### Limitations of Wrap text
 
 The following features have some limitations in wrap text:
 
@@ -135,7 +135,7 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
-### Limitation of Merge
+### Limitations of Merge
 
 The following features have some limitations in Merge:
 
@@ -276,7 +276,7 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
-### Limitation of Data validation
+### Limitations of Data validation
 
 The following features have some limitations in Data Validation:
 

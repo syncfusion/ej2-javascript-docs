@@ -84,6 +84,6 @@ spreadsheet.appendTo('#spreadsheet');
 
 {% endtab %}
 
-## Limitation
+## Limitations
 
 * Undo/redo for Replace All is not supported in this feature.
