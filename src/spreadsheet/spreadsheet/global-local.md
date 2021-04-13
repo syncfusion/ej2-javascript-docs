@@ -1,14 +1,14 @@
 ---
 title: "Globalization"
 component: "Spreadsheet"
-description: "Learn how to apply localization (l10n), internationalization (i18n), and right-to-left (RTL) in the Essential JS 2 Spreadsheet."
+description: "Learn how to apply localization (l10n) and right-to-left (RTL) in the Essential JS 2 Spreadsheet."
 ---
 
 # Globalization
 
 ## Localization
 
-The [`Localization`](../common/internationalization) library allows you to localize the default text content of the Spreadsheet. The Spreadsheet has static text on some features (cell formatting, Merge, Data validation, etc.) that can be changed to other cultures (Arabic, Deutsch, French, etc.) by defining the
+The [`Localization`](../common/localization) library allows you to localize the default text content of the Spreadsheet. The Spreadsheet has static text on some features (cell formatting, Merge, Data validation, etc.) that can be changed to other cultures (Arabic, Deutsch, French, etc.) by defining the
 [`locale`](../api/spreadsheet/#locale) value and translation object.
 
 The following list of properties and their values are used in the Spreadsheet.
@@ -505,5 +505,4 @@ spreadsheet.appendTo('#spreadsheet');
 
 ## See Also
 
-* [Internationalization](../common/localization)
-* [Localization](../common/internationalization)
+* [Localization](../common/localization)

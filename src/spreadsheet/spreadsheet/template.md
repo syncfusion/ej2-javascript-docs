@@ -28,6 +28,8 @@ import { Spreadsheet, CellRenderEventArgs, BeforeSelectEventArgs, getRangeIndexe
         showFormulaBar: false,
         allowOpen: false,
         allowSave: false,
+        allowEditing: false,
+        selectionSettings: { mode: 'None' },
         scrollSettings: {
             isFinite: true
         },
