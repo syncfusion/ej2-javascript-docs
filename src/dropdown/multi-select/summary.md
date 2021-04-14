@@ -8,6 +8,7 @@
 * [CheckBox](multi-select/checkbox.md)
 * [Chip Customization](multi-select/chip-customization.md)
 * [Localization](multi-select/localization.md)
+* [Style and appearance](multi-select/style.md)
 * [Accessibility](multi-select/accessibility.md)
 * [Show the list items with icons](multi-select/how-to/icons-support.md)
 * [Virtual Scrolling](multi-select/how-to/achieve-virtual-scrolling.md)

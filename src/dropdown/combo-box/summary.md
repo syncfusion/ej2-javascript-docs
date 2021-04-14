@@ -5,6 +5,7 @@
 * [Grouping](combo-box/grouping.md)
 * [Filtering](combo-box/filtering.md)
 * [Localization](combo-box/localization.md)
+* [Style and appearance](combo-box/style.md)
 * [Accessibility](combo-box/accessibility.md)
 * [Autofill supported with ComboBox](combo-box/how-to/autofill.md)
 * [Configure the Cascading ComboBox](combo-box/how-to/cascading.md)
