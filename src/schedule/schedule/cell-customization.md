@@ -174,11 +174,43 @@ You can customize cells such as work cells, month cells, all-day cells, header c
 | minorSlot | triggers on minor time slot cell rendering.|
 | weekNumberCell | triggers on cell displaying week number.|
 
+## Customizing cell header in month view
+
+The month header of each date cell in the month view can be customized using the `cellHeaderTemplate` option which accepts the string or HTMLElement. The corresponding date can be accessed with the template.
+
+{% tab template="schedule/cell-dimension", es5Template="cell-header-template", iframeHeight="588px",  sourceFiles="index.ts,index.html"  %}
+
+```typescript
+import { Internationalization } from "@syncfusion/ej2-base";
+import { Schedule, Month } from '@syncfusion/ej2-schedule';
+
+Schedule.Inject(Month);
+
+let instance: Internationalization = new Internationalization();
+(window as TemplateFunction).getDate = (date: Date) => {
+  return instance.formatDate(date, { skeleton: "Ed" });
+};
+interface TemplateFunction extends Window {
+    getDate?: Function;
+}
+
+let scheduleObj: Schedule = new Schedule({
+        width: '100%',
+        height: '550px',
+        views: ['Month'],
+        cssClass: 'schedule-cell-header-template',
+        cellHeaderTemplate: '<div class="cell-header-wrap">${getDate(data.date)}</div>'
+});
+scheduleObj.appendTo('#Schedule');
+```
+
+{% endtab %}
+
 ## Customizing the minimum and maximum date values
 
 Providing the `minDate` and `maxDate` property with some date values, allows the Scheduler to set the minimum and maximum date range. The Scheduler date that lies beyond this minimum and maximum date range will be in a disabled state so that the date navigation will be blocked beyond the specified date range.
 
-{% tab template="schedule/cell-dimension", es5Template="minDate/maxDate", iframeHeight="588px",  sourceFiles="index.ts,index.html"  %}
+{% tab template="schedule/cell-dimension", es5Template="min-max-date", iframeHeight="588px",  sourceFiles="index.ts,index.html"  %}
 
 ```typescript
 import { Schedule, Day, Week, WorkWeek, Month, Agenda, Year } from '@syncfusion/ej2-schedule';
@@ -200,3 +232,7 @@ scheduleObj.appendTo('#Schedule');
 {% endtab %}
 
 >By default, the `minDate` property value is set to new Date(1900, 0, 1) and `maxDate` property value is set to new Date(2099, 11, 31). The user can also set the customized `minDate` and `maxDate` property values.
+
+## How to disable multiple cell and row selection in Schedule
+
+By default, the `allowMultiCellSelection` and `allowMultiRowSelection` properties of the Schedule are set to `true`. So, the Schedule allows user to select multiple cells and rows. If the user want to disable this multiple cell and row selection. The user can disable this feature by setting up `false` to these properties.

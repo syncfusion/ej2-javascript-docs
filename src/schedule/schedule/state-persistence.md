@@ -18,7 +18,7 @@ The following sample demonstrates how to set state persistence of the Scheduler 
 import { Schedule, Day, Week, WorkWeek, Month } from '@syncfusion/ej2-schedule';
 import { scheduleData } from './datasource.ts';
 
-Schedule.Inject(Month);
+Schedule.Inject(Day, Week, WorkWeek, Month);
 
 let scheduleObj: Schedule = new Schedule({
     width: '100%',
