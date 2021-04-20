@@ -113,10 +113,10 @@ In the following example, Drag the card from one Kanban and drop it into another
 ```typescript
 import { Kanban } from '@syncfusion/ej2-kanban';
 import { closest } from '@syncfusion/ej2-base';
-import { kanbanData } from './datasource.ts';
+import { kanbanAData, kanbanBData } from './datasource.ts';
 
 const kanbanObjA: Kanban = new Kanban({
-    dataSource: kanbanData,
+    dataSource: kanbanAData,
     keyField: 'Status',
     columns: [
         { headerText: 'Backlog', keyField: 'Open' },
@@ -148,7 +148,7 @@ const kanbanObjA: Kanban = new Kanban({
 kanbanObjA.appendTo('#kanbanA');
 
 const kanbanObjB: Kanban = new Kanban({
-    dataSource: kanbanData,
+    dataSource: kanbanBData,
     keyField: 'Status',
     columns: [
         { headerText: 'Backlog', keyField: 'Open' },
@@ -261,7 +261,6 @@ const kanbanOptions: KanbanModel = {
     dataSource: kanbanData,
     keyField: 'DepartmentName',
     columns: [
-        { headerText: 'DENTAL', keyField: 'DENTAL' },
         { headerText: 'GENERAL', keyField: 'GENERAL' }
     ],
     externalDropId: ['#Schedule'],
