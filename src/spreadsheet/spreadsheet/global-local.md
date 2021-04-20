@@ -376,7 +376,7 @@ IsProtected | is protected
 
 To load translation object in an application, use [`load`](../common/internationalization/#load) function of the [`L10n`](../common/internationalization) class.
 
-The following example demonstrates the Spreadsheet in `French` culture. In the below sample we have translate the tab name and clipboard and cell style related words.
+The following example demonstrates the Spreadsheet in `French` culture. In the below sample we have translated the ribbon tab names and Home tab content (clipboard, cell style).
 
 {% tab template="spreadsheet/global/locale", sourceFiles="app.ts,index.html", es5Template="es5-locale", iframeHeight="450px" , isDefaultActive=true %}
 
