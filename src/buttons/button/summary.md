@@ -1,5 +1,6 @@
 * [Getting Started](button/es5-getting-started.md)
 * [Types and Styles](button/types-and-styles.md)
+* [Styles and Appearances](button/style-and-appearance.md)
 * [Add link to a Button](button/how-to/add-link-to-a-button.md)
 * [Create a Block Button](button/how-to/create-a-block-button.md)
 * [Customize Button Appearance](button/how-to/customize-button-appearance.md)
@@ -8,5 +9,4 @@
 * [Right-To-Left](button/how-to/right-to-left.md)
 * [Set the disabled state](button/how-to/set-the-disabled-state.md)
 * [Tooltip for Button](button/how-to/tooltip-for-button.md)
-* [Style and Appearance](button/how-to/style-and-appearance.md)
 * [Migration from Essential JS 1](button/ej1-api-migration.md)

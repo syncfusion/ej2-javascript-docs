@@ -2,6 +2,7 @@
 * [Types and Styles](button-group/types-and-styles.md)
 * [Selection and Nesting](button-group/selection.md)
 * [Accessibility](button-group/accessibility.md)
+* [Styles and Appearances](button-group/style-and-appearance.md)
 * [Create ButtonGroup with icons](button-group/how-to/create-buttongroup-with-icons.md)
 * [Create ButtonGroup with rounded corner](button-group/how-to/create-buttongroup-with-rounded-corner.md)
 * [Disable](button-group/how-to/disable.md)
@@ -10,4 +11,3 @@
 * [Form submit](button-group/how-to/form-submit.md)
 * [Initialize ButtonGroup using util function](button-group/how-to/initialize-buttongroup-using-util-function.md)
 * [Show ButtonGroup selected state on initial render](button-group/how-to/show-buttongroup-selected-state-on-initial-render.md)
-* [Style and Appearance](button-group/how-to/style-and-appearance.md)
