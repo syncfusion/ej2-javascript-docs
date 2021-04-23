@@ -3,6 +3,7 @@
 * [Data source binding and Custom menu items](menu/data-source-binding-and-custom-menu-items.md)
 * [Use case scenarios](menu/use-case-scenarios.md)
 * [Accessibility](menu/accessibility.md)
+* [Styles and Appearances](menu/style-and-appearance.md)
 * [Change orientation](menu/how-to/change-orientation.md)
 * [Customize menu using css class](menu/how-to/customize-menu-using-css.md)
 * [Customize menu using events](menu/how-to/customize-menu-using-events.md)
@@ -13,5 +14,4 @@
 * [Change animation settings](menu/how-to/change-animation-settings.md)
 * [Right to left](menu/how-to/right-to-left.md)
 * [Set title for Menu items](menu/how-to/set-title.md)
-* [Style and Appearance](menu/how-to/style-and-appearance.md)
 * [Migration from Essential JS 1](menu/ej1-api-migration.md)
