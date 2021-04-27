@@ -68,7 +68,7 @@ let chart: Chart = new Chart({
         name: 'Germany', type: 'Column'
     },{
         dataSource: chartData, width:2,
-        xName: 'x', yName: 'y1', yAxisName: 'yAxis'
+        xName: 'x', yName: 'y1', yAxisName: 'yAxis',
         name: 'Japan', type: 'Line',
         marker: { visible: true, width: 10, height: 10, border: { width: 2, color: '#F8AB1D' } }
     }],
@@ -130,7 +130,7 @@ let chart: Chart = new Chart({
         name: 'Germany', type: 'Column'
     },{
         dataSource: chartData, width:2,
-        xName: 'x', yName: 'y1', yAxisName: 'yAxis'
+        xName: 'x', yName: 'y1', yAxisName: 'yAxis',
         name: 'Japan', type: 'Line',
         marker: { visible: true, width: 10, height: 10, border: { width: 2, color: '#F8AB1D' } }
     }],
@@ -197,7 +197,7 @@ let chart: Chart = new Chart({
         name: 'Germany', type: 'Column'
     },{
         dataSource: chartData, width:2,
-        xName: 'x', yName: 'y1', xAxisName: 'xAxis'
+        xName: 'x', yName: 'y1', xAxisName: 'xAxis',
         name: 'Japan', type: 'Line',
         marker: { visible: true, width: 10, height: 10, border: { width: 2, color: '#F8AB1D' } }
     }],
@@ -258,7 +258,7 @@ let chart: Chart = new Chart({
         name: 'Germany', type: 'Column'
     },{
         dataSource: chartData, width:2,
-        xName: 'x', yName: 'y1', xAxisName: 'xAxis'
+        xName: 'x', yName: 'y1', xAxisName: 'xAxis',
         name: 'Japan', type: 'Line',
         marker: { visible: true, width: 10, height: 10, border: { width: 2, color: '#F8AB1D' } }
     }],

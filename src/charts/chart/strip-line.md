@@ -30,8 +30,8 @@ let chartData: any[] = [{x: 1, y: 20},{x: 2, y: 22},{x: 3, y: 0},{x: 4, y: 12},{
 let chart: Chart = new Chart({
    primaryYAxis: {
        stripLines:[
-            { start: 15, end: 22 }
-            { start: 8, end: 15 }
+            { start: 15, end: 22 },
+            { start: 8, end: 15 },
             { start: 0, end: 8 }]
     },
     series:[{
