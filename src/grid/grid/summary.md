@@ -61,6 +61,7 @@
 * [Exporting the Selected Records](grid/how-to/exporting-selected-data.md)
 * [Show Spinner on Grid when Exporting](grid/how-to/show-spinner-while-exporting.md)
 * [Passing additional parameters to the server when Exporting](grid/how-to/passing-parameter-to-server-exporting.md)
+* [Passing the selected records to the server using ajax request via custom toolbar button click](grid/how-to/passing-selected-records-to-server.md)
 * [Customize Pager DropDown](grid/how-to/customize-pager-drop-down.md)
 * [Hide the expand/collapse icon in parent row with no record in child grid](grid/how-to/hide-the-expand-collapse-icon-in-parent-row.md)
 * [Select rows in Grid based on certain condition](grid/how-to/select-rows-in-grid-based-on-certain-condition.md)
