@@ -51,9 +51,9 @@ import { enableRipple } from '@syncfusion/ej2-base';
 
 enableRipple(true);
 
-let columns: ColumnModel[] = [{ width: 100 }, { width: 130 },{ width: 96},
-    { width: 130 }, { width: 130 },{ width: 96},
-    { width: 100 }, { width: 100 },{ width: 110}, { width: 100 }, { width: 130 },{ width: 150}]
+let columns: ColumnModel[] = [{ width: 180 }, { width: 180 },{ width: 180},
+    { width: 180 }, { width: 180 },{ width: 180},
+    { width: 180 }, { width: 180 },{ width: 180}, { width: 180 }, { width: 180 },{ width: 180}]
 
 let spreadsheet: Spreadsheet = new Spreadsheet({
     sheets: [{ ranges: [{ dataSource: tradeData }], columns: columns
