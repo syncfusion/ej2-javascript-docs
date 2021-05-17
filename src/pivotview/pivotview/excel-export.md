@@ -298,7 +298,7 @@ exportBtn.appendTo('#excel');
 
 document.getElementById('excel').onclick = function () {
     let excelExportProperties: ExcelExportProperties = {
-        filename:'sample.xslx'
+        filename:'sample.xlsx'
     };
     pivotTableObj.excelExport(excelExportProperties);
 };
