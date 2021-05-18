@@ -78,7 +78,6 @@ Row template feature is not compatible with all the features which are available
 * Filtering
 * Paging
 * Sorting
-* Scrolling
 * Searching
 * Rtl
 * Export
@@ -87,6 +86,17 @@ Row template feature is not compatible with all the features which are available
 * Selection
 * Grouping
 * Editing
+* Frozen rows & columns
+* Virtual & Infinite scrolling
+* Column chooser
+* Column menu
+* Detail Row
+* Foreignkey column
+* Resizing
+* Reordering
+* Aggregates
+* Clipboard
+* Adaptive view
 
 ## Detail template
 
