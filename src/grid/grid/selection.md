@@ -305,45 +305,6 @@ The following screenshot represents a grid touch selection in the device.
 
 ![Touch interaction](images/touch-selection.jpg)
 
-## Multiple Selection based on condition
-
-You can select multiple grid rows based on condition by using the [`selectRows`](../api/grid/#selectrows) method.
-
-In the following code, the rows which contains `ShipCountry` value as `Brazil` are selected at initial rendering.
-
-{% tab template="grid/selected-index", es5Template="selection" %}
-
-```typescript
-import { Grid, Page, Selection, Row, Column } from '@syncfusion/ej2-grids';
-import { sdata } from './datasource.ts';
-
-Grid.Inject(Page, Selection);
-
-let grid: Grid = new Grid({
-    dataSource: sdata,
-    selectionSettings: {type: 'Multiple'},
-    dataBound: ()=>{
-        let rowIndexes : number[]=[];
-        grid.dataSource.forEach((data,index)=>{
-            if(data.ShipCountry === "Brazil"){
-            rowIndexes.push(index);
-            }
-            });
-        grid.selectionModule.selectRows(rowIndexes);
-     },
-     columns: [
-        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120 },
-        { field: 'CustomerID', headerText: 'Customer ID', width: 150 },
-        { field: 'ShipCountry', headerText: 'Ship Country', width: 150 },
-        { field: 'ShipName', headerText: 'Ship Name', width: 150 }
-     ]
-});
-grid.appendTo('#Grid');
-
-```
-
-{% endtab %}
-
 ## Simple Multiple Row selection
 
 You can select multiple rows by clicking on rows one by one. This will not deselect the previously selected rows. To deselect the previously selected row, you can click on the  selected row. You can enable this behavior by using [`selectionSettings.enableSimpleMultiRowSelection`](../api/grid/selectionSettings/#enablesimplemultirowselection) property.
