@@ -285,7 +285,7 @@ exportBtn.appendTo('#pdf');
 
 document.getElementById('pdf').onclick = function () {
     let pdfExportProperties: PdfExportProperties = {
-        filename:'sample.pdf'
+        fileName:'sample.pdf'
     };
     pivotTableObj.pdfExport(pdfExportProperties);
 };
