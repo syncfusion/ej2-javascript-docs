@@ -99,6 +99,108 @@ class CustomAdaptor extends ODataAdaptor {
 
 > By default, `DataManager` uses **ODataAdaptor** for remote data-binding.
 
+### Binding with OData services
+
+`OData` is a standardized protocol for creating and consuming data. You can retrieve data from OData service using the DataManager. Refer to the following code example for remote Data binding using OData service.
+
+{% tab template="spreadsheet/data-binding", sourceFiles="app.ts,index.html", es5Template="es5-oData", iframeHeight="450px" %}
+
+```typescript
+
+import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
+import { DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
+
+//Initialize DataManager
+let data: DataManager = new DataManager({
+  url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+  adaptor: new ODataAdaptor(),
+  crossDomain: true
+});
+//Initialize Spreadsheet control
+let spreadsheet: Spreadsheet = new Spreadsheet({
+  sheets: [
+    {
+      name: 'Order details',
+      ranges: [{ dataSource: data }],
+      columns: [
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 280 },
+        { width: 180 },
+        { width: 80 },
+        { width: 180 },
+        { width: 180 },
+      ]
+    }
+  ],
+  created: (): void => {
+    //Applies cell and number formatting to specified range of the active sheet
+    spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' },
+      'A1:K1');
+  }
+});
+
+//Render the initialized Spreadsheet control
+spreadsheet.appendTo('#spreadsheet');
+```
+
+{% endtab %}
+
+### Web API
+
+You can use WebApiAdaptor to bind spreadsheet with Web API created using OData endpoint.
+
+{% tab template="spreadsheet/data-binding", sourceFiles="app.ts,index.html", es5Template="es5-webApi", iframeHeight="450px" %}
+
+```typescript
+
+import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
+import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+
+//Initialize DataManager
+let data: DataManager = new DataManager({
+    url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+    crossDomain: true,
+    adaptor: new WebApiAdaptor()
+});
+//Initialize Spreadsheet control
+let spreadsheet: Spreadsheet = new Spreadsheet({
+  sheets: [
+    {
+      name: 'Order details',
+      ranges: [{ dataSource: data }],
+      columns: [
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 80 },
+        { width: 280 },
+        { width: 180 },
+        { width: 80 },
+        { width: 180 },
+        { width: 180 },
+      ]
+    }
+  ],
+  created: (): void => {
+    //Applies cell and number formatting to specified range of the active sheet
+    spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' },
+      'A1:K1');
+  }
+});
+
+//Render the initialized Spreadsheet control
+spreadsheet.appendTo('#spreadsheet');
+```
+
+{% endtab %}
+
 ## Cell data binding
 
 The Spreadsheet control can bind the data to individual cell in a sheet . To achive this you can use the

@@ -449,9 +449,9 @@ spreadsheet.appendTo('#spreadsheet');
 
 The Internationalization library is used to globalize number, date, and time values in the spreadsheet component.
 
-The following example demonstrates the Spreadsheet in French [ `fr-CH`] culture. In the below sample we have globalized the Date(Date column), Time(Time column), and Currency(Amount column) formats.
+The following example demonstrates the Spreadsheet in French [`fr-CH`] culture. In the below sample we have globalized the Date(Date column), Time(Time column), and Currency(Amount column) formats.
 
-{% tab template="spreadsheet/global/internationalization", sourceFiles="app.ts,index.html", es5Template="es5-internationalization", iframeHeight="450px" , isDefaultActive=true %}
+{% tab template="spreadsheet/global/internationalization",es5Template="es5-internationalization" %}
 
 ```typescript
 import { Spreadsheet, SheetModel } from '@syncfusion/ej2-spreadsheet';

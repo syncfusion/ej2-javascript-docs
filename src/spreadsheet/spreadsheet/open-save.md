@@ -50,6 +50,36 @@ Please find the below table for the beforeOpen event arguments.
 > * Use `Ctrl + O` keyboard shortcut to open Excel documents.
 > * The default value of the [allowOpen](../api/spreadsheet/#allowopen) property is `true`. For demonstration purpose, we have showcased the [allowOpen](../api/spreadsheet/#allowopen) property in previous code snippet.
 
+### Open an external URL excel file while initial load
+
+You can achieve to access the remote excel file by using the [`created`](../api/spreadsheet/#created) event. In this event you can fetch the excel file and convert it to a blob. Convert this blob to a file and [`open`](../api/spreadsheet/#open) this file by using Spreadsheet component open method.
+
+{% tab template="spreadsheet/open-save",sourceFiles="app.ts,index.html", es5Template="es5-openUrl",iframeHeight="450px" %}
+
+```typescript
+
+import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
+
+//Initialize the Spreadsheet control
+    let spreadsheet: Spreadsheet = new Spreadsheet({
+        openUrl: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open',
+        saveUrl: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',
+        created: (): void => {
+            fetch("https://js.syncfusion.com/demos/ejservices/data/Spreadsheet/LargeData.xlsx") // fetch the remote url
+                .then((response) => {
+                    response.blob().then((fileBlob) => { // convert the excel file to blob
+                    let file = new File([fileBlob], "Sample.xlsx"); //convert the blob into file
+                    spreadsheet.open({ file: file }); // open the file into Spreadsheet
+                    })
+                })
+        }
+    });
+//Render the initialized Spreadsheet
+spreadsheet.appendTo('#spreadsheet');
+```
+
+{% endtab %}
+
 ## Save
 
 The Spreadsheet control saves its data, style, format, and more as Excel file document. To enable this feature, set [`allowSave`](../api/spreadsheet/#allowsave) as `true` and assign service url to the [`saveUrl`](../api/spreadsheet/#saveurl) property.
@@ -151,6 +181,46 @@ Please find the below table for the beforeSave event arguments.
 > * Use `Ctrl + S` keyboard shortcut to save the Spreadsheet data as Excel file.
 > * The default value of [allowSave](../api/spreadsheet/#allowsave) property is `true`. For demonstration purpose, we have showcased the [allowSave](../api/spreadsheet/#allowsave) property in previous code snippet.
 > * Demo purpose only, we have used the online web service url link.
+
+### To send and receive custom params from client to server
+
+Passing the custom parameters from client to server by using [`beforeSave`](../api/spreadsheet/#beforeSave) event.
+
+{% tab template="spreadsheet/open-save", sourceFiles="app.ts,index.html", es5Template="es5-custom-params", iframeHeight="450px" %}
+
+```typescript
+
+import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
+import { data } from './datasource.ts';
+
+//Initialize the SpreadSheet control
+let spreadsheet: Spreadsheet = new Spreadsheet({
+  sheets: [{
+                ranges: [{ dataSource: data }],
+                columns: [{ width: 80 }, { width: 80 },{ width: 80},
+                          { width: 160 }, { width: 100 }, {width: 150}]
+            }],
+            saveUrl: 'https://ej2services.syncfusion.com/development/web-services/api/spreadsheet/save',
+            beforeSave: (args: BeforeSaveEventArgs) => {
+               args.customParams = { customParams: 'you can pass custom params in server side'}; // you can pass the custom params
+            }
+  }
+});
+spreadsheet.appendTo('#spreadsheet');
+```
+
+{% endtab %}
+
+Server side code snippets:
+
+```csharp
+
+    public IActionResult Save(SaveSettings saveSettings, string customParams)
+        {
+            Console.WriteLine(customParams); // you can get the custom params in controller side
+            return Workbook.Save(saveSettings);
+        }
+```
 
 ### Methods
 
