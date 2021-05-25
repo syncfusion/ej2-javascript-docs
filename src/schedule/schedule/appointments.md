@@ -1329,6 +1329,36 @@ scheduleObj.appendTo('#Schedule');
 
 {% endtab %}
 
+## Appointments occupying entire cell
+
+The Scheduler allows the event to occupies the full height of the cell without its header part by setting `true` for `enableMaxHeight` Property.
+
+We can show more indicator if more than one appointment is available in a same cell by setting `true` to `enableIndicator` property whereas its default value is false.
+
+{% tab template="schedule/event", es5Template="enable-maxheight", iframeHeight="588px", sourceFiles="index.ts,index.html"%}
+
+```typescript
+import { Schedule, TimelineViews, TimelineMonth } from '@syncfusion/ej2-schedule';
+import { scheduleData } from './datasource.ts';
+
+Schedule.Inject(TimelineViews, TimelineMonth);
+let scheduleObj: Schedule = new Schedule({
+    width: '100%',
+    height: '500px',
+    currentView: 'TimelineMonth',
+    views: ['TimelineWeek', 'TimelineMonth'],
+    selectedDate: new Date(2018, 1, 15),
+    eventSettings: {
+        dataSource: scheduleData,
+        enableMaxHeight: true,
+        enableIndicator: false
+    }
+});
+scheduleObj.appendTo('#Schedule');
+```
+
+{% endtab %}
+
 ## Display tooltip for appointments
 
 The tooltip shows the Scheduler appointment's information in a formatted style by making use of the tooltip related options.
