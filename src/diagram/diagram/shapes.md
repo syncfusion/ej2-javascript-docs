@@ -72,7 +72,7 @@ Diagram allows to add images as [`image`](../api/diagram/node#shape-shapemodel) 
 
 The following code illustrates how an image node is created.
 
-{% tab template= "diagram/getting-started", es5Template="es5Image" %}
+{% tab template= "diagram/shapes", es5Template="es5Image" %}
 
 ```typescript
 
@@ -126,7 +126,7 @@ Stretch and align the image content anywhere but within the node boundary.
 The scale property of the node allows to stretch the image as you desired (either to maintain proportion or to stretch). By default, the [`scale`](../api/diagram/image#scale-scale) property of the node is set as **meet**.
 The following code illustrates how to scale or stretch the content of the image node.
 
-{% tab template= "diagram/shapes", es5Template="es5HTML" %}
+{% tab template= "diagram/shapes", es5Template="es5Image2" %}
 
 ```typescript
 
