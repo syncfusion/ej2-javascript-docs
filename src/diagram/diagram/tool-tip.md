@@ -274,7 +274,7 @@ let diagram: Diagram = new Diagram({
             strokeColor: '#6BA5D7',
             fill: '#6BA5D7'
         },
-        constraints: NodeConstraints.Default | NodeConstraints.Tooltip,
+        constraints: (NodeConstraints.Default & ~NodeConstraints.InheritTooltip) | NodeConstraints.Tooltip,
         //Defines mouse over tooltip for a node
         tooltip: {
             content: 'Node1',
