@@ -75,7 +75,8 @@ import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
     let spreadsheet: Spreadsheet = new Spreadsheet({
         contextMenuBeforeOpen: (args): void => {
            // To add context menu items.
-           spreadsheet.addContextMenuItems([{ text: 'Custom Item' }], 'Paste Special', false); //To pass the items, Item before / after that the element to be inserted, Set false if the items need to be inserted before the text.
+           spreadsheet.addContextMenuItems([{ text: 'Custom Item' }], 'Paste Special', false);
+           //To pass the items, Item before / after that the element to be inserted, Set false if the items need to be inserted before the text.
         }
     });
 
@@ -127,7 +128,8 @@ import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
     let spreadsheet: Spreadsheet = new Spreadsheet({
         contextMenuBeforeOpen: (): void => {
             //To enable / disable context menu items.
-          spreadsheet.enableContextMenuItems(['Rename'], false, false); // Contextmenu Items that needs to be enabled / disabled, Set true / false to enable / disable the menu items, Set true if the given text is a unique id.
+          spreadsheet.enableContextMenuItems(['Rename'], false, false);
+          // Contextmenu Items that needs to be enabled / disabled, Set true / false to enable / disable the menu items, Set true if the given text is a unique id.
         }
     });
 
