@@ -231,8 +231,44 @@ To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [
 ```typescript
 
 import { Spreadsheet, ColumnModel } from '@syncfusion/ej2-spreadsheet';
-import { Button } from '@syncfusion/ej2-buttons';
 import { data } from './datasource.ts';
+import { DropDownButton, ItemModel } from "@syncfusion/ej2-splitbuttons";
+
+//Initialize action items.
+let items: ItemModel[] = [
+  {
+    text: "Save As xlsx"
+  },
+  {
+    text: "Save As xls"
+  },
+  {
+    text: "Save As csv"
+  },
+  {
+    text: "Save As pdf"
+  }
+];
+
+// Initialize the DropDownButton component.
+let drpDownBtn: DropDownButton = new DropDownButton({
+  items: items,
+  cssClass: "e-round-corner",
+  select: (args: MenuEventArgs) => {
+    if (args.item.text === 'Save As xlsx')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
+    if (args.item.text === 'Save As xls')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
+    if (args.item.text === 'Save As csv')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
+    if (args.item.text === 'Save As pdf')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
+  }
+});
+
+// Render initialized DropDownButton.
+drpDownBtn.appendTo("#element");
+
 
 let columns: ColumnModel[] = [{ width: 100 }, { width: 130 },{ width: 96},
     { width: 130 }, { width: 130 },{ width: 96},
@@ -245,27 +281,6 @@ let spreadsheet: Spreadsheet = new Spreadsheet({
 
 //Render the initialized Spreadsheet
 spreadsheet.appendTo('#spreadsheet');
-
-let button: Button = new Button({content: 'Save As xlsx'});
-button.appendTo('#xlsx');
-let button1: Button = new Button({content: 'Save As xls'});
-button1.appendTo('#xls');
-let button2: Button = new Button({content: 'Save As csv'});
-button2.appendTo('#csv');
-let button3: Button = new Button({content: 'Save As pdf'});
-button3.appendTo('#pdf');
-document.getElementById('xlsx').onclick = (): void => {
-  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
-}
-document.getElementById('xls').onclick = (): void => {
-  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
-}
-document.getElementById('csv').onclick = (): void => {
-  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
-}
-document.getElementById('pdf').onclick = (): void => {
-  spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
-}
 ```
 
 {% endtab %}

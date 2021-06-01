@@ -155,7 +155,7 @@ let columns: ColumnModel[] = [
 
 let spreadsheet: Spreadsheet = new Spreadsheet({
     sheets: [{ name: 'Budget', ranges: [{ dataSource: budgetData }], columns: columns }],
-    selectionSettings: { mode: 'None' }, allowEditing: false,
+    selectionSettings: { mode: 'None' },
     created: (): void => {
             spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' }, 'A1:D1');
         },
