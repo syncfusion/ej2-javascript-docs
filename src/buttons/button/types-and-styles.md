@@ -200,7 +200,7 @@ SVG image can be added to the Button using [`iconCss`](../api/button#iconcss) pr
 
 In the following example, SVG image is added using the iconCss class `e-search-icon` by setting `height` and `width`.
 
-{% tab template= "button/svg", sourceFiles="app.ts,index.html",es5Template="icons-template" %}
+{% tab template= "button/svg", sourceFiles="app.ts,index.html,styles.css",es5Template="icons-template" %}
 
 ```typescript
 import { Button } from '@syncfusion/ej2-buttons';
