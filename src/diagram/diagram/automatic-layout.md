@@ -1367,10 +1367,12 @@ Orientation, spacings, and position of the layout can be customized with a set o
 
 To explore layout properties, refer to [`Layout Properties`](../api/diagram/layout).
 
-**Layout bounds**
+### Layout bounds
+
 Diagram provides support to align the layout within any custom rectangular area. For more information about bounds, refer to [`bounds`](../api/diagram/layout).
 
-**Layout alignment**
+### Layout alignment
+
 The layout can be aligned anywhere over the layout bounds/viewport using the [`horizontalAlignment`](../api/diagram/layout) and [`verticalAlignment`](../api/diagram/layout) properties of the layout.
 
 The following code illustrates how to align the layout at the top-left of the layout bounds.
@@ -1467,10 +1469,12 @@ diagram.appendTo('#element');
 
 {% endtab %}
 
-**Layout spacing**
+### Layout spacing
+
 Layout provides support to add space horizontally and vertically between the nodes. The [`horizontalSpacing`](../api/diagram/layout) and [`verticalSpacing`](../api/diagram/layout) properties of the layout allows you to set the space between the nodes in horizontally and vertically.
 
-**Layout margin**
+### Layout margin
+
 Layout provides support to add some blank space between the layout bounds/viewport and the layout. The [`margin`](../api/diagram/layout) property of the layout allows you to set the blank space.
 
 The following code illustrates how to set the layout margin.
@@ -1571,14 +1575,27 @@ diagram.appendTo('#element');
 
 {% endtab %}
 
-**Layout orientation**
+### Layout orientation
+
+The layout orientation can used to arrange the layout based on the direction. there are different orientation types that are defined in the following table.
+
+|Orientation|Description|
+| -------- | ----------- |
+|TopToBottom|Aligns the layout from top to bottom. All the roots are placed at top of diagram.|
+|LeftToRight|Aligns the layout from left to right. All the roots are placed at left of diagram.|
+|BottomToTop|Aligns the layout from bottom to top. All the roots are placed at bottom of the diagram.|
+|RightToLeft|Aligns the layout from right to left. All the roots are placed at right of the diagram.|
+
 Diagram provides support to customize the  [`orientation`](../api/diagram/layout) of layout. You can set the desired orientation using layout.orientation.
+
+>Note: In the diagram the default orientation is TopToBottom.
 
 The following code illustrates how to arrange the nodes in a BottomToTop orientation.
 
 {% tab template= "diagram/AutomaticLayout", es5Template="es5LayoutOrientation" %}
 
 ```typescript
+
 import {
     Diagram, ConnectorModel, NodeModel, DiagramConstraints, HierarchicalTree, TextModel, DataBinding, Rect
 } from '@syncfusion/ej2-diagrams';
@@ -1682,7 +1699,8 @@ diagram.appendTo('#element');
 
 {% endtab %}
 
-**Fixed node**
+### Fixed node
+
 Layout provides support to arrange the nodes with reference to the position of a fixed node and set it to the [`fixedNode`](../api/diagram/layout) of the layout property. This is helpful when you try to expand/collapse a node. It might be expected that the position of the double-clicked node should not be changed.
 
 {% tab template= "diagram/AutomaticLayout", es5Template="es5Node" %}
@@ -1794,7 +1812,8 @@ diagram.appendTo('#element');
 
 {% endtab %}
 
-**Expand and collapse**
+### Expand and collapse
+
 Diagram allows to expand/collapse the subtrees of a layout. The node’s isExpanded property allows you to expand/collapse its children. The following code example shows how to expand/collapse the children of a node.
 
 {% tab template= "diagram/AutomaticLayout", es5Template="es5ExpandAndCollapse" %}
@@ -1936,10 +1955,12 @@ diagram.appendTo('#element');
 
 In the previous example, while expanding/collapsing a node, it is set as fixed node in order to prevent it from repositioning.
 
-**Refresh layout**
+### Refresh layout
+
 Diagram allows to refresh the layout at runtime. To refresh the layout, refer to Refresh layout.
 
-**setNodeTemplate**
+### setNodeTemplate
+
  The setNodeTemplate function is provided for the purpose of customizing nodes. It will be called for each node on node initialization. In this function, the node style and its properties can be customized and can bind the custom JSON with node.
 
 {% tab template= "diagram/AutomaticLayout", es5Template="esNodeTemplate" %}
