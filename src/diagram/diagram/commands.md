@@ -867,8 +867,9 @@ let diagram: Diagram = new Diagram({
                 //Defines that the clone command can be executed, if and only if the selection list is not empty.
                 if (diagram.selectedItems.nodes.length > 0 || diagram.selectedItems.connectors.length > 0) {
                     return true;
+                } else {
+                    return false;
                 }
-                return false;
             },
             //Command handler
             execute: function() {
@@ -915,9 +916,10 @@ let diagram: Diagram = new Diagram({
 
             //Modifies the existing command - nudgeLeft
             "nudgeLeft": {
-                canExecute: function(args)
-                if (args.model.selectedItems.length) {
-                    return true;
+                canExecute: function(args){
+                    if (args.model.selectedItems.length) {
+                        return true;
+                    }
                 }
             },
 
