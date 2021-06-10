@@ -32,7 +32,7 @@ The Essential JS 2 JavaScript components can be initialized by using either of t
 >
 > Styles: `C:/Program Files (x86)/Syncfusion/Essential Studio/15.4.30/Essential JS 2/ej2-navigations/styles/material.css`
 
-**Step 3:** Create a folder `myapp/resources` and copy/paste the global scripts and styles from the above installed location to `myapp/resources` location.
+**Step 3:** Create a folder `myapp/resources` and copy/paste the Toolbar and its dependency scripts and styles from the above installed location to `myapp/resources` location.
 
 **Step 4:** Create a HTML page (index.html) in `myapp` location and add the Essentials JS 2 script and style references.
 
@@ -40,12 +40,20 @@ The Essential JS 2 JavaScript components can be initialized by using either of t
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
        <head>
-            <title>Essential JS 2</title>
-            <!-- Essential JS 2 material theme -->
-            <link href="resources/material.css" rel="stylesheet" type="text/css"/>
+            <title>Essential JS 2 Toolbar</title>
+            <!-- Essential JS 2 Toolbar's dependent material theme -->
+            <link href="resources/base/styles/material.css" rel="stylesheet" type="text/css" />
+            <link href="resources/buttons/styles/material.css" rel="stylesheet" type="text/css" />
+            <link href="resources/popups/styles/material.css" rel="stylesheet" type="text/css" />
+            <!-- Essential JS 2 Toolbar's material theme -->
+            <link href="resources/navigations/styles/material.css" rel="stylesheet" type="text/css" />
 
+            <!-- Essential JS 2 Toolbar's dependent scripts -->
+            <script src="resources/scripts/ej2-base.min.js" type="text/javascript"></script>
+            <script src="resources/scripts/ej2-buttons.min.js" type="text/javascript"></script>
+            <script src="resources/scripts/ej2-popups.min.js" type="text/javascript"></script>
             <!-- Essential JS 2 Toolbar's global script -->
-            <script src="resources/ej2-navigations.min.js" type="text/javascript"></script>
+            <script src="resources/scripts/ej2-navigations.min.js" type="text/javascript"></script>
        </head>
        <body>
        </body>
@@ -63,12 +71,20 @@ For more information about item configuration, refer to the [Item Configuration]
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
        <head>
-            <title>Essential JS 2</title>
-            <!-- Essential JS 2 material theme -->
-            <link href="resources/material.css" rel="stylesheet" type="text/css"/>
+            <title>Essential JS 2 Toolbar</title>
+            <!-- Essential JS 2 Toolbar's dependent material theme -->
+            <link href="resources/base/styles/material.css" rel="stylesheet" type="text/css" />
+            <link href="resources/buttons/styles/material.css" rel="stylesheet" type="text/css" />
+            <link href="resources/popups/styles/material.css" rel="stylesheet" type="text/css" />
+            <!-- Essential JS 2 Toolbar's material theme -->
+            <link href="resources/navigations/styles/material.css" rel="stylesheet" type="text/css" />
 
+            <!-- Essential JS 2 Toolbar's dependent scripts -->
+            <script src="resources/scripts/ej2-base.min.js" type="text/javascript"></script>
+            <script src="resources/scripts/ej2-buttons.min.js" type="text/javascript"></script>
+            <script src="resources/scripts/ej2-popups.min.js" type="text/javascript"></script>
             <!-- Essential JS 2 Toolbar's global script -->
-            <script src="resources/ej2-navigations.min.js" type="text/javascript"></script>
+            <script src="resources/scripts/ej2-navigations.min.js" type="text/javascript"></script>
        </head>
        <body>
             <!-- Add the HTML <div> element  -->
@@ -124,15 +140,20 @@ For more information about item configuration, refer to the [Item Configuration]
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
        <head>
-            <title>Essential JS 2</title>
-            <!-- Essential JS 2 material theme -->
+            <title>Essential JS 2 Toolbar</title>
+            <!-- Essential JS 2 Toolbar's dependent material theme -->
             <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" type="text/css"/>
             <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" type="text/css"/>
             <link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" type="text/css"/>
+            <!-- Essential JS 2 Toolbar's material theme -->
             <link href="https://cdn.syncfusion.com/ej2/ej2-navigations/styles/material.css" rel="stylesheet" type="text/css"/>
 
-            <!-- Essential JS 2 global script -->
-            <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+            <!-- Essential JS 2 Toolbar's dependent scripts -->
+            <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
+            <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js" type="text/javascript"></script>
+            <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js"></script>
+            <!-- Essential JS 2 Toolbar's global script -->
+            <script src="https://cdn.syncfusion.com/ej2/ej2-navigations/dist/global/ej2-navigations.min.js" type="text/javascript"></script>
        </head>
        <body>
            <!-- Add the HTML <div> element  -->
