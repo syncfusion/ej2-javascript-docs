@@ -190,7 +190,7 @@ import { data } from './datasource.ts';
 
 Grid.Inject(Aggregate);
 
-let customAggregateFn = (data: Object) => data.result.filter((item: Object) => item['ShipCountry'] === 'Brazil').length;
+let customAggregateFn = (data: Object, aggColumn: Object) => data.result.filter((item: Object) => item[aggColumn.columnName] === 'Brazil').length;
 
 let grid: Grid = new Grid({
     dataSource: data,
