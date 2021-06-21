@@ -101,7 +101,7 @@ import { Uploader, FileInfo } from '@syncfusion/ej2-inputs';
 import { createElement, isNullOrUndefined, detach, EventHandler } from '@syncfusion/ej2-base';
 
     enableRipple(true);
-    let dropElement: HTMLElement = document.getElementsByClassName('control-fluid')[0] as HTMLElement; let filesDetails : FileInfo[] = [];
+    let dropElement: HTMLElement = document.querySelector('.control_wrapper') as HTMLElement; let filesDetails : FileInfo[] = [];
     let filesList: HTMLElement[] = [];
     let uploadObj: Uploader = new Uploader({
         asyncSettings: {
