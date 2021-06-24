@@ -36,7 +36,6 @@ let drpDownBtn: DropDownButton = new DropDownButton({
       printElement.querySelector(".e-sheet-content").innerHTML = document.querySelector(
         ".e-sheet-content"
       ).outerHTML; //  To add the spreadsheet table
-      debugger
       let usedRange: UsedRangeModel = spreadsheet.getActiveSheet().usedRange;
       let tbody: Element = printElement.querySelector('tbody');
       for (let i: number = tbody.getElementsByClassName('e-row').length; i >= 0; i--) {

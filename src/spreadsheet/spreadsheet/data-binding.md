@@ -291,7 +291,7 @@ The following table defines the arguments of the `dataSourceChanged` event.
 > For `add` action, the value for all the fields will be `null` in the data. In the case that you do not want the primary key field to be null which needs to be updated in the backend service, you can use `edit` action after updating the primary key field to update in the backend service. <br><br>
 > For inserting a row at the end of the datasource range, you should insert a row below at the end of the range to trigger the `dataSourceChanged` event with action `add`.
 
-{% tab template="spreadsheet/dynamic-data-binding", sourceFiles="app.ts,datasource.ts,index.html", es5Template="es5-dynamic-data-binding", iframeHeight="4725px" %}
+{% tab template="spreadsheet/dynamic-data-binding", sourceFiles="app.ts,datasource.ts,index.html", es5Template="es5-dynamic-data-binding", iframeHeight="700px" %}
 
 ```typescript
 
