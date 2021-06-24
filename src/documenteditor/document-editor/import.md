@@ -86,7 +86,11 @@ document.getElementById('file_upload').addEventListener("change", (e: any): void
 
 ## Convert word documents into SFDT
 
-You can convert word documents into SFDT format using the .NET Standard library [`Syncfusion.EJ2.WordEditor.AspNet.Core`](<https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Core/>) by the web API service implementation. This library helps you to convert word documents (.dotx,.docx,.docm,.dot,.doc), rich text format documents (.rtf), and text documents (.txt) into SFDT format. Refer to the following example.
+You can convert word documents into SFDT format using the .NET Standard library [`Syncfusion.EJ2.WordEditor.AspNet.Core`](<https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Core/>) by the web API service implementation. This library helps you to convert word documents (.dotx,.docx,.docm,.dot,.doc), rich text format documents (.rtf), and text documents (.txt) into SFDT format.
+
+>Note: The Syncfusion Document editor component makes sensible decision when layout the text, and other supported elements while paginating the document content for displaying page by page. But however, there may not be guaranteed pagination with all the documents compared to the pagination of Microsoft Word.
+
+Please refer the following example for converting word documents into SFDT.
 
 ```typescript
 import { DocumentEditor } from '@syncfusion/ej2-documenteditor';
