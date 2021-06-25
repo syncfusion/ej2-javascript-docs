@@ -200,11 +200,11 @@ diagram.appendTo("#element");
 
 | Shape       | Image                                |
 | ----------- | ------------------------------------ |
-| Association | ![Association](images/Association.PNG) |
-| Aggregation | ![Aggregation](images/Aggregation.PNG)  |
-| Composition | ![Composition](images/Composition.PNG) |
-| Inheritance | ![Inheritance](images/Inheritance.PNG)   |
-| Dependency  | ![Dependency](images/Dependency.PNG) |
+| Association | ![Association](images/Association.png) |
+| Aggregation | ![Aggregation](images/Aggregation.png)  |
+| Composition | ![Composition](images/Composition.png) |
+| Inheritance | ![Inheritance](images/Inheritance.png)   |
+| Dependency  | ![Dependency](images/Dependency.png) |
 
 ## Association
 
@@ -486,19 +486,19 @@ To create a UmlActivity, define type as "UmlActivity" and the list of built-in s
 
 | Shape          | Image                                    |
 | -------------- | ---------------------------------------- |
-| Action         | ![Action](images/Action.PNG)          |
-| Decision       | ![Decision](images/Decision.PNG)         |
-| MergeNode      | ![MergeNode](images/MergeNode.PNG)       |
-| InitialNode    | ![InitialNode](images/InitialNode.PNG)       |
-| FinalNode      | ![FinalNode](images/FinalNode.PNG)      |
-| ForkNode       | ![ForkNode](images/ForkNode.PNG)       |
-| JoinNode       | ![JoinNode](images/JoinNode.PNG)       |
-| TimeEvent      | ![TimeEvent](images/TimeEvent.PNG)      |
-| AcceptingEvent | ![AcceptingEvent](images/AcceptingEvent.PNG) |
-| SendSignal     | ![SendSignal](images/SendSignal.PNG)     |
-| ReceiveSignal  | ![ReceiveSignal](images/ReceiveSignal.PNG)  |
-| StructuredNode | ![StructuredNode](images/StructuredNode.PNG) |
-| Note           | ![Note](images/Note.PNG)           |
+| Action         | ![Action](images/Action.png)          |
+| Decision       | ![Decision](images/Decision.png)         |
+| MergeNode      | ![MergeNode](images/MergeNode.png)       |
+| InitialNode    | ![InitialNode](images/InitialNode.png)       |
+| FinalNode      | ![FinalNode](images/FinalNode.png)      |
+| ForkNode       | ![ForkNode](images/ForkNode.png)       |
+| JoinNode       | ![JoinNode](images/JoinNode.png)       |
+| TimeEvent      | ![TimeEvent](images/TimeEvent.png)      |
+| AcceptingEvent | ![AcceptingEvent](images/AcceptingEvent.png) |
+| SendSignal     | ![SendSignal](images/SendSignal.png)     |
+| ReceiveSignal  | ![ReceiveSignal](images/ReceiveSignal.png)  |
+| StructuredNode | ![StructuredNode](images/StructuredNode.png) |
+| Note           | ![Note](images/Note.png)           |
 
 The following code illustrates how to create a UmlActivity shapes.
 
@@ -576,4 +576,4 @@ You can edit the name, attributes, and methods of the class diagram shapes just 
 
 The following image illustrates how the text editor looks in an edit mode.
 
-![Editing Class Diagram](images/ClassEdit.PNG)
+![Editing Class Diagram](images/ClassEdit.png)

@@ -595,13 +595,13 @@ The following table illustrates the different chart orientations and chart types
 
 |Orientation|Type|Description|Example|
 | -------- | ----------- | ------------- |------|
-|Horizontal|Left|Arranges the child nodes horizontally at the left side of the parent.|![Horizontal Left](images/hleft.JPG)|
-||Right|Arranges the child nodes horizontally at the right side of the parent.|![Horizontal Right](images/hright.JPG)|
-||Center|Arranges the children like standard tree layout orientation.|![Horizontal Center](images/hcenter.JPG)|
-||Balanced|Arranges the leaf level child nodes in multiple rows.|![Horizontal Balanced](images/hbalanced.JPG)|
-|Vertical|Left|Arranges the children vertically at the left side of the parent.|![Vertical Left](images/vleft.JPG)|
-||Right|Arranges the children vertically at the right side of the parent.|![Vertical Right](images/vright.JPG)|
-||Alternate|Arranges the children vertically at both left and right sides of the parent.|![Vertical Alternate](images/vAlternate.JPG)|
+|Horizontal|Left|Arranges the child nodes horizontally at the left side of the parent.|![Horizontal Left](images/hleft.jpg)|
+||Right|Arranges the child nodes horizontally at the right side of the parent.|![Horizontal Right](images/hright.jpg)|
+||Center|Arranges the children like standard tree layout orientation.|![Horizontal Center](images/hcenter.jpg)|
+||Balanced|Arranges the leaf level child nodes in multiple rows.|![Horizontal Balanced](images/hbalanced.jpg)|
+|Vertical|Left|Arranges the children vertically at the left side of the parent.|![Vertical Left](images/vleft.jpg)|
+||Right|Arranges the children vertically at the right side of the parent.|![Vertical Right](images/vright.jpg)|
+||Alternate|Arranges the children vertically at both left and right sides of the parent.|![Vertical Alternate](images/vAlternate.jpg)|
 
 The following code example illustrates how to set the vertical right arrangement to the leaf level trees.
 
