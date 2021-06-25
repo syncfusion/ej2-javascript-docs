@@ -258,10 +258,10 @@ diagram.appendTo('#element');
 
 * The following code illustrates how to disable InConnect constraints.
 
-```typescript
+```javascript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      nodes:[
          {
             id: 'node', width: 100, height: 100, offsetX: 100, offsetY: 150,
@@ -270,9 +270,7 @@ let diagram: Diagram = new Diagram({
             constraints: NodeConstraints.Default & ~NodeConstraints.InConnect,
          }
      ]
-});
-diagram.appendTo('#diagram');
-
+},'#diagram');
 ```
 
 ## Connections with ports
@@ -487,10 +485,10 @@ diagram.connectors[0].targetPortID = 'newnodeport1'
 
 * When you set PortConstraints to None, the port restricts connector to establish connection in it.
 
-```typescript
+```javascript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      nodes:[
          {
             id: 'node', width: 100, height: 100, offsetX: 100, offsetY: 150,
@@ -501,9 +499,7 @@ let diagram: Diagram = new Diagram({
            ]
          }
      ]
-});
-diagram.appendTo('#diagram');
-
+},'#diagram');
 ```
 
 ## Segments
@@ -1795,7 +1791,7 @@ diagram.appendTo('#element');
 
 ```javascript
 
-let connectors: ConnectorModel = {
+var connectors = {
     id: 'connector1',
     // Defines the information about the connector
     addInfo:'centralconnector',

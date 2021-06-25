@@ -19,18 +19,13 @@ In diagram, [Layers](../api/diagram) provide a way to change the properties of a
 
 The layer's [visible](../api/diagram/layer#visible-boolean) property is used to control the visibility of the elements assigned to the layer.
 
-```typescript
+```javascript
 
-import {
-    Diagram,
-    ConnectorModel,
-    NodeModel,
-    LayerModel
-} from '@syncfusion/ej2-diagrams';
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram, ej.diagrams.ConnectorModel,ej.diagrams.NodeModel,ej.diagrams.LayerModel);
 
 // A node is created and stored in nodes array.
 
-let nodes: NodeModel[] = [{
+var nodes = [{
         id: 'node1',
         width: 100,
         height: 100,
@@ -57,7 +52,7 @@ let nodes: NodeModel[] = [{
     }
 ];
 
-let connectors: ConnectorModel[] = [{
+var connectors = [{
     id: 'connector1',
     type: 'Straight',
     sourcePoint: {
@@ -72,7 +67,7 @@ let connectors: ConnectorModel[] = [{
 
 // initialize diagram component
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     connectors: connectors,
@@ -83,9 +78,7 @@ let diagram: Diagram = new Diagram({
             objects: ['node1']
         }
     ]
-});
-// render initialized diagram
-diagram.appendTo('#element');
+},'#element');
 
 ```
 
@@ -93,18 +86,13 @@ diagram.appendTo('#element');
 
 The layer's [lock](../api/diagram/layer#lock-boolean) property is used to prevent or allow changes to the elements dimension and position.
 
-```typescript
+```javascript
 
-import {
-    Diagram,
-    ConnectorModel,
-    NodeModel,
-    LayerModel
-} from '@syncfusion/ej2-diagrams';
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram, ej.diagrams.ConnectorModel,ej.diagrams.NodeModel,ej.diagrams.LayerModel);
 
 // A node is created and stored in nodes array.
 
-let nodes: NodeModel[] = [{
+var nodes = [{
         id: 'node1',
         width: 100,
         height: 100,
@@ -131,7 +119,7 @@ let nodes: NodeModel[] = [{
     }
 ];
 
-let connectors: ConnectorModel[] = [{
+var connectors = [{
     id: 'connector1',
     type: 'Straight',
     sourcePoint: {
@@ -146,7 +134,7 @@ let connectors: ConnectorModel[] = [{
 
 // initialize diagram component
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     connectors: connectors,
@@ -164,9 +152,7 @@ let diagram: Diagram = new Diagram({
             lock: false
         }
     ]
-});
-// render initialized diagram
-diagram.appendTo('#element');
+},'#element');
 
 ```
 
@@ -174,18 +160,13 @@ diagram.appendTo('#element');
 
 The layer's [objects](../api/diagram/layer#objects-string[]) property defines the diagram elements to the layer.
 
-```typescript
+```javascript
 
-import {
-    Diagram,
-    ConnectorModel,
-    NodeModel,
-    LayerModel
-} from '@syncfusion/ej2-diagrams';
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram, ej.diagrams.ConnectorModel,ej.diagrams.NodeModel,ej.diagrams.LayerModel);
 
 // A node is created and stored in nodes array.
 
-let nodes: NodeModel[] = [{
+var nodes = [{
         id: 'node1',
         width: 100,
         height: 100,
@@ -212,7 +193,7 @@ let nodes: NodeModel[] = [{
     }
 ];
 
-let connectors: ConnectorModel[] = [{
+var connectors = [{
     id: 'connector1',
     type: 'Straight',
     sourcePoint: {
@@ -227,7 +208,7 @@ let connectors: ConnectorModel[] = [{
 
 // initialize diagram component
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     connectors: connectors,
@@ -243,10 +224,7 @@ let diagram: Diagram = new Diagram({
             objects: ['node2']
         }
     ]
-});
-
-// render initialized diagram
-diagram.appendTo('#element');
+},'#element');
 
 ```
 
@@ -256,18 +234,13 @@ The [`addInfo`](../api/diagram/layer#addinfo-Object) property of layers allow yo
 
 The following code illustrates how to add additional information to the layers.
 
-```typescript
+```javascript
 
-import {
-    Diagram,
-    ConnectorModel,
-    NodeModel,
-    LayerModel
-} from '@syncfusion/ej2-diagrams';
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram, ej.diagrams.ConnectorModel,ej.diagrams.NodeModel,ej.diagrams.LayerModel);
 
 // A node is created and stored in nodes array.
 
-let nodes: NodeModel[] = [{
+var nodes = [{
         id: 'node1',
         width: 100,
         height: 100,
@@ -294,7 +267,7 @@ let nodes: NodeModel[] = [{
     }
 ];
 
-let connectors: ConnectorModel[] = [{
+var connectors = [{
     id: 'connector1',
     type: 'Straight',
     sourcePoint: {
@@ -307,11 +280,11 @@ let connectors: ConnectorModel[] = [{
     },
 }];
 
-let addInfo: Object = { Description: 'Layer1' };
+var addInfo = { Description: 'Layer1' };
 
 // initialize Diagram component
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     connectors: connectors,
@@ -340,10 +313,10 @@ The layer's [`ID`](../api/diagram/layer#id-string) property defines the ID of th
 
 The following code illustrates how to add a layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
 // add the layers to the existing diagram layer collection
 diagram.addLayer({
     id: 'newlayer',
@@ -371,10 +344,10 @@ Layers can be removed at runtime by using the [`removeLayer`](../api/diagram#rem
 
 The following code illustrates how to remove a layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
 // remove the diagram layers
 diagram.removeLayer([diagram.model.layers[i]]);
 
@@ -386,10 +359,10 @@ Objects of the layers can be moved by using the [`moveObjects`](../api/diagram#m
 
 The following code illustrates how to move objects from one layer to another layer from the diagram.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
 // move the objects of diagram layers
 diagram.moveObjects(['connector1'], 'layer2');
 
@@ -401,10 +374,10 @@ Layers can be moved forward at runtime by using the [`bringLayerForward`](../api
 
 The following code illustrates how to bring forward to layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
 // move the layer forward
 diagram.bringLayerForward('layer1');
 
@@ -416,10 +389,10 @@ Layers can be moved backward at runtime by using the [`sendLayerBackward`](../ap
 
 The following code illustrates how to send backward to layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
 // move the layer backward
 diagram.sendLayerBackward('layer1');
 
@@ -431,10 +404,10 @@ Layers can be cloned with its object by using the [`cloneLayer`](../api/diagram#
 
 The following code illustrates how to bring forward to layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
 // clone a layer with its object
 diagram.cloneLayer('layer2');
 
@@ -446,10 +419,10 @@ To get the active layers back in diagram, use the [`getActiveLayer`](../api/diag
 
 The following code illustrates how to bring forward to layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram: Object[] = diagramElement.ej2_instances[0];
 // gets the active layer back
 diagram.getActiveLayer();
 
@@ -461,10 +434,10 @@ Set the active layer by using the [`setActiveLayer`](../api/diagram#setActiveLay
 
 The following code illustrates how to bring forward to layer.
 
-```typescript
+```javascript
 
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+var diagramElement = document.getElementById('element');
+var diagram: Object[] = diagramElement.ej2_instances[0];
 // set the active layer
 //@param layerName defines the name of the layer which is to be active layer
 diagram.setActiveLayer('layer2');

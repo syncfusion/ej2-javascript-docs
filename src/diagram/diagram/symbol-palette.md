@@ -15,18 +15,16 @@ The **SymbolPalette** displays a collection of palettes. The palette shows a s
 
 The [`width`](../api/diagram/palette#width-number) and [`height`](../api/diagram/palette#height-number) properties of the symbol palette allows to define the size of the symbol palette.
 
-```typescript
-import {
-    SymbolPalette
-} from '@syncfusion/ej2-diagrams';
+```javascript
+
+ej.diagrams.Diagram.Inject(ej.diagrams.SymbolPalette);
 
 //Initializes the symbol palette
 
-let palette: SymbolPalette = new SymbolPalette({
+var palette = new ej.diagrams.SymbolPalette({
     width: '100%',
     height: '700px',
-});
-palette.appendTo('#element');
+},'#element');
 
 ```
 

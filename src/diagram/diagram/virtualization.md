@@ -17,11 +17,10 @@ The following code illustrates how to enable Virtualization mode in the diagram.
 ```typescript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '800px', height: '500px',
     //Enable virtualization in diagram
     constraints: DiagramConstraints.Default | DiagramConstraints.Virtualization,
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 
 ```

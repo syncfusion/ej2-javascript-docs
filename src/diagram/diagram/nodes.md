@@ -8,7 +8,7 @@ description: "Nodes visually represents the geometrical information and process 
 
 Nodes are graphical objects used to visually represent the geometrical information, process flow, internal business procedure, entity, or any other kind of data.
 
-![Node](images/node.png)
+![Node](../images/node.png)
 
 <!-- markdownlint-disable MD033 -->
 
@@ -638,9 +638,9 @@ The nodes z-order property specifies the stack order of the node. A node with gr
 
 Node has the InEdges and OutEdges read-only property. In this property, you can find what are all the connectors that are connected to the node, and then you can find these connectors by using the [`getObject`](../api/diagram#getObject) method in the diagram.
 
-```typescript
+```javascript
 
-let node: NodeModel = {
+var node = {
     id: 'node1',
     // Position of the node
     offsetX: 450,
@@ -650,7 +650,7 @@ let node: NodeModel = {
     height: 50,
     style: { fill: '#6BA5D7', strokeColor: 'white' },
 };
-let node2: NodeModel = {
+var node2 = {
     id: 'node2',
     // Position of the node
     offsetX: 350,
@@ -660,7 +660,7 @@ let node2: NodeModel = {
     height: 50,
     style: { fill: '#6BA5D7', strokeColor: 'white' },
 };
-let node3: NodeModel = {
+var node3 = {
     id: 'node3',
     // Position of the node
     offsetX: 450,
@@ -670,7 +670,7 @@ let node3: NodeModel = {
     height: 50,
     style: { fill: '#6BA5D7', strokeColor: 'white' },
 };
-let node4: NodeModel = {
+var node4 = {
     id: 'node4',
     // Position of the node
     offsetX: 550,
@@ -680,21 +680,20 @@ let node4: NodeModel = {
     height: 50,
     style: { fill: '#6BA5D7', strokeColor: 'white' },
 };
-let connector: ConnectorModel = {
+var connector = {
     id: 'connector1', sourceID: 'node1', targetID: 'node2', type: 'Orthogonal'
 };
-let connector2: ConnectorModel = {
+var connector2 = {
     id: 'connector2', sourceID: 'node1', targetID: 'node3', type: 'Orthogonal'
 };
-let connector3: ConnectorModel = {
+var connector3 = {
     id: 'connector3', sourceID: 'node1', targetID: 'node4', type: 'Orthogonal'
 };
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600, nodes: [node, node2, node3, node4],
     connectors: [connector, connector2, connector3]
-});
-diagram.appendTo('#element');
+    }, '#element');
 diagram.getObject('connector1');
 ```
 

@@ -231,14 +231,14 @@ Set the desired [`tool`](../api/diagram) to the tool property of the diagram mod
 
 ```javascript
 // To Enable Single Tool
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     //To draw an object once, activate draw once
     width: '100%', height: 700,tool:DiagramTools.DrawOnce;
     }
 });
 
 // Enables multiple tools
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     // Selects when you click a node and pans when you click the diagram surface
     width: '100%', height: 700,tool:DiagramTools.DrawOnce | DiagramTools.ZoomPan;
     }

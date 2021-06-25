@@ -60,7 +60,7 @@ The Essential JS 2 JavaScript components can be initialized by using either of t
        <head>
             <title>Essential JS 2</title>
             <!-- Essential JS 2 material theme -->
-            <ink href="resources/material.css" rel="stylesheet" type="text/css"/>
+            <link href="resources/material.css" rel="stylesheet" type="text/css"/>
 
             <!-- Essential JS 2 Diagram's global script -->
             <script src="resources/ej2-diagrams.min.js" type="text/javascript"></script>
@@ -121,7 +121,6 @@ The Essential JS 2 JavaScript components can be initialized by using either of t
 
                 // Render initialized diagram.
                 diagram.appendTo('#element')
-            </script>
             </script>
        </body>
   </html>
@@ -299,10 +298,10 @@ In the 'Flow Diagram' section, how to create a diagram manually was discussed. T
 
 Define Employee Information as JSON data. The following code example shows an employee array whose, `Name` is used as an unique identifier and `ReportingPerson` is used to identify the person to whom an employee report to, in the organization.
 
-```typescript
+```javascript
 
 //Initialize data source...
-let data: object[] = [{Name: "Elizabeth", Role: "Director" },
+var data = [{Name: "Elizabeth", Role: "Director" },
 { Name: "Christina", ReportingPerson: "Elizabeth", Role: "Manager" },
 { Name: "Yoshi", ReportingPerson: "Christina", Role: "Lead" },
 { Name: "Philip", ReportingPerson: "Christina", Role: "Lead" },
@@ -317,11 +316,11 @@ let data: object[] = [{Name: "Elizabeth", Role: "Director" },
 
 You can configure the above "Employee Information" with diagram, so that the nodes and connectors are automatically generated using the mapping properties. The following code example show how `dataSourceSettings` is used to map ID and parent with property name identifiers for employee information.
 
-```typescript
+```javascript
 
 //Initialize data source...
 
-let data: object[] = [{Name: "Elizabeth", Role: "Director" },
+var data = [{Name: "Elizabeth", Role: "Director" },
 { Name: "Christina", ReportingPerson: "Elizabeth", Role: "Manager" },
 { Name: "Yoshi", ReportingPerson: "Christina", Role: "Lead" },
 { Name: "Philip", ReportingPerson: "Christina", Role: "Lead" },
@@ -330,10 +329,10 @@ let data: object[] = [{Name: "Elizabeth", Role: "Director" },
 { Name: "Yvonne", ReportingPerson: "Yang", Role: "Lead" }
 ];
 
-let items: DataManager = new DataManager(data as JSON[], new Query().take(7));
+var items = new DataManager(data as JSON[], new Query().take(7));
 
 //Initialize data source...
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: '600px',
 
 //Configure data source for diagram

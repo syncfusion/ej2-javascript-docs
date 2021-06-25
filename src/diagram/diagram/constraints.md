@@ -22,8 +22,8 @@ Diagram constraints allow to enable or disable the following behaviors:
 
 The following example illustrates how to disable page editing using the diagram constraints.
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600,
     constraints: DiagramConstraints.Default & ~DiagramConstraints.PageEditable
 });
@@ -47,11 +47,11 @@ Node constraints allows to enable or disable the following behaviors of node. Th
 The following example illustrates how to disable rotation using the node constraints.
 
 ```typescript
-let nodes: NodeModel[] = [{ id: 'node', offsetX: 100, offsetY: 100, constraints: NodeConstraints.Default & ~NodeConstraints.Rotate }];
+var nodes = [{ id: 'node', offsetX: 100, offsetY: 100, constraints: NodeConstraints.Default & ~NodeConstraints.Rotate }];
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%, height: 600, nodes: nodes,
-});
+},'#element');
 ```
 
 For more information about node constraints, refer to [`NodeConstraints`](../api/diagram/nodeConstraints).
@@ -69,17 +69,17 @@ Connector constraints allow to enable or disable certain behaviors of connectors
 
 The following code illustrates how to disable selection by using connector constraints.
 
-```typescript
-let connectors: ConnectorModel[] = [{
+```javascript
+var connectors = [{
     id: 'connector1',
     type: 'Straight',
     sourcePoint: { x: 100, y: 100 },
     targetPoint: { x: 200, y: 200 },
     constraints: ConnectorConstraints.Default & ~ConnectorConstraints.Select
 }];
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600, connectors: connectors,
-});
+},'#element');
 ```
 
 For more information about connector constraints, refer to [`ConnectorConstraints`](../api/diagram/connectorConstraints).
@@ -93,8 +93,8 @@ You can enable or disable certain behaviors of port. They are as follows:
 
 The following code illustrates how to disable creating connections with a port.
 
-```typescript
-let nodes: NodeModel[] = [
+```javascript
+var nodes = [
     {
         id: 'node',
         offsetX: 100,
@@ -107,7 +107,7 @@ let nodes: NodeModel[] = [
     }
 ];
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600, nodes: nodes,
 });
 ```
@@ -120,8 +120,8 @@ You can enable or disable read-only mode for the annotations by using the annota
 
 The following code illustrates how to enable read-only mode for the annotations.
 
-```typescript
-let nodes: NodeModel[] = [
+```javascript
+var nodes = [
     {
         id: 'node',
         offsetX: 100,
@@ -136,7 +136,7 @@ let nodes: NodeModel[] = [
     }
 ];
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600, nodes: nodes,
 });
 ```
@@ -153,8 +153,8 @@ Selector visually represents the selected elements with certain editable thumbs.
 
 The following code illustrates how to hide rotator.
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600,
     selectedItems: { constraints: SelectorConstraints.All & ~SelectorConstraints.Rotate}
 });
@@ -173,8 +173,8 @@ Snap constraints control the visibility of gridlines and enable/disable snapping
 
 The following code illustrates how to show only horizontal gridlines.
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javacript
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600,
     snapSettings: {
         constraints: SnapConstraints.ShowHorizontalLines
@@ -194,8 +194,8 @@ Boundary constraints defines a boundary for the diagram inside which the interac
 
 The following code illustrates how to limit the interaction done inside a diagram within a page.
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javacript
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600,
     pageSettings: {
         boundaryConstraints: 'Page'
@@ -212,15 +212,15 @@ Some of the behaviors can be defined through both the specific object (node/conn
 The following code example illustrates how to inherit the line bridging behavior from the diagram model.
 
 ```typescript
-Diagram.Inject(ConnectorBridging);
-let connectors: ConnectorModel[] = [{
+ej.diagrams.Inject(ej.diagrams.ConnectorBridging);
+var connectors = [{
     id: 'connector1',
     type: 'Straight',
     sourcePoint: { x: 100, y: 100 },
     targetPoint: { x: 200, y: 200 },
     constraints: ConnectorConstraints.Default & ConnectorConstraints.InheritBridging
 }];
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 600, connectors: connectors,
     constraints: DiagramConstraints.Default | DiagramConstraints.Bridging
 });
@@ -234,7 +234,7 @@ Bitwise operations are used to manipulate the flagged enumerations [enum]. In th
 
 You can add or enable multiple values at a time by using Bitwise ‘|’ (OR) operator.
 
-```typescript
+```javascript
 node.constraints = NodeConstraints.Select | NodeConstraints.Rotate;
 ```
 
@@ -244,7 +244,7 @@ In the previous example, you can do both the selection and rotation operation.
 
 You can remove or disable values by using Bitwise ‘&~’ (XOR) operator.
 
-```typescript
+```javascript
 node.constraints = node.constraints & ~(NodeConstraints.Rotate);
 ```
 
@@ -254,7 +254,7 @@ In the previous example, rotation is disabled but other constraints are enabled.
 
 You can check any value by using Bitwise ‘&’ (AND) operator.
 
-```typescript
+```javascript
 if ((node.constraints & (NodeConstraints.Rotate)) == (NodeConstraints.Rotate));
 ```
 

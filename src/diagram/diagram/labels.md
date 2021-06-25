@@ -284,15 +284,15 @@ The following tables illustrates all the possible alignments visually with 'offs
 
 | Horizontal Alignment | Vertical Alignment | Output with Offset(0,0) |
 | -------- | -------- | -------- |
-| Left | Top | ![Left Top Label Alignment](images/Label1.png) |
-| Center | Top | ![Center Top Label Alignment](images/Label2.png) |
-| Right | Top |  ![Right Top Label Alignment](images/Label3.png) |
-| Left | Center | ![Left Center Label Alignment](images/Label4.png) |
-| Center | Center| ![Center Center Label Alignment](images/Label5.png) |
-| Right | Center | ![Right Center Label Alignment](images/Label6.png) |
-| Left | Bottom | ![Left Bottom Label Alignment](images/Label7.png) |
-| Center | Bottom | ![Center Bottom Label Alignment](images/Label8.png) |
-| Right |Bottom |![Right Bottom Label Alignment](images/Label9.png) |
+| Left | Top | ![Left Top Label Alignment](../images/Label1.png) |
+| Center | Top | ![Center Top Label Alignment](../images/Label2.png) |
+| Right | Top |  ![Right Top Label Alignment](../images/Label3.png) |
+| Left | Center | ![Left Center Label Alignment](../images/Label4.png) |
+| Center | Center| ![Center Center Label Alignment](../images/Label5.png) |
+| Right | Center | ![Right Center Label Alignment](../images/Label6.png) |
+| Left | Bottom | ![Left Bottom Label Alignment](../images/Label7.png) |
+| Center | Bottom | ![Center Bottom Label Alignment](../images/Label8.png) |
+| Right |Bottom |![Right Bottom Label Alignment](../images/Label9.png) |
 
 The following codes illustrates how to align annotations.
 
@@ -694,9 +694,9 @@ diagram.appendTo('#element');
 
 | Value | Description | Image |
 | -------- | -------- | -------- |
-| No Wrap | Text will not be wrapped. | ![Label No Wrap](images/Wrap1.png) |
-| Wrap | Text-wrapping occurs, when the text overflows beyond the available node width. | ![Label Wrap](images/Wrap2.png) |
-| WrapWithOverflow (Default) | Text-wrapping occurs, when the text overflows beyond the available node width. However, the text may overflow beyond the node width in the case of a very long word. | ![Label WrapWith Overflow](images/Wrap3.png) |
+| No Wrap | Text will not be wrapped. | ![Label No Wrap](../images/Wrap1.png) |
+| Wrap | Text-wrapping occurs, when the text overflows beyond the available node width. | ![Label Wrap](../images/Wrap2.png) |
+| WrapWithOverflow (Default) | Text-wrapping occurs, when the text overflows beyond the available node width. However, the text may overflow beyond the node width in the case of a very long word. | ![Label WrapWith Overflow](../images/Wrap3.png) |
 
 ## Text overflow
 
@@ -968,10 +968,10 @@ diagram.appendTo('#element');
 
 * The following code illustrates how to set a dragLimit for connector annotations.
 
-```typescript
+```javascript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      connectors:[
          {
             id: 'connector2',
@@ -989,8 +989,7 @@ let diagram: Diagram = new Diagram({
            ],
          }
      ]
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 
 ```
 

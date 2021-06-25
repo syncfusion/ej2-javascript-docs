@@ -22,18 +22,16 @@ Undo/redo commands can be executed through shortcut keys. Shortcut key for undo 
 
 The client-side methods [`undo`](../api/diagram) and [`redo`](../api/diagram) help you to revert/restore the changes. The following code example illustrates how to undo/redo the changes through script.
 
-```typescript
+```javascript
 
 // initialize diagram component
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     // Add node
     nodes: [];
-});
-// render initialized diagram
-diagram.appendTo('#element');
+},'#element');
 
 // Reverts the last action performed
 diagram.undo();
@@ -119,20 +117,18 @@ The following code example illustrates how to save the existing property values.
 
 ```javascript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
-});
-
-diagram.appendTo('#element');
+},'#element');
 
 //Creates a custom entry
-let entry: HistoryEntry = {
+var entry = {
     undoObject: diagram.nodes[0];
 };
 // adds that to history list
 diagram.historyList.push(entry);
-diagram.dataBind();
+
 ```
 
 ## canLog
@@ -194,13 +190,11 @@ The undoStack/redoStack is the read-only property.
 
 ```javascript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     nodes: nodes,
-    });
-
-diagram.appendTo('#element');
+    },'#element');
 
 //get the collection of undoStack objects
 let undoStack = diagram.historyList.undoStack;
@@ -214,17 +208,15 @@ The [`historyChange`](../api/diagram) event triggers, whenever the interaction o
 
 ```javascript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     nodes: nodes,
-    });
-diagram.appendTo('#element');
-
+    },'#element');
 
 // history change event
 
-diagram.historyChange = (arg: IHistoryChangeArgs) => {
+diagram.historyChange = (arg) => {
     //causes of history change
     let cause: string = arg.cause;
 }
@@ -284,7 +276,7 @@ You can retain a selection at undo/redo operation by using the client-side API M
 
 ```javascript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '600px',
     updateSelection: (object: NodeModel, diagram: Diagram) => {
@@ -293,7 +285,6 @@ let diagram: Diagram = new Diagram({
                     diagram.select(selArr);
                 },
     nodes: nodes,
-    });
-diagram.appendTo('#element');
+    },'#element');
 
 ```

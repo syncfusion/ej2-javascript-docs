@@ -595,13 +595,13 @@ The following table illustrates the different chart orientations and chart types
 
 |Orientation|Type|Description|Example|
 | -------- | ----------- | ------------- |------|
-|Horizontal|Left|Arranges the child nodes horizontally at the left side of the parent.|![Horizontal Left](images/hleft.jpg)|
-||Right|Arranges the child nodes horizontally at the right side of the parent.|![Horizontal Right](images/hright.jpg)|
-||Center|Arranges the children like standard tree layout orientation.|![Horizontal Center](images/hcenter.jpg)|
-||Balanced|Arranges the leaf level child nodes in multiple rows.|![Horizontal Balanced](images/hbalanced.jpg)|
-|Vertical|Left|Arranges the children vertically at the left side of the parent.|![Vertical Left](images/vleft.jpg)|
-||Right|Arranges the children vertically at the right side of the parent.|![Vertical Right](images/vright.jpg)|
-||Alternate|Arranges the children vertically at both left and right sides of the parent.|![Vertical Alternate](images/vAlternate.jpg)|
+|Horizontal|Left|Arranges the child nodes horizontally at the left side of the parent.|![Horizontal Left](../images/hleft.JPG)|
+||Right|Arranges the child nodes horizontally at the right side of the parent.|![Horizontal Right](../images/hright.JPG)|
+||Center|Arranges the children like standard tree layout orientation.|![Horizontal Center](../images/hcenter.JPG)|
+||Balanced|Arranges the leaf level child nodes in multiple rows.|![Horizontal Balanced](../images/hbalanced.JPG)|
+|Vertical|Left|Arranges the children vertically at the left side of the parent.|![Vertical Left](../images/vleft.JPG)|
+||Right|Arranges the children vertically at the right side of the parent.|![Vertical Right](../images/vright.JPG)|
+||Alternate|Arranges the children vertically at both left and right sides of the parent.|![Vertical Alternate](../images/vAlternate.JPG)|
 
 The following code example illustrates how to set the vertical right arrangement to the leaf level trees.
 
@@ -1329,7 +1329,7 @@ The following code illustrates how to allow a linear arrangement in diagram layo
 ```typescript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      width: '100%', height: '590px',
     layout: {
         type: 'ComplexHierarchicalTree',
@@ -1338,8 +1338,7 @@ let diagram: Diagram = new Diagram({
         horizontalSpacing: 40, verticalSpacing: 40,
         orientation: 'TopToBottom',
     },
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 
 ```
 
@@ -1350,14 +1349,13 @@ The below constraints prevents the connector segments overlapping nodes with a c
 ```typescript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      width: '100%', height: '590px',
     layout: {
         //this prevents connector segments overlapping
         enableRouting: true,
     },
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 
 ```
 

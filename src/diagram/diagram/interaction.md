@@ -14,7 +14,7 @@ Selector provides a visual representation of selected elements. It behaves like 
 
 An element can be selected by clicking that element. During single click, all previously selected items are cleared. The following image shows how the selected elements are visually represented.
 
-![Single Selection](images/single-select.gif)
+![Single Selection](../gifs/single-select.gif)
 
 * While selecting the diagram elements, the following events can be used to do your customization.
 * When selecting/unselecting the diagram elements, the [`selectionChange`](../api/diagram#selectionChange--emittypeiselectionchangeeventargs) event gets triggered.
@@ -31,13 +31,13 @@ Multiple elements can be selected with the following ways:
 
 During single click, any existing item in the selection list be cleared, and only the item clicked recently is there in the selection list. To avoid cleaning the old selected item, Ctrl key must be on hold when clicking.
 
-![Multiple Selection](images/multi-select-ctrl.gif)
+![Multiple Selection](../gifs/multi-select-ctrl.gif)
 
 * Selection rectangle/rubber band selection
 
 Clicking and dragging the diagram area allows to create a rectangular region. The elements that are covered under the rectangular region are selected at the end.
 
-![Multiple Rubberband Selection](images/multi-select-rubber-band.gif)
+![Multiple Rubberband Selection](../gifs/multi-select-rubber-band.gif)
 
 ## Select/Unselect elements using program
 
@@ -54,7 +54,7 @@ The client-side method [`selectAll`](../api/diagram#selectAll) used to select al
 * An object can be dragged by clicking and dragging it. When multiple elements are selected, dragging any one of the selected elements move every selected element.
 * When you drag the elements in the diagram, the [`positionChange`](../api/diagram#positionChange--emittypeidraggingeventargs) event gets triggered and to do customization in this event.
 
-![Drag](images/drag.gif)
+![Drag](../gifs/drag.gif)
 
 ## Resize
 
@@ -62,7 +62,7 @@ The client-side method [`selectAll`](../api/diagram#selectAll) used to select al
 * When one corner of the selector is dragged, opposite corner is in a static position.
 * When a node is resized, the [`sizeChange`](../api/diagram#sizeChange--emittypeisizechangeeventargs) event gets triggered.
 
-![Resize](images/resize.gif)
+![Resize](../gifs/resize.gif)
 
 >Note:  While dragging and resizing, the objects are snapped towards the nearest objects to make better alignments. For better alignments, refer to `Snapping`.
 
@@ -72,7 +72,7 @@ The client-side method [`selectAll`](../api/diagram#selectAll) used to select al
 * The node is rotated with reference to the static pivot point.
 * Pivot thumb (thumb at the middle of the node) appears while rotating the node to represent the static point.
 
-![rotate](images/rotate.gif)
+![rotate](../gifs/rotate.gif)
 
 ## Connection editing
 
@@ -84,7 +84,7 @@ The client-side method [`selectAll`](../api/diagram#selectAll) used to select al
 
 Source and target points of the selected connectors are represented with two handles. Clicking and dragging those handles help you to adjust the source and target points.
 
-![Drag End Point Handles](images/connector-end-point.gif)
+![Drag End Point Handles](../gifs/connector-end-point.gif)
 
 * If you drag the connector end points, then the following events can be used to do your customization.
 * When the connector source point is changed, the [`sourcePointChange`](../api/diagram#sourcePointChange--emittypeiendchangeeventargs) event gets triggered.
@@ -96,24 +96,24 @@ Source and target points of the selected connectors are represented with two han
 * End point of each straight segment is represented by a thumb that enables to edit the segment.
 * Any number of new segments can be inserted into a straight line by clicking, when Shift and Ctrl keys are pressed (Ctrl+Shift+Click).
 
-![Straight Segment Editing Addition](images/straight-segment-add.gif)
+![Straight Segment Editing Addition](../gifs/straight-segment-add.gif)
 
 * Straight segments can be removed by clicking the segment end point, when Ctrl and Shift keys are pressed (Ctrl+Shift+Click).
 
-![Straight Segment Editing Remove](images/straight-segment-remove.gif)
+![Straight Segment Editing Remove](../gifs/straight-segment-remove.gif)
 
 ## Orthogonal thumbs
 
 * Orthogonal thumbs allow you to adjust the length of adjacent segments by clicking and dragging it.
 * When necessary, some segments are added or removed automatically, when dragging the segment. This is to maintain proper routing of orthogonality between segments.
 
-![orthogonal Segment Edit](images/orthogonal-segment-edit.gif)
+![orthogonal Segment Edit](../gifs/orthogonal-segment-edit.gif)
 
 ## Bezier thumbs
 
 * Bezier segments are annotated with two thumbs to represent the control points. Control points of the curve can be configured by clicking and dragging the control thumbs.
 
-![Bezier Segement Thumb](images/bezier-segement-thumb.gif)
+![Bezier Segement Thumb](../gifs/bezier-segement-thumb.gif)
 
 ## Drag and drop nodes over other elements
 
@@ -154,11 +154,10 @@ The diagram component notifies the mouse button clicked. For example, when the r
 | Middle | When the mouse wheel is clicked, middle is notified |
 | Right | When the right mouse button is clicked, right is notified |
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: '100%', height: 900
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 diagram.click = function (args: IClickEventArgs) {
 // Obtains the mouse button clicked
    let clickedButtons = args.button
@@ -233,7 +232,7 @@ class CloneTool extends MoveTool {
 * Diagram can be zoomed in or out by using Ctrl + mouse wheel.
 * When the diagram is zoomed or panned, the [`scrollChange`](../api/diagram#scrollChange--emittypeiscrollchangeeventargs) event gets triggered.
 
-![Zoom Pan](images/Zoom-pan.gif)
+![Zoom Pan](../gifs/Zoom-pan.gif)
 
 ## Zoom pan status
 

@@ -254,7 +254,7 @@ This feature allows you to read the data source and perform add or edit or delet
 ```typescript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      dataSourceSettings: {
        crudAction:
         {
@@ -268,8 +268,7 @@ let diagram: Diagram = new Diagram({
                 create: 'https://ej2services.syncfusion.com/development/web-services/api/Crud/AddConnectors',
             }
      }
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 //Sends the newly added nodes/connectors from client side to the server side through the URL which is specified in server side.
 diagram.insertData();
 
@@ -286,7 +285,7 @@ diagram.insertData();
 ```typescript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      dataSourceSettings: {
        crudAction:
         {
@@ -300,8 +299,7 @@ let diagram: Diagram = new Diagram({
            update: 'https://ej2services.syncfusion.com/development/web-services/api/Crud/UpdateConnectors',
         }
      }
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 //Sends the updated nodes/connectors from client side to the server side through the URL which is specified in server side.
 diagram.updateData();
 
@@ -316,7 +314,7 @@ diagram.updateData();
 ```typescript
 
 //Initialize diagram
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
      dataSourceSettings: {
        crudAction:
         {
@@ -330,8 +328,7 @@ let diagram: Diagram = new Diagram({
            destroy: 'https://ej2services.syncfusion.com/development/web-services/api/Crud/DeleteConnectors',
         }
      }
-});
-diagram.appendTo('#diagram');
+},'#diagram');
 //Sends the deleted nodes/connectors from client side to the server side through the URL which is specified in server side.
 diagram.removeData();
 

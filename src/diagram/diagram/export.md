@@ -13,12 +13,11 @@ The client-side method [`exportDiagram`](../api/diagram#exportDiagram) helps to 
 
 <!-- markdownlint-disable MD033 -->
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 diagram.exportDiagram(options);
 ```
@@ -40,12 +39,11 @@ Diagram provides support to export the desired region of the diagram to desired 
 * BMP
 * SVG
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 options.format = 'SVG';
 diagram.exportDiagram(options);
@@ -57,12 +55,11 @@ diagram.exportDiagram(options);
 
 <!-- markdownlint-disable MD033 -->
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 options.margin = { left: 10, right: 10, top: 10, bottom: 10};
 options.fileName = 'format';
@@ -82,12 +79,11 @@ For more information about the exporting modes, refer to Exporting Modes.
 
 The following code example illustrates how to export the diagram as raw data.
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 options.margin = { left: 10, right: 10, top: 10, bottom: 10};
 options.fileName = 'format';
@@ -107,13 +103,12 @@ For more information about region, refer to Regions.
 
 The following code example illustrates how to export the region occupied by the diagram elements.
 
-```typescript
+```javascript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 options.margin = { left: 10, right: 10, top: 10, bottom: 10};
 options.fileName = 'format';
@@ -131,11 +126,10 @@ The following code example illustrates how to export the region occupied by the 
 
 ```typescript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 options.margin = { left: 10, right: 10, top: 10, bottom: 10};
 options.fileName = 'region';
@@ -154,13 +148,12 @@ Diagram provides support to export the diagram as image for [`stretch`](../api/d
 
 The following code example illustrates how to export the region occupied by the diagram elements.
 
-```typescript
+```javascript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
 options.mode = 'Data';
 options.margin = { left: 10, right: 10, top: 10, bottom: 10};
 options.fileName = 'region';
@@ -188,11 +181,10 @@ The following code example illustrates how to export the region occupied by the 
 
 ```typescript
 
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: 1500, height: 1500
-});
-diagram.appendTo('#element');
-let options: IExportOptions = {};
+},'#element');
+var options = {};
     options.mode = 'Data';
     options.region = 'PageSettings';
     options.multiplePage = true;

@@ -12,10 +12,10 @@ description: "Serialization is the process of saving and loading for state persi
 
 The diagram is serialized as string while saving. The client-side method, [`saveDiagram`](../api/diagram#saveDiagram) helps to serialize the diagram as a string. The following code illustrates how to save the diagram.
 
-```typescript
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
-let saveData: string;
+```javascript
+var diagramElement = document.getElementById('element');
+var diagram = diagramElement.ej2_instances[0];
+var saveData;
 //returns serialized string of the Diagram
 saveData = diagram.saveDiagram();
 
@@ -23,7 +23,7 @@ saveData = diagram.saveDiagram();
 
 This string can be converted to JSON data and stored for future use. The following snippet illustrates how to save the serialized string into local storage.
 
-```typescript
+```javascript
 //Saves the string in to local storage
 localStorage.setItem('fileName', saveData);
 saveData = localStorage.getItem('fileName');
@@ -37,9 +37,9 @@ Diagram can also be saved as raster or vector image files. For more information 
 Diagram is loaded from the serialized string data by client-side method, [`loadDiagram`](../api/diagram#loadDiagram).
 The following code illustrates how to load the diagram from serialized string data.
 
-```typescript
-let diagramElement = document.getElementById('element');
-let diagram: Object[] = diagramElement.ej2_instances[0];
+```javascript
+var diagramElement = document.getElementById('element');
+var diagram: Object[] = diagramElement.ej2_instances[0];
 
 //Loads the diagram from saved json data
 diagram.loadDiagram(saveData);
@@ -54,8 +54,8 @@ The [`preventDefaults`](../api/diagram/serializationSettingsModel) property of s
 
 The following code illustrates how to simplify the JSON object.
 
-```typescript
-let diagram: Diagram = new Diagram({
+```javascript
+var diagram = new ej.diagrams.Diagram({
  serializationSettings: { preventDefaults: true },
 });
 

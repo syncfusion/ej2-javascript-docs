@@ -35,14 +35,11 @@ Alignment commands enable you to align the selected or defined objects such as n
 
 The following code example illustrates how to align all the selected objects at the left side of the selection boundary.
 
-```typescript
-import {
-    Diagram,
-    NodeModel
-} from '@syncfusion/ej2-diagrams';
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.DataBinding, ej.diagrams.NodeModel);
 
 //Initializes the node
-let node: NodeModel = {
+var node = {
     id: 'node1',
     width: 90,
     height: 60,
@@ -54,7 +51,7 @@ let node: NodeModel = {
         strokeWidth: 1
     },
 };
-let node2: NodeModel = {
+var node2 = {
     id: 'node2',
     width: 100,
     height: 60,
@@ -66,7 +63,7 @@ let node2: NodeModel = {
         strokeWidth: 1
     },
 };
-let node3: NodeModel = {
+var node3 = {
     id: 'node3',
     width: 140,
     height: 60,
@@ -80,22 +77,21 @@ let node3: NodeModel = {
 };
 
 //Initializes the Diagram Component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
     nodes: [node, node2, node3]
-});
-diagram.appendTo('#element');
-let selArray: (NodeModel | ConnectorModel)[] = [];
+},'#element');
+var selArray = [];
 selArray.push(diagram.nodes[0], diagram.nodes[1], diagram.nodes[2]);
 //Selects the nodes
 diagram.select(selArray);
 //Sets direction as left
 diagram.align('Left', diagram.selectedItems.nodes, 'Selector');
-diagram.dataBind();
+
 ```
 
-![Align Sample](images/Commands_img1.png)
+![Align Sample](../images/Commands_img1.png)
 
 ## Distribute
 
@@ -114,14 +110,11 @@ The factor to distribute the shapes [`DistributeOptions`](../api/diagram/distrib
 
 The following code example illustrates how to execute the space commands.
 
-```typescript
-import {
-    Diagram,
-    NodeModel
-} from '@syncfusion/ej2-diagrams';
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.DataBinding, ej.diagrams.NodeModel);
 
 //Initializes the node
-let node: NodeModel = {
+var node = {
     id: 'node1',
     width: 90,
     height: 60,
@@ -133,7 +126,7 @@ let node: NodeModel = {
         strokeWidth: 1
     },
 };
-let node2: NodeModel = {
+var node2 = {
     id: 'node2',
     width: 90,
     height: 60,
@@ -145,7 +138,7 @@ let node2: NodeModel = {
         strokeWidth: 1
     },
 };
-let node3: NodeModel = {
+var node3 = {
     id: 'node3',
     width: 90,
     height: 60,
@@ -158,21 +151,21 @@ let node3: NodeModel = {
     },
 };
 //Initializes the diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
     nodes: [node, node2, node3]
-});
-diagram.appendTo('#element');
+},'#element');
 let selArray: (NodeModel | ConnectorModel)[] = [];
 selArray.push(diagram.nodes[0], diagram.nodes[1], diagram.nodes[2]);
 //Selects the nodes
 diagram.select(selArray);
 //Distributes space between the nodes
 diagram.distribute('RightToLeft', diagram.selectedItems.nodes);
+
 ```
 
-![Distribute Sample](images/Commands_img2.png)
+![Distribute Sample](../images/Commands_img2.png)
 
 ## Sizing
 
@@ -186,14 +179,10 @@ Sizing [`sameSize`](../api/diagram#sameSize) commands enable to equally size the
 
 The following code example illustrates how to execute the size commands.
 
-```typescript
-import {
-    Diagram,
-    NodeModel
-} from '@syncfusion/ej2-diagrams';
-
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.DataBinding, ej.diagrams.NodeModel);
 //Initializes the node
-let node: NodeModel = {
+var node = {
     id: 'node1',
     width: 90,
     height: 60,
@@ -205,7 +194,7 @@ let node: NodeModel = {
         strokeWidth: 1
     },
 };
-let node2: NodeModel = {
+var node2 = {
     id: 'node2',
     width: 100,
     height: 60,
@@ -217,7 +206,7 @@ let node2: NodeModel = {
         strokeWidth: 1
     },
 };
-let node3: NodeModel = {
+var node3 = {
     id: 'node3',
     width: 130,
     height: 60,
@@ -231,21 +220,21 @@ let node3: NodeModel = {
 };
 
 //Initializes the diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
     nodes: [node, node2, node3]
-});
-diagram.appendTo('#element');
+},'#element');
 let selArray: (NodeModel)[] = [];
 selArray.push(diagram.nodes[0], diagram.nodes[1], diagram.nodes[2]);
 //Selects the nodes
 diagram.select(selArray);
 //Resizes the selected nodes with the same width
 diagram.sameSize('Width', diagram.selectedItems.nodes);
+
 ```
 
-![Sizing Sample](images/Commands_img3.png)
+![Sizing Sample](../images/Commands_img3.png)
 
 ## Clipboard
 
@@ -682,7 +671,7 @@ The [`zoom`](../api/diagram#zoom) command is used to zoom-in and zoom-out the di
 
 The following code illustrates how to zoom-in/zoom out the diagram.
 
-```typescript
+```javascript
 import {
     Diagram
 } from '@syncfusion/ej2-diagrams';
@@ -718,17 +707,14 @@ The accepted values of the argument "direction" are as follows:
 
 The following code illustrates how to execute nudge command.
 
-```typescript
-import {
-    Diagram
-} from '@syncfusion/ej2-diagrams';
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram);
 
 //Initializes the Diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
-});
-diagram.appendTo('#element');
+},'#element');
 //Nudges to right
 diagram.nudge('Right');
 
@@ -738,7 +724,7 @@ diagram.nudge('Right');
 
 The corresponding arrow keys are used to move the selected elements towards up, down, left, or right direction by 1 pixel.
 
-![Nudge Command](images/Commands_img4.png)
+![Nudge Command](../images/Commands_img4.png)
 
 Nudge commands are particularly useful for accurate placement of elements.
 
@@ -748,18 +734,14 @@ The [`bringIntoView`](../api/diagram#bringIntoView) command brings the specified
 
 The following code illustrates how to execute the `bringIntoView` command.
 
-```typescript
-import {
-    Diagram,
-    Rect
-} from '@syncfusion/ej2-diagrams';
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram);
 
 //Initializes the diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
-});
-diagram.appendTo('#element');
+},'#element');
 //Brings the specified rectangular region of the diagram content to the viewport of the page.
 let bound: Rect = new Rect(200, 400, 500, 400);
 diagram.bringIntoView(bound);
@@ -772,20 +754,16 @@ The [`bringToCenter`](../api/diagram#bringToCenter) command brings the specified
 
 The following code illustrates how to execute the `bringToCenter` command.
 
-```typescript
-import {
-    Diagram,
-    Rect
-} from '@syncfusion/ej2-diagrams';
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram,ej.diagrams.React);
 
 //Initializes the Diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
-});
-diagram.appendTo('#element');
+},'#element');
 //Brings the specified rectangular region of the Diagram content to the center of the viewport.
-let bound: Rect = new Rect(200, 400, 500, 400);
+var bound = ej.diagram.Rect(200, 400, 500, 400);
 diagram.bringToCenter(bound);
 
 ```
@@ -806,17 +784,14 @@ The [`customBounds`](../api/diagram/iFitOptions#customBounds) parameter the cust
 
 The following code illustrates how to execute `FitToPage` command.
 
-```typescript
-import {
-    Diagram
-} from '@syncfusion/ej2-diagrams';
+```javascript
+ej.diagrams.Diagram.Inject(ej.diagrams.Diagram);
 
 //Initializes the Diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
-});
-diagram.appendTo('#element');
+},'#element');
 //fit the diagram to the page with respect to mode and region
 diagram.fitToPage({
     mode: 'Page',
@@ -847,7 +822,7 @@ To explore the properties of custom commands, refer to [`Commands`](../api/diagr
 
 The following code example illustrates how to define a custom command.
 
-```typescript
+```javascript
 import {
     Diagram,
     Keys,
@@ -855,7 +830,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 
 //Initializes the Diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
     commandManager: {
@@ -885,8 +860,7 @@ let diagram: Diagram = new Diagram({
             }
         }]
     },
-});
-diagram.appendTo('#element');
+},'#element');
 ```
 
 ## Modify the existing command
@@ -895,7 +869,7 @@ When any one of the default commands is not desired, they can be disabled. To ch
 
 The following code example illustrates how to disable a command and how to modify the built-in commands.
 
-```typescript
+```javascript
 import {
     Diagram,
     Keys,
@@ -903,7 +877,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 
 //Initializes the diagram component
-let diagram: Diagram = new Diagram({
+var diagram = new ej.diagrams.Diagram({
     width: '100%',
     height: '350px',
     //Disables the nudging commands
@@ -934,8 +908,7 @@ let diagram: Diagram = new Diagram({
         }
     }
 }
-});
-diagram.appendTo('#element');
+},'#element');
 
 ```
 
