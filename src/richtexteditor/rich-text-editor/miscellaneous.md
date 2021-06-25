@@ -313,3 +313,31 @@ defaultRTE.appendTo('#defaultRTE');
 ```
 
 {% endtab %}
+
+## Number and Bullet Format Lists
+
+This feature allows the user to change the appearance of the Numbered and Bulleted lists. Users can also apply different numbering or bullet formats lists such as lowercase greek, upper Alpha, square and circles. You can also customize the style type of the lists to be populated in the dropdown from the toolbar by using the `numberFormatList` and `bulletFormatList` properties in the Rich Text Editor.
+
+{% tab template="rich-text-editor/format-lists", es5Template="format-lists" %}
+
+```typescript
+
+import { enableRipple } from '@syncfusion/ej2-base';
+enableRipple(true);
+/**
+ * Rich Text Editor default sample
+ */
+import { RichTextEditor, Toolbar, Link, Image, HtmlEditor, QuickToolbar } from '@syncfusion/ej2-richtexteditor';
+RichTextEditor.Inject(Toolbar, Link, Image, HtmlEditor, QuickToolbar);
+
+
+let defaultRTE: RichTextEditor = new RichTextEditor({
+    toolbarSettings: {
+        items: ['NumberFormatList', 'BulletFormatList']},
+});
+
+defaultRTE.appendTo('#defaultRTE');
+
+```
+
+{% endtab %}
