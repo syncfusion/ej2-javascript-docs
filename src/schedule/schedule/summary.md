@@ -34,3 +34,4 @@
 * [Zoom in and Zoom out the Schedule using the mouse scrolling event](schedule/how-to/zoom-in-and-zoom-out-the-schedule.md)
 * [Show entire time in responsive mode when start hour is set](schedule/how-to/show-entire-time-in-responsive-mode.md)
 * [Show quick info template](schedule/how-to/quick-info-template.md)
+* [Enable scroll option on all-day section](schedule/how-to/enable-scroll-option-on-all-day-section.md)

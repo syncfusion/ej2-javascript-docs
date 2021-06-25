@@ -70,6 +70,8 @@ You can make use of the CSS customization to prevent the display of all-day row 
     </style>
 ```
 
+> You can also enable scroller for all-day row, please [refer](./how-to/enable-scroll-option-on-all-day-section/) here to know more.
+
 ## Recurring events
 
 Represents an appointment that is created for a certain time interval and occurring repeatedly on a daily, weekly, monthly or yearly basis at the same time interval based on the provided recurrence rule. Usually, the recurring events are indicated by a repeat marker added at the bottom-right position.

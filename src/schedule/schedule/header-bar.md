@@ -104,6 +104,32 @@ let userContentEle: HTMLElement = createElement('div', {
 
 {% endtab %}
 
+## How to display the view options within the header bar popup
+
+By default, the header bar holds the view navigation options, through which the user can switch between various views. You can move this view options to the header bar popup by setting `true` to the `enableAdaptiveUI` property.
+
+{% tab template="schedule/header-bar", es5Template="header-bar-popup", iframeHeight="588px" , sourceFiles="index.ts,index.html"  %}
+
+```typescript
+import { Schedule, Day, Week, WorkWeek, Month, Agenda} from '@syncfusion/ej2-schedule';
+import { scheduleData } from './datasource.ts';
+
+Schedule.Inject(Day, Week, WorkWeek, Month, Agenda);
+
+let scheduleObj: Schedule = new Schedule({
+    width: '100%',
+    height: '550px',
+    selectedDate: new Date(2018, 1, 15),
+    enableAdaptiveUI: true,
+    eventSettings: { dataSource: scheduleData }
+});
+scheduleObj.appendTo('#Schedule');
+```
+
+{% endtab %}
+
+> Refer [here](./resources/#adaptive-ui-in-desktop) to know more about adaptive UI in resources scheduler.
+
 ## Date header customization
 
 The Scheduler UI that displays the date text on all views are considered as the date header cells. You can customize the date header cells of Scheduler either using `dateHeaderTemplate` or `renderCell` event.
