@@ -405,6 +405,54 @@ let chart: Chart = new Chart({
 
 {% endtab %}
 
+**Spline Range Area**
+
+The Spline Range Area Chart is used to display continuous data points as a set of splines that vary between high and low values over intervals of time and across different categories.
+
+To render a spline range area series, use series [`type`](../api/chart/seriesModel/#type-string) as `SplineRangeArea` and inject `SplineRangeAreaSeries` module using `Chart.Inject(SplineRangeAreaSeries)` method.
+
+{% tab template= "chart/chart-types", es5Template="es5SplineRangeArea" %}
+
+```typescript
+
+import { Chart, SplineRangeAreaSeries, Category } from '@syncfusion/ej2-charts';
+import { splinedata } from './datasource.ts';
+Chart.Inject(SplineRangeAreaSeries, Category);
+
+let chart: Chart = new Chart({
+    primaryXAxis: {
+        valueType: 'Category',
+        edgeLabelPlacement: 'Shift',
+        majorGridLines: { width: 0 },
+    },
+    primaryYAxis: {
+            labelFormat: '{value}˚C',
+            lineStyle: { width: 0 },
+            minimum: 0,
+            maximum: 40,
+            majorTickLines: { width: 0 }
+    },
+    series: [
+        {
+            type: 'SplineRangeArea',
+            name: 'England',
+            dataSource: splinedata,
+            xName: 'x', high: 'high', low: 'low',
+            opacity: 0.4,
+        },
+        {
+            type: 'SplineRangeArea',
+            name: 'India',
+            dataSource: splinedata,
+            xName: 'x', high: 'high1', low: 'low1',
+            opacity: 0.4,
+        }],
+}, '#element');
+
+```
+
+{% endtab %}
+
 **Stacked Area**
 
 To render a stacked area series, use series [`type`](../api/chart/seriesModel/#type-string) as `StackingArea` and inject `StackingAreaSeries` module
