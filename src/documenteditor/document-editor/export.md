@@ -35,7 +35,7 @@ document.getElementById('export').addEventListener('click', () => {
 
 The following example shows how to export the document as Word document (.docx).
 
->Note: The Syncfusion Document editor component's document pagination (page-by-page display) can't be guaranteed for all the Word documents to match the pagination of Microsoft Word application. For more information about [why the document pagination (page-by-page display) differs from Microsoft Word](../document-editor/import/#Why-the-document-pagination-differs-from-Microsoft-Word)
+>Note: The Syncfusion Document editor component's document pagination (page-by-page display) can't be guaranteed for all the Word documents to match the pagination of Microsoft Word application. For more information about [why the document pagination (page-by-page display) differs from Microsoft Word](../document-editor/import/#why-the-document-pagination-differs-from-microsoft-word)
 
 {% tab template="document-editor/export", es5Template="word-export", sourceFiles="index.ts,index.html" %}
 

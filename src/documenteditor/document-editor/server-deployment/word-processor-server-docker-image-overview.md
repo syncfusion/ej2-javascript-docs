@@ -153,7 +153,7 @@ This YAML definition binds the data folder that is available in the Docker compo
 ]
 ```
 
-Note: By default, the json file name should be "spellcheck.json". You can also use different file name by mounting the file name to 'SPELLCHECK_JSON_FILENAME' attribute in Docker compose file as below,
+>Note: By default, the json file name should be "spellcheck.json". You can also use different file name by mounting the file name to 'SPELLCHECK_JSON_FILENAME' attribute in Docker compose file as below,
 
 ```yaml
 version: '3.4'
@@ -195,7 +195,7 @@ services:
 
 You can copy the required template Word documents into docker container while deploying the docker image to server. You can open these Word documents present in the server by passing the document path (name with relative path) to LoadDocument() web API.
 
-Note: Place the word files in the data folder mentioned in the volumes section(i.e., C:\Docker\Data) of the docker-compose.yml file. All the files present in the folder path (C:\Docker\Data) mentioned in the volumes section of ‘docker-compose.yml’ file will be copied to the respective folder (/app/Data) of docker container. The Word documents copied to docker container can be processed using the 'LoadDocument' web API.
+>Note: Place the word files in the data folder mentioned in the volumes section(i.e., C:\Docker\Data) of the docker-compose.yml file. All the files present in the folder path (C:\Docker\Data) mentioned in the volumes section of ‘docker-compose.yml’ file will be copied to the respective folder (/app/Data) of docker container. The Word documents copied to docker container can be processed using the 'LoadDocument' web API.
 
 The following code example shows how to use LoadDocument() API in document editor.
 

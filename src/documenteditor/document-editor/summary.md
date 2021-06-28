@@ -11,6 +11,8 @@
 * [How to Deploy Word Processor Server Docker Container in Azure Kubernetes Service](document-editor/server-deployment/how-to-deploy-word-processor-server-docker-container-in-azure-kubernetes-service.md)
 * [How to Publish DocumentEditor Web API Application in Azure App Service from Visual Studio](document-editor/server-deployment/how-to-publish-documenteditor-web-api-application-in-azure-app-service-from-visual-studio.md)
 * [Images](document-editor/image.md)
+* [Shapes](document-editor/shapes.md)
+* [Text Wrapping Style](document-editor/text-wrapping-style.md)
 * [Bookmarks](document-editor/bookmark.md)
 * [Hyperlink](document-editor/link.md)
 * [Tables](document-editor/table.md)
