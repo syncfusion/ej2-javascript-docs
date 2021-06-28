@@ -1,22 +1,22 @@
 ---
-title: "Add Font Awesome icons"
+title: "Add Font Awesome icons || Add third-party icons"
 component: "Toolbar"
-description: "This example demonstrates how to add the font awesome icons into Essential JS Toolbar items."
+description: "This example demonstrates how to add font awesome icons into the Essential JS Toolbar items."
 ---
 
 # Add Font Awesome
 
-We can customize the Toolbar component items by using font awesome icons and fonts.
+You can customize the Toolbar component items by using third-party icons other than the icons available in the Syncfusion library. In the following example, font awesome icons are used as toolbar items.
 
-* Need to add font awesome CDN reference link in your sample to use font awesome icons.
+* Refer to the third-party reference link. Here, the CDN link of font awesome is referred.
 
 ```html
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
 ```
 
-You can add the font awesome icons to the toolbar component using ['prefixIcon'](../../api/toolbar/itemDirective/#prefixicon) property. The following sample illustrates how to use font awesome in toolbar component.
+* Add the icons to the toolbar component using ['prefixIcon'](../../api/toolbar/itemDirective/#prefixicon) property
+
+The following sample explains how to use font awesome in the toolbar component.
 
 {% tab template="toolbar/add-font-awesome", es5Template="es5_font_awesome", sourceFiles="index.ts,index.html,index.css" %}
 
@@ -37,11 +37,11 @@ toolbar.appendTo("#element");
 
 {% endtab %}
 
-> We can also use templates for rendering icons based on customized requirement.
+> We can also use templates for rendering icons based on the requirements.
 
 ## Customization
 
-The class “e-icons” is used for standardizing the icons appearance to fit into toolbar items. If you rather wish to override the appearance of the icons used, you could do this by using the below set of classes
+The class “e-icons” is used for standardizing the appearance of the icons to fit into toolbar items. If you wish to override the appearance of the icons used, you could do this by using the following set of classes
 
 Use the following CSS to set the color of icons.
 
