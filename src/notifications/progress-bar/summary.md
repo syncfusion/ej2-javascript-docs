@@ -5,4 +5,5 @@
 * [Annotation and label](progress-bar/annotation.md)
 * [Animation](progress-bar/animation.md)
 * [Range](progress-bar/range.md)
+* [Theme](progress-bar/theme.md)
 * [Events](progress-bar/events.md)
