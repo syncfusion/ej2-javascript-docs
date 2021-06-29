@@ -63,6 +63,8 @@ The following steps is used to create the **Syncfusion ASP.NET Core (Essential J
 
 4. Click Create, the Syncfusion ASP.NET Core (Essential JS 2) Application has been created.
 
+    ![css refernce](../images/readme-file.PNG)
+
 5. The required Syncfusion NuGet/NPM packages, Scripts, and CSS have been added to the Project.
 
     **Blazor (server-side, ASP.NET Core hosted, client-side):**
