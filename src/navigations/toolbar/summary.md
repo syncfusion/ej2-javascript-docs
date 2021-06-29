@@ -9,5 +9,6 @@
 * [Set item-wise custom template](toolbar/how-to/set-item-wise-custom-template.md)
 * [Add font awesome icons](toolbar/how-to/add-font-awesome.md)
 * [Add Toggle Button](toolbar/how-to/add-toggle-button.md)
+* [Enable/Disable Toolbar item](toolbar/how-to/enable-or-disable-toolbar-item.md)
 * [How to customize toolbar scrollStep](toolbar/how-to/how-to-customize-toolbar-scroll-step.md)
 * [Migration from Essential JS 1](toolbar/ej1-api-migration.md)
