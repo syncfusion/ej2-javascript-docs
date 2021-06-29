@@ -46,6 +46,8 @@ Use the following steps to create the **Syncfusion ASP.NET MVC (Essential JS 2) 
 
 3. Click **Create**, the Syncfusion ASP.NET MVC (Essential JS 2) Application will be created.
 
+    ![readme-file](../images/readme-file.PNG)
+
 4. The required Syncfusion NuGet packages, Scripts, and CSS have been added to the project.
 
     ![nuget-package](../images/nuget.png)
