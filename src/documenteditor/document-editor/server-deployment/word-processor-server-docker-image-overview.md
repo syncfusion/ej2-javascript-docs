@@ -50,12 +50,6 @@ services:
 docker-compose up
 ```
 
-Also, you can run the Docker container along with the license key using this docker run command.
-
-```console
-docker run -d -p 6002:80 –e SYNCFUSION_LICENSE_KEY= YOUR_LICENSE_KEY syncfusion/word-processor-server:latest
-```
-
 Now the Word Processor server Docker instance runs in the localhost with the provided port number `http://localhost:6002`. Open this link in a browser and navigate to the Word Processor Web API control `http://localhost:6002/api/documenteditor`. It returns the default get method response.
 
 **Step 4:** Append the Docker instance running the URL `(http://localhost:6002/api/documenteditor)` to the service URL in the client-side Word Processor control. For more information about how to get started with the Word Processor control, refer to this [`getting started page.`](https://ej2.syncfusion.com/javascript/documentation/document-editor/getting-started)
