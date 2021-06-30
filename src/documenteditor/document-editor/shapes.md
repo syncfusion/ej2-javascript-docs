@@ -12,7 +12,7 @@ Shapes are drawing objects that include a text box, rectangles, lines, curves, c
 
 The DocumentEditor has preservation support for Text box, Rectangle, Rounded Rectangle and Line shapes.
 
-![List of supported shapes in DocumentEditor](images/Shapes_images/supported_shapes.PNG)
+![List of supported shapes in DocumentEditor](images/Shapes_images/supported_shapes.png)
 
 >Note: When using ASP.NET MVC service, the unsupported shapes will be converted as image and preserved as image.
 
@@ -20,13 +20,13 @@ The DocumentEditor has preservation support for Text box, Rectangle, Rounded Rec
 
 A text box is a rectangular area on the document where you can enter text. When you click in a text box, a flashing cursor will display indicating that you can begin typing. It allows you to enter multiple lines of text with all text formatting.
 
-![Text box shape view in DocumentEditor](images/Shapes_images/textbox_shape.PNG)
+![Text box shape view in DocumentEditor](images/Shapes_images/textbox_shape.png)
 
 ## Shape Resizer
 
 The DocumentEditor also supports a built-in shape resizer to resize the shapes present in the document. The shape resizer accepts both touch and mouse interactions.
 
-![Shape resizer view in DocumentEditor](images/Shapes_images/shape_resizer.PNG)
+![Shape resizer view in DocumentEditor](images/Shapes_images/shape_resizer.png)
 
 ## Text wrapping style
 
