@@ -784,6 +784,70 @@ grid.toolbarClick = (args: Object) => {
 
 > **Note:** Refer to the GitHub sample for quick implementation and testing from [here](https://github.com/SyncfusionExamples/TypeScript-EJ2-Grid-server-side-exporting).
 
+### CSV Export in server side
+
+You can export the Grid to CSV format by using the [`serverCsvExport`](../api/grid/#servercsvexport) method which will pass the Grid properties to server.
+
+In the below demo, we have invoked the above method inside the [`toolbarClick`](../api/grid/#toolbarclick) event. In server side, we have deserialized the Grid properties and passed to the `CsvExport` method which will export the properties to CSV format.
+
+```typescript
+public ActionResult CsvGridExport(string gridModel)
+{
+    GridExcelExport exp = new GridExcelExport();
+    Grid gridProperty = ConvertGridObject(gridModel);
+    return exp.CsvExport<OrdersDetails>(gridProperty, OrderRepository.GetAllRecords());
+}
+
+private Grid ConvertGridObject(string gridProperty)
+{
+    Grid GridModel = (Grid)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(Grid));
+    GridColumnModel cols = (GridColumnModel)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(GridColumnModel));
+    GridModel.Columns = cols.columns;
+    return GridModel;
+}
+
+public ActionResult DataSource(DataManager dm)
+{
+    var DataSource = OrderRepository.GetAllRecords();
+    DataResult result = new DataResult();
+    result.result = DataSource.Skip(dm.Skip).Take(dm.Take).ToList();
+    result.count = result.result.Count;
+    return Json(result, JsonRequestBehavior.AllowGet);
+}
+
+```
+
+```typescript
+import { Grid, Toolbar } from '@syncfusion/ej2-grids';
+import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
+Grid.Inject(Toolbar);
+
+let data: DataManager = new DataManager({
+    url: "Home/DataSource",
+    adaptor: new UrlAdaptor
+});
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    toolbar: ['CsvExport'],
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 100 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 120 },
+        { field: 'Freight', headerText: 'Freight', textAlign: 'Right', width: 120, format: 'C2' },
+        { field: 'ShipCountry', headerText: 'Ship Country', width: 150 }
+    ],
+    height: 265
+});
+grid.appendTo('#Grid');
+
+grid.toolbarClick = (args: Object) => {
+    if (args['item'].id === 'Grid_csvexport') {
+        grid.serverCsvExport("Home/CsvGridExport");
+    }
+}
+
+```
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to/exporting-grid-in-cordova-application)
