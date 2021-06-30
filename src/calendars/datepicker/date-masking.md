@@ -77,7 +77,7 @@ let datepickerPlaceholder: DatePicker = new DatePicker({
     enableMask: true,
     maskPlaceholder: {day: 'd', month: 'M', year: 'y'}
 });
-datepickerPlaceholder.appendTo('#palceholder');
+datepickerPlaceholder.appendTo('#placeholder');
 ```
 
 {% endtab %}

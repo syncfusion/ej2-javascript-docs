@@ -77,7 +77,7 @@ let timepickerPlaceholder: TimePicker = new TimePicker({
     enableMask: true,
     maskPlaceholder: {hour: 'h', minute: 'm', second: 's'}
 });
-timepickerPlaceholder.appendTo('#palceholder');
+timepickerPlaceholder.appendTo('#placeholder');
 ```
 
 {% endtab %}
