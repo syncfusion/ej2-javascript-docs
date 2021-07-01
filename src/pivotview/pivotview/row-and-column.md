@@ -115,6 +115,39 @@ pivotTableObj.appendTo('#PivotTable');
 
 {% endtab %}
 
+### Adjust width based on columns
+
+By default, if the component width set in code-behind is more than the width of the total columns, then the columns will be stretched to make it fit. To avoid the stretching, set the [`allowAutoResizing`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/#allowautoresizing) property in the [`gridSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/) to **false**. By doing so, the component will be adjusted (shrinked) based on the width of total columns.
+
+{% tab template="pivot-table/pivot-table", es5Template="column-allowAutoResizing", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+let pivotTableObj: PivotView = new PivotView({
+        dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        columns: [{ name: 'Year', caption: 'Production Year' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        filterSettings: [{ name: 'Year', type: 'Exclude', items: ['FY 2015', 'FY 2017'] }],
+        filters: []
+    },
+    gridSettings: {
+        columnWidth: 120,
+        allowAutoResizing: false
+    },
+    height: 350,
+    width: 800
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
 ## Reorder
 
 Allows end user to reorder a particular column header from one index to another index within the pivot table through drag-and-drop option. It can be enabled by setting the [`allowReordering`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/#allowreordering) property in [`gridSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/) to **true**.

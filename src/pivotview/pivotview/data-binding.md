@@ -404,6 +404,37 @@ pivotTableObj.appendTo('#PivotTable');
 
 ```
 
+### Querying in Data Manager
+
+By default, the data manager retrieves all the data from the provider which is mapped in it. The data from the provider can be filtered, sorted, paged, etc. by setting the own query in `defaultQuery` property in the data manager instance.
+
+{% tab template="pivot-table/pivot-table", es5Template="defaultquery", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView } from '@syncfusion/ej2-pivotview';
+import { DataManager, ODataAdaptor, Query } from '@syncfusion/ej2-data';
+
+let remoteData: DataManager = new DataManager({
+  url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
+  adaptor: new ODataAdaptor(),
+  crossDomain: true
+});
+remoteData.defaultQuery = new Query().take(2);
+
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: remoteData,
+        expandAll: false,
+        columns: [{ name: 'CustomerID', caption: 'Customer ID' }],
+        rows: [{ name: 'ShipCountry', caption: 'Ship Country' }, { name: 'ShipCity', caption: 'Ship City' }],
+        values: [{ name: 'Freight' }]
+    },
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
 ## Mapping
 
 One can define field information like alias name (caption), data type, aggregation type, show and hide subtotals etc. using the [`fieldMapping`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/#fieldmapping) property under [`dataSourceSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/). The available options are,

@@ -715,6 +715,53 @@ pivotTableObj.appendTo('#PivotTable');
 
 {% endtab %}
 
+One can also customize multi-level labels of primary x-axis by using the `multiLevelLabelRender` event in the [`chartSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/), which fires on rendering each multi-level label in the pivot chart. It has the following parameters:
+
+`axis` - It holds the information of the current axis.
+
+`text` - It allows to change the text of the multi-level label.
+
+`textStyle` - It allows to customize the text font.
+
+`alignment` - It allows to set the text alignment.
+
+{% tab template="pivot-table/pivot-table", es5Template="chart-multiLevelLabelRender-event", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, PivotChart, ChartSeriesCreatedEventArgs } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(PivotChart);
+let pivotTableObj: PivotView = new PivotView({
+        dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    displayOption: { view: 'Chart' },
+    chartSettings: {
+        value: 'Amount', chartSeries: { type: 'Column' },
+        multiLevelLabelRender(args) {
+            args.alignment = 'Near';
+            args.textStyle = { fontFamily: 'Bold', fontWeight: '400', size: '16px', color: 'red' };
+            if (args.text === ' + United Kingdom') {
+                args.text = 'Text Changed';
+                args.textStyle = { fontFamily: 'Bold', fontWeight: '800', size: '16px', color: 'Blue' };
+            }
+        }
+    },
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
 ## Legend Customization
 
 User can customize legend using [`legendSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/pivotChartSettingsLegendSettings/) in [`chartSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/chartSettingsModel/). By default, legend will be visible and it can be hidden by setting the property [`visible`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/pivotChartSettingsLegendSettings/#visible) in [`legendSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/pivotChartSettingsLegendSettings/) to **false**.

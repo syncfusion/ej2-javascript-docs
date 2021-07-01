@@ -46,6 +46,40 @@ pivotTableObj.appendTo('#PivotTable');
 
 The grouping bar provides some additional options to customize it's UI using [`groupingBarSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/) property.
 
+## Show or hide fields panel
+
+The fields panel, which is positioned above the grouping bar, displays the fields that are available in the data source but are not bound in the report. The fields can be dragged and dropped into the appropriate axis. In addition, any field removed from any axes will be automatically added to the fields panel. The fields panel can be displayed by setting the [`showFieldsPanel`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/#showfieldspanel) property in the [`groupingBarSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/) to **true**.
+
+{% tab template="pivot-table/pivot-table", es5Template="show-fieldspanel", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, GroupingBar } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(GroupingBar);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        enableSorting: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }],
+        rows: [{ name: 'Country' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    showGroupingBar: true,
+    groupingBarSettings: {
+        showFieldsPanel: true
+    },
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
 ## Show or hide all filter icon
 
 The Grouping Bar has an option to filter members of particular fields at runtime in pivot table. In-order to filter members in a field, click the filter icon and check/uncheck members that needs to be displayed. By default, filter icon besides each field is enabled in the grouping bar. To disable the filter icon, set the property [`showFilterIcon`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/#showfiltericon) in [`groupingBarSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/) to **false**.
@@ -566,6 +600,8 @@ The event [`aggregateMenuOpen`](https://ej2.syncfusion.com/javascript/document
 
 * [`aggregateTypes`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#aggregatetypes): It holds the aggregation types set for a field.
 
+* `displayMenuCount`: It allows to set the menu count to be displayed initially. By default, its count is 7.
+
 * `cancel`: It is a boolean property and by setting this to true, dropdown menu won’t be displayed.
 
 In the below sample, the aggregate types of the field "Amount" has been customized in it's dropdown menu.
@@ -588,6 +624,7 @@ let pivotTableObj: PivotView = new PivotView({
     },
     showGroupingBar: true,
     aggregateMenuOpen: function (args: AggregateMenuOpenEventArgs ) {
+        args.displayMenuCount = 4;
         if(args.fieldName === 'Amount') {
             args.aggregateTypes = ['Sum', 'Avg', 'Max'];
         }
