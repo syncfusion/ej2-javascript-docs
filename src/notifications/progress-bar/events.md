@@ -24,11 +24,11 @@ This section describes the Progress Bar events that will be triggered when appro
 
 * `resized` - When the window is resized, this event is triggered.
 
-{% tab template="progressbar/progressbar", es5Template="es5_progressbar", sourceFiles="index.ts,index.html"  %}
+{% tab template="progressbar/events", es5Template="es5_progressbar", sourceFiles="index.ts,index.html"  %}
 
 ```typescript
 
-import {ProgressBar, ProgressAnnotation, IProgressValueEventArgs ITextRenderEventArgs, IAnnotationRenderEventArgs, ILoadedEventArgs,IProgressResizeEventArgs } from '@syncfusion/ej2-progressbar';
+import {ProgressBar, ProgressAnnotation, IProgressValueEventArgs, ITextRenderEventArgs, IAnnotationRenderEventArgs, ILoadedEventArgs,IProgressResizeEventArgs } from '@syncfusion/ej2-progressbar';
 ProgressBar.Inject(ProgressAnnotation);
 
 let progress: ProgressBar = new ProgressBar({
