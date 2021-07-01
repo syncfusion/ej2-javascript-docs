@@ -21,8 +21,8 @@ the [`pageSettings.pageSize`](../api/grid/pageSettingsModel/#pagesize) property.
 {% tab template="grid/grid", es5Template="rowvirtual" %}
 
 ```typescript
-import { Grid, VirtualScroll } from '@syncfusion/ej2-grids';
-Grid.Inject(VirtualScroll);
+import { Grid, VirtualScroll, Edit, Toolbar } from '@syncfusion/ej2-grids';
+Grid.Inject(VirtualScroll, Edit, Toolbar);
 
 let names: string[] = ['TOM', 'Hawk', 'Jon', 'Chandler', 'Monica', 'Rachel', 'Phoebe', 'Gunther', 'Ross', 'Geller', 'Joey', 'Bing', 'Tribbiani', 'Janice', 'Bong', 'Perk', 'Green', 'Ken', 'Adams'];
 let hours: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -51,13 +51,15 @@ let grid: Grid = new Grid({
     dataSource: data(1000),
     height: 300,
     enableVirtualization: true,
+    editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
+    toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel'],
     pageSettings: { pageSize: 50 },
     columns: [
-        { field: 'TaskID', headerText: 'Task ID', textAlign: 'Right', width: 50, type: 'number' },
+        { field: 'TaskID', headerText: 'Task ID', textAlign: 'Right', width: 100, type: 'number', isPrimaryKey: true, validationRules: { required: true } },
         { field: 'Engineer', width: 100 },
-        { field: 'Designation', width: 100 },
-        { field: 'Estimation', textAlign: 'Right', width: 100 },
-        { field: 'Status', width: 100, template: '${getStatus(data.Status)}' }
+        { field: 'Designation', width: 140, editType: 'dropdownedit', validationRules: { required: true } },
+        { field: 'Estimation', textAlign: 'Right', width: 110, editType: 'numericedit', validationRules: { required: true } },
+        { field: 'Status', width: 140, template: '${getStatus(data.Status)}', editType: 'dropdownedit' }
     ]
 });
 
@@ -82,14 +84,15 @@ To setup the column virtualization, set the
 {% tab template="grid/grid", es5Template="columnvirtual" %}
 
 ```typescript
-import { Grid, VirtualScroll } from '@syncfusion/ej2-grids';
-Grid.Inject(VirtualScroll);
+import { Grid, VirtualScroll, Edit, Toolbar } from '@syncfusion/ej2-grids';
+Grid.Inject(VirtualScroll, Edit, Toolbar);
 let virtualData: Object[] = [];
 let names: string[] = ['hardire', 'abramjo01', 'aubucch01', 'Hook', 'Rumpelstiltskin', 'Belle', 'Emma', 'Regina', 'Aurora', 'Elsa', 'Anna', 'Snow White', 'Prince Charming', 'Cora', 'Zelena', 'August', 'Mulan', 'Graham', 'Discord', 'Will', 'Robin Hood', 'Jiminy Cricket', 'Henry', 'Neal', 'Red', 'Aaran', 'Aaren', 'Aarez', 'Aarman', 'Aaron', 'Aaron-James', 'Aarron', 'Aaryan', 'Aaryn', 'Aayan', 'Aazaan', 'Abaan', 'Abbas', 'Abdallah', 'Abdalroof', 'Abdihakim', 'Abdirahman', 'Abdisalam', 'Abdul', 'Abdul-Aziz', 'Abdulbasir', 'Abdulkadir', 'Abdulkarem', 'Abdulkhader', 'Abdullah', 'Abdul-Majeed', 'Abdulmalik', 'Abdul-Rehman', 'Abdur', 'Abdurraheem', 'Abdur-Rahman', 'Abdur-Rehmaan', 'Abel', 'Abhinav', 'Abhisumant', 'Abid', 'Abir', 'Abraham', 'Abu', 'Abubakar', 'Ace', 'Adain', 'Adam', 'Adam-James', 'Addison', 'Addisson', 'Adegbola', 'Adegbolahan', 'Aden', 'Adenn', 'Adie', 'Adil', 'Aditya', 'Adnan', 'Adrian', 'Adrien', 'Aedan', 'Aedin', 'Aedyn', 'Aeron', 'Afonso', 'Ahmad', 'Ahmed', 'Ahmed-Aziz', 'Ahoua', 'Ahtasham', 'Aiadan', 'Aidan', 'Aiden', 'Aiden-Jack', 'Aiden-Vee'];
 
 function dataSource(): void {
     for (let i: number = 0; i < 1000; i++) {
         virtualData.push({
+            'SNo': i + 1,
             'FIELD1': names[Math.floor(Math.random() * names.length)],
             'FIELD2': 1967 + (i % 10), 'FIELD3': Math.floor(Math.random() * 200),
             'FIELD4': Math.floor(Math.random() * 100), 'FIELD5': Math.floor(Math.random() * 2000), 'FIELD6': Math.floor(Math.random() * 1000), 'FIELD7': Math.floor(Math.random() * 100), 'FIELD8': Math.floor(Math.random() * 10), 'FIELD9': Math.floor(Math.random() * 10), 'FIELD10': Math.floor(Math.random() * 100), 'FIELD11': Math.floor(Math.random() * 100), 'FIELD12': Math.floor(Math.random() * 1000), 'FIELD13': Math.floor(Math.random() * 10), 'FIELD14': Math.floor(Math.random() * 10), 'FIELD15': Math.floor(Math.random() * 1000), 'FIELD16': Math.floor(Math.random() * 200), 'FIELD17': Math.floor(Math.random() * 300), 'FIELD18': Math.floor(Math.random() * 400), 'FIELD19': Math.floor(Math.random() * 500), 'FIELD20': Math.floor(Math.random() * 700), 'FIELD21': Math.floor(Math.random() * 800), 'FIELD22': Math.floor(Math.random() * 1000), 'FIELD23': Math.floor(Math.random() * 2000), 'FIELD24': Math.floor(Math.random() * 150), 'FIELD25': Math.floor(Math.random() * 1000), 'FIELD26': Math.floor(Math.random() * 100), 'FIELD27': Math.floor(Math.random() * 400), 'FIELD28': Math.floor(Math.random() * 600), 'FIELD29': Math.floor(Math.random() * 500), 'FIELD30': Math.floor(Math.random() * 300),
@@ -102,7 +105,11 @@ let grid: Grid = new Grid({
     enableVirtualization: true,
     enableColumnVirtualization: true,
     height: 300,
-    columns: [{ field: 'FIELD1', headerText: 'Player Name', width: 140 },
+    editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
+    toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel'],
+    columns: [
+    { field: 'SNo', headerText: 'S.No', width: 120, isPrimaryKey: true, validationRules: { required: true } },
+    { field: 'FIELD1', headerText: 'Player Name', width: 140, editType: 'dropdownedit', validationRules: { required: true } },
     { field: 'FIELD2', headerText: 'Year', width: 120, textAlign: 'Right' },
     { field: 'FIELD3', headerText: 'Stint', width: 120, textAlign: 'Right' },
     { field: 'FIELD4', headerText: 'TMID', width: 120, textAlign: 'Right' },
@@ -131,7 +138,7 @@ let grid: Grid = new Grid({
     { field: 'FIELD27', headerText: 'PostPoints', width: 130, textAlign: 'Right' },
     { field: 'FIELD28', headerText: 'PostoRebounds', width: 130, textAlign: 'Right' },
     { field: 'FIELD29', headerText: 'PostdRebounds', width: 130, textAlign: 'Right' },
-    { field: 'FIELD30', headerText: 'PostRebounds', width: 130, textAlign: 'Right' }]
+    { field: 'FIELD30', headerText: 'PostRebounds', width: 130, textAlign: 'Right', editType: 'numericedit', validationRules: { required: true } }]
 });
 
 grid.appendTo('#Grid');
