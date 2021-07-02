@@ -31,7 +31,7 @@ The mask pattern is defined based on the provided time format to the component. 
 | <kbd>Up / Down arrows</kbd> | To increment and decrement the selected portion of the time. |
 | <kbd>Left / Right arrows and Tab</kbd> | To navigate the selection from one portion to next portion |
 
-The following example demonstrates default and custom format of TimePicker component with mask module.
+The following example demonstrates default and custom format of TimePicker component with mask.
 
 {% tab template="timepicker/mask-support" , sourceFiles="app.ts,index.html",
 es5Template="mask-support-template" %}
@@ -65,7 +65,7 @@ While changing to a culture other than `English`, ensure that locale text for th
 //Load the L10n from ej2-base
 import { L10n } from '@syncfusion/ej2-base';
 
-//load the locale object to set the localized placeholder value
+//load the locale object to set the localized mask placeholder value
 L10n.load({
 'de': {
     'timepicker': { hour: 'Stunde' ,minute: 'Minute', second:'Sekunde' }
