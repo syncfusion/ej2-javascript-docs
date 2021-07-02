@@ -8,9 +8,9 @@ description: "This section explains how to customize the Year view using differe
 
 The year view of our scheduler displays all the 365 days and their related appointments of a particular year. You can customize the year view by using the following properties.
 
-* [`firstMonthOfYear`](../api/schedule#firstmonthofyear)
-* [`monthsCount`](../api/schedule#monthscount)
-* [`monthHeaderTemplate`](../api/schedule#monthheadertemplate)
+* [`firstMonthOfYear`](../../api/schedule#firstmonthofyear)
+* [`monthsCount`](../../api/schedule#monthscount)
+* [`monthHeaderTemplate`](../../api/schedule#monthheadertemplate)
 
 In the following code example, you can see how to render only the last six months of a year in the scheduler. To start with the month of  June, `firstMonthYear` is set to 6 and `monthsCount` is set to 6 to render only 6 months.
 
@@ -27,14 +27,12 @@ Schedule.Inject(Year, TimelineYear, DragAndDrop, Resize);
 interface TemplateFunction extends Window {
     getMonthHeaderText?: Function;
 }
-let instance: Internationalization = new Internationalization();
-
-(window as TemplateFunction).getMonthHeaderText = (instance: Date) => { return instance.toLocaleString("en-us", { month: "long" }) + " " + instance.getFullYear(); };
+(window as TemplateFunction).getMonthHeaderText = (date: Date) => { return date.toLocaleString("en-us", { month: "long" }) + " " + date.getFullYear(); };
 
 let scheduleObj: Schedule = new Schedule({
     width: '100%',
     height: '555px',
-    selectedDate: new Date(2018, 7, 4),
+    selectedDate: new Date(2021, 7, 4),
     firstMonthOfYear: 6,
     monthsCount: 6,
     monthHeaderTemplate: '<div class="date-text">${getMonthHeaderText(data.date)}</div>',
