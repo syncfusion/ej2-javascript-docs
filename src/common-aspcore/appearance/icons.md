@@ -121,3 +121,7 @@ The complete pack of Essential JS 2 icons are listed in the following table. The
 ### High Contrast
 
 <iframe class="doc-sample-frame" src="https://ej2.syncfusion.com/products/icons/highcontrast/index.html" style="height:1000px;"></iframe>
+
+### Tailwind
+
+<iframe class="doc-sample-frame" src="https://ej2.syncfusion.com/products/icons/tailwind/demo.html" style="height:1000px;"></iframe>
