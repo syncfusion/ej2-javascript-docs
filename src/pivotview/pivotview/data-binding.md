@@ -406,7 +406,7 @@ pivotTableObj.appendTo('#PivotTable');
 
 ### Querying in Data Manager
 
-By default, the data manager retrieves all the data from the provider which is mapped in it. The data from the provider can be filtered, sorted, paged, etc. by setting the own query in `defaultQuery` property in the data manager instance.
+By default, the data manager retrieves all the data from the provider which is mapped in it. The data from the provider can be filtered, sorted, paged, etc. by setting the own query in [`defaultQuery`](https://ej2.syncfusion.com/javascript/documentation/api/data/dataManager/#setdefaultquery) property in the data manager instance.
 
 {% tab template="pivot-table/pivot-table", es5Template="defaultquery", sourceFiles="index.ts,index.html" %}
 
