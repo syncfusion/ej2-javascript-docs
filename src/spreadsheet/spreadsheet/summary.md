@@ -23,6 +23,7 @@
 * [Ribbon](spreadsheet/ribbon.md)
 * [Globalization](spreadsheet/global-local.md)
 * [Undo and Redo](spreadsheet/undo-redo.md)
+* [Styles and Appearance](spreadsheet/styles.md)
 * [Collaborative Editing](spreadsheet/use-cases/collaborative-editing.md)
 * [Sort a range by custom list](spreadsheet/how-to/sort-a-range-by-custom-list.md)
 * [Create a JSON structure](spreadsheet/how-to/create-a-object-structure.md)
