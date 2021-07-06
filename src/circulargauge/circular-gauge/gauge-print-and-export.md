@@ -12,11 +12,12 @@ To use the print functionality, we should set the [`allowPrint`](../api/circular
 ```typescript
 import { CircularGauge, Print } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Print);
+
 let gauge: CircularGauge = new CircularGauge({
     allowPrint: true
 }, '#element');
 document.getElementById('print').onclick = () => {
-        gauge.print();
+    gauge.print();
 };
 ```
 
@@ -37,11 +38,12 @@ To use the image export functionality, we should set the [`allowImageExport`](..
 ```typescript
 import { CircularGauge, ImageExport} from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(ImageExport);
+
 let gauge: CircularGauge = new CircularGauge({
     allowImageExport: true
 }, '#element');
 document.getElementById('export').onclick = () => {
-        gauge.export("PNG","Gauge");
+    gauge.export("PNG","Gauge");
 };
 ```
 
@@ -54,6 +56,7 @@ We can get the image file as base64 string for the JPEG and PNG formats. The cir
 ```typescript
 import { CircularGauge, ImageExport } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(ImageExport);
+
 let gauge: CircularGauge = new CircularGauge({
     allowImageExport: true
 }, '#element');
@@ -76,6 +79,7 @@ To use the PDF export functionality, we should set the [`allowPdfExport`](../api
 ```typescript
 import { CircularGauge, PdfExport } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(PdfExport);
+
 let gauge: CircularGauge = new CircularGauge({
     allowPdfExport: true
 }, '#element');

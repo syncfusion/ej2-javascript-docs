@@ -32,7 +32,7 @@ let gauge: CircularGauge = new CircularGauge({
     axes: [{
         labelStyle: {
             position: 'Inside',
-            //Label format as currency
+            //Label format as currency.
             format: 'c'
         }
     }]

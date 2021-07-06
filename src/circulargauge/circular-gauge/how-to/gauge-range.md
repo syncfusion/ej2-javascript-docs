@@ -16,12 +16,12 @@ Initialize the circular gauge with one range.
 
 import { CircularGauge, Range } from '@syncfusion/ej2-circulargauge';
 
-// initialize the circular gauge
+// initialize the circular gauge.
 let circulargauge: CircularGauge = new CircularGauge({
   axes: [
     {
       minimum: 0, maximum: 120,
-      // initialize the ranges
+      // initialize the ranges.
       ranges: [
         {
           start: 0, end: 20
@@ -30,7 +30,7 @@ let circulargauge: CircularGauge = new CircularGauge({
     }
   ]
 });
-// render initialized circular gauge
+// render initialized circular gauge.
 circulargauge.appendTo('#element');
 ```
 
@@ -61,16 +61,16 @@ let circulargauge: CircularGauge = new CircularGauge({
 circulargauge.appendTo('#element');
 
 document.getElementById("addRange").onclick = function () {
-  let start: number;
-  let end: number;
-  start = +(circulargauge.axes[0].ranges[circulargauge.axes[0].ranges.length - 1].start) + 20;
-  end = start + 20;
-  if (end > circulargauge.axes[0].maximum) {
-    circulargauge.axes[0].maximum = end;
-  }
-  let range = { start: start, end: end };
-  circulargauge.axes[0].ranges.push(new Range(<Range>(circulargauge.axes[0].ranges[0]), 'ranges', range));
-  circulargauge.refresh();
+    let start: number;
+    let end: number;
+    start = +(circulargauge.axes[0].ranges[circulargauge.axes[0].ranges.length - 1].start) + 20;
+    end = start + 20;
+    if (end > circulargauge.axes[0].maximum) {
+        circulargauge.axes[0].maximum = end;
+    }
+    let range = { start: start, end: end };
+    circulargauge.axes[0].ranges.push(new Range(<Range>(circulargauge.axes[0].ranges[0]), 'ranges', range));
+    circulargauge.refresh();
 }
 ```
 

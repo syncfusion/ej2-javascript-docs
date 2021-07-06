@@ -39,7 +39,7 @@ You can set the size of the gauge in pixel as demonstrated below.
 
 import { CircularGauge } from '@syncfusion/ej2-circulargauge';
 let gauge: CircularGauge = new CircularGauge({
-    // Width and height for gauge in pixel
+    // Width and height for gauge in pixel.
     width: '650', height: '350'
 }, '#element');
 
@@ -58,7 +58,7 @@ the height is ‘50%’, gauge renders to half of the container height.
 
 import { CircularGauge } from '@syncfusion/ej2-circulargauge';
 let gauge: CircularGauge = new CircularGauge({
-    // Width and height for gauge in percentage
+    // Width and height for gauge in percentage.
     width: '80%', height: '50%'
 }, '#element');
 

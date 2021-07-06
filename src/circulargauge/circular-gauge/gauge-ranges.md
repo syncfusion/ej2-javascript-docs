@@ -239,7 +239,8 @@ let rangeLinearGradient: Object = {
     startValue: '0%', endValue: '100%',
     colorStop: [
         { color: '#9E40DC', offset: '0%', opacity: 0.9 },
-        { color: '#E63B86', offset: '70%', opacity: 0.9 }]
+        { color: '#E63B86', offset: '70%', opacity: 0.9 }
+    ]
 };
 let gauge: CircularGauge = new CircularGauge({
     title: 'Short Put Distance',
@@ -269,10 +270,12 @@ let gauge: CircularGauge = new CircularGauge({
             font: {
                 size: '0px'
             }
-        }, majorTicks: {
-            width: 0,
-        }, minorTicks: {
-            width: 0,
+        },
+        majorTicks: {
+            width: 0
+        },
+        minorTicks: {
+            width: 0
         },
         startAngle: 200, endAngle: 130,
         minimum: 0, maximum: 14,
@@ -342,14 +345,15 @@ To apply radial gradient to the range, follow the below code sample.
 
 ```typescript
 
-import { CircularGauge, Gradient, Annotaions } from '@syncfusion/ej2-circulargauge';
+import { CircularGauge, Gradient, Annotations } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Gradient, Annotations);
 let rangeRadialGradient: Object = {
     radius: '50%', innerPosition: { x: '50%', y: '50%' },
     outerPosition: { x: '50%', y: '50%' },
     colorStop: [
         { color: '#9E40DC', offset: '90%', opacity: 0.9 },
-        { color: '#E63B86', offset: '160%', opacity: 0.9 }]
+        { color: '#E63B86', offset: '160%', opacity: 0.9 }
+    ]
 };
 let gauge: CircularGauge = new CircularGauge({
     title: 'Short Put Distance',
@@ -380,9 +384,9 @@ let gauge: CircularGauge = new CircularGauge({
             size: '0px'
         }
         }, majorTicks: {
-            width: 0,
+            width: 0
         }, minorTicks: {
-            width: 0,
+            width: 0
         },
         startAngle: 200, endAngle: 130,
         minimum: 0, maximum: 14,

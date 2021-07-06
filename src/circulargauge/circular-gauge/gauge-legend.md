@@ -90,7 +90,7 @@ The font of the legend item text can be customized using the following prope
 
 The following code example shows how to add legend in the gauge.
 
-{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5Legend" %}
+{% tab template= "circular-gauge/gauge-legend", sourceFiles="index.ts,index.html", es5Template="es5Legend" %}
 
 ```typescript
 
@@ -129,15 +129,15 @@ let gauge: CircularGauge = new CircularGauge({
         }]
     }],
      legendSettings : {
-       visible: true,
-            shapeWidth:30,
-            shapeHeight:30,
-            padding:15,
-            border: {
-                color:'green',
-                width:3
-            }
-      }
+        visible: true,
+        shapeWidth:30,
+        shapeHeight:30,
+        padding:15,
+        border: {
+            color:'green',
+            width:3
+        }
+    }
 }, '#element');
 
 ```
@@ -148,14 +148,14 @@ let gauge: CircularGauge = new CircularGauge({
 
 The toggle option has been provided for legend. So, if you toggle the legend, the given color will be changed to the corresponding circular gauge range. You can enable the toggle option using [`toggleVisibility`]((../api/circular-gauge/legendSettings-toggleVisibility-boolean)) in the `legendSettings` property.
 
-{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5ToggleLegend" %}
+{% tab template= "circular-gauge/gauge-legend", sourceFiles="index.ts,index.html", es5Template="es5ToggleLegend" %}
 
 ```typescript
 
 import { CircularGauge, Legend } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Legend);
 let gauge: CircularGauge = new CircularGauge({
-   axes: [{
+    axes: [{
         minimum: 0,
         maximum: 100,
         majorTicks: {
@@ -185,10 +185,10 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '108%'
         }]
     }],
-     legendSettings : {
-       visible: true,
-       toggleVisibility: true
-      }
+    legendSettings : {
+        visible: true,
+        toggleVisibility: true
+    }
 }, '#element');
 
 ```
@@ -199,14 +199,14 @@ let gauge: CircularGauge = new CircularGauge({
 
 By default, paging will be enabled if the legend items exceed the legend bounds. You can view each legend item by navigating between the pages using navigation buttons.
 
-{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5LegendPaging" %}
+{% tab template= "circular-gauge/gauge-legend", sourceFiles="index.ts,index.html", es5Template="es5LegendPaging" %}
 
 ```typescript
 
 import { CircularGauge, Legend } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Legend);
 let gauge: CircularGauge = new CircularGauge({
-   axes: [{
+    axes: [{
         minimum: 0,
         maximum: 100,
         majorTicks: {
@@ -236,10 +236,10 @@ let gauge: CircularGauge = new CircularGauge({
           radius: '108%'
         }]
     }],
-     legendSettings : {
-       visible: true,
-       height: '50'
-      }
+    legendSettings : {
+        visible: true,
+        height: '50'
+    }
 }, '#element');
 
 ```
@@ -250,14 +250,14 @@ let gauge: CircularGauge = new CircularGauge({
 
 You can customize the legend text using [`legendText`](../api/circular-gauge/range/#legendtext) property in `ranges`.
 
-{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5LegendText" %}
+{% tab template= "circular-gauge/gauge-legend", sourceFiles="index.ts,index.html", es5Template="es5LegendText" %}
 
 ```typescript
 
 import { CircularGauge, Legend, ILegendRenderEventArgs } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Legend);
 let gauge: CircularGauge = new CircularGauge({
- axes: [{
+    axes: [{
         minimum: 0,
         maximum: 100,
         majorTicks: {
@@ -292,9 +292,9 @@ let gauge: CircularGauge = new CircularGauge({
             legendText: 'Gentle breeze'
         }]
     }],
-     legendSettings : {
-       visible: true
-      },
+    legendSettings : {
+        visible: true
+    },
     legendRender: (args: ILegendRenderEventArgs) => {
         args.text = "Legend Modified Text Value";
     }

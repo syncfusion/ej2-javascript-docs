@@ -49,7 +49,8 @@ let gauge: CircularGauge = new CircularGauge({
         annotations: [{
             content: '#annotation-template',
             angle: 90,
-            radius: '150%'
+            radius: '150%',
+            zIndex:'1'
         }],
         pointers:[{
             value: 50

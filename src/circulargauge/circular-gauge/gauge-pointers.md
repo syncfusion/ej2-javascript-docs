@@ -222,7 +222,8 @@ let gauge: CircularGauge = new CircularGauge({
         },
         ranges: [
             { start: 0, end: 50, color: '#30B32D', radius:'108%' },
-            { start: 50, end: 100, color: '#FFDD00', radius:'108%' }],
+            { start: 50, end: 100, color: '#FFDD00', radius:'108%' }
+        ],
         pointers: [{
             value: 50,
             type: 'RangeBar',
@@ -424,7 +425,8 @@ let pointerLinearGradient: Object = {
     endValue: '100%',
     colorStop: [
         { color: '#FEF3F9', offset: '0%', opacity: 0.9 },
-        { color: '#E63B86', offset: '70%', opacity: 0.9 }]
+        { color: '#E63B86', offset: '70%', opacity: 0.9 }
+    ]
 };
 let gauge: CircularGauge = new CircularGauge({
     axes: [{
@@ -454,11 +456,11 @@ let gauge: CircularGauge = new CircularGauge({
                     color: '#E63B86',
                     width: 1
                 }
-                },
-                needleTail: {
-                    length: '20%',
-                    linearGradient: pointerLinearGradient,
-                }
+            },
+            needleTail: {
+                length: '20%',
+                linearGradient: pointerLinearGradient,
+            }
         }, {
             radius: '60%', value: 40,
             animation: { duration: 1000 },
@@ -486,7 +488,7 @@ Using radial gradient, colors will be applied in circular progression. The inner
 
 The radial gradient can be applied to all pointer types like marker, range bar and needle. To do so, follow the below code sample.
 
-{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5RangeGradient" %}
+{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5RadialGradient" %}
 
 ```typescript
 
@@ -498,7 +500,8 @@ let pointerRadialGradient: Object = {
     outerPosition: { x: '50%', y: '50%' },
     colorStop: [
         { color: '#FEF3F9', offset: '0%', opacity: 0.9 },
-        { color: '#E63B86', offset: '60%', opacity: 0.9 }]
+        { color: '#E63B86', offset: '60%', opacity: 0.9 }
+    ]
 };
 let gauge: CircularGauge = new CircularGauge({
     axes: [{
@@ -528,12 +531,12 @@ let gauge: CircularGauge = new CircularGauge({
                     color: '#E63B86',
                     width: 1
                 }
-                },
-                needleTail: {
-                    length: '20%',
-                    radialGradient: pointerRadialGradient,
-                }
-            }, {
+            },
+            needleTail: {
+                length: '20%',
+                radialGradient: pointerRadialGradient,
+            }
+        }, {
             radius: '60%', value: 40,
             animation: { duration: 1000 },
             pointerWidth: 10,

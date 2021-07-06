@@ -4,6 +4,7 @@
 * [Ranges](circular-gauge/gauge-ranges.md)
 * [Pointers](circular-gauge/gauge-pointers.md)
 * [Annotations](circular-gauge/gauge-annotations.md)
+* [Legend](circular-gauge/gauge-legend.md)
 * [User Interaction](circular-gauge/gauge-user-interaction.md)
 * [Print and Export](circular-gauge/gauge-print-and-export.md)
 * [Appearance](circular-gauge/gauge-appearance.md)

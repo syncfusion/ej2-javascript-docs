@@ -19,7 +19,7 @@ By default, tooltip is not visible. Enable the tooltip by setting
 import { CircularGauge, GaugeTooltip } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(GaugeTooltip);
 let gauge: CircularGauge = new CircularGauge({
-    // Title for circular gauge
+    // Title for circular gauge.
     tooltip: {
         enable: true
     },
@@ -45,7 +45,7 @@ Any HTML elements can be displayed in the tooltip by using the
 import { CircularGauge, GaugeTooltip } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(GaugeTooltip);
 let gauge: CircularGauge = new CircularGauge({
-    // Title for circular gauge
+    // Title for circular gauge.
     tooltip: {
         enable: true,
         template: '${value}'
@@ -126,7 +126,6 @@ let gauge: CircularGauge = new CircularGauge({
         majorTicks: { color: 'white', offset: -5, height: 12 },
         minorTicks: { width: 0 },
         labelStyle: { useRangeColor: true, font: { color: '#424242', size: '13px', fontFamily: 'Roboto' } },
-
         pointers: [{
             value: 70,
             radius: '60%',
@@ -155,7 +154,6 @@ let gauge: CircularGauge = new CircularGauge({
         annotationSettings: { template:'<div>CircularGauge</div>' },
         rangeSettings: { fill:'red' }
     },
-
 }, '#element');
 
 ```

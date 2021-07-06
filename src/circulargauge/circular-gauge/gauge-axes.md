@@ -261,8 +261,7 @@ let gauge: CircularGauge = new CircularGauge({
         minimum: 0,
         maximum: 170,
         startAngle: 210, endAngle: 150
-    }],
-
+    }]
 }, '#element');
 
 ```
@@ -319,7 +318,8 @@ let gauge: CircularGauge = new CircularGauge({
             interval: 0.2,
             position: 'Inside',
             height: 5
-        }, labelStyle: {
+        },
+        labelStyle: {
             position: 'Inside',
             hiddenLabel: 'First'
         }
@@ -446,8 +446,9 @@ let gauge: CircularGauge = new CircularGauge({
         hideIntersectingLabel: true,
         minimum: 0,
         maximum: 200,
-        startAngle: 270, endAngle: 90,
-        majorTicks:{
+        startAngle: 270,
+        endAngle: 90,
+        majorTicks: {
            interval:4
         },
         minorTicks: {
