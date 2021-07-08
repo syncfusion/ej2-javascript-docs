@@ -2,7 +2,7 @@
 
 This demo showcases the quick popups for cells and appointments with the customized templates.
 
-{% tab template="schedule/how-to-quick-info-template", es5Template="navigation-prevent", iframeHeight="588px", sourceFiles="index.ts,index.html,index.css"  %}
+{% tab template="schedule/how-to-quick-info-template", es5Template="quick-info", iframeHeight="588px", sourceFiles="index.ts,index.html,index.css"  %}
 
 ```typescript
 import { extend, Internationalization } from '@syncfusion/ej2-base';
