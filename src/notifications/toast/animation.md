@@ -24,7 +24,8 @@ enableRipple(true);
 let toast: Toast = new Toast({
     title: 'Matt sent you a friend request',
     content: 'You have a new friend request yet to accept',
-    position: { X: 'Right', Y: 'Bottom' }
+    position: { X: 'Right', Y: 'Bottom' },
+    animation: { show: { effect: "FadeIn" }, hide: { effect: "FadeOut" } },
 });
 toast.appendTo('#element');
 toast.show();
