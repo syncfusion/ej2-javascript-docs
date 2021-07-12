@@ -104,7 +104,7 @@ You can invoke download action using following code snippet.
 ```javascript
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableDownload: true,
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "FormDesigner.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.Annotation, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
@@ -125,7 +125,7 @@ You can invoke print action using the following code snippet.,
 
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enablePrint: true,
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "FormDesigner.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
@@ -139,3 +139,24 @@ pdfviewer.print.print();
 We can open the already saved PDF document contains Form Fields in it by clicking the open icon in the toolbar. Refer the below GIF for further reference.
 
 ![Alt text](../../../../pdfviewer/images/openexistingpdf.gif)
+
+## Validate form fields
+
+The form fields in the PDF Document will be validated when the `enableFormFieldsValidation` is set to true and hook the validateFormFields. The validateFormFields will be triggered when the PDF document is downloaded or printed with the non-filled form fields. The non-filled fields will be obtained in the `nonFillableFields` property of the event arguments of validateFormFields.
+
+Add the following code snippet to validate the form fields,
+
+```javascript
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "FormDesigner.pdf",
+                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+viewer.enableFormFieldsValidation = true;
+viewer.validateFormFields = function (args) {
+    var nonfilledFormFields = args.nonFillableFields;
+};
+
+```
