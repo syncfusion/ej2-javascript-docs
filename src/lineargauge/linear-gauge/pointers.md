@@ -1,6 +1,14 @@
-# Pointers
+---
+title: "Pointers in EJ2 Linear Gauge component | Syncfusion "
 
-Pointers are used to indicate values on the axis. Value of the pointer can be modified using the [`value`](../api/linear-gauge/pointer#value-number) property.
+component: "Linear Gauge"
+
+description: "Learn here all about the Pointers feature of Syncfusion EJ2 Linear Gauge component and more."
+---
+
+# Pointers in EJ2 Linear Gauge
+
+Pointers are used to indicate values on an axis. The value of the pointer can be modified using the [`value`](../api/linear-gauge/pointerModel/#value) property in [`pointers`](../api/linear-gauge/axisModel/#pointers).
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5Pointer" %}
 
@@ -20,28 +28,29 @@ let gauge: LinearGauge = new LinearGauge({
 
 ## Types of pointer
 
-The Linear Gauge supports the following two types of pointers:
+The Linear Gauge supports the following types of pointers:
 
 * Bar
 * Marker
 
-You can choose any one of the pointer by using [`type`](../api/linear-gauge/pointer/#type-string) property.
+The type of pointer can be modified by using the [`type`](../api/linear-gauge/pointerModel/#type) property in [`pointers`](../api/linear-gauge/axisModel/#pointers).
 
-## Marker Pointer
+### Marker pointer
 
-A marker pointer is a shape, that can be placed to mark the pointer value in the linear gauge.
+A marker pointer is a shape that can be used to mark the pointer value in the Linear Gauge.
 
 <b>Types of marker shapes</b>
 
-The following marker types are available in linear gauge. You can change the marker shape using [`markerType`](../api/linear-gauge/pointer/#markertype-string) property in [`pointer`](../api/linear-gauge/pointer/#pointer-pointermodel) options. The available marker types are,
+By default, the marker shape for the pointer is "**InvertedTriangle**". To change the shape of the pointer, use the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property in [`pointers`](../api/linear-gauge/axisModel/#pointers). The following marker types are available in Linear Gauge.
 
 * Circle
 * Rectangle
 * Triangle
 * InvertedTriangle
 * Diamond
+* Image
 
-You can also use image instead of rendering shape as pointer. It can be achieved by using [`markerType`](../api/linear-gauge/pointer/#markertype-string) property as `Image` set image path to ['imageUrl'](../api/linear-gauge/pointer/#imageurl-string) in [`pointer`](../api/linear-gauge/pointer/#pointer-pointermodel).
+An image can be rendered instead of rendering a shape as a pointer. It can be achieved by setting the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property to "**Image**" and setting the source URL of image to [`imageUrl`](../api/linear-gauge/pointerModel/#imageurl) property in [`pointers`](../api/linear-gauge/axisModel/#pointers).
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5MarkerPointer" %}
 
@@ -65,15 +74,17 @@ let gauge: LinearGauge = new LinearGauge({
 
 **Marker Pointer Customization**
 
-The marker can be customized by using the following properties.
+The marker pointer can be customized using the following properties.
 
-* [`height`](../api/linear-gauge/pointer/#height-number) - Specifies pointer height
-* [`width`](../api/linear-gauge/pointer/#width-number) - Specifies pointer width
-* [`color`](../api/linear-gauge/pointer/#color-string) - Specifies pointer color
-* [`placement`](../api/linear-gauge/pointer/#placement-string) - Specifies pointer placement position, available placement options are 'Near', 'Far', 'Center' and 'None'
-* [`offset`](../api/linear-gauge/pointer/#offset-number) - Specifies offset value from it default position.
-* [`animationDuration`](../api/linear-gauge/pointer/#animationduration-number) - Specifies pointer animation duration
-* [`border`](../api/linear-gauge/pointer/#pointer-bordermodel) - Specifies pointer border color and width
+* [`height`](../api/linear-gauge/pointerModel/#height) - To set the height of the pointer.
+* [`position`](../api/linear-gauge/pointerModel/#position) - The position of the pointer can be changed by setting the value as "**Inside**", "**Outside**", "**Cross**", or "**Auto**".
+* [`width`](../api/linear-gauge/pointerModel/#width) - To set the width of the pointer.
+* [`color`](../api/linear-gauge/pointerModel/#color) - To set the color of the pointer.
+* [`placement`](../api/linear-gauge/pointerModel/#placement) - To place the pointer in the specified position. By default, the pointer is placed "**Far**" from the axis. To change the placement, set the [`placement`](../api/linear-gauge/pointerModel/#placement) property as "**Near**", "**Center**", or "**None**".
+* [`offset`](../api/linear-gauge/pointer/#offset) - To place the pointer with specified distance from the axis.
+* [`opacity`](../api/linear-gauge/pointerModel/#opacity) - To set the opacity of the pointer.
+* [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) - To specify the duration of the animation in pointer.
+* [`border`](../api/linear-gauge/pointerModel/#border) - To set the color and width for the border of the pointer.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5MarkerPointerCustom" %}
 
@@ -95,9 +106,9 @@ let gauge: LinearGauge = new LinearGauge({
 
 {% endtab %}
 
-## Bar Pointer
+### Bar Pointer
 
-Bar pointer is used to track the axis value and it will render depending upon the container type. Bar pointer starts from the beginning of the gauge and ends at the pointer value.
+The bar pointer is used to track the axis value. The bar pointer starts from the beginning of the gauge and ends at the pointer value. To enable bar pointer set the [`type`](../api/linear-gauge/pointerModel/#type) property property in [`pointer`](../api/linear-gauge/axisModel/#pointers) as "**Bar**".
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5BarPointer" %}
 
@@ -122,11 +133,15 @@ let gauge: LinearGauge = new LinearGauge({
 
 The bar pointer can be customized using following properties.
 
-* [`width`](../api/linear-gauge/pointer/#width-number) - Specifies bar pointer width
-* [`color`](../api/linear-gauge/pointer/#color-string) - Specifies bar pointer color
-* [`offset`](../api/linear-gauge/pointer/#offset-number) - Helps to move the bar pointer from its default position.
-* [`border`](../api/linear-gauge/pointer/#pointer-bordermodel) - Specifies bar pointer border width and color
-* [`placement`](../api/linear-gauge/pointer/#placement-string) property is not supported for bar pointer.
+* [`width`](../api/linear-gauge/pointerModel/#width) - To set the thickness of the bar pointer.
+* [`color`](../api/linear-gauge/pointerModel/#color) - To set the color of the bar pointer.
+* [`offset`](../api/linear-gauge/pointerModel/#offset) - To place the bar pointer with the specified distance from it's default position.
+* [`opacity`](../api/linear-gauge/pointerModel/#opacity) - To set the opacity of the bar pointer.
+* [`roundedCornerRadius`](../api/linear-gauge/pointerModel/#roundedcornerradius) - To set the corner radius for the bar pointer.
+* [`border`](../api/linear-gauge/pointerModel/#border) - To set the color and width for the border of the pointer.
+* [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) - To set the duration of the animation in bar pointer.
+
+>Note: The placement property is not applicable for the bar pointer.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5BarPointerCustom" %}
 
@@ -147,37 +162,9 @@ let gauge: LinearGauge = new LinearGauge({
 
 {% endtab %}
 
-## Pointer placement
+## Multiple pointers
 
-You can placement the marker pointer in any of the following locations using [`placement`] property.
-
-* Far
-* Near
-* Center
-* None
-
-{% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5pointerPlacement" %}
-
-```typescript
-import { LinearGauge } from '@syncfusion/ej2-lineargauge';
-let gauge: LinearGauge = new LinearGauge({
-    axes: [{
-        pointers: [{
-            value: 60,
-            markerType: 'Arrow'
-            color: '#cd41f4',
-            placement: 'Near'
-        }]
-    }]
-}, '#element');
-
-```
-
-{% endtab %}
-
-## Multiple Pointers
-
-In addition to the default pointer, you can add n number of pointer to an axis.
+Multiple pointers can be added to the Linear Gauge by adding multiple [`pointer`](../api/linear-gauge/pointerModel/) objects in the [`pointers`](../api/linear-gauge/axisModel/#pointers) and customization for the pointers can be done with the [`pointer`](../api/linear-gauge/pointerModel/) object.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5MultiplePointers" %}
 
@@ -205,10 +192,9 @@ let gauge: LinearGauge = new LinearGauge({
 
 {% endtab %}
 
-## Pointer Animation
+## Pointer animation
 
-Pointer will animate on loading the gauge. This can be handled by using
-[`animationDuration`](../api/linear-gauge/pointer/#animationduration-number) property. You need to specify the duration of the animation in milliseconds.
+Pointer is animated on loading the gauge. This can be handled using the [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) property. The duration of the animation can be specified in milliseconds.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5PointerAnimation" %}
 
@@ -229,16 +215,14 @@ let gauge: LinearGauge = new LinearGauge({
 
 ## Gradient Color
 
-Gradient support allows to add multiple colors in the ranges and pointers of the circular gauge. The following gradient types are supported in the linear gauge.
+Gradient support allows the addition of multiple colors in the pointers of the Linear Gauge. The following gradient types are supported in the Linear Gauge.
 
 * Linear Gradient
 * Radial Gradient
 
 ### Linear Gradient
 
-Using linear gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as color, opacity and offset are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property.
-
-The linear gradient can be applied to all pointer types like marker and range bar. To do so, follow the below code sample.
+Using linear gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property. The linear gradient can be rendered for the pointer in the Linear Gauge by using the below example.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5LinearGradient" %}
 
@@ -285,9 +269,7 @@ let gauge: LinearGauge = new LinearGauge({
 
 ### Radial Gradient
 
-Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as color, opacity and offset are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property.
-
-The radial gradient can be applied to all pointer types like marker and rangeBar. To do so, follow the below code sample.
+Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property. The radial gradient can be rendered for the pointer in the Linear Gauge by using the below example.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="index.ts,index.html", es5Template="es5RadialGradient" %}
 
@@ -332,3 +314,5 @@ let gauge: LinearGauge = new LinearGauge({
 ```
 
 {% endtab %}
+
+> Note: If we set both gradients, only the linear gradient gets rendered. If we set the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) and [`endValue`](../api/linear-gauge/linearGradient/#endvalue) of the [`linearGradient`](../api/linear-gauge/linearGradient/) as empty strings, then the radial gradient gets rendered in the pointer of the Linear Gauge.
