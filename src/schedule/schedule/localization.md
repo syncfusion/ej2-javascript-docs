@@ -333,6 +333,8 @@ scheduleObj.appendTo('#Schedule');
 
 {% endtab %}
 
+> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.
+
 ## See Also
 
 * [How to change first day of the week in the Scheduler](./working-days/#setting-start-day-of-the-week)

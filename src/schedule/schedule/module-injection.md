@@ -32,4 +32,6 @@ The required modules should be injected into the Scheduler using the `ej.schedul
 ej.schedule.Schedule.Inject(ej.schedule.Day, ej.schedule.Week, ej.schedule.WorkWeek, ej.schedule.Month, ej.schedule.Agenda, ej.schedule.MonthAgenda);
 ```
 
-> This module injection is not necessary in JavaScript.
+**Note:** This module injection is not necessary in JavaScript.
+
+> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/javascript/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

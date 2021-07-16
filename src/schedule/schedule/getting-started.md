@@ -6,7 +6,7 @@ description: "This article demonstrates how to create a simple Scheduler and con
 
 # Getting Started
 
-This section briefly explains how to create the **Scheduler** component and configure its available functionalities in a JavaScript application.
+This section briefly explains how to create the [**JavaScript Scheduler**](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) component and configure its available functionalities in a JavaScript application.
 
 ## Dependencies
 
@@ -329,3 +329,5 @@ The output will display the Scheduler with the specified view configuration.
 {% tab template="schedule/views-model", es5Template="default-template", isDefaultActive=true, iframeHeight="588px", sourceFiles="index.ts,index.html"  %}
 
 {% endtab %}
+
+> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/javascript/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

@@ -40,3 +40,5 @@ Also, it can be displayed with appropriate time mode and date-format as per the 
 * **Keyboard interaction** - All the common actions such as traversing through the events, multiple cell selection,
 add/edit/delete the appointments, navigate to other views or dates and much more can be performed through keyboard inputs.
 * **RTL** - Supports to display the Scheduler component in the direction from right to left.
+
+> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

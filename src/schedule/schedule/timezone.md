@@ -259,3 +259,5 @@ Returns `Date`
     let convertedDate: Date = timezone.removeLocalOffset(date);
     console.log(convertedDate); //2018-12-05T15:25:11.000Z
 ```
+
+> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

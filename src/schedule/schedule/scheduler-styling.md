@@ -47,3 +47,5 @@ To modify the Scheduler appearance, you need to override the default CSS of Sche
 | .e-schedule .e-timeline-month-view .e-resource-cells| Resource cells in timeline month view of scheduler. |
 | e-parent-node | Parent resource cells in timeline views of scheduler. |
 | e-child-node | Child resource cells in timeline views of scheduler. |
+
+> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.
