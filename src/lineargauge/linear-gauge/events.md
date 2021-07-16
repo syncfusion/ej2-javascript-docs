@@ -39,7 +39,7 @@ Before the annotation is rendered in the Linear Gauge, the [`annotationRender`](
 {% tab template= "linear-gauge/events", sourceFiles="index.ts,index.html", es5Template="es5AnnotationRender" %}
 
 ```typescript
-import { LinearGauge } from '@syncfusion/ej2-lineargauge';
+import { LinearGauge, Annotations } from '@syncfusion/ej2-lineargauge';
 LinearGauge.Inject(Annotations);
 let gauge: LinearGauge = new LinearGauge({
   annotationRender: function() {
@@ -278,7 +278,7 @@ The [`tooltipRender`](../api/linear-gauge#tooltiprender) event is fired before t
 {% tab template= "linear-gauge/events", sourceFiles="index.ts,index.html", es5Template="es5TooltipChange" %}
 
 ```typescript
-import { LinearGauge } from '@syncfusion/ej2-lineargauge';
+import { LinearGauge, GaugeTooltip } from '@syncfusion/ej2-lineargauge';
 LinearGauge.Inject(GaugeTooltip);
 let gauge: LinearGauge = new LinearGauge({
  tooltipRender: function() {

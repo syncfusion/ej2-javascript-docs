@@ -35,7 +35,8 @@ let gauge: LinearGauge = new LinearGauge({
     annotations: [{
         content: '#fruits',
         x: 100,
-        y: 100
+        y: 100,
+        zIndex: "1"
     }]
 }, '#element');
 

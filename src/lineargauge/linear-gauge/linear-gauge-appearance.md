@@ -54,7 +54,7 @@ The title for the Linear Gauge can be set using [`title`](../api/linear-gauge/#t
 ```typescript
 import { LinearGauge } from '@syncfusion/ej2-lineargauge';
 let gauge: LinearGauge = new LinearGauge({
-        /Title for linear gauge
+        // Title for linear gauge.
         title: 'linear gauge',
         titleStyle: {
             fontFamily: "Arial",
@@ -182,7 +182,7 @@ let gauge: LinearGauge = new LinearGauge({
         right: 0,
         top: 0,
         bottom: 0
-    }
+    },
     axes: [{
     }]
 }, '#element');
