@@ -6,7 +6,7 @@ THe Essential JS 2 has provided the below list of in-built themes those are,
 2. Microsoft Office’s Fabric
 3. Bootstrap
 4. High Contrast
-5. Tailwind
+5. Tailwind CSS
 
 > The Essential JS 2 Bootstrap theme is designed based on `Bootstrap v3`, however it can be compatible in `Bootstrap v4` applications. In addition to these four built-in themes, [ThemeStudio](https://ej2.syncfusion.com/aspnetcore/documentation/appearance/theme-studio/) provides support for the Fusion Theme that can only be downloaded from [ThemeStudio](https://ej2.syncfusion.com/themestudio/?theme=fusion).
 
@@ -234,7 +234,7 @@ The below list of common variables used in the Essential JS 2 themes for all com
 | `$info-alt` | ![#66b0ff](https://ej2.syncfusion.com/download/documentation/svg/66b0ff.svg) `#66b0ff` |
 | `$disable` | ![#757575](https://ej2.syncfusion.com/download/documentation/svg/757575.svg) `#757575` |
 
-### Tailwind
+### Tailwind CSS
 
 | Name | Value |
 | ------------- | ------------- |
