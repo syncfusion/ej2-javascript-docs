@@ -239,6 +239,130 @@ grid.appendTo('#Grid');
 
 > Normal edit mode is default mode of editing.
 
+#### Automatically update the column based on another column edited value
+
+You can update the column value based on another column edited value by using the Cell Edit Template feature.
+
+In the below demo, we have update the `TotalCost` column value based on the `UnitPrice` and `UnitInStock` column value while editing.
+
+{% tab template="grid/grid",es5Template="autoupdateinline" %}
+
+```typescript
+import { Grid, Edit, Toolbar } from '@syncfusion/ej2-grids';
+import { productData } from './productData.ts';
+import { NumericTextBox } from '@syncfusion/ej2-inputs';
+
+Grid.Inject(Edit, Toolbar);
+
+var priceElem: HTMLElement;;
+var priceObj: NumericTextBox;
+var stockElem: HTMLElement;;
+var stockObj: NumericTextBox;
+
+let grid: Grid = new Grid({
+  dataSource: productData,
+  editSettings: {
+    allowEditing: true,
+    allowAdding: true,
+    allowDeleting: true,
+    mode: 'Normal',
+    newRowPosition: 'Top'
+  },
+  allowPaging: true,
+  pageSettings: { pageCount: 5 },
+  toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel'],
+  columns: [
+    {
+      field: 'ProductID',
+      isPrimaryKey: true,
+      headerText: 'Product ID',
+      textAlign: 'Right',
+      validationRules: { required: true, number: true },
+      width: 140
+    },
+    {
+      field: 'ProductName',
+      headerText: 'Product Name',
+      validationRules: { required: true },
+      width: 140
+    },
+    {
+      field: 'UnitPrice',
+      headerText: 'UnitPrice',
+      textAlign: 'Right',
+      edit: {
+        create: function() {
+          priceElem = document.createElement('input');
+          return priceElem;
+        },
+        read: function() {
+          return priceObj.value;
+        },
+        destroy: function() {
+          priceObj.destroy();
+        },
+        write: function(args) {
+          priceObj = new NumericTextBox({
+            value: args.rowData[args.column.field],
+            change: function(args) {
+              var formEle = grid.element.querySelector('form').ej2_instances[0];
+              var totalCostFieldEle = formEle.getInputElement('TotalCost');
+              totalCostFieldEle.value = priceObj.value * stockObj.value;
+            }
+          });
+          priceObj.appendTo(priceElem);
+        }
+      },
+      width: 140,
+      format: 'C2',
+      validationRules: { required: true }
+    },
+    {
+      field: 'UnitsInStock',
+      headerText: 'Units In Stock',
+      textAlign: 'Right',
+      edit: {
+        create: function() {
+          stockElem = document.createElement('input');
+          return stockElem;
+        },
+        read: function() {
+          return stockObj.value;
+        },
+        destroy: function() {
+          priceObj.destroy();
+        },
+        write: function(args) {
+          stockObj = new NumericTextBox({
+            value: args.rowData[args.column.field],
+            change: function(args) {
+              var formEle = grid.element.querySelector('form').ej2_instances[0];
+              var totalCostFieldEle = formEle.getInputElement('TotalCost');
+              totalCostFieldEle.value = priceObj.value * stockObj.value;
+            }
+          });
+          stockObj.appendTo(stockElem);
+        }
+      },
+      width: 140,
+      validationRules: { required: true }
+    },
+    {
+      field: 'TotalCost',
+      headerText: 'Total Unit Cost',
+      textAlign: 'Right',
+      allowEditing: false,
+      width: 140,
+      format: 'C2',
+    }
+  ]
+});
+grid.appendTo('#Grid');
+
+```
+
+{% endtab %}
+
 ### Dialog
 
 In Dialog edit mode, when you start editing the currently selected row data will be shown on a dialog.
@@ -263,6 +387,50 @@ let grid: Grid = new Grid({
         { field: 'Freight', headerText: 'Freight', textAlign: 'Right', editType: 'numericedit', width: 120, format: 'C2' },
         { field: 'ShipCountry', headerText: 'Ship Country', editType: 'dropdownedit', width: 150 }
     ],
+    height: 265
+});
+grid.appendTo('#Grid');
+
+```
+
+{% endtab %}
+
+### Customize Edit Dialog
+
+You can customize the Header and Footer appearance of the edit dialog in the [`actionComplete`](../api/grid/#actioncomplete) event based on `requestType` as `beginEdit` or `add`.
+
+In the following example, We have customized the dialog's height and title of the dialog's header and also we have changed the button content name in the dialog's footer.
+
+{% tab template="grid/grid",es5Template="customizedialog" %}
+
+```typescript
+import { Grid, Edit, Toolbar, DialogEditEventArgs } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+import { Dialog } from '@syncfusion/ej2-popups';
+
+Grid.Inject(Edit, Toolbar);
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    toolbar: ['Add', 'Edit', 'Delete'],
+    editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog' },
+    actionComplete: (args: DialogEditEventArgs) => {
+                if ((args.requestType === 'beginEdit' || args.requestType === 'add')) {
+                    let dialog: Dialog = args.dialog;
+                    // set the height of the dialog
+                    dialog.height = 400;
+                    // change the header of the dialog
+                    dialog.header = args.requestType === 'beginEdit' ? 'Edit Record of ' + args.rowData['CustomerID'] : 'New Customer';
+                    // change the footer button name of the dialog
+                    dialog.getButtons()[0].content = "Ok";
+                    dialog.getButtons()[1].content = "Close";
+                }
+            },  
+    columns: [
+                { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right',
+                  width: 100, isPrimaryKey: true },
+                { field: 'CustomerID', headerText: 'Customer ID', width: 120, },
+                { field: 'ShipCountry', headerText: 'Ship Country', width: 150 }],
     height: 265
 });
 grid.appendTo('#Grid');
