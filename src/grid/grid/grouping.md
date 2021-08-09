@@ -133,7 +133,7 @@ grid.appendTo('#Grid');
 
 We can render custom components in the group caption by using the [`groupSettings.captionTemplate`](../api/grid/column/#captionTemplate) property.
 
-In the below demo, we have rendered the EJ 2 [`ButtonComponent`](../button/getting-started/) in the group caption.
+In the below demo, we have rendered the EJ2 [`ButtonComponent`](../button/getting-started/) in the group caption.
 
 {% tab template="grid/customComponent-captiontemplate", sourceFiles="index.ts,index.html",es5Template="template" %}
 
