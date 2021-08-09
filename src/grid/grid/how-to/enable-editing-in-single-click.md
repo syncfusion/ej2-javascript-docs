@@ -53,7 +53,7 @@ grid.appendTo('#Grid');
 
 ### Open dropdown edit popup on single click
 
-You can open the default dropdown edit popup with single click edit by focusing the dropdown element and calling the EJ2 dropdown list's showPopup(../../api/drop-down-list/#showpopup) method in the Grid's actionComplete(../../api/grid/#actioncomplete) event. In this demo we have used a global flag variable in the 'mouseup' event to ensure if the dropdown column is the clicked edit target.
+You can open the default dropdown edit popup with single click edit by focusing the dropdown element and calling the EJ2 dropdown list's [`showPopup`](../../api/drop-down-list/#showpopup) method in the Grid's [`actionComplete`](../../api/grid/#actioncomplete) event. In this demo we have used a global flag variable in the 'mouseup' event to ensure if the dropdown column is the clicked edit target.
 
 {% tab template="grid/grid", es5Template="open-dropdown-popup" %}
 
