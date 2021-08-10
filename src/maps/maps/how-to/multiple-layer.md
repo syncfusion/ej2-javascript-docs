@@ -1,8 +1,6 @@
-# Adding multiple layers in map
+# Multilayer
 
-The multilayer support allows loading multiple shape files in a single container and enables maps to display more information.
-
-Initialize the map component with SubLayer option by using the `type` property. The shape layer is the core layer of the map. Multiple layers can be added in a shape layer as sublayers as mentioned in the following code example. To know more about multiple layers, please refer to the [`API`](../../api/maps/layerSettings/) documentation.
+The multilayer support allows loading multiple shape files in a single container and enables Maps to display more information. The shape layer is the main layer of the Maps. Multiple layers can be added in a shape layer as **SubLayer** using the [`type`](../api/maps/type/) property.
 
 {% tab template= "maps/default-map", sourceFiles="index.ts,index.html" , es5Template="layers" %}
 
@@ -14,7 +12,7 @@ import { Maps } from '@syncfusion/ej2-maps';
 
 // initialize Maps component
 let map: Maps = new Maps({
-        layers: [
+    layers: [
         {
             shapeData: usa_map,
             shapeSettings: {

@@ -1,14 +1,12 @@
-# Marker Types
+# Marker types
 
 ## Add different types of markers
 
-You can use different marker objects in maps control by using the marker settings.
-
-To update different marker settings in maps, please follow the given steps:
+Different marker objects can be added to the Maps component using the marker settings. To update different marker settings in Maps, please follow the given steps:
 <!-- markdownlint-disable MD034 -->
 **Step 1**:
 
-Initialize the maps control with marker settings. Here, a marker has been added with specified latitude and longitude of California by using the `dataSource` property. You can customize the shape of the marker using the `Shape` property and change the border color and width of the marker using the `border` property as mentioned in the following code example. To know more about the marker settings, please refer to the [`API`](../../api/maps/markerSettings/) documentation.
+Initialize the Maps control with marker settings. Here, a marker has been added with specified latitude and longitude of California by using the [`dataSource`](../api/maps/markerSettingsModel/#datasource) property. To customize the shape of the marker using the [`shape`](../api/maps/markerSettingsModel/#shape) property and change the border color and width of the marker using the [`border`](../api/maps/markerSettingsModel/#border) property as mentioned in the following example.
 
 {% tab template= "maps/default-map", sourceFiles="index.ts,index.html" , es5Template="step-one" %}
 
@@ -16,10 +14,10 @@ Initialize the maps control with marker settings. Here, a marker has been added 
 import { world_map } from './world-map.ts';
 import { Maps , Marker, MarkerSettings } from '@syncfusion/ej2-maps';
 
-// initialize Map component
+// Initialize Map component.
 let map: Maps = new Maps({
-    //Initializing Map with Marker settings
-  layers: [
+    // Initializing Map with Marker settings.
+    layers: [
         {
             shapeData: world_map,
             markerSettings: [
@@ -36,15 +34,16 @@ let map: Maps = new Maps({
                 }
             ]
         }
-  ]
-}, '#element');  // render initialized Map
+    ]
+});
+map.appendTo('#element');  // render initialized Map.
 ```
 
 {% endtab %}
 
 **Step 2**:
 
-Customize the above option for n number of markers as mentioned in the following code example.
+Customize the above option for n number of markers as mentioned in the following example.
 
 {% tab template= "maps/default-map", sourceFiles="index.ts,index.html" , es5Template = "step-two" %}
 
@@ -92,52 +91,12 @@ let map: Maps = new Maps({
                     height:10,
                     animationDuration:0,
                     border:{width:2,color:'blue'}
-                },
+                }
             ]
         }
     ]
-}, '#element'); // render initialized Map
-```
-
-{% endtab %}
-
-## Tooltip for marker
-
-Tooltip is used to display more information about marker on mouse over or touch end event. This can be enabled separately for layer or marker by setting the `tooltipSettings.visible` property to **true**. The `valuePath` property in tooltip takes the field name that presents in dataSource and displays that value as tooltip text. The following code example illustrates enabling the tooltip for marker to show city name field. To know more about tooltip, please refer to the [`API`](../../api/maps/tooltipSettings/) documentation.
-
-{% tab template= "maps/default-map", sourceFiles="index.ts,index.html" , es5Template="marker-tooltip" %}
-
-```typescript
-import { usa_map } from './usa.ts';
-import { Maps , Marker,MapsTooltip, MarkerSettings } from '@syncfusion/ej2-maps';
-Maps.Inject(Marker,MapsTooltip);
-// initialize Maps component
-let map: Maps = new Maps({
-    layers: [
-        {
-            shapeData: usa_map,
-            markerSettings: [
-                {
-                    dataSource: [
-                        { latitude: 40.7424509, longitude: -74.0081468, city: 'New York' }
-                    ],
-                    visible:true,
-                    shape:'Circle',
-                    fill:'white',
-                    width:3,
-                    animationDuration:0,
-                    border:{width:2,color:'#333'},
-                    tooltipSettings: {
-                        visible: true,
-                        valuePath:'city'
-                }
-                }
-            ]
-        }
-    ],
-    height: '450px',
-    width: '700px'
-}, '#element');
+});
+map.appendTo('#element'); // render initialized Map.
 ```
 
 {% endtab %}

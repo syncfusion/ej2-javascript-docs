@@ -1,27 +1,17 @@
 # Navigation Lines
 
-The navigation lines are used to denote path between two locations. We can use this feature to draw the flight or train or sea routes.
+The navigation lines are used to denote the path between two locations. This feature can be used to draw flight or sea routes. Navigation lines are enabled by setting the [`visible`](../api/maps/navigationLineSettingsModel/#visible) property of the [`navigationLineSettings`](../api/maps/navigationLineSettingsModel) property to **true**.
 
 ## Customization
 
-You can customize the following properties in the navigation lines by modifying their default values in `navigationlineSettings`
+The following properties are available in [`navigationLineSettings`](../api/maps/navigationLineSettingsModel/) property to customize the navigation line of the Maps component.
 
-* Color - Specifies the color of navigation line.
-* Dash array - Specifies the type of dash array line.
-* Width - Specifies the line width.
-* Angle - Specifies the navigation line angle.
-* Highlight settings - Customizes the opacity, border, and fill color when the cursor hovers over it.
-* Selection settings - Customizes the opacity, border, and fill color when the line is selected.
-
-Following example shows rendering the path between two locations using latitudes and longitudes.
-
-Yon can customize the navigation line color, dashArray, width and angle by modifying their default values in
-`navigationLineSettings`.
-
-Refer the below code snippet to navigate line between two cities in World map.
-Import usmap geo json data from world_map.ts file.
-Import the `NavigationLine` Module and Inject into the Maps using `Maps.Inject(NavigationLine)`.
-Provide two locations latitude and longitude values to `navigationLineSettings`.
+* [`color`](../api/maps/navigationLineSettingsModel/#color) - To apply the color for navigation lines in Maps.
+* [`dashArray`](../api/maps/navigationLineSettingsModel/#dasharray) - To define the pattern of dashes and gaps that is applied to the outline of the navigation lines.
+* [`width`](../api/maps/navigationLineSettingsModel/#width) - To customize the width of the navigation lines.
+* [`angle`](../api/maps/navigationLineSettingsModel/#angle) - To customize the angle of the navigation lines.
+* [`highlightSettings`](../api/maps/navigationLineSettingsModel/#highlightsettings) - To customize the highlight settings of the navigation line.
+* [`selectionSettings`](../api/maps/navigationLineSettingsModel/#selectionsettings) - To customize the selection settings of the navigation line.
 
 {% tab template= "maps/default-map", es5Template="navigation" %}
 
@@ -29,15 +19,13 @@ Provide two locations latitude and longitude values to `navigationLineSettings`.
 
 ## Enabling the arrows
 
-You can enable the arrows in the navigation line using [`arrowSettings.showArrow`](../api/maps/arrow) API, also you can customize following properties in arrow
+To enable the arrow in the navigation line, set the [`showArrow`](../api/maps/arrowModel/#showarrow) property of [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) property to **true**. The following properties are available in [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) property to customize the arrow of the navigation lines.
 
-* color - Specifies the color of the arrow
-* offset - Specifies the arrow's offset position
-* position - Specifies the arrow position to `start` or `end` line
-* size - Specifies the arrow size in pixel
+* [`color`](../api/maps/arrowModel/#color) - To apply the color for arrow of the navigation line.
+* [`offset`](../api/maps/arrowModel/#offset) - To customize the offset position of the arrow of the navigation line.
+* [`position`](../api/maps/arrowModel/#position) - To customize the position of the arrow in navigation line. The possible values can be **Start** and **End**.
+* [`size`](../api/maps/arrowModel/#size) - To customize the size of the arrow in pixels.
 
 {% tab template= "maps/default-map", es5Template="arrowSettings" %}
 
 {% endtab %}
-
-Refer the [`API`](../api/maps/navigationLineSettingsModel/) for Navigation Lines feature.

@@ -1,6 +1,6 @@
 # Navigating to particular country
 
-You can navigate to a particular country by setting the center position zooming using the [centerPosition](../../api/maps#centerposition/) and [zoomFactor](../../api/maps/zoomSettings/#zoomfactor) APIs as demonstrated in the following code sample. The center position is used to configure the zoom level of maps, and zoom factor is used to specify the center position where the map should be displayed.
+To navigate a particular country by setting the center position zooming using the [`centerPosition`](../../api/maps#centerposition/) and [`zoomFactor`](../../api/maps/zoomSettings/#zoomfactor) property as demonstrated in the following sample. The center position is used to configure the zoom level of maps, and zoom factor is used to specify the center position where the map should be displayed.
 
 To navigate to a particular country, follow the given steps:
 

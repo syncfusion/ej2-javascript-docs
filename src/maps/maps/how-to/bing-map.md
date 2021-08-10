@@ -1,10 +1,10 @@
 # Display geometry shape in bing maps
 
-Usually bing map displays the maps in satellite view in which you can't make changes as per your requirement. To over come this, you can add maps shape as sublayer over the bing map and you can customize it as per your requirement. Kindly follow the below steps to add geometry shapes as sublayer in bing maps.
+Usually bing map displays the Maps in satellite view in which you can't make changes as per your requirement. To over come this, you can add maps shape as sublayer over the bing map and you can customize it as per your requirement. Kindly follow the below steps to add geometry shapes as sublayer in bing maps.
 
 **Step 1**:
 
-To render the map control as bing map, please set the layerType as bing and also provide your bing map's key.
+To render the Maps control as bing map, set the [`layerType`](../api/maps/layerSettingsModel/#layertype) as **Bing** and also provide the key for the bing map.
 
 {% tab template="maps/default-map", sourceFiles="index.ts,index.html" ,es5Template="bing" %}
 
@@ -30,7 +30,7 @@ map.appendTo("#container");
 
 **Step 2**:
 
-You can add geometry shape in bing map, using sublayer concept. First import the shape data and set the type as subLayer and also assign your shape data to API shapeData.
+The geometry shape can be added in the bing map using sublayer concept. In the below example, Africa continent can be set as the sublayer in bing map using the [`type`](../api/maps/layerSettingsModel/#type) property.
 
 {% tab template="maps/default-map", sourceFiles="index.ts,index.html" ,es5Template="bing-map" %}
 
@@ -61,5 +61,3 @@ map.appendTo("#container");
 ```
 
 {% endtab %}
-
-Above code will render Africa continent as sublayer in bing map.

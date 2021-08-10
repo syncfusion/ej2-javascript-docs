@@ -1,6 +1,7 @@
 # Drill-down
 
-By clicking a continent, you can view all the countries available in that continent using the drill-down feature. For example, the countries in the `Africa` continent have been showcased here. You can showcase all the countries in `Africa` continent by clicking the [shapeSelected](../../api/maps/) event as mentioned in the following code example.
+By clicking a continent, all the countries available in that continent can be viewed using the drill-down feature. For example, the countries in the `Africa` continent have been showcased here. To showcase all the countries in `Africa` continent by clicking the [`shapeSelected`](../api/maps#shapeselected) event as mentioned in the following example.
+
 <!-- markdownlint-disable MD031 -->
 {% tab template= "maps/default-map", sourceFiles="index.ts,index.html" , es5Template="drill" %}
 
@@ -15,7 +16,7 @@ export interface ShapeData {
     continent?: string;
 }
 
-// initialize Maps component
+// Initialize Maps component.
 let map: Maps = new Maps({
     shapeSelected: (args: IShapeSelectedEventArgs): void => {
         let shape: string = (args.shapeData as ShapeData).continent;
@@ -24,7 +25,7 @@ let map: Maps = new Maps({
             map.refresh();
         }
     },
-        layers: [
+    layers: [
         {
             layerType: 'Geometry',
             shapeData: world_map,
@@ -34,7 +35,7 @@ let map: Maps = new Maps({
             shapeSettings: {
                 colorValuePath: 'drillColor'
             },
-            markerSettings: [       {
+            markerSettings: [{
                 visible: true,
                 template: '<div id="marker3" class="markerTemplate">Africa' +
                     '</div>',
@@ -42,8 +43,7 @@ let map: Maps = new Maps({
                     { latitude: 10.97274101999902, longitude: 16.390625 }
                 ],
                 animationDuration: 0
-            }
-        ]
+            }]
         },
         {
             layerType: 'Geometry',
@@ -56,9 +56,8 @@ let map: Maps = new Maps({
                 fill: '#80306A'
             }
         }
-
     ]
-},);
+});
 map.appendTo('#element');
 
 ```

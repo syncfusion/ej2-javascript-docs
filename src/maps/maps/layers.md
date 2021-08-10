@@ -1,24 +1,16 @@
 # Layers
 
-Map is maintained through `layers` and it can accommodate one or more layers.
+The Maps component is rendered through [`layers`](../api/maps/#layers) and any number of layers can be added to the Maps.
 
 ## Multilayer
 
-The Multilayer support allows you to load multiple shape files in a single container, enabling maps to display more information.
-
-### Adding Multiple Layers in the Map
-
-The shape layers is the core layer of the map. The multiple layers can be added in the shape layers as `subLayers` within the shape layers.
+The Multilayer support allows loading multiple shapefiles and map providers in a single container, enabling Maps to display more information. The shape layer or map providers are the main layers of the Maps. Multiple layers can be added as **SubLayer** over the main layers using the [`type`](../api/maps/layerSettingsModel/#type) property in the [`layers`](../api/maps/layerSettingsModel/#type) property.
 
 ## SubLayer
 
-The subLayer is the collection of shape layers.
+Sublayer is a type of shape file layer. It allows loading multiple shape files in a single map view. For example, a sublayer can be added over the main layer to view geographic features such as rivers, valleys and cities in a map of a country. Similar to the main layer, elements in the Maps such as markers, bubbles, color mapping and legends can be added to the sub-layer.
 
-In this example, World Map shape is used as shape data by utilizing the `USA.json”` file in the following folder structure obtained from downloaded Maps_GeoJSON folder.
-
-..\ Maps_GeoJSON\
-
-You can assign the complete contents in `USA.json` file to new JSON object. For better understanding, a JSON file `USA.json` is already created to store JSON data in JSON object usa_map and also copy the USA.json file data, bind value to “california” and “texas”.
+In this example, the United States map shape is used as shape data by utilizing the **usa.ts** file, and the **texas.ts** and **california.ts** files are used as sub-layers in the United States map.
 
 {% tab template= "maps/default-map", es5Template="layers" %}
 
@@ -26,19 +18,11 @@ You can assign the complete contents in `USA.json` file to new JSON object. For 
 
 ## Displaying layer in the view
 
-In Maps, you can load multiple shape files. Using the `baseLayerIndex` property, you can select a layer to display on user interface.
-
-In this example, we have loaded two layers with the World map and the United States map shape data and selected a layer using the `baseLayerIndex` property to show that layer on the web page.
+Multiple shape files and map providers can be loaded simultaneously in Maps. The [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) property is used to determine which layer on the user interface should be displayed. This property is used for the Maps drill-down feature, so when the [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) value is changed, the corresponding shape is loaded. In this example, two layers can be loaded with the World map and the United States map. Based on the given [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) value the corresponding shape will be loaded in the user interface. If the [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) value is set to 0, then the world map will be loaded.
 
 {% tab template= "maps/default-map", es5Template="layerView" %}
 
 {% endtab %}
-
-If you set the `baseLayerIndex` value to 0, the world map will be loaded.
-
-This concept is used in the Maps drill-down feature, so the corresponding shape will be loaded when clicking a shape of the maps.
-
-Refer the [`API`](../api/maps/layerSettingsModel/) for Layers feature.
 
 ## See Also
 

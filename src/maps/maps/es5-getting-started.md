@@ -120,6 +120,8 @@ The [`Custom Resource Generator (CRG)`](https://crg.syncfusion.com/) is an onlin
 
 {% endtab %}
 
+> Note: Refer the data values for [`world_map`](https://www.syncfusion.com/downloads/support/directtrac/321036/ze/world_map1633413751.zip) here.
+
 <!-- markdownlint-disable MD009 -->
 
 ## Bind data source to map
@@ -130,9 +132,9 @@ The following properties in layers are used for binding data source to map.
 * [`shapeDataPath`]
 * [`shapePropertyPath`]
 
-The [`dataSource`] property takes collection value as input. For example, the list of objects can be provided as input. This data is further used in tooltip, data label, bubble, legend and in color mapping.
+The [`dataSource`](../api/maps/layerSettingsModel/#datasource) property takes collection value as input. For example, the list of objects can be provided as input. This data is further used in tooltip, data label, bubble, legend and in color mapping.
 
-The [`shapeDataPath`] property used to refer the data ID in dataSource. Where as, the [`shapePropertyPath`] property is used to refer the column name in shapeData to identify the shape. Both the properties are related to each other. When the values of the shapeDataPath property in the dataSource property and the value of shapePropertyPath in the shapeData property match, then the associated object from the dataSource is bound to the corresponding shape.
+The [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) property used to refer the data ID in dataSource. Where as, the [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property is used to refer the column name in shapeData to identify the shape. Both the properties are related to each other. When the values of the shapeDataPath property in the dataSource property and the value of shapePropertyPath in the shapeData property match, then the associated object from the dataSource is bound to the corresponding shape.
 
 The JSON object "UnCountries" is used as data source below.
 
@@ -140,9 +142,11 @@ The JSON object "UnCountries" is used as data source below.
 
 {% endtab %}
 
+> Note: Refer the data values for [`world_map`](https://www.syncfusion.com/downloads/support/directtrac/321036/ze/world_map1633413751.zip) here.
+
 ## Apply Color Mapping
 
-The Color Mapping feature supports customization of shape colors based on the underlying value of shape received from bounded data. Specify the field name from which the values have to be compared for the shapes in [`colorValuePath`] property in [`shapeSettings`].
+The Color Mapping feature supports customization of shape colors based on the underlying value of shape received from bounded data. Specify the field name from which the values have to be compared for the shapes in [`colorValuePath`](../api/maps/shapeSettingsModel/#colorvaluepath) property in [`shapeSettings`](../api/maps/shapeSettingsModel/).
 
 {% tab template="maps/default-map", es5Template="color-map" %}
 
@@ -150,7 +154,7 @@ The Color Mapping feature supports customization of shape colors based on the un
 
 ## Add Title for Maps
 
-You can add a title using [`titleSettings`] property to the map to provide quick
+You can add a title using [`titleSettings`](../api/maps/titleSettingsModel/) property to the map to provide quick
 information to the user about the shapes rendered in the map.
 
 {% tab template= "maps/default-map", es5Template="title" %}
@@ -159,8 +163,8 @@ information to the user about the shapes rendered in the map.
 
 ## Enable Legend
 
-You can show legend for the maps by setting true to the [`visible`]
-property in [`legendSettings`] object.
+You can show legend for the maps by setting true to the [`visible`](../api/maps/legendSettingsModel/#visible)
+property in [`legendSettings`](../api/maps/legendSettingsModel/) object.
 
 {% tab template="maps/default-map", es5Template="legend" %}
 
@@ -168,7 +172,7 @@ property in [`legendSettings`] object.
 
 ## Add Data Label
 
-You can add data labels to show additional information of the shapes in map. This can be achieved by setting [`visible`] property to true in the [`dataLabelSettings`] object.
+You can add data labels to show additional information of the shapes in map. This can be achieved by setting [`visible`](../api/maps/dataLabelSettingsModel/#visible) property to true in the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) object.
 
 {% tab template="maps/default-map", es5Template="label" %}
 
@@ -177,8 +181,8 @@ You can add data labels to show additional information of the shapes in map. Thi
 ## Enable Tooltip
 
 The tooltip is useful when you cannot display information by using the data labels due to space constraints.
-You can enable tooltip by setting the [`visible`] property as true
-in [`tooltipSettings`] object.
+You can enable tooltip by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property as true
+in [`tooltipSettings`](../api/maps/tooltipSettingsModel/) object.
 
 {% tab template="maps/default-map", es5Template="tooltip" %}
 

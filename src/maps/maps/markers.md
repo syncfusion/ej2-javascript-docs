@@ -1,42 +1,54 @@
 # Markers
 
-Markers are notes used to leave some message on the map.  It indicates or marks a specific location with desired symbols on the maps.
+Markers are notes that are used to leave a message on the Maps. It indicates or marks a specific location with desired symbols on the Maps. It can be enabled by setting the [`visible`](../api/maps/markerSettingsModel/#visible) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property to **true**.
 
-The `dataSource` property has a list of objects that contains data for markers. By default, it displays the bound data at the specified latitude and longitude. Using the `visible` API, you can enable or disable the markers.
+## Adding marker
 
-There are two ways to set marker for map.
+The [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property has a list of objects that contains the data for Markers. Using this property, any number of markers can be added to the shape layers. By default, it displays the markers based on the specified latitude and longitude in the given data source. Each data source object contains the following list of properties.
 
-* Marker and marker template
-
-* Adding marker objects to map.
-
-## Marker and marker template
-
-The `markerSettings.dataSource` property has a list of objects that contains the data for Annotation. By default, it displays the bound data at the specified latitude and longitude. The `markerSettings.template` property is used for customizing the template for markers.
+* label - Text that displays some information about the marker in text format.
+* latitude - The latitude point which determines the X location of the marker.
+* longitude - The longitude point which determines the Y location of the marker.
 
 **Note:** markerSettings is an Array property.
+
+{% tab template="maps/default-map", es5Template="marker-adding" %}
+
+{% endtab %}
+
+## Adding marker template
+
+The Marker can be added as a template in the Maps component. The [`template`](../api/maps/markerSettingsModel/#template) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property is used to set the Marker as a template. HTML element or id of an element can be added as the template in Markers.
 
 {% tab template="maps/default-map", es5Template="marker" %}
 
 {% endtab %}
 
-## Adding marker objects to map
+## Customization
 
-The n number of markers can be added to shape layers with `markerSettings.dataSource` property. Each dataSource object contains the following list of properties.
+The following properties are available in [`markerSettings`](../api/maps/markerSettingsModel/) property to customize the Markers of the Maps component.
 
-* label - Text that displays some information about the annotation in text format.
-* latitude - Latitude point determine the Y-axis position of annotation.
-* longitude - Longitude point determine the X-axis position of annotation.
+* [`border`](../api/maps/markerSettingsModel/#border) - To customize the color, width and opacity of the border for the markers in Maps.
+* [`fill`](../api/maps/markerSettingsModel/#fill) - To apply the color for markers in Maps.
+* [`dashArray`](../api/maps/markerSettingsModel/#dasharray) - To define the pattern of dashes and gaps that is applied to the outline of the markers in Maps.
+* [`height`](../api/maps/markerSettingsModel/#height) - To customize the height of the markers in Maps.
+* [`width`](../api/maps/markerSettingsModel/#width) - To customize the width of the markers in Maps.
+* [`offset`](../api/maps/markerSettingsModel/#offset) - To customize the position of the markers in Maps.
+* [`opacity`](../api/maps/markerSettingsModel/#opacity) - To customize the transparency of the markers in Maps.
+* [`animationDelay`](../api/maps/markerSettingsModel/#animationdelay) - To change the time delay in the transition for markers.
+* [`animationDuration`](../api/maps/markerSettingsModel/#animationduration) - To change the time duration of animation for markers.
+* [`highlightSettings`](../api/maps/markerSettingsModel/#highlightsettings) - To customize the highlight settings for the marker in Maps.
+* [`selectionSettings`](../api/maps/markerSettingsModel/#selectionsettings) - To customize the selection settings for the marker in Maps.
 
-{% tab template="maps/default-map", es5Template="marker-object" %}
+{% tab template="maps/default-map", es5Template="marker-customization" %}
 
 {% endtab %}
 
 ## Marker shapes
 
-The Maps component contains the following marker shapes. You can select any shape using the `shape` property in `markerSettings`.
+The Maps component supports the following marker shapes. To set the shape of the marker, the [`shape`](../api/maps/markerSettingsModel/#shape) property in [`markerSettings`](../api/maps/markerSettingsModel) property is used.
 
-* Ballon
+* Balloon
 * Circle
 * Cross
 * Diamond
@@ -47,9 +59,17 @@ The Maps component contains the following marker shapes. You can select any shap
 * VerticalLine
 * HorizontalLine
 
+## Rendering Marker shape as image
+
+To render a marker as an image in Maps, set the [`shape`](../api/maps/markerSettingsModel/#shape) property of [`markerSettings`](../api/maps/markerSettingsModel/) as **Image** and specify the path of the image to [`imageUrl`](../api/maps/markerSettingsModel/#imageurl) property. There is another way to render a marker as an image using the [`imageUrlValuePath`](../api/maps/markerSettingsModel/#imageurlvaluepath) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property. Bind the field name that contains the path of the image in the data source to the [`imageUrlValuePath`](../api/maps/markerSettingsModel/#imageurlvaluepath) property.
+
+{% tab template="maps/default-map", es5Template="marker-image" %}
+
+{% endtab %}
+
 ## Multiple marker groups
 
-You can specify multiple marker groups and customize each group of markers separately as demonstrated in the following example.
+Multiple group of markers can be added to the Maps using the [`markerSettings`](../api/maps/markerSettingsModel) property in which the properties of markers are added as an array. The customization for the markers can be done with the [`markerSettings`](../api/maps/markerSettingsModel) property.
 
 {% tab template="maps/default-map", es5Template="markerGroup" %}
 
@@ -59,11 +79,10 @@ You can specify multiple marker groups and customize each group of markers separ
 
 ### Bind different colors and shapes to the marker from data source
 
-The location on the map is marked by different marker shapes using `shapeValuePath` property in `markerSettings`. Based on the field name in the data source bind the value to the `shapeValuePath` property. Also, you can customize the marker shape color by binding the color value field name in the data source to the `colorValuePath` property in `markerSettings`.
-
-A default marker object is represented by `balloon` shape. You can set various shapes to the marker object by using `shape` property in `markerSettings`. Also, you can change the shapes of the marker from the datasource.
+Using the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) and [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath) properties, apply the color and shape of the marker from the given data source. Bind the data source to the [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property and set the field names that contains the shape and color values in the data source to the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) and [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath) properties. A default marker object is represented by a **balloon** shape. To set various shapes to the marker object by using the [`shape`](../api/maps/markerSettingsModel/#shape) property in [`markerSettings`](../api/maps/markerSettingsModel/).
 
 The following shapes are used for the marker object.
+
 * Circle
 * Rectangle
 * Balloon
@@ -80,45 +99,67 @@ The following shapes are used for the marker object.
 
 {% endtab %}
 
-## Marker Zooming
+## Setting value path from the data source
 
-The map is initially scaled to the center value based on the marker distance. This can be achieved by setting `shouldZoomInitially` property in `zoomSettings` as `true`.
+The latitude and longitude values are used to determine the location of each marker in the Maps. The [`latitudeValuePath`](../api/maps/markerSettingsModel/#latitudevaluepath) and [`longitudeValuePath`](../api/maps/markerSettingsModel/#longitudevaluepath) properties are used to specify the value path that presents in the data source of the marker. In the following example, the field name from the data source is set to the [`latitudeValuePath`](../api/maps/markerSettingsModel/#latitudevaluepath) and [`longitudeValuePath`](../api/maps/markerSettingsModel/#longitudevaluepath) properties.
+
+{% tab template="maps/default-map", es5Template="markerValuePath" %}
+
+{% endtab %}
+
+## Marker zooming
+
+The Maps is initially scaled to the center value based on the marker distance. This can be achieved by setting the [`shouldZoomInitially`](../api/maps/zoomSettingsModel/#shouldzoominitially) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) as **true**.
 
 {% tab template="maps/default-map", es5Template="markerZooming" %}
 
 {% endtab %}
 
-## Marker Cluster Expand
+## Marker clustering
 
-The cluster is formed by grouping an identical and non-identical marker from the surrounding area. By clicking on the cluster and setting `allowClusterExpand` property in `markerClusterSettings` as `true` to expand the identical markers. If you zoom in any of the locations of the cluster, the number on the cluster will decrease and the overlapping marker will be split into an individual marker on the map. When you zoom out, it will increase the marker count and then cluster it again.
+Maps provide support to hide and cluster markers when they overlap each other. The number on a cluster indicates how many overlapped markers it contains. If zooming any of the cluster locations in Maps, the number on the cluster will decrease and begin to see the individual markers on the map. When zooming out, the overlapping marker will increase so that it can cluster again and increase the count over the cluster.
 
-{% tab template="maps/default-map", es5Template="markerClusterExpand" %}
-
-{% endtab %}
-
-## Enable the Legend for map markers
-
-Legend can be enabled for marker using `legendSettings.type` as **Markers** and legend visible as true.Refer the code snippet to enable the legend for the markers.
-
-{% tab template="maps/default-map", es5Template="marker-legend" %}
-
-{% endtab %}
-
-## Marker Clustering
-
-Maps provides support to hide and cluster markers when they overlap each other.
-
-The number on a cluster indicates how many overlapped markers it contains. If you zoom any of the cluster locations, the number on the cluster will decrease and you will begin to see the individual markers on the map. When zooming out, the overlapping marker will increase so that you can cluster it again and increase the count over the cluster.
-
-Using the [`markerClusterSettings.allowClustering`](../api/maps/markerClusterSettings/#allowclustering) API, you can enable or disable this cluster support. The [`markerClusterSettings`](../api/maps/markerClusterSettings) API also helps to customize clusters.
-
-The [`MarkerClusterRendering`](../api/maps/iMarkerClusterRenderingEventArgs) event occurs when each cluster is rendered. You can also use this to customize the cluster. The [`markerClusterClick`](../api/maps/iMarkerClickEventArgs) and [`markerClusterMouseMove`](../api/maps/iMarkerClusterMoveEventArgs) events on mouse move and on clicking the cluster.
+To enable clustering in markers, set the [`allowClustering`](../api/maps/markerClusterSettingsModel/#allowclustering) property of [`markerClusterSettings`](../api/maps/markerClusterSettingsModel) as **true** and customization of clustering can be done with the [`markerClusterSettings`](../api/maps/markerClusterSettingsModel) property.
 
 {% tab template= "maps/default-map", es5Template="cluster" %}
 
 {% endtab %}
 
-Refer the [`API`](../api/maps/markerSettingsModel/) for Marker feature.
+## Customization of marker cluster
+
+The following properties are available to customize the marker clustering in the Maps component.
+
+* [`border`](../api/maps/markerClusterSettingsModel/#border) - To customize the color, width and opacity of the border of cluster in Maps.
+* [`connectorLineSettings`](../api/maps/connectorLineSettingsModel/) - To customize the connector line in cluster separating the markers.
+* [`dashArray`](../api/maps/markerClusterSettingsModel/#dasharray) - To customize the dash array for the marker cluster in Maps.
+* [`fill`](../api/maps/markerClusterSettingsModel/#fill) - Applies the color of the cluster in Maps.
+* [`height`](../api/maps/markerClusterSettingsModel/#height) - To customize the height of the marker cluster in Maps.
+* [`imageUrl`](../api/maps/markerClusterSettingsModel/#imageurl) - To customize the URL path for the marker cluster when the cluster shape is set as image in Maps.
+* [`labelStyle`](../api/maps/markerClusterSettingsModel/#labelstyle) - To customize the text in marker cluster.
+* [`offset`](../api/maps/markerClusterSettingsModel/#offset) - To customize the offset position for the marker cluster in Maps.
+* [`opacity`](../api/maps/markerClusterSettingsModel/#opacity) - To customize the opacity of the marker cluster.
+* [`shape`](../api/maps/markerClusterSettingsModel/#shape) - To customize the shape for the cluster of markers.
+* [`width`](../api/maps/markerClusterSettingsModel/#width) - To customize the width of the marker cluster in Maps.
+
+{% tab template= "maps/default-map", es5Template="cluster-customization" %}
+
+{% endtab %}
+
+## Marker cluster expand
+
+The cluster is formed by grouping an identical and non-identical marker from the surrounding area. By clicking on the cluster and setting the [`allowClusterExpand`](../api/maps/markerClusterSettingsModel/#allowclusterexpand) property in [`markerClusterSettings`](../api/maps/markerClusterSettingsModel) as **true** to expand the identical markers. If zoom in any of the locations of the cluster, the number on the cluster will decrease and the overlapping marker will be split into an individual marker on the map. When performing zoom out, it will increase the marker count and then cluster it again.
+
+{% tab template="maps/default-map", es5Template="markerClusterExpand" %}
+
+{% endtab %}
+
+## Tooltip for marker
+
+Tooltip is used to display more information about a marker on mouse over or touch end event. This can be enabled separately for marker by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property or [`tooltipSettings`](../api/maps/tooltipSettingsModel) property to **true**. The [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the [`tooltipSettings`](../api/maps/tooltipSettingsModel) takes the field name that presents in dataSource and displays that value as tooltip text. The following example illustrates enabling the tooltip for the marker.
+
+{% tab template="maps/default-map", es5Template="marker-tooltip" %}
+
+{% endtab %}
 
 ## See Also
 
