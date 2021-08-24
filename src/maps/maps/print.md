@@ -58,6 +58,6 @@ The rendered Maps with providers such as OSM, Bing and Google static Maps can be
 * PNG
 * PDF
 
-{% tab template="maps/OSMPrintExport", sourceFiles="index.ts,index.html", es5Template="OSMPrintExport" %}
+{% tab template="maps/OSMPrintExport", sourceFiles="index.ts,index.html", es5Template="osm" %}
 
 {% endtab %}

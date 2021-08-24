@@ -73,7 +73,8 @@ let map: Maps = new Maps({
             shapeData: world_map
         }
     ]
-}, '#element');
+});
+map.appendTo('#element');
 
 ```
 

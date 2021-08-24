@@ -174,7 +174,7 @@ property in [`legendSettings`](../api/maps/legendSettingsModel/) object.
 
 You can add data labels to show additional information of the shapes in map. This can be achieved by setting [`visible`](../api/maps/dataLabelSettingsModel/#visible) property to true in the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) object.
 
-{% tab template="maps/default-map", es5Template="label" %}
+{% tab template="maps/default-map", es5Template="dataLabel" %}
 
 {% endtab %}
 
@@ -184,6 +184,8 @@ The tooltip is useful when you cannot display information by using the data labe
 You can enable tooltip by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property as true
 in [`tooltipSettings`](../api/maps/tooltipSettingsModel/) object.
 
-{% tab template="maps/default-map", es5Template="tooltip" %}
+{% tab template="maps/default-map", es5Template="tooltips" %}
 
 {% endtab %}
+
+N> You can refer to our [JavaScript Maps](https://www.syncfusion.com/javascript-ui-controls/js-maps) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Map example](https://ej2.syncfusion.com/demos/#/material/maps/default.html) to know how to render and configure the map.

@@ -67,3 +67,11 @@ Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotat
 {% tab template= "maps/default-map", es5Template="annotationAlignment" %}
 
 {% endtab %}
+
+## Multiple Annotation
+
+Multiple annotations can be added to the Maps using the [`annotations`](../api/maps/annotationModel) property and customization for the annotations can be done with this property.
+
+{% tab template= "maps/default-map", es5Template="annotation-multiple" %}
+
+{% endtab %}

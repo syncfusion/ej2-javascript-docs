@@ -66,7 +66,7 @@ var map = new ej.maps.Maps({
         enable: true,
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
     }]
 });
 map.appendTo('#element');
@@ -83,7 +83,7 @@ var map = new ej.maps.Maps({
         pinchZooming: true
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
     }]
 });
 map.appendTo('#element');
@@ -100,7 +100,7 @@ var map = new ej.maps.Maps({
         zoomOnClick: true
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
     }]
 });
 map.appendTo('#element');
@@ -117,7 +117,7 @@ var map = new ej.maps.Maps({
         doubleClickZoom: true
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
     }]
 });
 map.appendTo('#element');
@@ -134,7 +134,7 @@ var map = new ej.maps.Maps({
         mouseWheelZoom: true
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
     }]
 });
 map.appendTo('#element');
@@ -152,7 +152,7 @@ var map = new ej.maps.Maps({
         maxZoom: 12
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
     }]
 });
 map.appendTo('#element');
@@ -168,7 +168,7 @@ var map = new ej.maps.Maps({
         enable: true,
     },
     layers: [{
-        shapeData: usmap,
+        shapeData: usa_map,
         animationDuration: 500
     }]
 });
@@ -211,7 +211,7 @@ To enable the selection for markers in Maps, set the [`selectionSettings`](../ap
 The [`shapeSelection`](../api/maps/#shapeselection) method can be used to select each shape in the Maps.
 LayerIndex, propertyName, country name, and selected value as a boolean state(true / false) are the input parameters for this method.
 
-{% tab template= "maps/default-map", es5Template="shapeSelectionMethod" %}
+{% tab template= "maps/selection-method", es5Template="shapeSelectionMethod" %}
 
 {% endtab %}
 
