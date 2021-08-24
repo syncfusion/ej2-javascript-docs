@@ -19,7 +19,7 @@ The Essential JS 2 JavaScript controls can be initialized by using either of the
 
 ### Using local script and style references in a HTML page
 
-**Step 1:** Create an app folder `quickstart` for getting started.
+**Step 1:** Create a folder `quickstart` for getting started application.
 
 **Step 2:** You can get the global scripts and styles from the [Essential Studio JavaScript (Essential JS 2)](https://www.syncfusion.com/downloads/essential-js2) build installed location.
 
@@ -39,14 +39,13 @@ The Essential JS 2 JavaScript controls can be initialized by using either of the
 >
 > Control Script: `C:\Program Files (x86)\Syncfusion\Essential Studio\JavaScript - EJ2\16.3.0.17\Web (Essential JS 2)\JavaScript\ej2-maps\dist\global\ej2-maps.min.js`
 
-The below located script and style file contains all Syncfusion JavaScript (ES5) UI control resources in a single file.
+The below located script file contains all Syncfusion JavaScript (ES5) UI control resources.
 
 > Scripts: `**(installed location)**\Syncfusion\Essential Studio\JavaScript - EJ2\{RELEASE_VERSION}\Web (Essential JS 2)\JavaScript\ej2\dist\ej2.min.js`
->
 
 The [`Custom Resource Generator (CRG)`](https://crg.syncfusion.com/) is an online web tool, which can be used to generate the custom script and styles for a set of specific controls. This web tool is useful to combine the required control scripts and styles in a single file.
 
-**Step 3:** Create a folder `~/quickstart/resources` and copy/paste the global scripts and styles from the above installed location to `~/quickstart/resources/package` corresponding package location.
+**Step 3:** Create a folder `~/quickstart/resources` and copy/paste the global scripts and styles from the above installed location to `~/quickstart/resources/scripts` for script files and `~/quickstart/resources/styles` for styles.
 
 **Step 4:** Create a HTML page (index.html) in `~/quickstart/index.html` and add the Essentials JS 2 script and style references.
 
@@ -56,18 +55,18 @@ The [`Custom Resource Generator (CRG)`](https://crg.syncfusion.com/) is an onlin
     <head>
         <title>Essential JS 2</title>
         <!-- Essential JS 2 Base's global script (Dependency Script) -->
-        <script src="resources/base/ej2-base.min.js" type="text/javascript"></script>
-        <script src="resources/base/ej2-data.min.js" type="text/javascript"></script>
-        <script src="resources/base/ej2-svg-base.min.js" type="text/javascript"></script>
+        <script src="resources/scripts/ej2-base.min.js" type="text/javascript"></script>
+        <script src="resources/scripts/ej2-data.min.js" type="text/javascript"></script>
+        <script src="resources/scripts/ej2-svg-base.min.js" type="text/javascript"></script>
         <!-- Essential JS 2 Maps's global script (Control Script) -->
-        <script src="resources/maps/ej2-maps.min.js" type="text/javascript"></script>
+        <script src="resources/scripts/ej2-maps.min.js" type="text/javascript"></script>
     </head>
     <body>
     </body>
 </html>
 ```
 
-**Step 5:** Now, add the `maps` element and initiate the `Syncfusion JavaScript (ES5) maps` control in the `~/quickstart/index.html` by using following code
+**Step 5:** Now, add a div element to initiate the `Syncfusion JavaScript (ES5) Maps` control in the `~/quickstart/index.html` by using following code
 
 ```html
 <!DOCTYPE html>
@@ -88,11 +87,26 @@ The [`Custom Resource Generator (CRG)`](https://crg.syncfusion.com/) is an onlin
 </html>
 ```
 
-**Step 6:** Now, run the `index.html` in web browser, it will render the **Syncfusion JavaScript maps** control.
+**Step 6:** Add the Maps control to the div element with `id` attribute as "**element**" using the below code. The below code can be added as separate script file and refer it in the **script** tag within the **body** tag.
+
+```
+var map = new ej.maps.Maps({
+   layers: [
+        {
+            shapeData: world_map
+        }
+    ]
+});
+map.appendTo('#element');
+```
+
+> Note: Refer the data values for [`world_map`](https://www.syncfusion.com/downloads/support/directtrac/321036/ze/world_map1633413751.zip) here. These data must be referred as script file in the HTML code.
+
+**Step 7:** Now, run the `index.html` in web browser, it will render the **Syncfusion JavaScript maps** control.
 
 ### Using CDN link for script and style reference
 
-**Step 1:** Create an app folder `quickstart` for getting started.
+**Step 1:** Create a folder `quickstart` for getting started application.
 
 **Step 2:** The Essential JS 2 controls's global scripts and styles are already hosted in the below CDN link formats.
 
@@ -106,16 +120,51 @@ The [`Custom Resource Generator (CRG)`](https://crg.syncfusion.com/) is an onlin
 > Script: [`https://cdn.syncfusion.com/ej2/ej2-maps/dist/global/ej2-maps.min.js`](https://cdn.syncfusion.com/ej2/ej2-maps/dist/global/ej2-maps.min.js)
 >
 
-**Step 3:** Create a HTML page (index.html) in `~/quickstart/index.html` location and add the following CDN link references.
+**Step 3:** Create a HTML page **index.html** in the **quickstart** folder and add the following CDN link references.
 ```
 <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
-    <script src="https://cdn.syncfusion.com/ej2/ej2-svg-base/dist/global/ej2-svg-base.min.js" type="text/javascript"></script>
-    <script src="https://cdn.syncfusion.com/ej2/ej2-data/dist/global/ej2-data.min.js" type="text/javascript"></script>
-	<script src="https://cdn.syncfusion.com/ej2/ej2-maps/dist/global/ej2-maps.min.js"></script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-svg-base/dist/global/ej2-svg-base.min.js" type="text/javascript"></script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-data/dist/global/ej2-data.min.js" type="text/javascript"></script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-maps/dist/global/ej2-maps.min.js"></script>
 
 ```
- Now, add the `maps` element and initiate the `Syncfusion JavaScript (ES5) maps` control in the index.html by using following code.
- 
+
+**Step 4:** Now, add the div element for initiating the `Syncfusion JavaScript (ES5) maps` control in the index.html by using following code.
+
+```html
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
+        <script src="https://cdn.syncfusion.com/ej2/ej2-svg-base/dist/global/ej2-svg-base.min.js" type="text/javascript"></script>
+        <script src="https://cdn.syncfusion.com/ej2/ej2-data/dist/global/ej2-data.min.js" type="text/javascript"></script>
+        <script src="https://cdn.syncfusion.com/ej2/ej2-maps/dist/global/ej2-maps.min.js"></script>
+    </head>
+    <body>
+        <div id='container'>
+            <div id='element'></div>
+        </div>
+    </body>
+</html>
+```
+
+**Step 5:** Add the Maps control to the div element with `id` attribute as "**element**" using the below code. The below code can be added as separate script file and refer it in the **script** tag within the **body** tag.
+
+```
+var map = new ej.maps.Maps({
+   layers: [
+        {
+            shapeData: world_map
+        }
+    ]
+});
+map.appendTo('#element');
+```
+
+> Note: Refer the data values for [`world_map`](https://www.syncfusion.com/downloads/support/directtrac/321036/ze/world_map1633413751.zip) here. These data must be referred as script file in the HTML code.
+
+**Step 6:** Now, run the `index.html` in web browser, it will render the **Syncfusion JavaScript maps** control.
+
 {% tab template="maps/default-map", es5Template="default" %}
 
 {% endtab %}
@@ -128,9 +177,9 @@ The [`Custom Resource Generator (CRG)`](https://crg.syncfusion.com/) is an onlin
 
 The following properties in layers are used for binding data source to map.
 
-* [`dataSource`]
-* [`shapeDataPath`]
-* [`shapePropertyPath`]
+* `dataSource`
+* `shapeDataPath`
+* `shapePropertyPath`
 
 The [`dataSource`](../api/maps/layerSettingsModel/#datasource) property takes collection value as input. For example, the list of objects can be provided as input. This data is further used in tooltip, data label, bubble, legend and in color mapping.
 
