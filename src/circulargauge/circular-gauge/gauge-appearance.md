@@ -15,7 +15,8 @@ let gauge: CircularGauge = new CircularGauge({
     titleStyle: {
         color: '#27d5ff'
     }
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -52,7 +53,8 @@ let gauge: CircularGauge = new CircularGauge({
         startAngle: 90,
         endAngle: 180
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -81,7 +83,8 @@ let gauge: CircularGauge = new CircularGauge({
         startAngle: 0,
         endAngle: 180
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -134,7 +137,8 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '110%'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -186,7 +190,8 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '110%'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -212,7 +217,8 @@ let gauge: CircularGauge = new CircularGauge({
         endAngle: 90,
         radius: '80%'
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 

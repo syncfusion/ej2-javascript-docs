@@ -15,7 +15,8 @@ CircularGauge.Inject(Print);
 
 let gauge: CircularGauge = new CircularGauge({
     allowPrint: true
-}, '#element');
+});
+gauge.appendTo('#element');
 document.getElementById('print').onclick = () => {
     gauge.print();
 };
@@ -59,11 +60,11 @@ CircularGauge.Inject(ImageExport);
 
 let gauge: CircularGauge = new CircularGauge({
     allowImageExport: true
-}, '#element');
+});
+gauge.appendTo('#element');
 document.getElementById('export').onclick = () => {
     gauge.export('JPEG', 'Gauge', null, false).then((data) => {
-            let base64 = data;
-            document.writeln(base64);
+            document.getElementById('data').innerHTML = data;
         });
 };
 ```
@@ -82,7 +83,8 @@ CircularGauge.Inject(PdfExport);
 
 let gauge: CircularGauge = new CircularGauge({
     allowPdfExport: true
-}, '#element');
+});
+gauge.appendTo('#element');
 document.getElementById('export').onclick = () => {
     gauge.export("PDF", "Gauge", 0);
 };

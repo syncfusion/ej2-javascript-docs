@@ -28,7 +28,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 70
         }],
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -55,7 +56,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 70
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -154,7 +156,8 @@ let gauge: CircularGauge = new CircularGauge({
         annotationSettings: { template:'<div>CircularGauge</div>' },
         rangeSettings: { fill:'red' }
     },
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -180,7 +183,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 70
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 

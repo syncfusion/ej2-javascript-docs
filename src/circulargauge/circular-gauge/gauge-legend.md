@@ -138,7 +138,8 @@ let gauge: CircularGauge = new CircularGauge({
             width:3
         }
     }
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -189,7 +190,8 @@ let gauge: CircularGauge = new CircularGauge({
         visible: true,
         toggleVisibility: true
     }
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -240,7 +242,8 @@ let gauge: CircularGauge = new CircularGauge({
         visible: true,
         height: '50'
     }
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -298,7 +301,8 @@ let gauge: CircularGauge = new CircularGauge({
     legendRender: (args: ILegendRenderEventArgs) => {
         args.text = "Legend Modified Text Value";
     }
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 

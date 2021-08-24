@@ -15,7 +15,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 90
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -49,7 +50,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -89,7 +91,8 @@ let gauge: CircularGauge = new CircularGauge({
             pointerWidth: 25
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -146,7 +149,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         ]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -170,7 +174,8 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '60%'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -200,7 +205,8 @@ let gauge: CircularGauge = new CircularGauge({
             pointerWidth: 15
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -230,7 +236,8 @@ let gauge: CircularGauge = new CircularGauge({
             roundedCornerRadius: 6
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -263,7 +270,8 @@ let gauge: CircularGauge = new CircularGauge({
             markerWidth: 15
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -299,7 +307,8 @@ let gauge: CircularGauge = new CircularGauge({
             markerWidth: 15
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -309,7 +318,7 @@ let gauge: CircularGauge = new CircularGauge({
 
 The pointers can be dragged over the axis line by clicking and dragging the same. To enable or disable the pointer drag, use the [`enablePointerDrag`](../api/circular-gauge/circularGaugeModel/#enablepointerdrag) property.
 
-{% tab template= "circular-gauge/gauge-pointers", sourceFiles="index.ts,index.html", es5Template="es5DragPointer" %}
+{% tab template= "circular-gauge/gauge-user-interaction", sourceFiles="index.ts,index.html", es5Template="es5PointerDrag" %}
 
 ```typescript
 
@@ -323,7 +332,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 50
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -367,7 +377,8 @@ let gauge: CircularGauge = new CircularGauge({
             pointerWidth: 25
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -395,7 +406,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -476,7 +488,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -551,7 +564,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }]
      }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 

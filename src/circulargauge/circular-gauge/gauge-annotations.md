@@ -24,7 +24,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 50
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -56,7 +57,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 50
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -164,7 +166,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 let gauge: CircularGauge = new CircularGauge({
     axes: [{
@@ -211,7 +214,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }]
     }]
-}, '#subGauge');
+});
+gauge.appendTo('#subGauge');
 
 ```
 

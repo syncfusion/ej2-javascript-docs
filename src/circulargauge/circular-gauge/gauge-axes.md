@@ -23,7 +23,8 @@ let gauge: CircularGauge = new CircularGauge({
         },
         background: 'rgba(0, 128, 128, 0.3)'
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -47,7 +48,8 @@ let gauge: CircularGauge = new CircularGauge({
         startAngle: 270,
         endAngle: 90
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -66,7 +68,8 @@ let gauge: CircularGauge = new CircularGauge({
     axes: [{
         direction: 'AntiClockWise'
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -92,7 +95,8 @@ let gauge: CircularGauge = new CircularGauge({
     axes: [{
         radius: '150'
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -113,7 +117,8 @@ let gauge: CircularGauge = new CircularGauge({
     axes: [{
         radius: '50%'
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -152,7 +157,8 @@ let gauge: CircularGauge = new CircularGauge({
             width: 2
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -188,7 +194,8 @@ let gauge: CircularGauge = new CircularGauge({
             offset: 5
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -213,7 +220,8 @@ let gauge: CircularGauge = new CircularGauge({
             }
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -240,7 +248,8 @@ let gauge: CircularGauge = new CircularGauge({
             offset: 5
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -262,7 +271,8 @@ let gauge: CircularGauge = new CircularGauge({
         maximum: 170,
         startAngle: 210, endAngle: 150
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -283,7 +293,8 @@ let gauge: CircularGauge = new CircularGauge({
             autoAngle: true
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -324,7 +335,8 @@ let gauge: CircularGauge = new CircularGauge({
             hiddenLabel: 'First'
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -345,7 +357,8 @@ let gauge: CircularGauge = new CircularGauge({
             format: 'p1'
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -426,7 +439,8 @@ let gauge: CircularGauge = new CircularGauge({
             format: '{value}°C'
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -455,7 +469,8 @@ let gauge: CircularGauge = new CircularGauge({
            interval:2
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -476,7 +491,8 @@ let gauge: CircularGauge = new CircularGauge({
         minimum: 50,
         maximum: 250
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -520,7 +536,8 @@ let gauge: CircularGauge = new CircularGauge({
             color: '#27d5ff'
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 

@@ -36,7 +36,8 @@ let gauge: CircularGauge = new CircularGauge({
             format: 'c'
         }
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 

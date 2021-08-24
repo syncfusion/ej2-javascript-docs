@@ -19,7 +19,8 @@ let gauge: CircularGauge = new CircularGauge({
             end: 80
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -43,7 +44,8 @@ let gauge: CircularGauge = new CircularGauge({
             color: '#ff5985'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -76,7 +78,8 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '100'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -104,7 +107,8 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '50%'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -135,7 +139,8 @@ let gauge: CircularGauge = new CircularGauge({
             value: 50
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -184,7 +189,8 @@ let gauge: CircularGauge = new CircularGauge({
             radius: '108%'
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -210,7 +216,8 @@ let gauge: CircularGauge = new CircularGauge({
             roundedCornerRadius: 5,
         }]
     }]
-}, '#element');
+});
+gauge.appendTo('#element');
 
 ```
 
@@ -236,100 +243,60 @@ To apply linear gradient to the range, follow the below code sample.
 import { CircularGauge, Gradient } from '@syncfusion/ej2-circulargauge';
 CircularGauge.Inject(Gradient);
 let rangeLinearGradient: Object = {
-    startValue: '0%', endValue: '100%',
+    startValue: '0%',
+    endValue: '100%',
     colorStop: [
         { color: '#9E40DC', offset: '0%', opacity: 0.9 },
         { color: '#E63B86', offset: '70%', opacity: 0.9 }
     ]
 };
-let gauge: CircularGauge = new CircularGauge({
-    title: 'Short Put Distance',
-    titleStyle: {
-        size: '18px'
-    },
-    centerY: '57%',
-    axes: [{
-        annotations: [{
-            content: '12 M', radius: '108%', angle: 98, zIndex: '1'
-        }, {
-            content: '11 M', radius: '80%', angle: 81, zIndex: '1'
-        }, {
-            content: '10 M', radius: '50%', angle: 69, zIndex: '1'
-        }, {
-            content: 'Doe', radius: '108%', angle: 190, zIndex: '1'
-        }, {
-            content: 'Almaida', radius: '80%', angle: 185, zIndex: '1'
-        }, {
-            content: 'John', radius: '50%', angle: 180, zIndex: '1'
-        }],
-        lineStyle: {
-             width: 0
-        },
-        radius: '90%',
+let gauge: CircularGauge = new CircularGauge(
+  {
+    axes: [
+    {
+        lineStyle: { width: 0 },
         labelStyle: {
+            position: 'Inside',
+            useRangeColor: true,
             font: {
-                size: '0px'
+                size: '0px',
+                color: 'white',
+                fontFamily: 'Roboto',
+                fontStyle: 'Regular'
             }
         },
-        majorTicks: {
-            width: 0
-        },
-        minorTicks: {
-            width: 0
-        },
-        startAngle: 200, endAngle: 130,
-        minimum: 0, maximum: 14,
-        ranges: [{
-            start: 0, end: 12, radius: '115%',
-            startWidth: 25, endWidth: 25,
-            linearGradient : rangeLinearGradient
-        }, {
-            start: 0, end: 11, radius: '85%',
-            startWidth: 25, endWidth: 25,
-            linearGradient : rangeLinearGradient
-        }, {
-            start: 0, end: 10, radius: '55%',
-            startWidth: 25, endWidth: 25,
-            linearGradient : rangeLinearGradient
-        }],
-        pointers: [{
-            type: 'Marker', value: 12, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/football.png',
-            radius: '108%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }, {
-            type: 'Marker', value: 11, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/basketball.png',
-            radius: '78%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1200 }
-        }, {
-            type: 'Marker', value: 10, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/golfball.png',
-            radius: '48%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 900 }
-        }, {
-            type: 'Marker', value: 12, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/athletics.png',
-            radius: '0%', markerWidth: 90, markerHeight: 90,
-            animation: { duration: 0 }
-        }, {
-            type: 'Marker', value: 0.1, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/girl1.png',
-            radius: '108%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }, {
-            type: 'Marker', value: 0.1, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/man1.png',
-            radius: '78%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }, {
-            type: 'Marker', value: 0.1, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/man2.png',
-            radius: '48%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }]
-    }]
-}, '#element');
+        majorTicks: { height: 0 },
+        minorTicks: { height: 0 },
+        startAngle: 200,
+        endAngle: 160,
+        minimum: 0,
+        maximum: 100,
+        radius: '80%',
+        ranges: [
+        {
+            start: 0,
+            end: 100,
+            radius: '90%',
+            startWidth: 30,
+            endWidth: 30,
+            color: '#E0E0E0',
+            roundedCornerRadius: 20,
+            linearGradient: rangeLinearGradient
+        }
+        ],
+        pointers: [
+          {
+            cap: {
+                radius: 0
+            },
+            pointerWidth: 0
+          }
+        ]
+      }
+    ]
+  }
+);
+gauge.appendTo('#element');
 
 ```
 
@@ -345,102 +312,64 @@ To apply radial gradient to the range, follow the below code sample.
 
 ```typescript
 
-import { CircularGauge, Gradient, Annotations } from '@syncfusion/ej2-circulargauge';
-CircularGauge.Inject(Gradient, Annotations);
+import { CircularGauge, Gradient } from '@syncfusion/ej2-circulargauge';
+CircularGauge.Inject(Gradient);
 let rangeRadialGradient: Object = {
-    radius: '50%', innerPosition: { x: '50%', y: '50%' },
+    radius: '50%',
+    innerPosition: { x: '50%', y: '50%' },
     outerPosition: { x: '50%', y: '50%' },
     colorStop: [
         { color: '#9E40DC', offset: '90%', opacity: 0.9 },
         { color: '#E63B86', offset: '160%', opacity: 0.9 }
     ]
 };
-let gauge: CircularGauge = new CircularGauge({
-    title: 'Short Put Distance',
-    titleStyle: {
-        size: '18px'
-    },
-    centerY: '57%',
-    axes: [{
-        annotations: [{
-            content: '12 M', radius: '108%', angle: 98, zIndex: '1'
-        }, {
-            content: '11 M', radius: '80%', angle: 81, zIndex: '1'
-        }, {
-            content: '10 M', radius: '50%', angle: 69, zIndex: '1'
-        }, {
-            content: 'Doe', radius: '108%', angle: 190, zIndex: '1'
-        }, {
-            content: 'Almaida', radius: '80%', angle: 185, zIndex: '1'
-        }, {
-            content: 'John', radius: '50%', angle: 180, zIndex: '1'
-        }],
-        lineStyle: {
-            width: 0
-        },
-        radius: '90%',
+let gauge: CircularGauge = new CircularGauge(
+  {
+    axes: [
+    {
+        lineStyle: { width: 0 },
         labelStyle: {
-        font: {
-            size: '0px'
-        }
-        }, majorTicks: {
-            width: 0
-        }, minorTicks: {
-            width: 0
+            position: 'Inside',
+            useRangeColor: true,
+            font: {
+                size: '0px',
+                color: 'white',
+                fontFamily: 'Roboto',
+                fontStyle: 'Regular'
+            }
         },
-        startAngle: 200, endAngle: 130,
-        minimum: 0, maximum: 14,
-        ranges: [{
-        start: 0, end: 12, radius: '115%',
-        startWidth: 25, endWidth: 25,
-        radialGradient: rangeRadialGradient
-        }, {
-            start: 0, end: 11, radius: '85%',
-            startWidth: 25, endWidth: 25,
+        majorTicks: { height: 0 },
+        minorTicks: { height: 0 },
+        startAngle: 200,
+        endAngle: 160,
+        minimum: 0,
+        maximum: 100,
+        radius: '80%',
+        ranges: [
+        {
+            start: 0,
+            end: 100,
+            radius: '90%',
+            startWidth: 30,
+            endWidth: 30,
+            color: '#E0E0E0',
+            roundedCornerRadius: 20,
             radialGradient: rangeRadialGradient
-        }, {
-            start: 0, end: 10, radius: '55%',
-            startWidth: 25, endWidth: 25,
-            radialGradient: rangeRadialGradient
-            }],
-        pointers: [{
-            type: 'Marker', value: 12, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/football.png',
-            radius: '108%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }, {
-            type: 'Marker', value: 11, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/basketball.png',
-            radius: '78%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1200 }
-        }, {
-            type: 'Marker', value: 10, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/golfball.png',
-            radius: '48%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 900 }
-        }, {
-            type: 'Marker', value: 12, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/athletics.png',
-            radius: '0%', markerWidth: 90, markerHeight: 90,
-            animation: { duration: 0 }
-        }, {
-            type: 'Marker', value: 0.1, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/girl1.png',
-            radius: '108%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }, {
-            type: 'Marker', value: 0.1, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/man1.png',
-            radius: '78%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-         }, {
-            type: 'Marker', value: 0.1, markerShape: 'Image',
-            imageUrl: 'templates/circular-gauge/images/man2.png',
-            radius: '48%', markerWidth: 28, markerHeight: 28,
-            animation: { duration: 1500 }
-        }]
-    }]
-}, '#element');
+        }
+        ],
+        pointers: [
+          {
+            cap: {
+                radius: 0
+            },
+            pointerWidth: 0
+          }
+        ]
+      }
+    ]
+  }
+);
+gauge.appendTo('#element');
 
 ```
 
