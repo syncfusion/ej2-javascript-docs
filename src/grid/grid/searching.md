@@ -185,3 +185,37 @@ document.getElementById('clear').addEventListener('click', () => {
 ```
 
 {% endtab %}
+
+## Search on each key stroke
+
+You can search the Grid data on each key stroke by binding the `keyup` event for the search input element inside the [`created`](../api/grid/#created) event. Inside the `keyup` handler you can search the Grid by invoking the [`search`](../api/grid/#search) method of the Grid component.
+
+{% tab template="grid/column-search", es5Template="eachkey" %}
+
+```typescript
+import { Grid, Search, Toolbar } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+
+Grid.Inject(Search, Toolbar);
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    toolbar: ['Search'],
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 150 },
+        { field: 'ShipCity', headerText: 'Ship City', width: 150 },
+        { field: 'ShipName', headerText: 'Ship Name', width: 150 }
+    ],
+    height: 272,
+    created: () => {
+        document.getElementById(grid.element.id + "_searchbar").addEventListener('keyup', () => {
+                grid.search((event.target as HTMLInputElement).value)
+        });
+    }
+});
+grid.appendTo('#Grid');
+
+```
+
+{% endtab %}

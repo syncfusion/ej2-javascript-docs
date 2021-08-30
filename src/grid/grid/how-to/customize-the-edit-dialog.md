@@ -8,15 +8,30 @@ description: "Learn how to customize the Edit Dialog."
 
 You can customize the appearance of the edit dialog in the [`actionComplete`](../../api/grid/#actioncomplete) event based on `requestType` as `beginEdit` or `add`.
 
-In the following example, the dialog's header text has been changed for editing and adding the records.
+In the following example, the dialog's properties like header text, showCloseIcon, height have been changed while editing and adding the records.
+
+Also the locale text for the `Save` and `Cancel` buttons has been changed by overriding the default locale strings.
+
+You can refer the Grid [`Default text`](../grid/global-local/) list for more localization.
 
 {% tab template="grid/customizedialog", sourceFiles="index.ts,index.css,index.html",es5Template="customizedialog" %}
 
 ```typescript
+import { L10n } from '@syncfusion/ej2-base';
+import { DialogModel } from '@syncfusion/ej2-popups';
 import { Grid, Edit, Toolbar, DialogEditEventArgs } from '@syncfusion/ej2-grids';
 import { data } from './datasource.ts';
 
 Grid.Inject(Edit, Toolbar);
+
+L10n.load({
+  'en-US': {
+    grid: {
+      SaveButton: 'Submit',
+      CancelButton: 'Discard'
+    }
+  }
+});
 
 let grid: Grid = new Grid({
     dataSource: data,
@@ -29,8 +44,9 @@ let grid: Grid = new Grid({
     ],
     height: 265,
     actionComplete: (args: DialogEditEventArgs) => {
-        if ((args.requestType === 'beginEdit' || args.requestType === 'add')) {
-            let dialog: Dialog = args.dialog;
+        if (args.requestType === 'beginEdit' || args.requestType === 'add') {
+            let dialog: DialogModel = args.dialog;
+            dialog.showCloseIcon = false;
             dialog.height = 400;
             // change the header of the dialog
             dialog.header = args.requestType === 'beginEdit' ? 'Edit Record of ' + args.rowData['CustomerID'] : 'New Customer';
