@@ -1,10 +1,10 @@
 # Navigation Lines
 
-The navigation lines are used to denote the path between two locations. This feature can be used to draw flight or sea routes. Navigation lines are enabled by setting the [`visible`](../api/maps/navigationLineSettingsModel/#visible) property of the [`navigationLineSettings`](../api/maps/navigationLineSettingsModel) property to **true**.
+The navigation lines are used to denote the path between two locations. This feature can be used to draw flight or sea routes. Navigation lines are enabled by setting the [`visible`](../api/maps/navigationLineSettingsModel/#visible) property of the [`navigationLineSettings`](../api/maps/navigationLineSettingsModel) to **true**.
 
 ## Customization
 
-The following properties are available in [`navigationLineSettings`](../api/maps/navigationLineSettingsModel/) property to customize the navigation line of the Maps component.
+The following properties are available in [`navigationLineSettings`](../api/maps/navigationLineSettingsModel/) to customize the navigation line of the Maps component.
 
 * [`color`](../api/maps/navigationLineSettingsModel/#color) - To apply the color for navigation lines in Maps.
 * [`dashArray`](../api/maps/navigationLineSettingsModel/#dasharray) - To define the pattern of dashes and gaps that is applied to the outline of the navigation lines.
@@ -19,7 +19,7 @@ The following properties are available in [`navigationLineSettings`](../api/maps
 
 ## Enabling the arrows
 
-To enable the arrow in the navigation line, set the [`showArrow`](../api/maps/arrowModel/#showarrow) property of [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) property to **true**. The following properties are available in [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) property to customize the arrow of the navigation lines.
+To enable the arrow in the navigation line, set the [`showArrow`](../api/maps/arrowModel/#showarrow) property of [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) to **true**. The following properties are available in [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) to customize the arrow of the navigation lines.
 
 * [`color`](../api/maps/arrowModel/#color) - To apply the color for arrow of the navigation line.
 * [`offset`](../api/maps/arrowModel/#offset) - To customize the offset position of the arrow of the navigation line.

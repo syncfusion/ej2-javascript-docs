@@ -236,5 +236,3 @@ in [`tooltipSettings`](../api/maps/tooltipSettingsModel/) object.
 {% tab template="maps/default-map", es5Template="tooltips" %}
 
 {% endtab %}
-
-N> You can refer to our [JavaScript Maps](https://www.syncfusion.com/javascript-ui-controls/js-maps) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Map example](https://ej2.syncfusion.com/demos/#/material/maps/default.html) to know how to render and configure the map.

@@ -1,16 +1,16 @@
 # Markers
 
-Markers are notes that are used to leave a message on the Maps. It indicates or marks a specific location with desired symbols on the Maps. It can be enabled by setting the [`visible`](../api/maps/markerSettingsModel/#visible) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property to **true**.
+Markers are notes that are used to leave a message on the Maps. It indicates or marks a specific location with desired symbols on the Maps. It can be enabled by setting the [`visible`](../api/maps/markerSettingsModel/#visible) property of the [`markerSettings`](../api/maps/markerSettingsModel/) to **true**.
 
 ## Adding marker
 
-The [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property has a list of objects that contains the data for Markers. Using this property, any number of markers can be added to the shape layers. By default, it displays the markers based on the specified latitude and longitude in the given data source. Each data source object contains the following list of properties.
+The [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the [`markerSettings`](../api/maps/markerSettingsModel/) has a list of objects that contains the data for Markers. Using this property, any number of markers can be added to the shape layers. By default, it displays the markers based on the specified latitude and longitude in the given data source. Each data source object contains the following list of properties.
 
 * label - Text that displays some information about the marker in text format.
 * latitude - The latitude point which determines the X location of the marker.
 * longitude - The longitude point which determines the Y location of the marker.
 
-**Note:** markerSettings is an Array property.
+>markerSettings is an Array property.
 
 {% tab template="maps/default-map", es5Template="marker-adding" %}
 
@@ -18,7 +18,7 @@ The [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the 
 
 ## Adding marker template
 
-The Marker can be added as a template in the Maps component. The [`template`](../api/maps/markerSettingsModel/#template) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property is used to set the Marker as a template. HTML element or id of an element can be added as the template in Markers.
+The Marker can be added as a template in the Maps component. The [`template`](../api/maps/markerSettingsModel/#template) property of the [`markerSettings`](../api/maps/markerSettingsModel/) is used to set the Marker as a template. HTML element or id of an element can be added as the template in Markers.
 
 {% tab template="maps/default-map", es5Template="marker" %}
 
@@ -26,7 +26,7 @@ The Marker can be added as a template in the Maps component. The [`template`](..
 
 ## Customization
 
-The following properties are available in [`markerSettings`](../api/maps/markerSettingsModel/) property to customize the Markers of the Maps component.
+The following properties are available in [`markerSettings`](../api/maps/markerSettingsModel/) to customize the Markers of the Maps component.
 
 * [`border`](../api/maps/markerSettingsModel/#border) - To customize the color, width and opacity of the border for the markers in Maps.
 * [`fill`](../api/maps/markerSettingsModel/#fill) - To apply the color for markers in Maps.
@@ -46,7 +46,7 @@ The following properties are available in [`markerSettings`](../api/maps/markerS
 
 ## Marker shapes
 
-The Maps component supports the following marker shapes. To set the shape of the marker, the [`shape`](../api/maps/markerSettingsModel/#shape) property in [`markerSettings`](../api/maps/markerSettingsModel) property is used.
+The Maps component supports the following marker shapes. To set the shape of the marker, the [`shape`](../api/maps/markerSettingsModel/#shape) property in [`markerSettings`](../api/maps/markerSettingsModel) is used.
 
 * Balloon
 * Circle
@@ -61,7 +61,7 @@ The Maps component supports the following marker shapes. To set the shape of the
 
 ## Rendering Marker shape as image
 
-To render a marker as an image in Maps, set the [`shape`](../api/maps/markerSettingsModel/#shape) property of [`markerSettings`](../api/maps/markerSettingsModel/) as **Image** and specify the path of the image to [`imageUrl`](../api/maps/markerSettingsModel/#imageurl) property. There is another way to render a marker as an image using the [`imageUrlValuePath`](../api/maps/markerSettingsModel/#imageurlvaluepath) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property. Bind the field name that contains the path of the image in the data source to the [`imageUrlValuePath`](../api/maps/markerSettingsModel/#imageurlvaluepath) property.
+To render a marker as an image in Maps, set the [`shape`](../api/maps/markerSettingsModel/#shape) property of [`markerSettings`](../api/maps/markerSettingsModel/) as **Image** and specify the path of the image to [`imageUrl`](../api/maps/markerSettingsModel/#imageurl) property. There is another way to render a marker as an image using the [`imageUrlValuePath`](../api/maps/markerSettingsModel/#imageurlvaluepath) property of the [`markerSettings`](../api/maps/markerSettingsModel/). Bind the field name that contains the path of the image in the data source to the [`imageUrlValuePath`](../api/maps/markerSettingsModel/#imageurlvaluepath) property.
 
 {% tab template="maps/default-map", es5Template="marker-image" %}
 
@@ -69,7 +69,7 @@ To render a marker as an image in Maps, set the [`shape`](../api/maps/markerSett
 
 ## Multiple marker groups
 
-Multiple group of markers can be added to the Maps using the [`markerSettings`](../api/maps/markerSettingsModel) property in which the properties of markers are added as an array. The customization for the markers can be done with the [`markerSettings`](../api/maps/markerSettingsModel) property.
+Multiple group of markers can be added to the Maps using the [`markerSettings`](../api/maps/markerSettingsModel) in which the properties of markers are added as an array. The customization for the markers can be done with the [`markerSettings`](../api/maps/markerSettingsModel).
 
 {% tab template="maps/default-map", es5Template="markerGroup" %}
 
@@ -79,7 +79,7 @@ Multiple group of markers can be added to the Maps using the [`markerSettings`](
 
 ### Bind different colors and shapes to the marker from data source
 
-Using the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) and [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath) properties, apply the color and shape of the marker from the given data source. Bind the data source to the [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the [`markerSettings`](../api/maps/markerSettingsModel/) property and set the field names that contains the shape and color values in the data source to the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) and [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath) properties. A default marker object is represented by a **balloon** shape. To set various shapes to the marker object by using the [`shape`](../api/maps/markerSettingsModel/#shape) property in [`markerSettings`](../api/maps/markerSettingsModel/).
+Using the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) and [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath) properties, apply the color and shape of the marker from the given data source. Bind the data source to the [`dataSource`](../api/maps/markerSettingsModel/#datasource) property of the [`markerSettings`](../api/maps/markerSettingsModel/) and set the field names that contains the shape and color values in the data source to the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) and [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath) properties. A default marker object is represented by a **balloon** shape. To set various shapes to the marker object by using the [`shape`](../api/maps/markerSettingsModel/#shape) property in [`markerSettings`](../api/maps/markerSettingsModel/).
 
 The following shapes are used for the marker object.
 
@@ -119,7 +119,7 @@ The Maps is initially scaled to the center value based on the marker distance. T
 
 Maps provide support to hide and cluster markers when they overlap each other. The number on a cluster indicates how many overlapped markers it contains. If zooming any of the cluster locations in Maps, the number on the cluster will decrease and begin to see the individual markers on the map. When zooming out, the overlapping marker will increase so that it can cluster again and increase the count over the cluster.
 
-To enable clustering in markers, set the [`allowClustering`](../api/maps/markerClusterSettingsModel/#allowclustering) property of [`markerClusterSettings`](../api/maps/markerClusterSettingsModel) as **true** and customization of clustering can be done with the [`markerClusterSettings`](../api/maps/markerClusterSettingsModel) property.
+To enable clustering in markers, set the [`allowClustering`](../api/maps/markerClusterSettingsModel/#allowclustering) property of [`markerClusterSettings`](../api/maps/markerClusterSettingsModel) as **true** and customization of clustering can be done with the [`markerClusterSettings`](../api/maps/markerClusterSettingsModel).
 
 {% tab template= "maps/default-map", es5Template="cluster" %}
 
@@ -155,7 +155,7 @@ The cluster is formed by grouping an identical and non-identical marker from the
 
 ## Tooltip for marker
 
-Tooltip is used to display more information about a marker on mouse over or touch end event. This can be enabled separately for marker by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property or [`tooltipSettings`](../api/maps/tooltipSettingsModel) property to **true**. The [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the [`tooltipSettings`](../api/maps/tooltipSettingsModel) takes the field name that presents in dataSource and displays that value as tooltip text. The following example illustrates enabling the tooltip for the marker.
+Tooltip is used to display more information about a marker on mouse over or touch end event. This can be enabled separately for marker by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property or [`tooltipSettings`](../api/maps/tooltipSettingsModel) to **true**. The [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the [`tooltipSettings`](../api/maps/tooltipSettingsModel) takes the field name that presents in dataSource and displays that value as tooltip text.
 
 {% tab template="maps/default-map", es5Template="marker-tooltip" %}
 

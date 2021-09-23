@@ -40,9 +40,9 @@ maps.appendTo('#element');
 
 ## Annotation customization
 
-**Changing the z-index**
+### Changing the z-index
 
-The stack order of an annotation element can be changed using the [`zIndex`](../api/maps/annotationModel/#zindex) property in the [`annotation`](../api/maps/annotationModel) property.
+The stack order of an annotation element can be changed using the [`zIndex`](../api/maps/annotationModel/#zindex) property in the [`annotation`](../api/maps/annotationModel).
 
 {% tab template= "maps/default-map", es5Template="annotationZOrder" %}
 
@@ -50,9 +50,9 @@ The stack order of an annotation element can be changed using the [`zIndex`](..
 
 <!-- markdownlint-disable MD036 -->
 
-**Positioning an Annotation**
+### Positioning an Annotation
 
-Annotations can be placed anywhere in the Maps by specifying pixel or percentage values to the [`x`](../api/maps/annotationModel/#x) and [`y`](../api/maps/annotationModel/#y) properties in the [`annotation`](../api/maps/annotationModel) property.
+Annotations can be placed anywhere in the Maps by specifying pixel or percentage values to the [`x`](../api/maps/annotationModel/#x) and [`y`](../api/maps/annotationModel/#y) properties in the [`annotation`](../api/maps/annotationModel).
 
 {% tab template= "maps/default-map", es5Template="annotationPosition" %}
 
@@ -60,9 +60,9 @@ Annotations can be placed anywhere in the Maps by specifying pixel or percentage
 
 <!-- markdownlint-disable MD036 -->
 
-**Alignment of an Annotation**
+### Alignment of an Annotation
 
-Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotationModel/#horizontalalignment) and [`verticalAlignment`](../api/maps/annotationModel/#verticalalignment) properties in the [`annotation`](../api/maps/annotationModel) property. The possible values can be **"Center"**, **"Far"**, **"Near"** and **"None"**.
+Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotationModel/#horizontalalignment) and [`verticalAlignment`](../api/maps/annotationModel/#verticalalignment) properties in the [`annotation`](../api/maps/annotationModel). The possible values can be **Center**, **Far**, **Near** and **None**.
 
 {% tab template= "maps/default-map", es5Template="annotationAlignment" %}
 
@@ -70,7 +70,7 @@ Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotat
 
 ## Multiple Annotation
 
-Multiple annotations can be added to the Maps using the [`annotations`](../api/maps/annotationModel) property and customization for the annotations can be done with this property.
+Multiple annotations can be added to the Maps using the [`annotations`](../api/maps/annotationModel) and customization for the annotations can be done with this property.
 
 {% tab template= "maps/default-map", es5Template="annotation-multiple" %}
 

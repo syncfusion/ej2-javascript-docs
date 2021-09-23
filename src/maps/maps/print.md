@@ -40,13 +40,13 @@ The image can be exported as base64 string for the JPEG and PNG formats. The ren
 
 ### PDF Export
 
-To use the PDF export functionality, set the [`allowPdfExport`](../api/maps/#allowpdfexport) property to **true**. The rendered Maps can be exported as PDF using the [`export`](../api/maps/#export) method. The [`export`](../api/maps/#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and "0" indicates portrait and "1" indicates landscape.
+To use the PDF export functionality, set the [`allowPdfExport`](../api/maps/#allowpdfexport) property to **true**. The rendered Maps can be exported as PDF using the [`export`](../api/maps/#export) method. The [`export`](../api/maps/#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and **0** indicates portrait and **1** indicates landscape.
 
 {% tab template="maps/export", sourceFiles="index.ts,index.html", es5Template="exportPdf" %}
 
 {% endtab %}
 
-> Note: The exporting of the Maps as base64 string is not supported for the PDF export.
+>The exporting of the Maps as base64 string is not supported for the PDF export.
 
 <!-- markdownlint-disable MD010 -->
 

@@ -1,5 +1,5 @@
 ---
-title: " Data Labels in EJ2 Maps control | Syncfusion "
+title: "Data Labels in EJ2 Maps control | Syncfusion"
 
 component: "Maps"
 
@@ -8,11 +8,11 @@ description: "Learn here all about Data Labels of Syncfusion EJ2 Maps control an
 
 # Data labels in EJ2 Maps control
 
-Data labels provide information to users about the shapes of the Maps control. It can be enabled by setting the [`visible`](../api/maps/dataLabelSettingsModel/#visible) property of the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) property to "**true**".
+Data labels provide information to users about the shapes of the Maps control. It can be enabled by setting the [`visible`](../api/maps/dataLabelSettingsModel/#visible) property of the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) to **true**.
 
 ## Adding data labels
 
-To display data labels in the Maps, the [`labelPath`](../api/maps/dataLabelSettingsModel/#labelpath) property of [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) property must be used. The value of the [`labelPath`](../api/maps/dataLabelSettingsModel/#labelpath) property can be taken from the field name in the shape data or data source. In the following example, the value of the [`labelPath`](../api/maps/dataLabelSettingsModel/#labelpath) property is the field name in the shape data of the Maps layer.
+To display data labels in the Maps, the [`labelPath`](../api/maps/dataLabelSettingsModel/#labelpath) of [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) must be used. The value of the [`labelPath`](../api/maps/dataLabelSettingsModel/#labelpath) property can be taken from the field name in the shape data or data source. In the following example, the value of the [`labelPath`](../api/maps/dataLabelSettingsModel/#labelpath) property is the field name in the shape data of the Maps layer.
 
 {% tab template="maps/default-map", es5Template="dataLabel" %}
 
@@ -26,7 +26,7 @@ In the following example, the value of [`labelPath`](../api/maps/dataLabelSettin
 
 ## Customization
 
-The following properties are available in the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) property to customize the data label of the Maps control.
+The following properties are available in the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) to customize the data label of the Maps control.
 
 * [`border`](../api/maps/dataLabelSettingsModel/#border) - To customize the color, width and opacity for the border of the data labels in Maps.
 * [`fill`](../api/maps/dataLabelSettingsModel/#fill) - To apply the color of the data labels in Maps.
@@ -63,9 +63,9 @@ The Maps component provides an option to handle the labels when a label intersec
 
 ## Adding data label as a template
 
-The data label can be added as a template in the Maps component. The [`template`](../api/maps/dataLabelSettingsModel/#template) property of [`dataLabelSettings`](../api/maps/dataLabelSettingsModel) property is used to set the data label as a template. Any text or HTML element can be added as the template in data labels.
+The data label can be added as a template in the Maps component. The [`template`](../api/maps/dataLabelSettingsModel/#template) property of [`dataLabelSettings`](../api/maps/dataLabelSettingsModel) is used to set the data label as a template. Any text or HTML element can be added as the template in data labels.
 
-> Note: The customization properties of data label, [`smartLabelMode`](../api/maps/dataLabelSettingsModel/#smartlabelmode) and [`intersectionAction`](../api/maps/dataLabelSettingsModel/#intersectionaction) properties are not applicable to [`template`](../api/maps/dataLabelSettingsModel/#template) property. The styles can be applied to the label template using the CSS styles of the template element.
+>The customization properties of data label, [`smartLabelMode`](../api/maps/dataLabelSettingsModel/#smartlabelmode) and [`intersectionAction`](../api/maps/dataLabelSettingsModel/#intersectionaction) properties are not applicable to [`template`](../api/maps/dataLabelSettingsModel/#template) property. The styles can be applied to the label template using the CSS styles of the template element.
 
 {% tab template="maps/default-map", es5Template="labelTemplate" %}
 

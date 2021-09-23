@@ -73,7 +73,7 @@ The following properties in the [`layers`](../api/maps/layerSettingsModel/) are 
 
 The [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property is used to refer to the column name in the [`shapeData`](../api/maps/layerSettingsModel/#shapedata) property of shape layers to identify the shape. When the values of [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) property from the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property and [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property from the [`shapeData`](../api/maps/layerSettingsModel/#shapedata) property match, then the associated object from the data source is bound to the corresponding shape.
 
-> `world-map.js` file contains following data and its field **"name"** value is used to map the corresponding shape with the provided data source.
+>`world-map.js` file contains following data and its field **name** value is used to map the corresponding shape with the provided data source.
 
 ```javascript
 export var world_map = {
@@ -92,7 +92,7 @@ export var world_map = {
 
 The [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) property is similar to the [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property, but it refers to the field name in the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property. For example, [populationData](#data-source) contains the **code**, **value**, **name**, **population** and **density** fields. Here, the **name** field is set to the shapeDataPath to map the corresponding name field value of shape data.
 
-In the below example, both "name" fields contain the same value as "Afghanistan", this value is matched in both shape data and data source, so that the details associated with "Afghanistan" will be mapped to the corresponding shape and used to color the corresponding shape, display data labels, display tooltips, and more.
+In the below example, both **name** fields contain the same value as **Afghanistan**, this value is matched in both shape data and data source, so that the details associated with **Afghanistan** will be mapped to the corresponding shape and used to color the corresponding shape, display data labels, display tooltips, and more.
 
 {% tab template= "maps/default-map", es5Template="population-data" %}
 
@@ -107,8 +107,6 @@ To bind the data field from data source to the maps in two different ways.
 
 2. Bind the field name as `data.field` to the properties as [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath), [`colorValuePath`](../api/maps/markerSettingsModel/#colorvaluepath),
 [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) and [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath).
-
-Refer complex support for data source as illustrated in the following example.
 
 {% tab template= "maps/default-map", es5Template="complexDataSource" %}
 

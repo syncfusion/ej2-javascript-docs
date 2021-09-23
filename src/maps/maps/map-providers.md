@@ -8,7 +8,7 @@ Map control support map providers such as OpenStreetMap that can be added to any
 
 ### Enable OSM
 
-You can enable this feature by setting the layerType property value as “OSM”.
+You can enable this feature by setting the layerType property value as **OSM**.
 
 ``` typescript
 import { Maps } from '@syncfusion/ej2-maps';
