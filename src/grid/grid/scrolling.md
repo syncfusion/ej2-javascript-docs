@@ -150,3 +150,31 @@ grid.appendTo('#Grid');
 ```
 
 {% endtab %}
+
+## Sticky Header
+
+You can make the Grid column headers remain fixed while scrolling by using the [`enableStickyHeader`](../api/grid/#enablestickyheader) property.
+
+In the below demo, the Grid headers will be sticky while scrolling the Grid's parent div element.
+
+{% tab template="grid/sticky-header", sourceFiles="index.ts,index.html",es5Template="sticky" %}
+
+```typescript
+import { Grid } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    enableStickyHeader: true,
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 150 },
+        { field: 'EmployeeID', headerText: 'Employee ID', textAlign: 'Right', width: 120 },
+        { field: 'ShipName', headerText: 'Ship Name', width: 150 }
+    ]
+});
+grid.appendTo('#Grid');
+
+```
+
+{% endtab %}
