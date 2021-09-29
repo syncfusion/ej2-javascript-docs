@@ -194,6 +194,276 @@ The sample response object should look like below.
 
 > The controller method's data parameter name must be `value`.
 
+## Custom Data Adaptor
+
+The `CustomDataAdaptor` provides an option to send your own request to handle the data operations.
+
+You can get the current action details inside the `getData` method of `CustomDataAdaptor` to build the request. Once the data is fetched from the service successfully, then the `onSuccess` method can be invoked to handle the further data processing. In failure case, invoke the `onFailure` method.
+
+```typescript
+import { DataManager, Query, CustomDataAdaptor, AjaxOption } from '@syncfusion/ej2-data';
+
+const SERVICE_URI: string = 'http://controller.com/actions';
+
+new DataManager({
+        adaptor: new CustomDataAdaptor({
+                getData: function(option: AjaxOption) {
+                      let xhttp: XMLHttpRequest = new XMLHttpRequest();
+                      xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                             let request: Object = extend({}, option, { httpRequest: xhttp });
+                             if ((xhttp.status >= 200 && xhttp.status <= 299) || xhttp.status === 304) {
+                             let data: Object = JSON.parse(xhttp.responseText);
+                             option.onSuccess(data, request);
+                            } else {
+                             option.onFailure(request);
+                            }
+                        }
+                    };
+                    xhttp.open("POST", SERVICE_URI, true);
+                    xhttp.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+                    xhttp.send(option.data);
+                }
+            })
+    }).executeQuery(new Query().take(8)).then((e) => {
+        //e.result will contain the records
+    });
+```
+
+Since the `CustomDataAdaptor` is extended from the `UrlAdaptor`, it expects response as a JSON object with properties `result` and `count` which
+contains the collection of entities and the total number of records respectively.
+
+The sample response object should be as follows,
+
+```json
+{
+    "result": [{..}, {..}, {..}, ...],
+    "count": 67
+}
+```
+
+### Performing CRUD action with CustomDataAdaptor
+
+You can perform the CRUD actions using the `addRecord`, `updateRecord`, `deleteRecord` and `batchUpdate` methods.
+
+```typescript
+import { DataManager, Query, CustomDataAdaptor, AjaxOption } from '@syncfusion/ej2-data';
+
+let createRequest: Function = (url: string, option: AjaxOption) => {
+    let xhttp: XMLHttpRequest = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            let request: Object = extend({}, option, { httpRequest: xhttp });
+            if ((xhttp.status >= 200 && xhttp.status <= 299) || xhttp.status === 304) {
+                let data: Object = JSON.parse(xhttp.responseText);
+                option.onSuccess(data, request);
+            } else {
+                option.onFailure(request);
+            }
+        }
+    };
+    xhttp.open("POST", url, true);
+    xhttp.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+    xhttp.send(option.data);
+};
+
+let baseUrl: string = "http://localhost:65327/Home/";
+
+new DataManager({
+        adaptor: new CustomDataAdaptor({
+                getData: function (option: AjaxOption) {
+                    createRequest(baseUrl + 'UrlDatasource', option);
+                },
+                addRecord: function (option: AjaxOption) {
+                    createRequest(baseUrl + 'Insert', option);
+                },
+                updateRecord: function (option: AjaxOption) {
+                    createRequest(baseUrl + 'Update', option);
+                },
+                deleteRecord: function (option: AjaxOption) {
+                    createRequest(baseUrl + 'Delete', option);
+                }
+                // to handle Batch operation
+                //batchUpdate: function (option: AjaxOption) {
+                //  createRequest(baseUrl + 'Delete', option);  
+                //}
+            })
+    }).executeQuery(new Query().take(8)).then((e) => {
+        //e.result will contain the records
+    });
+```
+
+## GraphQL Adaptor
+
+The `GraphQLAdaptor` provides an option to retrieve data from the GraphQL server. It performs CRUD and data operations such as paging, sorting, filtering etc by sending the required arguments to the server.
+
+You can provide the GraphQL query string by using the `query` property of the `GraphQLAdaptor`. Since, the `GraphQLAdaptor` is extended from the `UrlAdaptor`, it expects response as a JSON object with properties `result` and `count` which contains the collection of entities and the total number of records respectively. The GraphQL response should be returned in JSON format like {
+  "data": { ... }} with query name as field, you need to set the `result` and `count` properties to map the response.
+
+```typescript
+import { DataManager, Query, GraphQLAdaptor } from '@syncfusion/ej2-data';
+
+const SERVICE_URI: string = 'http://controller.com/actions';
+
+new DataManager({
+        url: SERVICE_URI, adaptor: new GraphQLAdaptor({
+        response: {
+            result: 'getOrders.OrderData',
+            count: 'getOrders.OrderCount'
+        },
+        query: `query getOrders($datamanager: String) {
+            getOrders(datamanager: $datamanager) {
+                OrderCount,
+                OrderData{OrderID, CustomerID, EmployeeID, ShipCity, ShipCountry}
+             }
+    }`
+    })
+    }).executeQuery(new Query().take(8)).then((e) => {
+        //e.result will contain the records
+    });
+```
+
+The Schema for the GraphQL server is
+
+```typescript
+
+input OrderInput {
+  OrderID: Int!
+  CustomerID: String!
+  EmployeeID: Int!
+  ShipCity: String!
+  ShipCountry: String!
+}
+
+type Order {
+  OrderID: Int!
+  CustomerID: String!
+  EmployeeID: Int!
+  ShipCity: String!
+  ShipCountry: String!
+}
+
+type ReturnType {
+  getOrders: [Order]
+  count: Int
+}
+
+type Query {
+  getOrders(datamanager: String): ReturnType
+}
+type Mutation {
+  createOrder(value: OrderInput): Order!
+  updateOrder(key: Int!, keyColumn: String, value: OrderInput): Order
+  deleteOrder(key: Int!, keyColumn: String, value: OrderInput): Order!
+}
+```
+
+The resolver for the corresponding action is
+
+```typescript
+import { data } from "./db";
+
+const resolvers = {
+  Query: {
+    getOrders: (parent, { datamanager }, context, info) => {
+      if (datamanager.search) {
+        // Perform searching
+      }
+      if (datamanager.sorted) {
+        // Perform sorting
+      }
+      if (datamanager.where) {
+        // Perform filtering
+      }
+      if (datamanager.search) {
+        // Perform search
+      }
+      if (datamanager.skip && datamanager.take) {
+        // Perform Paging
+      }
+      return { OrderData: data, OrderCount: data.length };
+    }
+  },
+  Mutation: {
+    createOrder: (parent, { value }, context, info) => {
+      // Perform Insert
+      return value;
+    },
+    updateOrder: (parent, { key, keyColumn, value }, context, info) => {
+      // Perform Update
+      return value;
+    },
+    deleteOrder: (parent, { key, keyColumn, value }, context, info) => {
+      // Perform Delete
+      return value;
+    },
+  }
+};
+
+export default resolvers;
+
+```
+
+The query parameters will be send in a string format which contains the below details.
+
+| Parameters | Description |
+|-----|-----|
+| `RequiresCounts` | If it is `true` then the total count of records will be included in response. |
+| `Skip` | Holds the number of records to skip. |
+| `Take` | Holds the number of records to take. |
+| `Sorted` | Contains details about current sorted column and its direction. |
+| `Where` | Contains details about current filter column name and its constraints. |
+| `Group` | Contains details about current Grouped column names. |
+
+### Performing CRUD action with GraphQLAdaptor
+
+You can perform the CRUD actions by returning the mutation queries inside the `getMutation` method based on the action.
+
+```typescript
+import { DataManager, Query, GraphQLAdaptor } from '@syncfusion/ej2-data';
+
+const SERVICE_URI: string = 'http://controller.com/actions';
+
+new DataManager({
+        url: SERVICE_URI, adaptor: new GraphQLAdaptor({
+        response: {
+            result: 'getOrders.getOrders',
+            count: 'getOrders.count'
+        },
+        query: `query getOrders($datamanager: String) {
+            getOrders(datamanager: $datamanager) {
+                count,
+                getOrders{OrderID, CustomerID, EmployeeID, ShipCity, ShipCountry}
+             }
+    }`,
+    getMutation: function (action): string {
+            if (action === 'insert') {
+                return `mutation CreateOrderMutation($value: OrderInput!){
+                                        createOrder(value: $value){
+                                            OrderID, CustomerID, EmployeeID, ShipCity, ShipCountry
+                                    }}`;
+            }
+            if (action === 'update') {
+                return `mutation Update($key: ID!, $keyColumn: String,$value: OrderInput){
+                            updateOrder(key: $key, keyColumn: $keyColumn, value: $value) {
+                                OrderID, CustomerID, EmployeeID, ShipCity, ShipCountry
+                            }
+                            }`;
+            } else {
+                return `mutation Remove($key: ID!, $keyColumn: String, $value: OrderInput){
+                    deleteOrder(key: $key, keyColumn: $keyColumn, value: $value) {
+                                OrderID, CustomerID, EmployeeID, ShipCity, ShipCountry
+                            }
+                            }`;
+            }
+        }
+    })
+    }).executeQuery(new Query().take(8)).then((e) => {
+        //e.result will contain the records
+    });
+
+```
+
 ## Writing custom adaptor
 
 Sometimes the built-in adaptors does not meet your requirement. In such cases you can create your own adaptor.
