@@ -74,3 +74,4 @@
 * [Add a title when using Grid print function](grid/how-to/grid-print.md)
 * [How to Change the hierarchy grid icons](grid/how-to/change-hierarchy-grid-icon.md)
 * [Show the count of distinct values in aggregate row](grid/how-to/show-the-count-of-distinct-value-in-aggregate.md)
+* [Open popup while focusing the edit dropdown list](grid/how-to/open-pop-up-while-focusing-the-drop-down-edit-cell.md)

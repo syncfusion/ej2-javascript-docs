@@ -367,7 +367,7 @@ grid.appendTo('#Grid');
 
 You can prevent the CRUD operations of the Grid by using condition in the [`actionBegin`](../api/grid/#actionbegin) event with requestType as `beginEdit` for editing, `add` for adding and `delete` for deleting actions.
 
-In the below demo, we prevent the CRUD operation based on the `Role` column value. If the Role Column is ‘employee’, we are unable to edit/delete that row.
+In the below demo, we prevent the CRUD operation based on the `Role` column value. If the Role Column is `Employee`, we are unable to edit/delete that row.
 
 {% tab template="grid/grid",es5Template="canceleditinline" %}
 
@@ -657,6 +657,68 @@ grid.cellEdit= function(args){
   if(args.columnName == "TotalCost"){
     args.cancel= true;
   }
+}
+
+```
+
+{% endtab %}
+
+#### Cancel edit based on condition in Batch mode
+
+You can prevent the CRUD operations of the Batch edit Grid by using condition in the [`cellEdit`](../api/grid/#cellEdit), [`beforeBatchAdd`](../api/grid/#beforeBatchAdd) and [`beforeBatchDelete`](../api/grid/#beforeBatchDelete) events for Edit, Add and Delete actions respectively.
+
+In the below demo, we prevent the CRUD operation based on the `Role` column value. If the Role Column is `Employee`, we are unable to edit/delete that row.
+
+{% tab template="grid/grid",es5Template="canceleditbatch" %}
+
+```typescript
+import { Grid, Edit, Toolbar } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+
+Grid.Inject(Edit, Toolbar);
+
+let isAddable: boolean = true;
+let grid: Grid = new Grid({
+    dataSource: data,
+    toolbar: ['Add', 'Delete', 'Update', 'Cancel'],
+    editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Batch' },
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 100, isPrimaryKey: true },
+        { field: 'Role', headerText: 'Role', width: 120, },
+        { field: 'Freight', headerText: 'Freight', textAlign: 'Right', editType: 'numericedit', width: 120, format: 'C2' },
+        { field: 'ShipCountry', headerText: 'Ship Country', editType: 'dropdownedit', width: 150 }
+    ],
+    cellEdit: cellEdit,
+    beforeBatchAdd: beforeBatchAdd,
+    beforeBatchDelete: beforeBatchDelete,  
+    height: 240
+});
+grid.appendTo('#Grid');
+
+function cellEdit(args) {
+  if (args.rowData['Role'] == 'Employee') {
+    args.cancel = true;
+  }
+}
+function beforeBatchAdd(args) {
+  if (!isAddable) {
+    args.cancel = true;
+  }
+}
+function beforeBatchDelete(args) {
+  if (args.rowData['Role'] == 'Employee') {
+    args.cancel = true;
+  }
+}
+
+var button = document.createElement('button');
+button.innerText = 'Grid is Addable';
+document.body.insertBefore(button, document.body.children[0]);
+button.addEventListener('click', btnClick.bind(this));
+
+function btnClick(args) {
+  args.target.innerText == 'Grid is Addable' ? (args.target.innerText = 'Grid is Not Addable') : (args.target.innerText = 'Grid is Addable');
+  isAddable = !isAddable;
 }
 
 ```
