@@ -61,3 +61,45 @@ let model: Object = JSON.parse(model);
 window.localStorage.setItem('gridGrid', JSON.stringify(model)); //"gridGrid" is component name + component id.
 
 ```
+
+## Restore initial Grid state
+
+When the [`enablePersistence`](../api/grid/#enablepersistence) property is set to **true**, the Grid will keep its state even if the page is reloaded. In some cases, you may be required to retain the Grid in its initial state. The Grid will not retain its initial state now since the [`enablePersistence`](../api/grid/#enablepersistence) property has been enabled.
+
+You can achieve this by destroying the grid after disabling the [`enablePersistence`](../api/grid/#enablepersistence) property and clearing the local storage data, as shown in the sample below.
+
+{% tab template="grid/initial-grid", es5Template="initialgrid" %}
+
+```typescript
+
+import { Grid, Filter, ActionEventArgs, Page } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+
+Grid.Inject(Filter, Page);
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    enablePersistence: true,
+    allowFiltering: true,
+    allowPaging: true,
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 150 },
+        { field: 'ShipCity', headerText: 'Ship City', width: 150 },
+        { field: 'ShipName', headerText: 'Ship Name', width: 150 }
+    ],
+    height: 230
+});
+grid.appendTo('#Grid');
+
+document.getElementById('restore').onclick = () => {
+    grid.enablePersistence = false;
+    window.localStorage.setItem("gridGrid", "");
+    grid.destroy();
+    //reloads the page
+    location.reload();
+}
+
+```
+
+{% endtab %}
