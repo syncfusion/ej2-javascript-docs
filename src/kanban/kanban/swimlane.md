@@ -250,3 +250,41 @@ kanbanObj.appendTo('#Kanban');
 ```
 
 {% endtab %}
+
+## Enable frozen rows
+
+Frozen rows provide an option to make the current swimlane row header text always visible on top of the content while scrolling the Kanban content. The swimlane header text will be changed dynamically, when you scroll to another swimlane row.
+
+By default, the `enableFrozenRows` property is set as `false`. If you wish to show the swimlane frozen rows, you can enable the `enableFrozenRows` property.
+
+> This feature support only when using Kanban content scrolling.
+
+{% tab template="kanban/enable-frozen", es5Template="enable-frozen", sourceFiles="index.ts,index.html,datasource.ts" %}
+
+```typescript
+import { Kanban } from '@syncfusion/ej2-kanban';
+import { kanbanData } from './datasource.ts';
+
+let kanbanObj: Kanban = new Kanban({
+    dataSource: kanbanData,
+    keyField: 'Status',
+    height: 500,
+    columns: [
+        { headerText: 'Backlog', keyField: 'Open' },
+        { headerText: 'In Progress', keyField: 'InProgress' },
+        { headerText: 'Testing', keyField: 'Testing' },
+        { headerText: 'Done', keyField: 'Close' }
+    ],
+    cardSettings: {
+        contentField: 'Summary',
+        headerField: 'Id'
+    },
+    swimlaneSettings: {
+        keyField: 'Assignee',
+        enableFrozenRows: true
+    }
+});
+kanbanObj.appendTo('#Kanban');
+```
+
+{% endtab %}
