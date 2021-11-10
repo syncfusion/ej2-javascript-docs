@@ -48,3 +48,6 @@
 * [Open default document](document-editor/how-to/open-default-document.md)
 * [Open document in read only by default](document-editor/how-to/read-only-default.md)
 * [Open document from URL](document-editor/how-to/open-document-by-address.md)
+* [Deploy Document Editor component for Mobile](document-editor/how-to/deploy-document-editor-component-for-mobile.md)
+* [Disable Optimized Text Measuring](document-editor/how-to/disable-optimized-text-measuring.md)
+* [Get the selected content](document-editor/how-to/get-the-selected-content.md)

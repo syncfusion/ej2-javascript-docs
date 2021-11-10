@@ -6,17 +6,16 @@ description: "Learn the how to enable (right-to-left) support. Dialogs & context
 
 # RTL
 
-Document editor provides RTL (right-to-left) support. This can be enabled using the “enableRtl” property.
+Document Editor provides RTL (right-to-left) support. This can be enabled using the “enableRtl” property.
 
 {% tab template="document-editor/rtl",es5Template="rtl" , sourceFiles="index.ts,index.html" %}
 
 ```typescript
 
-import { DocumentEditor, Editor,Selection,OptionsPane, Search, ContextMenu, EditorHistory,ImageResizer, ListDialog,TableDialog, HyperlinkDialog, ParagraphDialog, FontDialog, PageSetupDialog, BookmarkDialog, StyleDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, TableOfContentsDialog } from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor } from '@syncfusion/ej2-documenteditor';
 import { L10n } from '@syncfusion/ej2-base';
 
-DocumentEditor.Inject(Editor,Selection,OptionsPane, Search, ContextMenu, EditorHistory,ImageResizer, ListDialog,TableDialog, HyperlinkDialog, ParagraphDialog, FontDialog, PageSetupDialog, BookmarkDialog, StyleDialog, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog, CellOptionsDialog, TableOfContentsDialog);
-
+//Set locale object
 L10n.load({
     'ar-AE': {
         'documenteditor': {
@@ -306,19 +305,15 @@ L10n.load({
 });
 
 let documenteditor: DocumentEditor = new DocumentEditor({
-    isReadOnly: false,
-    enableRtl: true, locale: 'ar-AE'
+      isReadOnly: false,
+      enableRtl: true, locale: 'ar-AE', height: '370px'
 });
+//Enable all the built in modules.
 documenteditor.enableAllModules();
-let containerPanel: HTMLElement = document.getElementById('container');
-function updateContainerSize() {
-  containerPanel.style.height = window.innerHeight + 'px';
-}
 
-updateContainerSize();
 documenteditor.appendTo('#DocumentEditor');
 
-let sfdt: string =`{
+let sfdt: string = `{
     "sections": [
         {
             "blocks": [
@@ -350,6 +345,7 @@ let sfdt: string =`{
     ]
 }`;
 
+//Open the sfdt content in Document Editor.
 documenteditor.open(sfdt);
 
 ```

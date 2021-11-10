@@ -8,13 +8,13 @@ description: "Learn how to localize the text in JavaScript document editor to an
 
 ## Localization
 
-The [`Localization`](../api/base/l10n/) library allows you to localize default text content of the DocumentEditor. The document editor component has static text on some features (like find & replace, context-menu, dialogs) that can be changed to other cultures (Arabic, Deutsch, French, etc.) by defining the locale value and translation object. Please refer the sample link [RTL](https://ej2.syncfusion.com/demos/document-editor/right-to-left/)
+The [`Localization`](../api/base/l10n/) library allows you to localize default text content of the DocumentEditor. The Document Editor component has static text on some features (like find & replace, context-menu, dialogs) that can be changed to other cultures (Arabic, Deutsch, French, etc.) by defining the locale value and translation object. Please refer the sample link [RTL](https://ej2.syncfusion.com/demos/document-editor/right-to-left/)
 
 Note: Please refer the [Locale](https://github.com/syncfusion/ej2-locale/tree/master/src).
 
 ## Document Editor
 
-The following list of properties and its values are used in the document editor.
+The following list of properties and its values are used in the Document Editor.
 
 Locale keywords |Text
 -----|-----
@@ -361,7 +361,7 @@ View | View
 
 ## Document Editor Container
 
-The following list of properties and its values are used in the document editor container.
+The following list of properties and its values are used in the Document Editor container.
 
 Locale keywords |Text
 -----|-----

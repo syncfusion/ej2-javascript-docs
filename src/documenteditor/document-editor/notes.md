@@ -14,31 +14,35 @@ The Footnotes and endnotes are both ways of adding extra bits of information to 
 
 ## Insert footnotes
 
-Document editor exposes an API to insert footnotes at cursor position programmatically or can be inserted to the end of selected text.
+Document Editor exposes an API to insert footnotes at cursor position programmatically or can be inserted to the end of selected text.
 
 ```typescript
-import { DocumentEditorContainer,Toolbar } from '@syncfusion/ej2-documenteditor';
+import { DocumentEditorContainer, Toolbar } from '@syncfusion/ej2-documenteditor';
+//Inject require modules.
 DocumentEditorContainer.Inject(Toolbar);
 let container: DocumentEditorContainer = new DocumentEditorContainer({
     enableToolbar: true,
     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/'
 });
 container.appendTo('#DocumentEditor');
+//Insert footnote in current selection.
 container.documentEditor.editor.insertFootnote();
 ```
 
 ## Insert endnotes
 
-Document editor exposes an API to insert endnotes at cursor position programmatically or can be inserted to the end of selected text.
+Document Editor exposes an API to insert endnotes at cursor position programmatically or can be inserted to the end of selected text.
 
 ```typescript
-import { DocumentEditorContainer,Toolbar } from '@syncfusion/ej2-documenteditor';
+import { DocumentEditorContainer, Toolbar } from '@syncfusion/ej2-documenteditor';
+//Inject require modules.
 DocumentEditorContainer.Inject(Toolbar);
 let container: DocumentEditorContainer = new DocumentEditorContainer({
     enableToolbar: true,
     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/documenteditor/'
 });
 container.appendTo('#DocumentEditor');
+//Insert endnote in current selection.
 container.documentEditor.editor.insertEndnote();
 ```
 

@@ -24,6 +24,7 @@ The following example demonstrate how to get all tracked revision from current d
 ```typescript
 let container: DocumentEditorContainer = new DocumentEditorContainer({ enableTrackChanges: true });
 container.appendTo('#container');
+
 /**
  * Get revisions from the current document
  */
@@ -41,10 +42,12 @@ container.appendTo('#container');
  * Get revisions from the current document
  */
 let revisions : RevisionCollection = container.documentEditor.revisions;
+
 /**
  * Accept all tracked changes
  */
 revisions.acceptAll();
+
 /**
  * Reject all tracked changes
  */
@@ -53,7 +56,7 @@ revisions.rejectAll();
 
 ## Accept or reject a specific revision
 
-The following example demonstrates how to accept/reject specific revision in the document editor.
+The following example demonstrates how to accept/reject specific revision in the Document Editor.
 
 ```typescript
 /**
@@ -81,6 +84,7 @@ container.appendTo('#container');
  * Navigate to next tracked change from the current selection.
  */
 container.documentEditor.selection.navigateNextRevision();
+
 /**
  * Navigate to previous tracked change from the current selection.
  */

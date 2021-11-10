@@ -6,11 +6,11 @@ description: "Learn the types of styles supported in JavaScript document editor 
 
 # Styles
 
-Styles are useful for applying a set of formatting consistently throughout the document. In document editor, styles are created and added to a document programmatically or via the built-in Styles dialog.
+Styles are useful for applying a set of formatting consistently throughout the document. In Document Editor, styles are created and added to a document programmatically or via the built-in Styles dialog.
 
 ## Styles definition overview
 
-A Style in document editor should have the following properties:
+A Style in Document Editor should have the following properties:
 
 * **name**: Name of the style. All styles in a document have a unique name, which is used as an identifier when applying the style.
 * **type**: Specifies the document elements that the style will target. For example, paragraph or character.
@@ -24,7 +24,7 @@ A Style in document editor should have the following properties:
 
 ## Default style
 
-The default style for span and paragraph properties is normal. It internally inherits the default style of the document loaded or document editor component.
+The default style for span and paragraph properties is normal. It internally inherits the default style of the document loaded or Document Editor component.
 
 ## Style hierarchy
 
@@ -73,7 +73,11 @@ New Styles are defined and added to the style collection of the document. In thi
 The following example shows how to programmatically create a character style.
 
 ```javascript
-var documentEditor = new ej.documenteditor.DocumentEditor({ enableEditor: true,isReadOnly: false, enableSelection: true });
+
+//Initialize Document Editor component.
+var documentEditor = new ej.documenteditor.DocumentEditor({ enableEditor: true, isReadOnly: false, enableSelection: true });
+
+// Create custom style object.
 var styleJson = {
     "type": "Character",
     "name": "New CharacterStyle",
@@ -87,6 +91,8 @@ var styleJson = {
         "underline": "Single"
     }
 };
+
+//Created new style using `createStyle` method.
 documentEditor.editor.createStyle(JSON.stringify(styleJson));
 ```
 
@@ -95,7 +101,11 @@ documentEditor.editor.createStyle(JSON.stringify(styleJson));
 The following example shows how to programmatically create a paragraph style.
 
 ```javascript
-var documentEditor = new ej.documenteditor.DocumentEditor({ enableEditor: true,isReadOnly: false, enableSelection: true });
+
+//Initialize Document Editor component.
+var documentEditor = new ej.documenteditor.DocumentEditor({ enableEditor: true, isReadOnly: false, enableSelection: true });
+
+// Create custom style object.
 var styleJson = {
     "type": "Paragraph",
     "name": "New ParagraphStyle",
@@ -120,6 +130,8 @@ var styleJson = {
         "outlineLevel": "Level1"
     }
 };
+
+//Created new style using `createStyle` method.
 documentEditor.editor.createStyle(JSON.stringify(styleJson));
 ```
 
@@ -128,7 +140,11 @@ documentEditor.editor.createStyle(JSON.stringify(styleJson));
 The following example shows how to programmatically create linked style.
 
 ```javascript
+
+//Initialize Document Editor component.
 var documentEditor = new ej.documenteditor.DocumentEditor({ enableEditor: true,isReadOnly: false, enableSelection: true });
+
+// Create custom style object.
 var styleJson = {
     "type": "Paragraph",
     "name": "New Linked",
@@ -152,6 +168,8 @@ var styleJson = {
         "outlineLevel": "Level1"
     }
 };
+
+//Created new style using `createStyle` method.
 documentEditor.editor.createStyle(JSON.stringify(styleJson));
 ```
 
@@ -166,7 +184,9 @@ When there is no selection, styles of **Linked** type will change the values of 
 For example, the following line will apply the "New Linked" to the current paragraph.
 
 ```javascript
+//Apply specified style for selected paragraph.
 editor.editorModule.applyStyle('New Linked');
+
 //Clear direct formatting and apply the specified style
 editor.editorModule.applyStyle('New Linked', true);
 ```

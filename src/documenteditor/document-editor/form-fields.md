@@ -36,11 +36,11 @@ let formFieldsNames: string[] = documentEditor.getFormFieldNames();
 Form field properties can be retrieved using [`getFormFieldInfo()`](../api/document-editor/#getformfieldinfo).
 
 ```typescript
-//Text form field
+//Get Text form field by using bookmark name.
 let textfieldInfo: TextFormFieldInfo = documentEditor.getFormFieldInfo('Text1') as TextFormFieldInfo;
-//Checkbox form field
+//Checkbox form field by using bookmark name.
 let checkboxfieldInfo: CheckBoxFormFieldInfo = documentEditor.getFormFieldInfo('Check1') as CheckBoxFormFieldInfo;
-//Dropdown form field
+//Dropdown form field by using bookmark name.
 let dropdownfieldInfo: DropDownFormFieldInfo = documentEditor.getFormFieldInfo('Drop1') as DropDownFormFieldInfo;
 ```
 
@@ -54,17 +54,17 @@ let textfieldInfo: TextFormFieldInfo = documentEditor.getFormFieldInfo('Text1') 
 textfieldInfo.defaultValue = "Hello";
 textfieldInfo.format = "Uppercase";
 textfieldInfo.type = "Text";
-documentEditor.setFormFieldInfo('Text1',textfieldInfo);
+documentEditor.setFormFieldInfo('Text1', textfieldInfo);
 
 // Set checkbox form field properties
 let checkboxfieldInfo: CheckBoxFormFieldInfo = documentEditor.getFormFieldInfo('Check1') as CheckBoxFormFieldInfo;
 checkboxfieldInfo.defaultValue = true;
-documentEditor.setFormFieldInfo('Check1',checkboxfieldInfo);
+documentEditor.setFormFieldInfo('Check1', checkboxfieldInfo);
 
 // Set checkbox form field properties
 let dropdownfieldInfo: DropDownFormFieldInfo = documentEditor.getFormFieldInfo('Drop1') as DropDownFormFieldInfo;
-dropdownfieldInfo.dropDownItems = ['One','Two', 'Three']
-documentEditor.setFormFieldInfo('Drop1',dropdownfieldInfo);
+dropdownfieldInfo.dropDownItems = ['One', 'Two', 'Three']
+documentEditor.setFormFieldInfo('Drop1', dropdownfieldInfo);
 ```
 
 ## Export form field data
@@ -80,11 +80,11 @@ let formFieldDate: FormFieldData[] = documentEditor.exportFormData();
 Form fields can be prefilled with data using [`importFormData`](../api/document-editor/#importformdata).
 
 ```typescript
-let textformField: FormFieldData = {fieldName: 'Text1', value: 'Hello World'};
-let checkformField: FormFieldData = {fieldName: 'Check1', value: true};
-let dropdownformField: FormFieldData = {fieldName: 'Drop1', value: 1};
+let textformField: FormFieldData = { fieldName: 'Text1', value: 'Hello World' };
+let checkformField: FormFieldData = { fieldName: 'Check1', value: true };
+let dropdownformField: FormFieldData = { fieldName: 'Drop1', value: 1 };
 //Import form field data
-this.container.documentEditor.importFormData([textformField,checkformField,dropdownformField]);
+this.container.documentEditor.importFormData([textformField, checkformField, dropdownformField]);
 ```
 
 ## Reset form fields

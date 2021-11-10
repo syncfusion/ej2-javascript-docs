@@ -6,20 +6,22 @@ description: "Learn how to perform spell check in JavaScript document editor"
 
 # Spell Check
 
-Document editor supports performing spell checking for any input text. You can perform spell checking for the text in Document Editor and it will provide suggestions for the mis-spelled words through dialog and in context menu.
+Document Editor supports performing spell checking for any input text. You can perform spell checking for the text in Document Editor and it will provide suggestions for the mis-spelled words through dialog and in context menu.
 
 ```typescript
-import { DocumentEditorContainer,Toolbar, SpellChecker } from '@syncfusion/ej2-documenteditor';
+import { DocumentEditorContainer, Toolbar, SpellChecker } from '@syncfusion/ej2-documenteditor';
 
 DocumentEditorContainer.Inject(Toolbar);
 let container: DocumentEditorContainer = new DocumentEditorContainer({
-    enableToolbar: true, enableSpellCheck: true
+      enableToolbar: true, enableSpellCheck: true
 });
 container.appendTo('#container');
 //Accessing spell checker.
 let spellChecker: SpellChecker = container.documentEditor.spellChecker;
-spellChecker.languageID = 1033 //LCID of "en-us";
+//Set language id to map dictionary in server side.;
+spellChecker.languageID = 1033;
 spellChecker.removeUnderline = false;
+//Allow suggetion for miss spelled word/
 spellChecker.allowSpellCheckAndSuggestion = true;
 ```
 
@@ -66,7 +68,7 @@ documentEditor.spellChecker.languageID = 1033; //LCID of "en-us";
 
 ### EnableOptimizedSpellCheck
 
-Document editor provides option to spellcheck page by page when loading the documents. The default value of this property is false, so when opening the document spellcheck web API will be called for each word in the document. To optimize the frequency of spellcheck web API calls, you can enable this property.
+Document Editor provides option to spellcheck page by page when loading the documents. The default value of this property is false, so when opening the document spellcheck web API will be called for each word in the document. To optimize the frequency of spellcheck web API calls, you can enable this property.
 
 The following code example illustrates how to enable optimized spell checking.
 

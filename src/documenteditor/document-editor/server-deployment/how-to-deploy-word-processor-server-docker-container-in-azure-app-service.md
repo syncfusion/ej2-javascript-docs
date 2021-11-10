@@ -3,7 +3,7 @@ title: "azure app service"
 component: "Document Editor"
 description: "Learn about deploy the Web API controller docker image in Azure App Service as Container"
 ---
-# How to deploy word-processor-server Docker container in Azure App Service
+# How to Deploy Word Processor Server Docker Container in Azure App Service
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ az appservice plan create --name documenteditorappservice --resource-group docum
 
 **Step 3:** Create a Docker Compose app.
 
-Create a multi-container [`web app`](https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro) in the documenteditorappservice App Service plan with the [`az webapp create`](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) command. The following command creates the web app using the provided Docker compose file. Please look into the section for getting started with Docker compose to create the Docker compose file for the document editor server and use the created Docker compose file here.
+Create a multi-container [`web app`](https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro) in the documenteditorappservice App Service plan with the [`az webapp create`](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) command. The following command creates the web app using the provided Docker compose file. Please look into the section for getting started with Docker compose to create the Docker compose file for the Document Editor server and use the created Docker compose file here.
 
 ```azurecli
 az webapp create --resource-group documenteditorresourcegroup --plan documenteditorappservice --name documenteditor-server --multicontainer-config-type compose --multicontainer-config-file documenteditor-server-compose.yml

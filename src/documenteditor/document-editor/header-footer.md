@@ -6,7 +6,7 @@ description: "Learn header footer support in JavaScript document editor and how 
 
 # Headers and Footers
 
-Document editor supports headers and footers in its document. Each section in the document can have the following types of headers and footers:
+Document Editor supports headers and footers in its document. Each section in the document can have the following types of headers and footers:
 
 * First page: Used only on the first page of the section.
 * Even pages: Used on all even numbered pages in the section.
@@ -16,9 +16,9 @@ You can define this by setting format properties of the corresponding section us
 
 ```typescript
 //Defines whether different header footer is required for first page of the section
-documenteditor.selection.sectionFormat.differentFirstPage= true;
+documenteditor.selection.sectionFormat.differentFirstPage = true;
 //Defines whether different header footer is required for odd and even pages in the section
-documenteditor.selection.sectionFormat.differentOddAndEvenPages= true;
+documenteditor.selection.sectionFormat.differentOddAndEvenPages = true;
 ```
 
 ## Go to header footer region

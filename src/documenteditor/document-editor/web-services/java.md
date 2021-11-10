@@ -61,22 +61,22 @@ You can easily download the Syncfusion packages for Java via maven repository. F
 ##### Gradle
 
 ```java
-repositories {
- maven {
- // Syncfusion maven repository to download the artifacts
- url "https://jars.syncfusion.com/repository/maven-public/"
- }
-}
+    repositories {
+        maven {
+        // Syncfusion maven repository to download the artifacts
+        url "https://jars.syncfusion.com/repository/maven-public/"
+        }
+    }
 ```
 
 ##### Apache Maven
 
 ```java
-<repository>
-<id>Syncfusion-Java</id>
-<name>Syncfusion Java repo</name>
-<url>https://jars.syncfusion.com/repository/maven-public/</url>
-</repository>
+    <repository>
+        <id>Syncfusion-Java</id>
+        <name>Syncfusion Java repo</name>
+        <url>https://jars.syncfusion.com/repository/maven-public/</url>
+    </repository>
 ```
 
 #### Refer the Syncfusion package in your project as the dependency
@@ -84,19 +84,19 @@ repositories {
 ##### Gradle
 
 ```java
-dependencies {
-implementation 'com.syncfusion:syncfusion-ej2-wordprocessor:18.4.0.30'
-}
+    dependencies {
+        implementation 'com.syncfusion:syncfusion-ej2-wordprocessor:18.4.0.30'
+    }
 ```
 
 ##### Apache Maven
 
 ```java
-<dependency>
-<groupId>com.syncfusion</groupId>
-<artifactId>syncfusion-ej2-wordprocessor</artifactId>
-<version>18.4.0.30</version>
-</dependency>
+    <dependency>
+        <groupId>com.syncfusion</groupId>
+        <artifactId>syncfusion-ej2-wordprocessor</artifactId>
+        <version>18.4.0.30</version>
+    </dependency>
 ```
 
 This section explains how to create the Java web service for DocumentEditor.
@@ -106,16 +106,16 @@ This section explains how to create the Java web service for DocumentEditor.
 The following code converts the Word document to SFDT file and sends the converted SFDT to client for importing Word document in DocumentEditor.
 
 ```java
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@PostMapping("/api/wordeditor/Import")
-public String uploadFile(@RequestParam("files") MultipartFile file) throws Exception {
-    try {
-        return WordProcessorHelper.load(file.getInputStream(), FormatType.Docx);
-    } catch (Exception e) {
-        e.printStackTrace();
-        return "{\"sections\":[{\"blocks\":[{\"inlines\":[{\"text\":" + e.getMessage() + "}]}]}]}";
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/Import")
+    public String uploadFile(@RequestParam("files") MultipartFile file) throws Exception {
+        try {
+            return WordProcessorHelper.load(file.getInputStream(), FormatType.Docx);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "{\"sections\":[{\"blocks\":[{\"inlines\":[{\"text\":" + e.getMessage() + "}]}]}]}";
+        }
     }
-}
 ```
 
 ## Paste with formatting
@@ -123,35 +123,35 @@ public String uploadFile(@RequestParam("files") MultipartFile file) throws Excep
 The following code converts the HTML, RTF content from client Clipboard to SFDT file and sends the converted SFDT to client for pasting formatted content in DocumentEditor.
 
 ```java
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@PostMapping("/api/wordeditor/SystemClipboard")
-public String systemClipboard(@RequestBody CustomParameter param) {
-    if (param.content != null && param.content != "") {
-        try {
-            return  WordProcessorHelper.loadString(param.content, GetFormatType(param.type.toLowerCase()));
-        } catch (Exception e) {
-            return "";
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/SystemClipboard")
+    public String systemClipboard(@RequestBody CustomParameter param) {
+        if (param.content != null && param.content != "") {
+            try {
+                return  WordProcessorHelper.loadString(param.content, GetFormatType(param.type.toLowerCase()));
+            } catch (Exception e) {
+                return "";
+            }
+        }
+        return "";
+    }
+
+    public class CustomParameter {
+        public String content;
+        public String type;
+        public String getContent() {
+            return content;
+        }
+        public String getType() {
+            return type;
+        }
+        public void setContent(String value) {
+            content= value;
+        }
+        public void setType(String value) {
+            type = value;
         }
     }
-    return "";
-}
-
-public class CustomParameter {
-    public String content;
-    public String type;
-    public String getContent() {
-        return content;
-    }
-    public String getType() {
-        return type;
-    }
-    public void setContent(String value) {
-        content= value;
-    }
-    public void setType(String value) {
-        type = value;
-    }
-}
 ```
 
 ## Restrict editing
@@ -159,37 +159,37 @@ public class CustomParameter {
 The following code computes HASH for the specified password and sends the generated HASH to client for protecting the Word document in DocumentEditor.
 
 ```java
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@PostMapping("/api/wordeditor/RestrictEditing")
-public String[] restrictEditing(@RequestBody CustomRestrictParameter param) throws Exception {
-    if (param.passwordBase64 == "" && param.passwordBase64 == null)
-        return null;
-    return WordProcessorHelper.computeHash(param.passwordBase64, param.saltBase64, param.spinCount);
-}
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/RestrictEditing")
+    public String[] restrictEditing(@RequestBody CustomRestrictParameter param) throws Exception {
+        if (param.passwordBase64 == "" && param.passwordBase64 == null)
+            return null;
+        return WordProcessorHelper.computeHash(param.passwordBase64, param.saltBase64, param.spinCount);
+    }
 
-public class CustomRestrictParameter {
-    public String passwordBase64;
-    public String saltBase64;
-    public int spinCount;
-    public String getPasswordBase64() {
-        return passwordBase64;
+    public class CustomRestrictParameter {
+        public String passwordBase64;
+        public String saltBase64;
+        public int spinCount;
+        public String getPasswordBase64() {
+            return passwordBase64;
+        }
+        public String getSaltBase64() {
+            return saltBase64;
+        }
+        public int getSpinCount() {
+            return spinCount;
+        }
+        public void setPasswordBase64(String value) {
+            passwordBase64= value;
+        }
+        public void setSaltBase64(String value) {
+            saltBase64= value;
+        }
+        public void setSpinCount(int value) {
+            spinCount= value;
+        }
     }
-    public String getSaltBase64() {
-        return saltBase64;
-    }
-    public int getSpinCount() {
-        return spinCount;
-    }
-    public void setPasswordBase64(String value) {
-        passwordBase64= value;
-    }
-    public void setSaltBase64(String value) {
-        saltBase64= value;
-    }
-    public void setSpinCount(int value) {
-        spinCount= value;
-    }
-}
 ```
 
 >Note: Please refer the [Java Web API example from GitHub](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices/tree/master/Java).

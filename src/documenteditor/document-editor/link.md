@@ -6,29 +6,34 @@ description: "Learn how to insert, delete, or navigate links in JavaScript docum
 
 # Hyperlink
 
-Document editor supports hyperlink field. You can link a part of the document content to Internet or file location, mail address, or any text within the document.
+Document Editor supports hyperlink field. You can link a part of the document content to Internet or file location, mail address, or any text within the document.
 
 ## Navigate a hyperlink
 
-Document editor triggers ‘requestNavigate’ event whenever user clicks Ctrl key or tap a hyperlink within the document. This event provides necessary details about link type, navigation URL, and local URL (if any) as arguments, and allows you to easily customize the hyperlink navigation functionality. Refer to the following example.
+Document Editor triggers ‘requestNavigate’ event whenever user clicks Ctrl key or tap a hyperlink within the document. This event provides necessary details about link type, navigation URL, and local URL (if any) as arguments, and allows you to easily customize the hyperlink navigation functionality. Refer to the following example.
 
 {% tab template="document-editor/hyperlink",es5Template="link" , sourceFiles="index.ts,index.html" %}
 
 ```typescript
 import { DocumentEditor, SfdtExport, Selection, RequestNavigateEventArgs } from '@syncfusion/ej2-documenteditor';
+
+//Inject require modules.
 DocumentEditor.Inject(Selection, SfdtExport);
-let documenteditor: DocumentEditor = new DocumentEditor({ enableSelection: true });
+//Initilize the Document Editor component.
+let documenteditor: DocumentEditor = new DocumentEditor({ enableSelection: true, height: '370px' });
 documenteditor.appendTo('#DocumentEditor');
+
 // Add event listener for requestNavigate event to customize hyperlink navigation functionality
 documenteditor.requestNavigate = (args: RequestNavigateEventArgs) => {
-if (args.linkType !== 'Bookmark') {
-let link: string = args.navigationLink;
-if (args.localReference.length > 0) {
-link += '#' + args.localReference;
-}
-window.open(link);
-args.isHandled = true;
-}
+    if (args.linkType !== 'Bookmark') {
+        let link: string = args.navigationLink;
+        if (args.localReference.length > 0) {
+            link += '#' + args.localReference;
+        }
+        //Navigate to the selected URL.
+        window.open(link);
+        args.isHandled = true;
+    }
 };
 
 ```
@@ -43,7 +48,7 @@ documenteditor.selection.navigateHyperlink();
 
 ## Copy link
 
-Document editor copies link text of a hyperlink field to the clipboard if the selection is in hyperlink. Refer to the following example.
+Document Editor copies link text of a hyperlink field to the clipboard if the selection is in hyperlink. Refer to the following example.
 
 ```typescript
 documenteditor .selection.copyHyperlink();
@@ -51,7 +56,7 @@ documenteditor .selection.copyHyperlink();
 
 ## Add hyperlink
 
-To create a basic hyperlink in the document, press `ENTER` / `SPACEBAR` / `SHIFT + ENTER` / `TAB` key after typing the address, for instance `http://www.google.com`. Document editor automatically converts this address to a hyperlink field. The text can be considered as a valid URL if it starts with any of the following.
+To create a basic hyperlink in the document, press `ENTER` / `SPACEBAR` / `SHIFT + ENTER` / `TAB` key after typing the address, for instance `http://www.google.com`. Document Editor automatically converts this address to a hyperlink field. The text can be considered as a valid URL if it starts with any of the following.
 
 > `<http://>`<br>
 > `<https://>`<br>
@@ -64,28 +69,28 @@ Refer to the following example.
 {% tab template="document-editor/hyperlink",es5Template="hyperlink" , sourceFiles="index.ts,index.html" %}
 
 ```typescript
-import { DocumentEditor, SfdtExport, Selection, Editor,RequestNavigateEventArgs } from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, SfdtExport, Selection, Editor, RequestNavigateEventArgs } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Selection, SfdtExport, Editor);
-let documenteditor: DocumentEditor = new DocumentEditor({ isReadOnly:false,enableSelection: true ,enableEditor:true});
+let documenteditor: DocumentEditor = new DocumentEditor({ height: '370px', isReadOnly: false, enableSelection: true, enableEditor: true });
 documenteditor.appendTo('#DocumentEditor');
 
 // Add event listener for requestNavigate event to customize hyperlink navigation functionality.
 documenteditor.requestNavigate = (args: RequestNavigateEventArgs) => {
-if (args.linkType !== 'Bookmark') {
-let link: string = args.navigationLink;
-if (args.localReference.length > 0) {
-link += '#' + args.localReference;
-}
-window.open(link);
-args.isHandled = true;
-}
+    if (args.linkType !== 'Bookmark') {
+        let link: string = args.navigationLink;
+        if (args.localReference.length > 0) {
+            link += '#' + args.localReference;
+        }
+        window.open(link);
+        args.isHandled = true;
+    }
 };
 
 ```
 
 {% endtab %}
 
-Also Document editor expose API [`insertHyperlink()`](../api/document-editor/editor/#inserthyperlink)to insert hyperlink.
+Also Document Editor expose API [`insertHyperlink()`](../api/document-editor/editor/#inserthyperlink)to insert hyperlink.
 
 Refer to the following sample code.
 
@@ -103,36 +108,30 @@ documenteditor.editor.removeHyperlink();
 
 ## Hyperlink dialog
 
-Document editor provides dialog support to insert or edit a hyperlink. Refer to the following example.
+Document Editor provides dialog support to insert or edit a hyperlink. Refer to the following example.
 
 {% tab template="document-editor/dialog",es5Template="link-dialog" , sourceFiles="index.ts,index.html" %}
 
 ```typescript
-import {
-DocumentEditor,
-Editor,
-Selection,
-EditorHistory,
-HyperlinkDialog,
-SfdtExport
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, EditorHistory, HyperlinkDialog, SfdtExport } from '@syncfusion/ej2-documenteditor';
 //Inject the required module
-DocumentEditor.Inject(Editor, Selection, EditorHistory, HyperlinkDialog, SfdtExport
-);
+DocumentEditor.Inject(Editor, Selection, EditorHistory, HyperlinkDialog, SfdtExport);
 let documenteditor: DocumentEditor = new DocumentEditor({
-isReadOnly: false,
-enableSelection: true,
-enableEditorHistory: true,
-enableEditor: true,
-enableHyperlinkDialog: true,
-enableSfdtExport:true
+      isReadOnly: false,
+      enableSelection: true,
+      enableEditorHistory: true,
+      enableEditor: true,
+      enableHyperlinkDialog: true,
+      enableSfdtExport: true,
+      height: '370px'
 });
 //Click the hyperlink button, the hyperlink dialog will open
-function showHyperlinkDialog(){
-documenteditor.showDialog('Hyperlink');
+function showHyperlinkDialog() {
+    //Open the hyperlink dialog.
+    documenteditor.showDialog('Hyperlink');
 }
-let button:HTMLElement=document.getElementById('dialog');
-button.addEventListener('click',showHyperlinkDialog)
+let button: HTMLElement = document.getElementById('dialog');
+button.addEventListener('click', showHyperlinkDialog)
 documenteditor.appendTo('#DocumentEditor');
 
 ```

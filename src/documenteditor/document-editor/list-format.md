@@ -6,7 +6,7 @@ description: "Learn the types of lists supported in JavaScript document editor a
 
 # Working with Lists
 
-Document editor supports both the single-level and multilevel lists. Lists are used to organize data as step-by-step instructions in documents for easy understanding of key points. You can apply list to the paragraph either using supported APIs.
+Document Editor supports both the single-level and multilevel lists. Lists are used to organize data as step-by-step instructions in documents for easy understanding of key points. You can apply list to the paragraph either using supported APIs.
 
 ## Create bullet list
 
@@ -52,72 +52,63 @@ documenteditor.editor.clearList();
 
 ## Working with lists
 
-The following sample demonstrates how to create bullet and numbering lists in document editor.
+The following sample demonstrates how to create bullet and numbering lists in Document Editor.
 
 {% tab template="document-editor/list",es5Template="list" , sourceFiles="index.ts" %}
 
 ```typescript
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  EditorHistory
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, EditorHistory } from '@syncfusion/ej2-documenteditor';
 import { Toolbar } from '@syncfusion/ej2-navigations';
+
 //Inject the require module
 DocumentEditor.Inject(Editor, Selection, EditorHistory);
 
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditorHistory: true,
-  enableEditor: true,
+      isReadOnly: false,
+      enableSelection: true,
+      enableEditorHistory: true,
+      enableEditor: true,
+      height: '370px'
 });
-function toolbarAction (args){
-  switch (args.item.id) {
-    case 'Bullets':
-      //To create bullet list
-      documenteditor.editor.applyBullet('\uf0b7', 'Symbol');
-      break;
-    case 'Numbering':
-      //To create numbering list
-      documenteditor.editor.applyNumbering('%1)', 'UpRoman');
-      break;
-    case 'clearlist':
-      //To clear list
-      documenteditor.editor.clearList();
-      break;
-  }
+
+function toolbarAction(args) {
+    switch (args.item.id) {
+        case 'Bullets':
+            //To create bullet list
+            documenteditor.editor.applyBullet('\uf0b7', 'Symbol');
+            break;
+        case 'Numbering':
+            //To create numbering list
+            documenteditor.editor.applyNumbering('%1)', 'UpRoman');
+            break;
+        case 'clearlist':
+            //To clear list
+            documenteditor.editor.clearList();
+            break;
+    }
 };
 
 let toolbar: Toolbar = new Toolbar({
-  clicked: toolbarAction,
-  items: [
-    {
-      prefixIcon: 'e-de-icon-Bullets',
-      tooltipText: 'Bullets',
-      id: 'Bullets',
-    },
-    {
-      prefixIcon: 'e-de-icon-Numbering',
-      tooltipText: 'Numbering',
-      id: 'Numbering',
-    },
-    {
-      text: 'Clear',
-      id: 'clearlist',
-      tooltipText: 'Clear List',
-    },
-  ],
+    clicked: toolbarAction,
+    items: [
+        {
+            prefixIcon: 'e-de-ctnr-bullets e-icons',
+            tooltipText: 'Bullets',
+            id: 'Bullets',
+        },
+        {
+            prefixIcon: 'e-de-ctnr-numbering e-icons',
+            tooltipText: 'Numbering',
+            id: 'Numbering',
+        },
+        {
+            text: 'Clear',
+            id: 'clearlist',
+            tooltipText: 'Clear List',
+        }
+    ],
 });
 toolbar.appendTo('#toolbar');
-
-function updateContainerSize() {
-  document.getElementById('container').style.height =
-    window.innerHeight - document.getElementById('toolbar').offsetHeight + 'px';
-}
-
-updateContainerSize();
 
 documenteditor.appendTo('#DocumentEditor');
 
@@ -127,7 +118,7 @@ documenteditor.appendTo('#DocumentEditor');
 
 ## Editing numbered list
 
-Document editor restarts the numbering or continue numbering for a numbered list. These options are found in the built-in context menu, if the list value is selected. Refer to the following screenshot.
+Document Editor restarts the numbering or continue numbering for a numbered list. These options are found in the built-in context menu, if the list value is selected. Refer to the following screenshot.
 
 ![Image](images/list.png)
 

@@ -6,7 +6,7 @@ description: "Learn the built-in dialog support in JavaScript document editor an
 
 # Dialog
 
-Document editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
+Document Editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
 
 ## Font Dialog
 
@@ -18,34 +18,28 @@ Refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  FontDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, FontDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
+
 DocumentEditor.Inject(Editor, Selection, SfdtExport, FontDialog);
+
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableFontDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableFontDialog: true,
+    enableSfdtExport: true,
+     height: '370px'
 });
+
 let containerPanel: HTMLElement = document.getElementById('container');
+
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
 
-  // To open Font Dialog
-  documenteditor.showDialog('Font');
+button.addEventListener('click', function () {
+    // To open Font Dialog
+    documenteditor.showDialog('Font');
 });
-function updateContainerSize() {
-  containerPanel.style.height =
-    window.innerHeight - document.getElementById('toolbar').offsetHeight + 'px';
-}
 
-updateContainerSize();
 documenteditor.appendTo('#DocumentEditor');
 
 ```
@@ -62,25 +56,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  ParagraphDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, ParagraphDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, ParagraphDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableParagraphDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableParagraphDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open paragraph dialog
-  documenteditor.showDialog('Paragraph');
+button.addEventListener('click', function () {
+    //To open paragraph dialog
+    documenteditor.showDialog('Paragraph');
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -98,25 +87,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  TableDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, TableDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, TableDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableTableDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableTableDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open table dialog
-  documenteditor.showDialog('Table');
+button.addEventListener('click', function () {
+    //To open table dialog
+    documenteditor.showDialog('Table');
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -138,25 +122,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  BookmarkDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, BookmarkDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, BookmarkDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableBookmarkDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableBookmarkDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open bookmark dialog
-  documenteditor.showDialog('Bookmark');
+button.addEventListener('click', function () {
+    //To open bookmark dialog
+    documenteditor.showDialog('Bookmark');
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -174,25 +153,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  HyperlinkDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, HyperlinkDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, HyperlinkDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableHyperlinkDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableHyperlinkDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open hyperlink dialog
-  documenteditor.showDialog('Hyperlink');
+button.addEventListener('click', function () {
+    //To open hyperlink dialog
+    documenteditor.showDialog('Hyperlink');
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -210,25 +184,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  TableOfContentsDialog,
-  SfdtExport
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, TableOfContentsDialog, SfdtExport } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, TableOfContentsDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableTableOfContentsDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableTableOfContentsDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open table of contents dialog
-  documenteditor.showDialog('TableOfContents');
+button.addEventListener('click', function () {
+    //To open table of contents dialog
+    documenteditor.showDialog('TableOfContents');
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -244,31 +213,25 @@ This dialog allows managing the styles in a document. It will display all the st
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  StyleDialog,
-  StylesDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, StyleDialog, StylesDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 
-DocumentEditor.Inject(Editor, Selection, SfdtExport, StyleDialog,StylesDialog);
+DocumentEditor.Inject(Editor, Selection, SfdtExport, StyleDialog, StylesDialog);
 
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableStyleDialog: true,
-  enableSfdtExport: true,
-  enableStylesDialog:true
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableStyleDialog: true,
+    enableSfdtExport: true,
+    enableStylesDialog: true,
+    height: '370px'
 });
 
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
+button.addEventListener('click', function () {
 
-  //To open styles dialog
-  documenteditor.showDialog('Styles');
+    //To open styles dialog
+    documenteditor.showDialog('Styles');
 });
 
 documenteditor.appendTo('#DocumentEditor');
@@ -287,29 +250,24 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  StyleDialog,
-  SfdtExport
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, StyleDialog, SfdtExport } from '@syncfusion/ej2-documenteditor';
 
 DocumentEditor.Inject(Editor, Selection, SfdtExport, StyleDialog);
 
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableStyleDialog: true,
-  enableSfdtExport: true
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableStyleDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
+button.addEventListener('click', function () {
 
-  //To open style dialog
-  documenteditor.showDialog('Style');
+    //To open style dialog
+    documenteditor.showDialog('Style');
 });
 
 documenteditor.appendTo('#DocumentEditor');
@@ -327,25 +285,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  ListDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, ListDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, ListDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableListDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableListDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open list dialog
-  documenteditor.showDialog('List');
+button.addEventListener('click', function () {
+    //To open list dialog
+    documenteditor.showDialog('List');
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -363,28 +316,23 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  BordersAndShadingDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, BordersAndShadingDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, BordersAndShadingDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableBordersAndShadingDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableBordersAndShadingDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open hyperlink dialog
-  documenteditor.showDialog('BordersAndShading');
+button.addEventListener('click', function () {
+    //To open hyperlink dialog
+    documenteditor.showDialog('BordersAndShading');
 });
 documenteditor.appendTo('#DocumentEditor');
-documenteditor.editor.insertTable(2,2);
+documenteditor.editor.insertTable(2, 2);
 
 ```
 
@@ -400,28 +348,23 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  TableOptionsDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, TableOptionsDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, TableOptionsDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableTableOptionsDialog: true,
-  enableSfdtExport: true,
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditor: true,
+    enableTableOptionsDialog: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open table options dialog
-  documenteditor.showDialog('TableOptions');
+button.addEventListener('click', function () {
+    //To open table options dialog
+    documenteditor.showDialog('TableOptions');
 });
 documenteditor.appendTo('#DocumentEditor');
-documenteditor.editor.insertTable(2,2);
+documenteditor.editor.insertTable(2, 2);
 
 ```
 
@@ -437,33 +380,28 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  TableOptionsDialog,
-  TablePropertiesDialog,
-  BordersAndShadingDialog,
-  SfdtExport,
-} from '@syncfusion/ej2-documenteditor';
-DocumentEditor.Inject(Editor, Selection, SfdtExport, TablePropertiesDialog,
-  BordersAndShadingDialog,TableOptionsDialog);
+import { DocumentEditor, Editor, Selection, TableOptionsDialog, TablePropertiesDialog, BordersAndShadingDialog, SfdtExport, } from '@syncfusion/ej2-documenteditor';
+DocumentEditor.Inject(Editor, Selection, SfdtExport, TablePropertiesDialog, BordersAndShadingDialog, TableOptionsDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enableTableOptionsDialog: true,
-  enableTablePropertiesDialog:true,
-  enableBordersAndShadingDialog:true,
-  enableSfdtExport: true,
+      isReadOnly: false,
+      enableSelection: true,
+      enableEditor: true,
+      enableTableOptionsDialog: true,
+      enableTablePropertiesDialog: true,
+      enableBordersAndShadingDialog: true,
+      enableSfdtExport: true,
+      height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open table properties dialog
-  documenteditor.showDialog('TableProperties');
+button.addEventListener('click', function () {
+    //To open table properties dialog
+    documenteditor.showDialog('TableProperties');
 });
+
 documenteditor.appendTo('#DocumentEditor');
-documenteditor.editor.insertTable(2,2);
+
+// Insert a new table.
+documenteditor.editor.insertTable(2, 2);
 
 ```
 
@@ -479,25 +417,20 @@ To open this dialog, refer to the following example.
 
 ```typescript
 
-import {
-  DocumentEditor,
-  Editor,
-  Selection,
-  PageSetupDialog,
-  SfdtExport
-} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, PageSetupDialog, SfdtExport } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Editor, Selection, SfdtExport, PageSetupDialog);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditor: true,
-  enablePageSetupDialog: true,
-  enableSfdtExport: true,
+      isReadOnly: false,
+      enableSelection: true,
+      enableEditor: true,
+      enablePageSetupDialog: true,
+      enableSfdtExport: true,
+      height: '370px'
 });
 let button: HTMLElement = document.getElementById('dialog');
-button.addEventListener('click', function() {
-  //To open page setup dialog
-  documenteditor.showDialog('PageSetup');
+button.addEventListener('click', function () {
+    //To open page setup dialog
+    documenteditor.showDialog('PageSetup');
 });
 documenteditor.appendTo('#DocumentEditor');
 

@@ -6,11 +6,11 @@ description: "Learn how to export the contents of JavaScript document editor as 
 
 # Export
 
-Document editor exports the document into various known file formats in client-side such as Microsoft Word document (.docx), text document (.txt), and its own format called **Syncfusion Document Text (.sfdt)**.
+Document Editor exports the document into various known file formats in client-side such as Microsoft Word document (.docx), text document (.txt), and its own format called **Syncfusion Document Text (.sfdt)**.
 
 ## SFDT export
 
-The following example shows how to export documents in document editor as Syncfusion document text (.sfdt).
+The following example shows how to export documents in Document Editor as Syncfusion document text (.sfdt).
 
 {% tab template="document-editor/export", es5Template="export-sfdt", sourceFiles="index.ts,index.html" %}
 
@@ -19,7 +19,7 @@ import { DocumentEditor, FormatType, Selection, Editor, SfdtExport } from '@sync
 
 DocumentEditor.Inject(SfdtExport, Selection, Editor);
 
-let documenteditor: DocumentEditor = new DocumentEditor({ enableSfdtExport: true, enableSelection: true, enableEditor: true, isReadOnly: false });
+let documenteditor: DocumentEditor = new DocumentEditor({ height: '370px', enableSfdtExport: true, enableSelection: true, enableEditor: true, isReadOnly: false });
 
 documenteditor.appendTo('#DocumentEditor');
 
@@ -35,16 +35,16 @@ document.getElementById('export').addEventListener('click', () => {
 
 The following example shows how to export the document as Word document (.docx).
 
->Note: The Syncfusion Document editor component's document pagination (page-by-page display) can't be guaranteed for all the Word documents to match the pagination of Microsoft Word application. For more information about [why the document pagination (page-by-page display) differs from Microsoft Word](../document-editor/import/#why-the-document-pagination-differs-from-microsoft-word)
+>Note: The Syncfusion Document Editor component's document pagination (page-by-page display) can't be guaranteed for all the Word documents to match the pagination of Microsoft Word application. For more information about [why the document pagination (page-by-page display) differs from Microsoft Word](../document-editor/import/#why-the-document-pagination-differs-from-microsoft-word)
 
 {% tab template="document-editor/export", es5Template="word-export", sourceFiles="index.ts,index.html" %}
 
 ```typescript
-import { DocumentEditor, FormatType, Selection, Editor, SfdtExport, WordExport} from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, FormatType, Selection, Editor, SfdtExport, WordExport } from '@syncfusion/ej2-documenteditor';
 
 DocumentEditor.Inject(SfdtExport, WordExport, Selection, Editor);
 
-let documenteditor: DocumentEditor = new DocumentEditor({ enableWordExport: true, enableSelection: true, enableEditor: true, isReadOnly: false });
+let documenteditor: DocumentEditor = new DocumentEditor({ height: '370px', enableWordExport: true, enableSelection: true, enableEditor: true, isReadOnly: false });
 
 documenteditor.appendTo('#DocumentEditor');
 
@@ -65,13 +65,15 @@ The following example shows how to export document as text document (.txt).
 ```typescript
 import { DocumentEditor, FormatType, Selection, Editor, SfdtExport, TextExport} from '@syncfusion/ej2-documenteditor';
 
+//Inject require modules for Export.
 DocumentEditor.Inject(SfdtExport, TextExport, Selection, Editor);
 
-let documenteditor: DocumentEditor = new DocumentEditor({ enableTextExport: true, enableSelection: true, enableEditor: true, isReadOnly: false });
+let documenteditor: DocumentEditor = new DocumentEditor({ height: '370px', enableTextExport: true, enableSelection: true, enableEditor: true, isReadOnly: false });
 
 documenteditor.appendTo('#DocumentEditor');
 
 document.getElementById('export').addEventListener('click', () => {
+    //Export the document as text file.
     documenteditor.save('sample', 'Txt');
 });
 
@@ -81,11 +83,12 @@ document.getElementById('export').addEventListener('click', () => {
 
 ## Export as blob
 
-Document editor also supports API to store the document into a blob. Refer to the following sample to export document into blob in client-side.
+Document Editor also supports API to store the document into a blob. Refer to the following sample to export document into blob in client-side.
 
 ```typescript
 import { DocumentEditor, FormatType, WordExport, SfdtExport } from '@syncfusion/ej2-documenteditor';
 
+//Inject require modules for Export.
 DocumentEditor.Inject(WordExport, SfdtExport);
 
 let documenteditor: DocumentEditor = new DocumentEditor({ enableSfdtExport: true, enableWordExport: true, enableTextExport: true });
@@ -95,6 +98,7 @@ documenteditor.appendTo('#DocumentEditor');
 documenteditor.open(sfdt);
 
 document.getElementById('export').addEventListener('click', () => {
+    //Export the current document as `Blob` object.
     documenteditor.saveAsBlob('Docx').then((exportedDocument: Blob) => {
       // The blob can be processed further
     });
@@ -105,37 +109,38 @@ document.getElementById('export').addEventListener('click', () => {
 For instance, to export the document as Rich Text Format file, implement an ASP.NET MVC web API controller using DocIO library by passing the DOCX blob. Refer to the following code example.
 
 ```csharp
-//API controller for the conversion.
-[HttpPost]
-public HttpResponseMessage ExportAsRtf()
-{
-    System.Web.HttpPostedFile data = HttpContext.Current.Request.Files[0];
-    //Opens document stream
-    WordDocument wordDocument = new WordDocument(data.InputStream);
-    MemoryStream stream = new MemoryStream();
-    //Converts document stream as RTF
-    wordDocument.Save(stream, FormatType.Rtf);
-    wordDocument.Close();
-    stream.Position = 0;
-    return new HttpResponseMessage() { Content = new StreamContent(stream) };
-}
-
+    //API controller for the conversion.
+    [HttpPost]
+    public HttpResponseMessage ExportAsRtf()
+    {
+        System.Web.HttpPostedFile data = HttpContext.Current.Request.Files[0];
+        //Opens document stream
+        WordDocument wordDocument = new WordDocument(data.InputStream);
+        MemoryStream stream = new MemoryStream();
+        //Converts document stream as RTF
+        wordDocument.Save(stream, FormatType.Rtf);
+        wordDocument.Close();
+        stream.Position = 0;
+        return new HttpResponseMessage() { Content = new StreamContent(stream) };
+    }
 ```
 
 In client-side, you can consume this web service and save the document as Rich Text Format (.rtf) file. Refer to the following example.
 
 ```typescript
 document.getElementById('export').addEventListener('click', () => {
+    //Expor the document as `Blob` object.
     documenteditor.saveAsBlob('Docx').then((exportedDocument: Blob) => {
-        // The blob can be processed further
-        let formData: FormData = new FormData();
-        formData.append('fileName', 'sample.docx');
-        formData.append('data', exportedDocument);
-        saveAsRtf(formData);
+          // The blob can be processed further
+          let formData: FormData = new FormData();
+          formData.append('fileName', 'sample.docx');
+          formData.append('data', exportedDocument);
+          saveAsRtf(formData);
     });
 });
 
 function saveAsRtf(formData: FormData): void {
+    //Send the blob object to server to process further.
     let httpRequest: XMLHttpRequest = new XMLHttpRequest();
     httpRequest.open('POST', '/api/DocumentEditor/ExportAsRtf', true);
     httpRequest.onreadystatechange = () => {
@@ -156,6 +161,7 @@ function saveAsRtf(formData: FormData): void {
     httpRequest.send(formData);
 }
 
+//Download the document in client side.
 function download(fileName: string, extension: string, buffer: Blob, downloadLink: HTMLAnchorElement, hasDownloadAttribute: Boolean): void {
     if (hasDownloadAttribute) {
         downloadLink.download = fileName;

@@ -6,13 +6,14 @@ description: "Learn how to perform comments in JavaScript document editor"
 
 # Comments
 
-Document editor allows you to add comments to documents. You can add, navigate and remove comments in code and from the UI.
+Document Editor allows you to add comments to documents. You can add, navigate and remove comments in code and from the UI.
 
 ## Add a new comment
 
 Comments can be inserted to the selected text.
 
 ```typescript
+//Add new commnt in the document.
 documentEditor.editor.insertComment("Test comment");
 ```
 
@@ -33,6 +34,7 @@ documentEditor.selection.navigatePreviousComment();
 Current comment can be be deleted using the below code snippet.
 
 ```typescript
+//Delete the selected comment.
 documentEditor.editor.deleteComment();
 ```
 
@@ -41,5 +43,6 @@ documentEditor.editor.deleteComment();
 All the comments in the document can be deleted using the below code snippet.
 
 ```typescript
+//Delete all the comments present in the current document.
 documentEditor.editor.deleteAllComments();
 ```

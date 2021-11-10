@@ -8,7 +8,7 @@ description: "Learn how to perform export of SFDT to other MS Word formats and P
 
 ## SFDT to DOCX export
 
-Document editor supports server-side export of **Syncfusion Document Text (.sfdt)** to Doc, DOCX, RTF, Txt, WordML, HTML formats using server-side helper **Syncfusion.EJ2.DocumentEditor** available in ASP.NET Core & ASP.NET MVC platform in the below NuGet's.
+Document Editor supports server-side export of **Syncfusion Document Text (.sfdt)** to Doc, DOCX, RTF, Txt, WordML, HTML formats using server-side helper **Syncfusion.EJ2.DocumentEditor** available in ASP.NET Core & ASP.NET MVC platform in the below NuGet's.
 
 * [Syncfusion.EJ2.WordEditor.AspNet.Core](https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Core)
 * [Syncfusion.EJ2.WordEditor.AspNet.Mvc5](https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Mvc5)
@@ -18,21 +18,21 @@ Please refer the following code example.
 
 ```csharp
 
-//API controller for the conversion.
-[HttpPost]
-public void ExportSFDT([FromBody]SaveParameter data)
-{
-    Stream document = WordDocument.Save(data.content, FormatType.Docx);
-    FileStream file = new FileStream("sample.docx", FileMode.OpenOrCreate, FileAccess.ReadWrite);
-    document.CopyTo(file);
-    file.Close();
-    document.Close();
-}
+    //API controller for the conversion.
+    [HttpPost]
+    public void ExportSFDT([FromBody]SaveParameter data)
+    {
+        Stream document = WordDocument.Save(data.content, FormatType.Docx);
+        FileStream file = new FileStream("sample.docx", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        document.CopyTo(file);
+        file.Close();
+        document.Close();
+    }
 
-public class SaveParameter
-{
-    public string content { get; set; }
-}
+    public class SaveParameter
+    {
+        public string content { get; set; }
+    }
 
 ```
 
@@ -41,21 +41,25 @@ Please refer the client side example to serialize the sfdt and send to the serve
 ```typescript
 import { DocumentEditor, FormatType, WordExport, SfdtExport } from '@syncfusion/ej2-documenteditor';
 
+//Inject require modules.
 DocumentEditor.Inject(WordExport, SfdtExport);
 
 let documenteditor: DocumentEditor = new DocumentEditor({ enableSfdtExport: true, enableWordExport: true, enableTextExport: true });
 
 documenteditor.appendTo('#DocumentEditor');
 
+//Open the sfdt document.
 documenteditor.open(sfdt);
 
 document.getElementById('export').addEventListener('click', () => {
-    let http: XMLHttpRequest = new XMLHttpRequest();
-    http.open('POST', 'http://localhost:5000/api/documenteditor/ExportSFDT');
-    http.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    http.responseType = 'json';
-    let sfdt: any = { content: documenteditor.serialize() };
-    http.send(JSON.stringify(sfdt));
+      let http: XMLHttpRequest = new XMLHttpRequest();
+      http.open('POST', 'http://localhost:5000/api/documenteditor/ExportSFDT');
+      http.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      http.responseType = 'json';
+      //Serialize document content as SFDT.
+      let sfdt: any = { content: documenteditor.serialize() };
+      //Send the sfdt content to server side.
+      http.send(JSON.stringify(sfdt));
 });
 
 ```

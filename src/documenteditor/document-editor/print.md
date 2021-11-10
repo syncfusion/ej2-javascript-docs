@@ -6,7 +6,7 @@ description: "Learn how to print the document in JavaScript document editor and 
 
 # Print
 
-To print the document, use the `print` method from document editor instance.
+To print the document, use the `print` method from Document Editor instance.
 
 Refer to the following example for showing a document and print it.
 
@@ -19,7 +19,7 @@ import { Button } from '@syncfusion/ej2-buttons';
 DocumentEditor.Inject(Print);
 
 let documenteditor: DocumentEditor = new DocumentEditor({
-    enablePrint: true
+    enablePrint: true, height: '370px'
 });
 documenteditor.appendTo('#DocumentEditor');
 
@@ -70,7 +70,8 @@ let documenteditor: DocumentEditor = new DocumentEditor({
     enablePrint: true,
     enableEditor: true,
     enableSelection: true,
-    enableEditorHistory: true
+    enableEditorHistory: true,
+    height: '370px'
 });
 documenteditor.appendTo('#DocumentEditor');
 let printButton: Button = new Button();
@@ -85,7 +86,7 @@ document.getElementById('print').addEventListener('click', () => {
 
 ## Print using window object
 
-You can print the document in document editor by passing the window instance. This is useful to implement print in third party frameworks such as electron, where the window instance will not be available. Refer to the following example.
+You can print the document in Document Editor by passing the window instance. This is useful to implement print in third party frameworks such as electron, where the window instance will not be available. Refer to the following example.
 
 ```typescript
 import { DocumentEditor, Print } from '@syncfusion/ej2-documenteditor';
@@ -93,7 +94,7 @@ import { DocumentEditor, Print } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Print);
 
 let documenteditor: DocumentEditor = new DocumentEditor({
-    enablePrint: true
+    enablePrint: true, height: '370px'
 });
 documenteditor.appendTo('#DocumentEditor');
 documenteditor.print(window);
@@ -119,13 +120,14 @@ let documenteditor: DocumentEditor = new DocumentEditor({
     enablePageSetupDialog: true,
     enableEditor: true,
     enableSelection: true,
-    enableEditorHistory: true
+    enableEditorHistory: true,
+    height: '370px'
 });
 documenteditor.appendTo('#DocumentEditor');
 documenteditor.showPageSetupDialog();
 ```
 
-By customizing margins, papers, and layouts, the layout of the document will be changed in document editor. To modify these options during print operation, serialize the document as SFDT using the `serialize` method in document editor instance and open the SFDT data in another instance of document editor in separate window.
+By customizing margins, papers, and layouts, the layout of the document will be changed in Document Editor. To modify these options during print operation, serialize the document as SFDT using the `serialize` method in Document Editor instance and open the SFDT data in another instance of Document Editor in separate window.
 
 The following example shows how to customize layout options only for printing.
 
@@ -135,23 +137,27 @@ The following example shows how to customize layout options only for printing.
 import { DocumentEditor, Print, Editor, Selection, EditorHistory, SfdtExport } from '@syncfusion/ej2-documenteditor';
 import { Button } from '@syncfusion/ej2-buttons';
 
+//Inject require modules.
 DocumentEditor.Inject(Print, Editor, Selection, EditorHistory, SfdtExport);
 
 let documenteditor1: DocumentEditor = new DocumentEditor({
-    isReadOnly: false,
-    enablePrint: true,
-    enableEditor: true,
-    enableSelection: true,
-    enableEditorHistory: true,
-    enableSfdtExport: true
+      isReadOnly: false,
+      enablePrint: true,
+      enableEditor: true,
+      enableSelection: true,
+      enableEditorHistory: true,
+      enableSfdtExport: true,
+      height: '370px'
 });
 documenteditor1.appendTo('#DocumentEditor');
 let printButton: Button = new Button();
 printButton.appendTo('#print');
+
 let documenteditor2: DocumentEditor = new DocumentEditor({
-    enablePrint: true, enableSelection: true, isReadOnly: false, enableEditor: true
+      enablePrint: true, enableSelection: true, isReadOnly: false, enableEditor: true, height: '370px'
 });
 documenteditor2.appendTo('#DocumentEditor2');
+//Print the document
 document.getElementById('print').addEventListener('click', () => {
     let sfdtData = documenteditor1.serialize();
     documenteditor2.open(sfdtData);

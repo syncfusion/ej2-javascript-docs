@@ -18,14 +18,18 @@ DocumentEditorContainer allows you to customize(add, show, hide, enable, and dis
 
 ```typescript
 let toolItem: CustomToolbarItemModel = {
-  prefixIcon: "e-de-ctnr-lock",
-  tooltipText: "Disable Image",
-  text: "Disable Image",
-  id: "Custom"
+    prefixIcon: "e-de-ctnr-lock",
+    tooltipText: "Disable Image",
+    text: "Disable Image",
+    id: "Custom"
 };
+
+//Initialize Document Editor Container component with custom toolbar item.
 let container: DocumentEditorContainer = new DocumentEditorContainer({
-  toolbarItems: [toolItem, 'Undo','Redo','Separator','Image','Table','Hyperlink','Bookmark','Comments','TableOfContents','Separator','Header','Footer','PageSetup','PageNumber','Break','Separator','Find','Separator','LocalClipboard','RestrictEditing']
+    toolbarItems: [toolItem, 'Undo','Redo','Separator','Image','Table','Hyperlink','Bookmark','Comments','TableOfContents','Separator','Header','Footer','PageSetup','PageNumber','Break','Separator','Find','Separator','LocalClipboard','RestrictEditing']
 });
+
+//To handle custom toolbar click event.
 container.toolbarClick = (args: ClickEventArgs): void => {
     switch(args.item.id){
         case 'Custom':
@@ -36,4 +40,4 @@ container.toolbarClick = (args: ClickEventArgs): void => {
 };
 ```
 
->Note: Default value of `toolbarItems` is `['New', 'Open', 'Separator', 'Undo', 'Redo', 'Separator', 'Image', 'Table', 'Hyperlink', 'Bookmark', 'Comments', 'TableOfContents', 'Separator', 'Header', 'Footer', 'PageSetup', 'PageNumber', 'Break', 'Separator', 'Find', 'Separator', 'LocalClipboard', 'RestrictEditing']`.
+>Note: Default value of `toolbarItems` is `['New', 'Open', 'Separator', 'Undo', 'Redo', 'Separator', 'Image', 'Table', 'Hyperlink', 'Bookmark', 'TableOfContents', 'Separator', 'Header', 'Footer', 'PageSetup', 'PageNumber', 'Break', 'InsertFootnote', 'InsertEndnote', 'Separator', 'Find', 'Separator', 'Comments', 'TrackChanges', 'Separator', 'LocalClipboard', 'RestrictEditing', 'Separator', 'FormFields', 'UpdateFields']`.

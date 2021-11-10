@@ -6,7 +6,7 @@ description: "Learn how to find a portion of text in JavaScript document editor 
 
 # Find and replace
 
-The document editor component searches a portion of text in the document through a built-in interface called `OptionsPane` or rich APIs. When used in combination with selection performs various operations on the search results like replacing it with some other text, highlighting it, making it bolder, and more.
+The Document Editor component searches a portion of text in the document through a built-in interface called `OptionsPane` or rich APIs. When used in combination with selection performs various operations on the search results like replacing it with some other text, highlighting it, making it bolder, and more.
 
 ## Options pane
 
@@ -17,7 +17,7 @@ This provides the options to search for a portion of text in the document. After
 ```typescript
 import { DocumentEditor, Selection, Editor, Search, OptionsPane } from '@syncfusion/ej2-documenteditor';
 DocumentEditor.Inject(Selection, Search, Editor, OptionsPane);
-let documenteditor: DocumentEditor = new DocumentEditor({ enableSelection: true, enableSearch: true, enableEditor: true, isReadOnly: false, enableOptionsPane: true });
+let documenteditor: DocumentEditor = new DocumentEditor({ height: '370px', enableSelection: true, enableSearch: true, enableEditor: true, isReadOnly: false, enableOptionsPane: true });
 documenteditor.appendTo('#DocumentEditor');
 let sfdt: string = `{
     "sections": [
@@ -50,7 +50,7 @@ You can close the options pane by pressing `Esc` key.
 
 ## Search
 
-The `Search` module of document editor exposes the following APIs:
+The `Search` module of Document Editor exposes the following APIs:
 
 |API Name|Type |Description|
 |---|---|---|
@@ -98,8 +98,11 @@ Using the exposed APIs, you can customize the find and replace functionality in 
 
 ```typescript
 import { DocumentEditor, Selection, Editor, Search } from '@syncfusion/ej2-documenteditor';
+//Inject require modules.
 DocumentEditor.Inject(Selection, Search, Editor);
-let documenteditor: DocumentEditor = new DocumentEditor({ enableSelection: true, enableSearch: true, enableEditor: true, isReadOnly: false });
+
+//Initialize the Document Editor component.
+let documenteditor: DocumentEditor = new DocumentEditor({ height: '370px', enableSelection: true, enableSearch: true, enableEditor: true, isReadOnly: false });
 documenteditor.appendTo('#DocumentEditor');
 let sfdt: string = `{
     "sections": [
@@ -120,6 +123,8 @@ let sfdt: string = `{
         }
     ]
 }`;
+
+//Open the SFDT document in Document Editor.
 documenteditor.open(sfdt);
 document.getElementById('replace_all').addEventListener('click', () => {
     let textToFind: string = (document.getElementById('find_text') as HTMLInputElement).value;

@@ -3,7 +3,7 @@ title: "azure kubernetes service"
 component: "Document Editor"
 description: "Learn about deploy the Web API controller docker image in Azure Kubernetes Service"
 ---
-# How to deploy word-processor-server Docker container in Azure Kubernetes Service
+# How to Deploy Word Processor Server Docker Container in Azure Kubernetes Service
 
 ## Prerequisites
 
@@ -52,45 +52,45 @@ az aks get-credentials --resource-group documenteditorresourcegroup --name docum
 [`Kubernetes Services`](https://kubernetes.io/docs/concepts/services-networking/service/) and [`Deployments`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) can be configured in a file. To run the Document Editor server, you must define a Service and a Deployment documenteditorserver. To do this, create the documenteditor-server.yml file in the current directory using the following code.
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: documenteditorserver
-  name: documenteditorserver
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
       app: documenteditorserver
-  strategy: {}
-  template:
-    metadata:
-      labels:
+    name: documenteditorserver
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
         app: documenteditorserver
-    spec:
-      containers:
-      - image: syncfusion/word-processor-server:latest
-        name: documenteditorserver
-        ports:
-        - containerPort: 80
-        env:
-        - name: SYNCFUSION_LICENSE_KEY
-          value: "YOUR_LICENSE_KEY"
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: documenteditorserver
-  name: documenteditorserver
-spec:
-  ports:
-  - port: 80
-    targetPort: 80
-  selector:
-    app: documenteditorserver
-  type: LoadBalancer
+    strategy: {}
+    template:
+      metadata:
+        labels:
+          app: documenteditorserver
+      spec:
+        containers:
+        - image: syncfusion/word-processor-server:latest
+          name: documenteditorserver
+          ports:
+          - containerPort: 80
+          env:
+          - name: SYNCFUSION_LICENSE_KEY
+            value: "YOUR_LICENSE_KEY"
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: documenteditorserver
+    name: documenteditorserver
+  spec:
+    ports:
+    - port: 80
+      targetPort: 80
+    selector:
+      app: documenteditorserver
+    type: LoadBalancer
 ```
 
 **Step 5:** To create all Services and Deployments needed to run the Document Editor server, execute the following.

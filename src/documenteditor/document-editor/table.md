@@ -6,7 +6,7 @@ description: "Learn how to insert, select, or delete table, row(s), and column(s
 
 # Tables
 
-Tables are an efficient way to present information. Document editor can display and edit the tables. You can select and edit tables through keyboard, mouse, or touch interactions. Document editor exposes a rich set of APIs to perform these operations programmatically.
+Tables are an efficient way to present information. Document Editor can display and edit the tables. You can select and edit tables through keyboard, mouse, or touch interactions. Document Editor exposes a rich set of APIs to perform these operations programmatically.
 
 ## Create a table
 
@@ -34,8 +34,10 @@ Refer to the following sample code.
 ```typescript
 //Inserts a row below the row at cursor position
 documentedior.editor.insertRow();
+
 //Inserts a row above the row at cursor position
 documentedior.editor.insertRow(false);
+
 //Inserts three rows below the row at cursor position
 documentedior.editor.insertRow(true, 3)
 ```
@@ -54,8 +56,10 @@ Refer to the following sample code.
 ```typescript
 //Insert a column to the right of the column at cursor position.
 documentedior.editor.insertColumn();
+
 //Insert a column to the left of the column at cursor position.
 documentedior.editor.insertColumn(false);
+
 //Insert two columns to the left of the column at cursor position.
 documentedior.editor.insertColumn(false, 2);
 ```
@@ -98,7 +102,7 @@ documenteditor.selection.selectCell();
 
 ## Delete table
 
-Document editor allows you to delete the entire table. You can use the `deleteTable()` method of editor instance, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the entire table. You can use the `deleteTable()` method of editor instance, if selection is in table. Refer to the following sample code.
 
 ```typescript
 documenteditor.editor.deleteTable();
@@ -106,7 +110,7 @@ documenteditor.editor.deleteTable();
 
 ## Delete row
 
-Document editor allows you to delete the selected number of rows. You can use the `deleteRow()` method of editor instance to delete the selected number of rows, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the selected number of rows. You can use the `deleteRow()` method of editor instance to delete the selected number of rows, if selection is in table. Refer to the following sample code.
 
 ```typescript
 documenteditor.editor.deleteRow();
@@ -114,7 +118,7 @@ documenteditor.editor.deleteRow();
 
 ## Delete column
 
-Document editor allows you to delete the selected number of columns. You can use the `deleteColumn ()` method of editor instance to delete the selected number of columns, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the selected number of columns. You can use the `deleteColumn ()` method of editor instance to delete the selected number of columns, if selection is in table. Refer to the following sample code.
 
 ```typescript
 documenteditor.editor.deleteColumn();
@@ -129,6 +133,10 @@ Refer to the following sample code.
 documenteditor.editor.mergeCells()
 ```
 
+## Positioning the table
+
+Document Editor preserves the position properties of the table and displays the table based on position properties. It does not support modifying the position properties. Whereas the table will be automatically moved along with text edited if it is positioned relative to the paragraph.
+
 ## How to work with tables
 
 The following sample demonstrates how to delete the table row or columns, merge cells and how to bind the API with button.
@@ -137,137 +145,138 @@ The following sample demonstrates how to delete the table row or columns, merge 
 
 ```typescript
 
-import {  DocumentEditor,  Editor,  Selection, SfdtExport,  EditorHistory,  TableDialog, ContextMenu } from '@syncfusion/ej2-documenteditor';
+import { DocumentEditor, Editor, Selection, SfdtExport, EditorHistory, TableDialog, ContextMenu } from '@syncfusion/ej2-documenteditor';
 import { Toolbar } from '@syncfusion/ej2-navigations';
-DocumentEditor.Inject(
-  Editor,
-  Selection,
-  EditorHistory,
-  TableDialog,
-  ContextMenu,
-  SfdtExport
-);
+DocumentEditor.Inject(Editor, Selection, EditorHistory, TableDialog, ContextMenu, SfdtExport);
 let documenteditor: DocumentEditor = new DocumentEditor({
-  isReadOnly: false,
-  enableSelection: true,
-  enableEditorHistory: true,
-  enableEditor: true,
-  enableTableDialog: true,
-  enableContextMenu: true,
-  enableSfdtExport: true
+    isReadOnly: false,
+    enableSelection: true,
+    enableEditorHistory: true,
+    enableEditor: true,
+    enableTableDialog: true,
+    enableContextMenu: true,
+    enableSfdtExport: true,
+    height: '370px'
 });
 function toolbarButtonClick(arg) {
-  switch (arg.item.id) {
-    case 'table':
-      //Insert table API to add table
-      documenteditor.editor.insertTable(3, 2);
-      break;
-    case 'insert_above':
-      //Insert the specified number of rows to the table above to the row at cursor position
-      documenteditor.editor.insertRow(true, 2);
-      break;
-    case 'insert_below':
-      //Insert the specified number of rows to the table below to the row at cursor position
-      documenteditor.editor.insertRow();
-      break;
-    case 'insert_left':
-      //Insert the specified number of columns to the table left to the column at cursor position
-      documenteditor.editor.insertColumn(true, 2);
-      break;
-    case 'insert_right':
-      //Insert the specified number of columns to the table right to the column at cursor position
-      documenteditor.editor.insertColumn();
-      break;
-    case 'delete_table':
-      //Delete the entire table
-      documenteditor.editor.deleteTable();
-      break;
-    case 'delete_row':
-      //Delete the selected number of rows
-      documenteditor.editor.deleteRow();
-      break;
-    case 'delete_column':
-      //Delete the selected number of columns
-      documenteditor.editor.deleteColumn();
-      break;
-    case 'merge_cell':
-      //Merge the selected cells into one (both vertically and horizontally)
-      documenteditor.editor.mergeCells();
-      break;
-    case 'table_dialog':
-      //Opens insert table dialog
-      documenteditor.showDialog('Table');
-      break;
-  }
+    switch (arg.item.id) {
+        case 'table':
+            //Insert table API to add table
+            documenteditor.editor.insertTable(3, 2);
+            break;
+        case 'insert_above':
+            //Insert the specified number of rows to the table above to the row at cursor position
+            documenteditor.editor.insertRow(true, 2);
+            break;
+        case 'insert_below':
+            //Insert the specified number of rows to the table below to the row at cursor position
+            documenteditor.editor.insertRow();
+            break;
+        case 'insert_left':
+            //Insert the specified number of columns to the table left to the column at cursor position
+            documenteditor.editor.insertColumn(true, 2);
+            break;
+        case 'insert_right':
+            //Insert the specified number of columns to the table right to the column at cursor position
+            documenteditor.editor.insertColumn();
+            break;
+        case 'delete_table':
+            //Delete the entire table
+            documenteditor.editor.deleteTable();
+            break;
+        case 'delete_row':
+            //Delete the selected number of rows
+            documenteditor.editor.deleteRow();
+            break;
+        case 'delete_column':
+            //Delete the selected number of columns
+            documenteditor.editor.deleteColumn();
+            break;
+        case 'merge_cell':
+            //Merge the selected cells into one (both vertically and horizontally)
+            documenteditor.editor.mergeCells();
+            break;
+        case 'table_dialog':
+            //Opens insert table dialog
+            documenteditor.showDialog('Table');
+            break;
+    }
 }
-let containerPanel: HTMLElement = document.getElementById('container');
-function updateContainerSize() {
-  containerPanel.style.height =
-    window.innerHeight - document.getElementById('toolbar').offsetHeight + 'px';
-}
+
 let toolBar: Toolbar = new Toolbar({
-  clicked: toolbarButtonClick,
-  items: [
-    {
-      prefixIcon: 'e-de-icon-Table',
-      tooltipText: 'Insert Table',
-      id: 'table',
-    },
-    {type: 'Separator' },
-    {
-      prefixIcon: 'e-de-icon-InsertAbove',
-      tooltipText: 'Insert new row above',
-      id: 'insert_above',
-    },
-    {
-      prefixIcon: 'e-de-icon-InsertBelow',
-      tooltipText: 'Insert new row below',
-      id: 'insert_below',
-    },
-    {type: 'Separator' },
-    {
-      prefixIcon: 'e-de-icon-InsertLeft',
-      tooltipText: 'Insert new column to the left',
-      id: 'insert_left',
-    },
-    {
-      prefixIcon: 'e-de-icon-InsertRight',
-      tooltipText: 'Insert new column to the right',
-      id: 'insert_right',
-    },
-    {type: 'Separator' },
-    {
-      prefixIcon: 'e-de-icon-DeleteTable',
-      tooltipText: 'Delete Entire table',
-      id: 'delete_table',
-    },
-    {
-      prefixIcon: 'e-de-icon-DeleteRows',
-      tooltipText: 'Delete the selected row',
-      id: 'delete_row',
-    },
-    {
-      prefixIcon: 'e-de-icon-DeleteColumns',
-      tooltipText: 'Delete the selected column',
-      id: 'delete_column',
-    },
-    {type: 'Separator' },
-    {
-      prefixIcon: 'e-de-icon-Cell',
-      tooltipText: 'Merge the selected cells',
-      id: 'merge_cell',
-    },
-    {type: 'Separator' },
-    {
-      text: 'Dialog',
-      tooltipText: 'Open insert table dialog',
-      id: 'table_dialog',
-    },
-  ],
+    clicked: toolbarButtonClick,
+    items: [
+        {
+            prefixIcon: 'e-de-ctnr-table e-icons',
+            tooltipText: 'Insert Table',
+            id: 'table',
+        },
+        {
+            type: 'Separator'
+        },
+        {
+            prefixIcon: 'e-de-ctnr-insertabove e-icons',
+            tooltipText: 'Insert new row above',
+            id: 'insert_above',
+        },
+        {
+            prefixIcon: 'e-de-ctnr-insertbelow e-icons',
+            tooltipText: 'Insert new row below',
+            id: 'insert_below',
+        },
+        {
+            type: 'Separator'
+        },
+        {
+            prefixIcon: 'e-de-ctnr-insertleft e-icons',
+            tooltipText: 'Insert new column to the left',
+            id: 'insert_left',
+        },
+        {
+            prefixIcon: 'e-de-ctnr-insertright e-icons',
+            tooltipText: 'Insert new column to the right',
+            id: 'insert_right',
+        },
+        {
+            type: 'Separator'
+        },
+        {
+            prefixIcon: 'e-de-delete-table e-icons',
+            tooltipText: 'Delete Entire table',
+            id: 'delete_table',
+        },
+        {
+            prefixIcon: 'e-de-ctnr-deleterows e-icons',
+            tooltipText: 'Delete the selected row',
+            id: 'delete_row',
+        },
+        {
+            prefixIcon: 'e-de-ctnr-deletecolumns e-icons',
+            tooltipText: 'Delete the selected column',
+            id: 'delete_column',
+        },
+        {
+            type: 'Separator'
+        },
+        {
+            prefixIcon: 'e-de-ctnr-mergecell e-icons',
+            tooltipText: 'Merge the selected cells',
+            id: 'merge_cell',
+        },
+        {
+            type: 'Separator'
+        },
+        {
+            text: 'Dialog',
+            tooltipText: 'Open insert table dialog',
+            id: 'table_dialog',
+        },
+    ],
 });
 toolBar.appendTo('#toolbar');
-updateContainerSize();
+
 documenteditor.appendTo('#DocumentEditor');
+//Insert table.
 documenteditor.editor.insertTable(2, 2);
 
 ```
