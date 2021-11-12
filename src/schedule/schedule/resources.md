@@ -411,63 +411,6 @@ scheduleObj.appendTo('#Schedule');
 
 > This kind of grouping by date is not applicable on any of the timeline views.
 
-### Grouping with empty resource datasource
-
-When using grouping, it is mandatory to provide at least one resource data in dataSource collection this is the default behavior of our scheduler. If the resource does not have a dataSource, scheduler rendered like below image.
-
-![Grouping with empty resource](./images/empty-datasource.png)
-
-To handle this case you can make the default schedule by emptying the group property.
-
-{% tab template="schedule/resource-grouping", es5Template="group-cells", iframeHeight="588px", sourceFiles="index.ts,index.html"  %}
-
-```typescript
-import { Schedule, Week, Month, ResourceDetails, TreeViewArgs, Agenda, Resize, DragAndDrop } from "@syncfusion/ej2-schedule";
-
-Schedule.Inject(Week, Month, Agenda, Resize, DragAndDrop);import { resourceData } from './datasource.ts';
-let scheduleObj: Schedule = new Schedule({
-width: "100%",
-  height: "650px",
-  selectedDate: new Date(2018, 3, 1),
-  views: ["Week", "Month", "Agenda"],
-  group: {
-    resources: ["Airlines"]
-  },
-  resources: [
-    {
-      field: "AirlineId",
-      title: "Airline Name",
-      name: "Airlines",
-      allowMultiple: true,
-      dataSource: [],
-      textField: "AirlineName",
-      idField: "AirlineId",
-      colorField: "AirlineColor"
-    }
-  ],
-  eventSettings: {
-    dataSource: [],
-    fields: {
-      subject: { title: "Travel Summary", name: "Subject" },
-      location: { title: "Source", name: "Location" },
-      description: { title: "Comments", name: "Description" },
-      startTime: { title: "Departure Time", name: "StartTime" },
-      endTime: { title: "Arrival Time", name: "EndTime" }
-    }
-  },
-  dataBinding(args) {
-    //check the resource count
-    if ((this.resourceCollection[0].dataSource as any).length === 0 && this.group.resources.length > 0) {
-      // Render default scheduler to handle above case.
-      this.group.resources = [];
-    }
-  }
-});
-scheduleObj.appendTo('#Schedule');
-```
-
-{% endtab %}
-
 ## Customizing parent resource cells
 
 In timeline view work cells of parent resource can be customized by checking the `elementType` as `resourceGroupCells` in the event `renderCell`. In the following code example, background color of the work hours has been changed.

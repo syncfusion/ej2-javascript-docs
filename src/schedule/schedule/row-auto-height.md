@@ -128,4 +128,52 @@ scheduleObj.appendTo('#Schedule');
 
 {% endtab %}
 
+## Appointments occupying entire cell
+
+By default, with the feature `rowAutoHeight`, there will be a space in the bottom of the cell when appointment is rendered. To avoid this space, we can set true to the property `ignoreWhitespace` with in `eventSettings` whereas its default property value is false. In the following code example, the whitespace below the appointments has been ignored.
+
+{% tab template="schedule/ignore-whitespace", es5Template="es5-ignore-whitespace", iframeHeight="588px", sourceFiles="index.ts,index.html,index.css"  %}
+
+```typescript
+import { Schedule, TimelineViews, TimelineMonth } from '@syncfusion/ej2-schedule';
+import { resourceData } from './datasource.ts';
+
+Schedule.Inject(TimelineViews, TimelineMonth, Agenda );
+let scheduleObj: Schedule = new Schedule({
+    width: '100%',
+    height: '550px',
+    currentView: 'TimelineWeek',
+    rowAutoHeight: true,
+    views: ['TimelineWeek', 'TimelineMonth'],
+    selectedDate: new Date(2021, 7, 4),
+    group: {
+        resources: ['Rooms', 'Owners']
+    },
+    resources: [{
+        field: 'RoomId', title: 'Room',
+        name: 'Rooms', allowMultiple: false,
+        dataSource: [
+            { RoomText: 'ROOM 1', Id: 1, RoomColor: '#cb6bb2' },
+            { RoomText: 'ROOM 2', Id: 2, RoomColor: '#56ca85' }
+            ],
+            textField: 'RoomText', idField: 'Id', colorField: 'RoomColor'
+        }, {
+        field: 'OwnerId', title: 'Owner',
+        name: 'Owners', allowMultiple: true,
+        dataSource: [
+            { OwnerText: 'Nancy', Id: 1, OwnerGroupId: 1, OwnerColor: '#ffaa00' },
+            { OwnerText: 'Steven', Id: 2, OwnerGroupId: 2, OwnerColor: '#f8a398' },
+            { OwnerText: 'Michael', Id: 3, OwnerGroupId: 1, OwnerColor: '#7499e1' }
+        ],
+        textField: 'OwnerText', idField: 'Id', groupIDField: 'OwnerGroupId', colorField: 'OwnerColor'
+    }],
+    eventSettings: { dataSource: resourceData, ignoreWhitespace: true }
+});
+scheduleObj.appendTo('#Schedule');
+```
+
+{% endtab %}
+
+**Note**: The property `ignoreWhitespace` will be applicable only when `rowAutoHeight` feature is enabled in the Scheduler.
+
 > You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.

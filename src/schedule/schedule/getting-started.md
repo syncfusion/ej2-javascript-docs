@@ -330,4 +330,4 @@ The output will display the Scheduler with the specified view configuration.
 
 {% endtab %}
 
-> You can refer to our [JavaScript Scheduler](https://www.syncfusion.com/javascript-ui-controls/js-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/javascript/demos/#/material/schedule/overview.html) to knows how to present and manipulate data.
+> You can also explore our [JavaScript Scheduler example](https://ej2.syncfusion.com/javascript/demos/#/material/schedule/overview.html) that shows how to use the toolbar buttons to play with Scheduler functionalities.
