@@ -73,6 +73,18 @@ The following table shows the default text values used in PDF Viewer in 'en-US' 
 |Print text|Print|
 |Search text|Search|
 |Annotation Edit text|Edit Annotation|
+|General|General|
+|Appearance|Appearance|
+|Options|Options|
+|Textbox Properties|Textbox Properties|
+|Name|Name|
+|Tooltip|Tooltip|
+|Value|Value|
+|Form Field Visibility|Form Field Visibility|
+|Read Only|Read Only|
+|Required|Required|
+|Checked|Checked|
+|Show Printing|Show Printing|
 
 The different locale value for the PDF Viewer can be specified using the locale property.
 
@@ -175,7 +187,18 @@ You have to map the text content based on locale like following script in sample
                         'Pan text': 'مقلاة',
                         'Print text': 'طباعة',
                         'Search text': 'بحث',
-                        'Annotation Edit text': 'تحرير التعليق التوضيحي'
+                        'Annotation Edit text': 'تحرير التعليق التوضيحي',
+                        'General': 'جنرال لواء',
+                        'Appearance': 'مظهر خارجي',
+                        'Options': 'والخيارات',
+                        'Textbox Properties': 'خصائص مربع النص',
+                        'Tooltip': 'تلميح',
+                        'Value': 'القيمة',
+                        'Form Field Visibility': 'رؤية حقل النموذج',
+                        'Read Only': 'يقرأ فقط',
+                        'Required': 'مطلوب',
+                        'Checked': 'التحقق',
+                        'Show Printing': 'عرض الطباعة'
                     }
                 }
             });

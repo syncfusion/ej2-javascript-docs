@@ -26,7 +26,7 @@ Have [`Docker`](https://www.docker.com/products/container-runtime#/download) ins
 **Step 1:** Pull the pdfviewer-server image from Docker Hub.
 
 ```console
-docker pull pdfviewer-server
+docker pull syncfusion/pdfviewer-server
 ```
 
 **Step 2:** Create the docker-compose.yml file with the following code in your file system.
