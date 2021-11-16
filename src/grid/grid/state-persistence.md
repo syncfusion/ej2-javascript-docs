@@ -104,6 +104,43 @@ document.getElementById('restore').onclick = () => {
 
 {% endtab %}
 
+## How to add a new column while using enablePersistence
+
+The Grid columns can be persisted when the [enablePersistence](../api/grid/#enablepersistence) property is set to true. If you want to add the new columns with the existing persist state, you can use the Grid inbuilt method such as `column.push` and call the [refreshColumns()](../api/grid/#refreshcolumns) method for UI changes. Please refer to the following sample for more information.
+
+{% tab template="grid/add-column", es5Template="addcolumn" %}
+
+```typescript
+
+import { Grid, Page } from '@syncfusion/ej2-grids';
+import { data } from './datasource.ts';
+
+Grid.Inject(Page);
+
+let grid: Grid = new Grid({
+    dataSource: data,
+    enablePersistence: true,
+    allowPaging: true,
+    columns: [
+        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 120 },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 150 },
+        { field: 'ShipCity', headerText: 'Ship City', width: 150 },
+        { field: 'ShipName', headerText: 'Ship Name', width: 150 }
+    ],
+    height: 230
+});
+grid.appendTo('#Grid');
+
+document.getElementById('add').onclick = () => {
+    let obj = { field: "Freight", headerText: 'Freight', width: 120 }
+    grid.columns.push(obj as any); //you can add the columns by using the Grid columns method
+    grid.refreshColumns();
+};
+
+```
+
+{% endtab %}
+
 ## How to prevent columns from persisting
 
 When the [enablePersistence](../api/grid/#enablepersistence) property is set to true, the Grid properties such as [Grouping](../api/grid/groupSettingsModel/), [Paging](../api/grid/pageSettingsModel/), [Filtering](../api/grid/pageSettingsModel/), [Sorting](../api/grid/sortSettingsModel/), and [Columns](../api/grid/columnModel/) will persist. You can use the `addOnPersist` method to prevent these Grid properties from persisting.
