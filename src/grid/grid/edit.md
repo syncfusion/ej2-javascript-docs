@@ -1435,3 +1435,4 @@ If `primaryKey` is not defined in the grid, then edit or delete action take plac
 * [Wizard Like Editing](./how-to/use-wizard-like-dialog-editing)
 * [Tab Inside the Dialog Template](./how-to/using-the-tab-inside-the-dialog-template)
 * [Restrict to type decimal points in a NumericTextBox while editing the numeric column](./how-to/restrict-decimal-points-while-grid-editing)
+* [How to bulk edit columns in Grid](https://www.syncfusion.com/blogs/post/bulk-edit-columns-in-javascript-datagrid.aspx)
