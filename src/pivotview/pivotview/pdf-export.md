@@ -436,7 +436,7 @@ document.getElementById('pdf').onclick = function () {
 
 <!-- markdownlint-disable MD009 -->
 
-### Changing default font while exporting
+### Changing default font while exporting 
 
 By default, the pivot table uses "Helvetica" font in the exported document. But it can be changed using the [`theme`](https://ej2.syncfusion.com/javascript/documentation/api/grid/pdfExportProperties/#theme) property in [`pdfExportProperties`](https://ej2.syncfusion.com/javascript/documentation/api/grid/pdfExportProperties/).
 
@@ -598,6 +598,49 @@ exportBtn.appendTo('#pdf');
 
 document.getElementById('pdf').onclick = function () {
     pivotTableObj.pdfExportModule.exportToPDF();
+};
+
+```
+
+{% endtab %}
+
+### Export all pages
+
+The pivot engine exports the entire virtual data of the pivot table (i.e. the data that contains all of the records used to render the complete pivot table) as a PDF document. To export just the current viewport of the pivot table, set the [`exportAllPages`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/#exportallpages) property to **false**. To use the pivot engine export, add the `PDFExport` module into the pivot table.
+
+> By default, the pivot engine export will be performed while virtual scrolling is enabled.
+
+{% tab template="pivot-table/pdf-export", es5Template="exportallpages", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, VirtualScroll } from '@syncfusion/ej2-pivotview';
+import { Button } from '@syncfusion/ej2-buttons';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(VirtualScroll);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: true,
+        drilledMembers: [{ name: 'Country', items: ['France'] }],
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        rows: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        values: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    allowPdfExport: true,
+    exportAllPages: false,
+    enableVirtualization: true,
+    height: 320
+});
+pivotTableObj.appendTo('#PivotTable');
+
+let exportBtn: Button = new Button({ isPrimary: true });
+exportBtn.appendTo('#pdf');
+
+document.getElementById('pdf').onclick = function () {
+    pivotTableObj.pdfExport();
 };
 
 ```

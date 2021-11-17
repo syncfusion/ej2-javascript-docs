@@ -185,6 +185,46 @@ Defer layout update support to update the pivot table only on demand and not dur
 
 ![output](images/fieldlist_deferupdate.png)
 
+## Show built-in Field List (Popup) over specific target
+
+By passing the target element to the built-in field list dialog module in the [`dataBound`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#databound) event, the field list dialog will be displayed over the appropriate target element on a web page. By default, the Pivot Table's parent element is used as the target element to display the built-in field list dialog.
+
+The sample code below shows the built-in field list dialog using `document.body` as the target element.
+
+{% tab template="pivot-table/pivot-table", es5Template="popup-fieldlist-on-specifictarget", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, FieldList } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(FieldList);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        enableSorting: true,
+        allowLabelFilter: true,
+        allowValueFilter: true,
+        drilledMembers: [{ name: 'Country', items: ['France'] }],
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    dataBound: function(args) {
+        // Here the target can be set to the built-in field list dialog
+        pivotTableObj.pivotFieldListModule.dialogRenderer.fieldListDialog.target = document.body;
+    },
+    showFieldList: true,
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
 ## Show field list using toolbar
 
 It can also be viewed in toolbar by setting [`showFieldList`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/#allowdeferlayoutupdate) and [`showToolbar`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/#allowdeferlayoutupdate) properties in pivot table to **true**. Also, include the item **FieldList** within the [`toolbar`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/#allowdeferlayoutupdate) property in pivot table. When toolbar is enabled, field list icon will be automatically added into the toolbar and the icon won't appear on top left corner in the pivot table component.
@@ -313,6 +353,50 @@ let pivotTableObj: PivotView = new PivotView({
     }
 });
 pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
+## Show values button
+
+During runtime, the **Values** button in the field list can be moved to a different position (i.e., different index) among other fields in the column or row axis. To enable the **Values** button, set the [`showValuesButton`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/#showvaluesbutton) property to **true**.
+
+> This support is only available for relational data sources.
+
+{% tab template="pivot-table/field-list", es5Template="values-button", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, PivotFieldList } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+let pivotTableObj: PivotView = new PivotView({
+    enginePopulated: () => {
+        if (fieldlistObj) {
+            fieldlistObj.update(pivotTableObj);
+        }
+    },
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+let fieldlistObj: PivotFieldList = new PivotFieldList({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        enableSorting: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    renderMode: 'Fixed',
+    showValuesButton: true,
+    enginePopulated: (): void => {
+        fieldlistObj.updateView(pivotTableObj);
+    }
+});
+fieldlistObj.appendTo('#Static_FieldList');
 
 ```
 

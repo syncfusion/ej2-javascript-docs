@@ -244,6 +244,113 @@ pivotTableObj.appendTo('#PivotTable');
 
 {% endtab %}
 
+### Autofit columns
+
+Allows the user to fit the Pivot Table columns as wide as the content of the cell without wrapping. It auto fits all of the Pivot Table columns by invoking the [`autoFitColumns`](https://ej2.syncfusion.com/javascript/documentation/api/grid/#autofitcolumns) method from the grid instance.
+
+{% tab template="pivot-table/pivot-table", es5Template="autofit-method", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    dataBound: function(args) {
+        pivotTableObj.grid.autoFitColumns();
+    },
+    height: 350,
+    width: 800
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
+> The minimum width of 250 pixels is set by default with the grouping bar UI for the first column and cannot be reduced further. So, when the grouping bar is enabled, one can auto fit the Pivot Table columns by calling the [`autoFitColumns`](https://ej2.syncfusion.com/javascript/documentation/api/grid/#autofitcolumns) method from the grid instance with the parameter contained pivot table columns field name excluding first column.
+
+{% tab template="pivot-table/pivot-table", es5Template="autofit-groupingbar", sourceFiles="index.ts,index.html" %}
+
+
+```typescript
+import { PivotView, IDataSet, GroupingBar } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(GroupingBar);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    dataBound: function(args) {
+        if (pivotTableObj.showGroupingBar) {
+            let columns: string[] = [];
+            for (let i: number = 1; i < (pivotTableObj.grid as any).columnModel.length; i++) {
+                columns.push((pivotTableObj.grid as any).columnModel[i].field);
+            }
+            pivotTableObj.grid.autoFitColumns(columns);
+        }
+    },
+    showGroupingBar: true,
+    height: 350,
+    width: 800
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
+### Autofit specific columns
+
+During initial rendering, the parameter `autoFit` in the [`columnRender`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/#columnrender) event under [`gridSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/) can be set to **true** to auto fit specific columns.
+
+{% tab template="pivot-table/pivot-table", es5Template="autofit-event", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, ColumnRenderEventArgs } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    gridSettings: {
+        columnRender: function (args: ColumnRenderEventArgs) {
+            for (let i: number = 0; i < args.columns.length; i++) {
+                args.columns[i].autoFit = true;
+            }
+        }
+    },
+    height: 350,
+    width: 800
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
 ## Grid Lines
 
 Allows end user to display cell border for each cells using [`gridLines`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/#gridlines) property in [`gridSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/gridSettings/).

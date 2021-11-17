@@ -6,7 +6,7 @@ description: "Getting started section briefly explains on how to create and add 
 
 # Getting Started
 
-This section explains the steps to create a simple Essential JS 2 **Pivot Table** and demonstrates the basic usage of the pivot table control in a JavaScript application.
+This section explains the steps to create a simple Essential JS 2 **Pivot Table** and demonstrates the basic usage of the [pivot table](https://www.syncfusion.com/javascript-ui-controls/js-pivot-table) control in a JavaScript application.
 
 ## Dependencies
 
@@ -524,3 +524,5 @@ pivotTableObj.appendTo('#PivotTable');
 ## Deploy the Application
 
 The Essential JS 2 pivot table control features are segregated into individual feature-wise modules. The [Essential Studio JavaScript (Essential JS 2)](https://www.syncfusion.com/downloads/essential-js2) build and `CDN` scripts contains code for all features used in pivot table and hence we suggest to not to use them in production. We strongly recommend you to generate script files to use in production using our **Custom Resource Generator**[`(CRG)`](https://crg.syncfusion.com/) for Essential JS 2. CRG will allow you to generate the bundled script for the currently enabled features in pivot table.
+
+> You can also explore our [JavaScript Pivot Table example](https://ej2.syncfusion.com/demos/#/material/pivot-table/default) that shows how to rendering of the pivot table with drill-up and drill-down functionality bound to a relational report.

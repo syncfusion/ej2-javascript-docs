@@ -90,7 +90,7 @@ By default, all the aggregation types are displayed in the dropdown menu availab
 {% tab template="pivot-table/pivot-table", es5Template="aggregateTypes", sourceFiles="index.ts,index.html" %}
 
 ```typescript
-import { PivotView, IDataSet,GroupingBar } from '@syncfusion/ej2-pivotview';
+import { PivotView, IDataSet,GroupingBar, FieldList } from '@syncfusion/ej2-pivotview';
 import { pivotData } from './datasource.ts';
 
 PivotView.Inject(GroupingBar, FieldList);

@@ -348,6 +348,38 @@ pivotTableObj.appendTo('#PivotTable');
 
 {% endtab %}
 
+## Remove specific field(s) from displaying
+
+When a report is bound to the pivot table, fields will be automatically populated within the Grouping Bar. In this case, you can also prevent specific fields from being displayed. To do so, set the appropriate field name(s) in the [`excludeFields`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/#excludefields) property of [`dataSourceSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/).
+
+> The `excludeFields` property setting will be reflected in the field list UI as well, and for more information, see this [link](https://ej2.syncfusion.com/javascript/documentation/pivotview/field-list/#remove-specific-fields-from-displaying).
+
+{% tab template="pivot-table/pivot-table", es5Template="groupingbar-excludefield", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, GroupingBar } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(GroupingBar);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        enableSorting: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: [],
+        excludeFields:['Quarter']
+    },
+    showGroupingBar: true,
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
 ## Changing aggregation type of value fields at runtime
 
 End user can perform calculations over a group of values using the aggregation option. The value fields bound to the field list, appears with a dropdown icon, helps to select an appropriate aggregation type at runtime. On selection, the values in the Pivot Table will be changed dynamically. By default, the icon to set aggregation type is enabled in the grouping bar. To disable this icon, set the property [`showValueTypeIcon`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/#showvaluetypeicon) in [`groupingBarSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/groupingBarSettings/) to false. To know more about aggregation,[`refer`](./aggregation) here.
@@ -413,6 +445,40 @@ pivotTableObj.appendTo('#PivotTable');
 {% endtab %}
 
  >The property [`showFilterIcon`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/fieldOptions/#showfiltericon), [`showSortIcon`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/fieldOptions/#showsorticon), [`showValueTypeIcon`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/fieldOptions/#showvaluetypeicon) and [`allowDragAndDrop`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/fieldOptions/#allowdraganddrop) in fields of [`dataSourceSettings`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/) are applicable for both grouping bar and field list.
+
+## Show values button
+
+During runtime, the **Values** button in the grouping bar can be moved to a different position (i.e., different index) among other fields in the column or row axis. To enable the **Values** button, set the [`showValuesButton`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/#showvaluesbutton) property to **true**.
+
+> This support is only available for relational data sources.
+
+{% tab template="pivot-table/pivot-table", es5Template="values-button", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet, GroupingBar } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(GroupingBar);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: false,
+        enableSorting: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    showGroupingBar: true,
+    showValuesButton: true,
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
 
 ## Event
 
@@ -548,7 +614,7 @@ pivotTableObj.appendTo('#PivotTable');
 
 ### FieldRemove
 
-The event [`fieldRemove`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#fieldremove) fires when removing any field from their axis. It helps the user to limit the elimination of a field based on its parameters. It has the following parameters
+The event [`fieldRemove`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview#fieldremove) fires when removing any field from their axis. It helps the user to limit the elimination of a field based on its parameters. It has the following parameters  
 
 * `fieldName`: It holds the name of the field to be removed.
 

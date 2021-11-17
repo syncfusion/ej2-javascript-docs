@@ -430,6 +430,49 @@ document.getElementById('excel').onclick = function () {
 
 {% endtab %}
 
+### Export all pages
+
+The pivot engine exports the entire virtual data of the pivot table (i.e. the data that contains all of the records used to render the complete pivot table) as an Excel/CSV document. To export just the current viewport of the pivot table, set the [`exportAllPages`](https://ej2.syncfusion.com/documentation/api/pivotview/#exportallpages) property to **false**. To use the pivot engine export, add the `ExcelExport` module into the pivot table.
+
+> By default, the pivot engine export will be performed while virtual scrolling is enabled.
+
+{% tab template="pivot-table/excel-export", es5Template="exportallpages", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, VirtualScroll, IDataSet } from '@syncfusion/ej2-pivotview';
+import { Button } from '@syncfusion/ej2-buttons';
+import { pivotData } from './datasource.ts';
+
+PivotView.Inject(VirtualScroll);
+let pivotTableObj: PivotView = new PivotView({
+    dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: true,
+        drilledMembers: [{ name: 'Country', items: ['France'] }],
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        rows: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        values: [{ name: 'Country' }, { name: 'Products' }],
+        formatSettings: [{ name: 'Amount', format: 'C0' }],
+        filters: []
+    },
+    height: 320,
+    allowExcelExport: true,
+    exportAllPages: false,
+    enableVirtualization: true
+});
+pivotTableObj.appendTo('#PivotTable');
+
+let exportBtn: Button = new Button({ isPrimary: true });
+exportBtn.appendTo('#excel');
+
+document.getElementById('excel').onclick = function () {
+    pivotTableObj.excelExport();
+};
+
+```
+
+{% endtab %}
+
 ## Events
 
 ### ExcelQueryCellInfo

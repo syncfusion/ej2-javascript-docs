@@ -524,6 +524,36 @@ pivotTableObj.appendTo('#PivotTable');
 
 {% endtab %}
 
+## Values at different positions
+
+By default, the value fields are placed at the end of the row or column axis. To place those value fields in different positions, use the [`valueIndex`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/#valueindex) property and set the value to an appropriate index position. Its default value is **-1**, which denotes the last position. The `valueIndex` property is dependent on the [`valueAxis`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/dataSourceSettings/#valueaxis) property.
+
+> This support is only available for relational data sources. Also, enable the [`showValuesButton`](https://ej2.syncfusion.com/javascript/documentation/api/pivotfieldlist/#showvaluesbutton) property in the [grouping bar](./grouping-bar/#show-values-button) and [field list](./field-list/#show-values-button) UI to **true** to re-arrange the values fields at different positions via user interaction.
+
+{% tab template="pivot-table/pivot-table", es5Template="valueindex", sourceFiles="index.ts,index.html" %}
+
+```typescript
+import { PivotView, IDataSet } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource.ts';
+
+let pivotTableObj: PivotView = new PivotView({
+        dataSourceSettings: {
+        dataSource: pivotData as IDataSet[],
+        expandAll: true,
+        columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+        values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+        rows: [{ name: 'Country' }, { name: 'Products' }],
+        filters: [],
+        valueIndex: 1
+    },
+    height: 350
+});
+pivotTableObj.appendTo('#PivotTable');
+
+```
+
+{% endtab %}
+
 ## Show 'no data' items
 
 By default, the pivot table only shows the field item if it has data in its row or column combination. To show all items that do not have data in row and column combination in the pivot table, use the [`showNoDataItems`](https://ej2.syncfusion.com/javascript/documentation/api/pivotview/fieldOptions/#shownodataitems) property by settings its value to true for the desired fields. In the following code sample, rows of the "Country" and "State" fields do not have data in all combination with "Date" column field.
@@ -718,3 +748,4 @@ pivotTableObj.appendTo('#PivotTable');
 * [Aggregation](./aggregation)
 * [Show/Hide Totals](./summary-customization)
 * [Customize number, date, and time values](./how-to/customize-number-date-and-time-values)
+* [Server Side Engine (Optional)](./server-side-pivot-engine)

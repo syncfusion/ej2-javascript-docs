@@ -329,7 +329,7 @@ let pivotTableObj: PivotView = new PivotView({
         values: [{ name: 'Sold', caption: 'Unit Sold' },
         { name: 'Amount', caption: 'Sold Amount' }],
         filters: [],
-        groupSettings: [{ name: 'Products', caption: 'Product catergory', customGroups: [{groupName: 'Clothings', items: ['Gloves', 'Jerseys', 'Shorts']}]}]
+        groupSettings: [{ type: 'Custom', name: 'Products', caption: 'Product catergory', customGroups: [{groupName: 'Clothings', items: ['Gloves', 'Jerseys', 'Shorts']}]}]
     },
     showGroupingBar: true,
     allowGrouping: true,
