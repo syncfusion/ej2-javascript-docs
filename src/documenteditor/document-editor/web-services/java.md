@@ -11,6 +11,8 @@ This page illustrates how to create web service in Java for the server-side depe
 * Import Word Document
 * Paste with formatting
 * Restrict Editing
+* Spell Check
+* Save as file formats other than SFDT and DOCX
 
 ## Supported Java versions
 
@@ -103,7 +105,9 @@ This section explains how to create the Java web service for DocumentEditor.
 
 ## Importing Word Document
 
-The following code converts the Word document to SFDT file and sends the converted SFDT to client for importing Word document in DocumentEditor.
+As the Document editor client-side script requires the document in SFDT file format, you can convert the Word documents (.dotx,.docx,.docm,.dot), rich text format documents (.rtf), and text documents (.txt) into SFDT format by using this Web API.
+
+The following example code illustrates how to write a Web API for importing Word documents into Document Editor component.
 
 ```java
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -120,7 +124,9 @@ The following code converts the Word document to SFDT file and sends the convert
 
 ## Paste with formatting
 
-The following code converts the HTML, RTF content from client Clipboard to SFDT file and sends the converted SFDT to client for pasting formatted content in DocumentEditor.
+This Web API converts the system clipboard data (HTML/RTF) to SFDT format which is required to paste content with formatting.
+
+The following example code illustrates how to write a Web API for paste with formatting.
 
 ```java
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -156,7 +162,9 @@ The following code converts the HTML, RTF content from client Clipboard to SFDT 
 
 ## Restrict editing
 
-The following code computes HASH for the specified password and sends the generated HASH to client for protecting the Word document in DocumentEditor.
+This Web API generates hash from the specified password and salt value which is required for restrict editing functionality of Document Editor component.
+
+The following example code illustrates how to write a Web API for restrict editing.
 
 ```java
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -190,6 +198,331 @@ The following code computes HASH for the specified password and sends the genera
             spinCount= value;
         }
     }
+```
+
+## Spell Check
+
+Document Editor supports performing spell checking for any input text. You can perform spell checking for the text in Document Editor and it will provide suggestions for the mis-spelled words through dialog and in context menu. Document editor client-side script requires this Web API to show error words and list suggestions in context menu. This Web API returns the json type of spell-checked word which contains details about error words if any and suggestions.
+
+To know more about configure spell check, please check this [link](https://github.com/SyncfusionExamples/EJ2-Document-Editor-Web-Services/tree/master/Java#steps-to-configure-spell-checker).
+
+In controller file, you can configure the spell check files like below:
+
+```java
+
+    List<DictionaryData> spellDictionary;
+    String personalDictPath;
+
+    public WordEditorController() throws Exception {
+
+    String jsonFilePath = "src/main/resources/spellcheck.json";
+    String jsonContent = new String(Files.readAllBytes(Paths.get(jsonFilePath)), StandardCharsets.UTF_8);
+    JsonArray spellDictionaryItems = new Gson().fromJson(jsonContent, JsonArray.class);
+    personalDictPath = "src/main/resources/customDict.dic";
+    spellDictionary = new ArrayList<DictionaryData>();
+    for(int i = 0; i < spellDictionaryItems.size(); i++) {
+        JsonObject spellCheckerInfo = spellDictionaryItems.get(i).getAsJsonObject();
+        DictionaryData dict = new DictionaryData();
+
+        if(spellCheckerInfo.has("LanguadeID"))
+            dict.setLanguadeID(spellCheckerInfo.get("LanguadeID").getAsInt());
+        if(spellCheckerInfo.has("DictionaryPath"))
+            dict.setDictionaryPath("src/main/resources/"+spellCheckerInfo.get("DictionaryPath").getAsString());
+        if(spellCheckerInfo.has("AffixPath"))
+            dict.setAffixPath("src/main/resources/"+spellCheckerInfo.get("AffixPath").getAsString());
+        spellDictionary.add(dict);
+    }
+
+    }
+
+```
+
+Document editor provides options to spell check word by word and spellcheck page by page when loading the documents.
+
+### Spell check word by word
+
+This Web API performs the spell check word by word and return the json which contains information about error words and suggestions if any. By default, spell check word by word is performed in Document editor when enabling spell check in client-side.
+
+The following example code illustrates how to write a Web API for spell check word by word.
+
+```csharp
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/SpellCheck")
+    public String spellCheck(@RequestBody SpellCheckJsonData spellChecker) throws Exception {
+        try {
+              SpellChecker spellCheck = new SpellChecker(spellDictionary,personalDictPath);
+               String data = spellCheck.getSuggestions(spellChecker.languageID, spellChecker.texttoCheck, spellChecker.checkSpelling, spellChecker.checkSuggestion, spellChecker.addWord);
+              return data;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "{\"SpellCollection\":[],\"HasSpellingError\":false,\"Suggestions\":null}";
+        }
+
+    }
+
+    public class SpellCheckJsonData {
+
+    @JsonProperty("LanguageID")
+    int languageID;
+    @JsonProperty("TexttoCheck")
+    String texttoCheck;
+    @JsonProperty("CheckSpelling")
+    boolean checkSpelling;
+    @JsonProperty("CheckSuggestion")
+    boolean checkSuggestion;
+    @JsonProperty("AddWord")
+    boolean addWord;
+
+    }
+```
+
+### Spell check page by page
+
+This Web API performs the spell check page by page and return the json which contains information about error words and suggestions if any. By [enabling optimized spell check](../../document-editor/spell-check#enableoptimizedspellcheck) in client-side, you can perform spellcheck page by page when loading the documents.
+
+The following example code illustrates how to write a Web API for spell check page by page.
+
+```csharp
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/SpellCheckByPage")
+    public String spellCheckByPage(@RequestBody SpellCheckJsonData spellChecker) throws Exception {
+        try {
+              SpellChecker spellCheck = new SpellChecker(spellDictionary,personalDictPath);
+               String data = spellCheck.checkSpelling(spellChecker.languageID, spellChecker.texttoCheck);
+              return data;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "{\"SpellCollection\":[],\"HasSpellingError\":false,\"Suggestions\":null}";
+        }
+    }
+
+
+    public class SpellCheckJsonData {
+
+    @JsonProperty("LanguageID")
+    int languageID;
+    @JsonProperty("TexttoCheck")
+    String texttoCheck;
+    @JsonProperty("CheckSpelling")
+    boolean checkSpelling;
+    @JsonProperty("CheckSuggestion")
+    boolean checkSuggestion;
+    @JsonProperty("AddWord")
+    boolean addWord;
+
+    }
+```
+
+## Save
+
+You can configure this API, if you want to save the document in file format other than DOCX and SFDT using server-side. You can save the document in following ways:
+
+### Save
+
+This Web API saves the document in the server machine. You can customize this API to save the document into databases or file servers.
+
+The following example code illustrates how to write a Web API for save document in server-side.
+
+```csharp
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/Save")
+    public void save(@RequestBody SaveParameter data) throws Exception {
+        try {
+            String name = data.getFileName();
+            String format = retrieveFileType(name);
+            if (name == null || name.isEmpty()) {
+                name = "Document1.docx";
+            }
+            WordDocument document = WordProcessorHelper.save(data.getContent());
+            // Saves the document to server machine file system, you can customize here to save into databases or file servers based on requirement.
+            FileOutputStream fileStream = new FileOutputStream(name);
+            document.save(fileStream, getWFormatType(format));
+            fileStream.close();
+            document.close();
+        } catch (Exception ex) {
+            throw new Exception(ex.getMessage());
+        }
+    }
+
+    public class SaveParameter {
+    private String _content;
+    private String _fileName;
+
+    public String getContent() {
+        return _content;
+    }
+
+    public String setContent(String value) {
+        _content = value;
+        return value;
+    }
+
+    public String getFileName() {
+        return _fileName;
+    }
+
+    public String setFileName(String value) {
+        _fileName = value;
+        return value;
+    }
+    }
+    static com.syncfusion.docio.FormatType getWFormatType(String format) throws Exception {
+
+        if (format == null || format.trim().isEmpty())
+            throw new Exception("EJ2 WordProcessor does not support this file format.");
+        switch (format.toLowerCase()) {
+        case ".dotx":
+            return com.syncfusion.docio.FormatType.Dotx;
+        case ".docm":
+            return com.syncfusion.docio.FormatType.Docm;
+        case ".dotm":
+            return com.syncfusion.docio.FormatType.Dotm;
+        case ".docx":
+            return com.syncfusion.docio.FormatType.Docx;
+        case ".rtf":
+            return com.syncfusion.docio.FormatType.Rtf;
+        case ".html":
+            return com.syncfusion.docio.FormatType.Html;
+        case ".txt":
+            return com.syncfusion.docio.FormatType.Txt;
+        case ".xml":
+            return com.syncfusion.docio.FormatType.WordML;
+        default:
+            throw new Exception("EJ2 WordProcessor does not support this file format.");
+        }
+    }
+```
+
+### ExportSfdt
+
+This Web API converts the SFDT string to required format and returns the document as FileStreamResult to client-side. Using this API, you can save the document in file format other than SFDT and DOCX and download the document in client browser.
+
+The following example code illustrates how to write a Web API for export sfdt.
+
+```csharp
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/ExportSFDT")
+    public ResponseEntity<Resource> exportSFDT(@RequestBody SaveParameter data) throws Exception {
+        try {
+            String name = data.getFileName();
+            String format = retrieveFileType(name);
+            if (name == null || name.isEmpty()) {
+                name = "Document1.docx";
+            }
+            WordDocument document = WordProcessorHelper.save(data.getContent());
+            return saveDocument(document, format);
+        } catch (Exception ex) {
+            throw new Exception(ex.getMessage());
+        }
+    }
+
+    public class SaveParameter {
+
+    private String _content;
+    private String _fileName;
+
+    public String getContent() {
+        return _content;
+    }
+
+    public String setContent(String value) {
+        _content = value;
+        return value;
+    }
+
+    public String getFileName() {
+        return _fileName;
+    }
+
+    public String setFileName(String value) {
+        _fileName = value;
+        return value;
+    }
+    }
+
+    private ResponseEntity<Resource> saveDocument(WordDocument document, String format) throws Exception {
+        String contentType = "";
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        com.syncfusion.docio.FormatType type = getWFormatType(format);
+        switch (type.toString()) {
+        case "Rtf":
+            contentType = "application/rtf";
+            break;
+        case "WordML":
+            contentType = "application/xml";
+            break;
+        case "Dotx":
+            contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.template";
+            break;
+        case "Html":
+            contentType = "application/html";
+            break;
+        }
+        document.save(outStream, type);
+        ByteArrayResource resource = new ByteArrayResource(outStream.toByteArray());
+        outStream.close();
+        document.close();
+
+        return ResponseEntity.ok().contentLength(resource.contentLength())
+                .contentType(MediaType.parseMediaType(contentType)).body(resource);
+    }
+```
+
+### Export
+
+This Web API converts the DOCX document to required format and returns the document as FileStreamResult to client-side. Using this API, you can save the document in file format other than SFDT and DOCX and download the document in client browser.
+
+The following example code illustrates how to write a Web API for export.
+
+```csharp
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/api/wordeditor/Export")
+    public ResponseEntity<Resource> export(@RequestParam("data") MultipartFile data, String fileName) throws Exception {
+        try {
+            String name = fileName;
+            String format = retrieveFileType(name);
+            if (name == null || name.isEmpty()) {
+                name = "Document1";
+            }
+            WordDocument document = new WordDocument(data.getInputStream(), com.syncfusion.docio.FormatType.Docx);
+            return saveDocument(document, format);
+        } catch (Exception ex) {
+            throw new Exception(ex.getMessage());
+        }
+    }
+
+    private ResponseEntity<Resource> saveDocument(WordDocument document, String format) throws Exception {
+        String contentType = "";
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        com.syncfusion.docio.FormatType type = getWFormatType(format);
+        switch (type.toString()) {
+        case "Rtf":
+            contentType = "application/rtf";
+            break;
+        case "WordML":
+            contentType = "application/xml";
+            break;
+        case "Dotx":
+            contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.template";
+            break;
+        case "Html":
+            contentType = "application/html";
+            break;
+        }
+        document.save(outStream, type);
+        ByteArrayResource resource = new ByteArrayResource(outStream.toByteArray());
+        outStream.close();
+        document.close();
+
+        return ResponseEntity.ok().contentLength(resource.contentLength())
+                .contentType(MediaType.parseMediaType(contentType)).body(resource);
+    }
+
+
 ```
 
 >Note: Please refer the [Java Web API example from GitHub](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices/tree/master/Java).
