@@ -451,3 +451,8 @@ grid.appendTo('#Grid');
 
 * [Customizing filter menu operators list](./how-to/customizing-filter-menu-operators-list)
 * [Customizing Filter Dialog by using an additional parameter](./how-to/add-params-for-filtering)
+* [How to implement 'not contains' operator for Grid filtering](https://www.syncfusion.com/kb/12691/how-to-implement-not-contains-operator-for-grid-filtering)
+* [How to filter custom date ranges in Grid column using date range picker](https://www.syncfusion.com/kb/12390/how-to-filter-custom-date-ranges-in-grid-column-using-date-range-picker)
+* [How to filter multiple records using the filter bar template](https://www.syncfusion.com/kb/11808/how-to-filter-multiple-records-using-the-filter-bar-template)
+* [How to change the data source for checkbox filter popup in Grid?](https://www.syncfusion.com/kb/11339/how-to-change-the-data-source-for-checkbox-filter-popup-in-grid)
+* [How to perform advanced filtering in grid using custom queries](https://www.syncfusion.com/kb/11256/how-to-perform-advanced-filtering-in-grid-using-custom-queries)

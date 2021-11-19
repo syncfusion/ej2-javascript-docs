@@ -478,3 +478,7 @@ Column selection background can be customized using below CSS.
 }
 
 ```
+
+## See Also
+
+* [How to change the font size of Grid elements](https://www.syncfusion.com/kb/11321/how-to-change-the-font-size-of-grid-elements)

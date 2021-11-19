@@ -234,3 +234,8 @@ grid.appendTo('#Grid');
 {% endtab %}
 
 >By default, [`columns.clipMode`](../api/grid/column/#clipmode) value is **Ellipsis**.
+
+## See Also
+
+* [How to get the clicked Grid cell details](https://www.syncfusion.com/kb/11537/how-to-get-the-clicked-grid-cell-details)
+* [How to customize the Grid cell values while exporting](https://www.syncfusion.com/kb/11324/how-to-customize-the-grid-cell-values-while-exporting)

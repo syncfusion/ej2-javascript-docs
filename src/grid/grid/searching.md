@@ -273,3 +273,8 @@ grid.appendTo('#Grid');
 ```
 
 {% endtab %}
+
+## See Also
+
+* [How to perform searching in Date type column](https://www.syncfusion.com/kb/11251/how-to-perform-searching-in-date-type-column)
+* [How to search the records in grid on each keystroke](https://www.syncfusion.com/kb/11248/how-to-search-the-records-in-grid-on-each-keystroke)

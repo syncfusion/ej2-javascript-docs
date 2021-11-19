@@ -469,3 +469,5 @@ return dm.RequiresCounts ? Json(new { result = groupedData == null ? DataSource 
 ## See Also
 
 * [Exporting grouped records](./excel-exporting#Exporting-grouped-records)
+* [How to apply formatting for the group caption template](https://www.syncfusion.com/kb/11253/how-to-apply-formatting-for-the-group-caption-template)
+* [How to hide expand/collapse icon for groups with single item](https://www.syncfusion.com/kb/11023/how-to-hide-expand-collapse-icon-for-groups-with-single-item)

@@ -222,3 +222,4 @@ If printing of all the data is still needed, we suggest to Export the grid to `E
 ## See Also
 
 * [How to Print the expanded state grid from all pages](./how-to#print-the-expanded-state-from-other-pages)
+* [How to print only selected records in grid](https://www.syncfusion.com/kb/11252/how-to-print-only-selected-records-in-grid)

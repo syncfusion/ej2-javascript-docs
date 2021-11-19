@@ -1436,3 +1436,7 @@ If `primaryKey` is not defined in the grid, then edit or delete action take plac
 * [Tab Inside the Dialog Template](./how-to/using-the-tab-inside-the-dialog-template)
 * [Restrict to type decimal points in a NumericTextBox while editing the numeric column](./how-to/restrict-decimal-points-while-grid-editing)
 * [How to bulk edit columns in Grid](https://www.syncfusion.com/blogs/post/bulk-edit-columns-in-javascript-datagrid.aspx)
+* [How to use Document Editor as an edit field in Data Grid](https://www.syncfusion.com/kb/11722/how-to-use-document-editor-as-an-edit-field-in-data-grid)
+* [How to render custom confirmation dialog while updating edit operations](https://www.syncfusion.com/kb/11695/how-to-render-custom-confirmation-dialog-while-updating-edit-operations)
+* [How to render ColorPicker component for particular column while editing a record](https://www.syncfusion.com/kb/11569/how-to-render-colorpicker-component-for-particular-column-while-editing-a-record)
+* [How to positioning the validation error message](https://www.syncfusion.com/kb/11217/how-to-positioning-the-validation-error-message)
