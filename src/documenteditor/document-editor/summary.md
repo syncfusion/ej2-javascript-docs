@@ -51,3 +51,4 @@
 * [Deploy Document Editor component for Mobile](document-editor/how-to/deploy-document-editor-component-for-mobile.md)
 * [Disable Optimized Text Measuring](document-editor/how-to/disable-optimized-text-measuring.md)
 * [Get the selected content](document-editor/how-to/get-the-selected-content.md)
+* [Set the default format in Document Editor](document-editor/how-to/set-default-format-in-document-editor.md)
