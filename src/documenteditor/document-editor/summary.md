@@ -52,3 +52,6 @@
 * [Disable Optimized Text Measuring](document-editor/how-to/disable-optimized-text-measuring.md)
 * [Get the selected content](document-editor/how-to/get-the-selected-content.md)
 * [Set the default format in Document Editor](document-editor/how-to/set-default-format-in-document-editor.md)
+* [Show and hide spinner](document-editor/how-to/show-hide-spinner.md)
+* [Resize document editor](document-editor/how-to/resize-document-editor.md)
+* [Export the document as Pdf](document-editor/how-to/export-document-as-pdf.md)
