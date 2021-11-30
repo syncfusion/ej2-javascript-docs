@@ -29,3 +29,5 @@ Section|CSS class|Purpose of CSS class
 **Summary**|e-gridfooter|This class is added to root of the summary div.
 ||e-summaryrow|This class is added to rows of treegrid summary.
 ||e-summarycell|This class is added to cells of summary row. This to override background color of summary.
+
+> You can refer to our [`JavaScript Tree Grid`](https://www.syncfusion.com/javascript-ui-controls/js-tree-grid) feature tour page for its groundbreaking feature representations. You can also explore our JavaScript Tree Grid example [`JavaScript Tree Grid example`](https://ej2.syncfusion.com/demos/#/material/tree-grid/treegrid-overview.html) to knows how to present and manipulate data.

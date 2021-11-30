@@ -441,3 +441,5 @@ treeGridObj.appendTo('#TreeGrid');
 ## Deploy the application
 
 The Essential JS 2 TreeGrid control features are segregated into individual feature-wise modules. The [Essential Studio JavaScript (Essential JS 2)](https://www.syncfusion.com/downloads/essential-js2) build and `CDN` scripts contains code for all features used in the TreeGrid. So, do not to use the `CDN` scripts in production. It is strongly recommended to generate script files to use in production using our **Custom Resource Generator**[`(CRG)`](https://crg.syncfusion.com/) for Essential JS 2. CRG allows you to generate the bundled script for the currently enabled features in TreeGrid.
+
+> You can refer to our [`JavaScript Tree Grid`](https://www.syncfusion.com/javascript-ui-controls/js-tree-grid) feature tour page for its groundbreaking feature representations. You can also explore our JavaScript Tree Grid example [`JavaScript Tree Grid example`](https://ej2.syncfusion.com/demos/#/material/tree-grid/treegrid-overview.html) to knows how to present and manipulate data.

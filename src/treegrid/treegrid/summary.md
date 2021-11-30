@@ -12,6 +12,7 @@
 * [Selection](treegrid/selection.md)
 * [Paging](treegrid/paging.md)
 * [Scrolling](treegrid/scrolling.md)
+* [Frozen Rows and Columns](treegrid/frozen.md)
 * [Virtualization](treegrid/virtual.md)
 * [Infinite Scrolling](treegrid/infinite-scroll.md)
 * [Aggregates](treegrid/aggregates.md)

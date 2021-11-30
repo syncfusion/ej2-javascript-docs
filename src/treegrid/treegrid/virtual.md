@@ -54,7 +54,16 @@ let treegrid: TreeGrid = new TreeGrid(
 
 * Due to the element height limitation in browsers, the maximum number of records loaded by the treegrid is limited by the browser capability.
 * Cell selection will not be persisted in row.
-* Row count of the page is not depend on the **pageSize** property of the **pageSettings**. Row count for the page is determined by the [`height`](https://ej2.syncfusion.com/javascript/documentation/api/treegrid/#height) given to the TreeGrid.
+* The page size provided must be two times larger than the number of visible rows in the grid. If the page size is failed to meet this condition then the size will be determined by TreeGrid.
 * The virtual height of the treegrid content is calculated using the row height and total number of records in the data source and hence features which changes row height such as text wrapping are not supported. If you want to increase the row height to accommodate the content then you can specify the row height as below to ensure all the table rows are in same height.
+
+```css
+.e-treegrid .e-row {
+    height: 2em;
+}
+```
+
 * Programmatic selection using the **selectRows** method is not supported in virtual scrolling.
-* Frozen column feature is not supported with Virtual Scrolling
+* Virtual scrolling is not compatible with Batch editing, detail template and Frozen columns.
+
+> You can refer to our [`JavaScript Tree Grid`](https://www.syncfusion.com/javascript-ui-controls/js-tree-grid) feature tour page for its groundbreaking feature representations. You can also explore our JavaScript Tree Grid example [`JavaScript Tree Grid example`](https://ej2.syncfusion.com/demos/#/material/tree-grid/treegrid-overview.html) to knows how to present and manipulate data.

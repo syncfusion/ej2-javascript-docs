@@ -212,3 +212,4 @@ treeGridObj.dataBound = () =>{
 > * The `created` event triggers when Pager is created.
 > * The `click` event triggers when the numeric items in the pager is clicked.
 > * The `dropDownChanged` event triggers when pageSize DropDownList value is selected.
+> You can refer to our [`JavaScript Tree Grid`](https://www.syncfusion.com/javascript-ui-controls/js-tree-grid) feature tour page for its groundbreaking feature representations. You can also explore our JavaScript Tree Grid example [`JavaScript Tree Grid example`](https://ej2.syncfusion.com/demos/#/material/tree-grid/treegrid-overview.html) to knows how to present and manipulate data.
