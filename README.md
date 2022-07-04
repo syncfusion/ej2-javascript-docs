@@ -1,6 +1,6 @@
 # Syncfusion JavaScript Documentation
 
-This is the GitHub repository for the technical product documentation for [Syncfusion Angular UI Components](https://ej2.syncfusion.com/home/angular.html).This documentation is published to https://ej2.syncfusion.com/angular/documentation/
+This is the GitHub repository for the technical product documentation for [Syncfusion JavaScript UI Components](https://ej2.syncfusion.com/home/javascript.html). This documentation is published to https://ej2.syncfusion.com/javascript/documentation/
 
 ## Contributions Welcome!
 
